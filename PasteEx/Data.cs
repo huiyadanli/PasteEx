@@ -82,7 +82,12 @@ namespace PasteEx
                 int i = url.LastIndexOf(".");
                 if (i > 0)
                 {
-                    return url.Substring(i + 1);
+                    string ext = url.Substring(i + 1);
+
+                    // *.png?SomeParameters
+                    if (ext.Length > 3) { ext = ext.Substring(0, 3); }
+
+                    if (imageExt.Contains(ext)) { return ext; } else { return null; }
                 }
             }
             return null;
