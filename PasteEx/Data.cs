@@ -84,7 +84,7 @@ namespace PasteEx
                 {
                     string ext = url.Substring(i + 1);
 
-                    // *.png?SomeParameters
+                    // a case of "*.png?SomeParameters"
                     if (ext.Length > 3) { ext = ext.Substring(0, 3); }
 
                     if (imageExt.Contains(ext)) { return ext; } else { return null; }

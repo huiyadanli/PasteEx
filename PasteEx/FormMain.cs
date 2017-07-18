@@ -16,16 +16,33 @@ namespace PasteEx
 
         private Data data;
 
+        private string currentLocation;
+
+        public string CurrentLocation
+        {
+            get
+            {
+                return currentLocation;
+            }
+            set
+            {
+                currentLocation = value.EndsWith("\\") ? value : value + "\\";
+                tsslCurrentLocation.ToolTipText = currentLocation;
+                tsslCurrentLocation.Text = GenerateDisplayLocation(currentLocation);
+            }
+        }
+
+
         public FormMain()
         {
             InitializeComponent();
-            tsslCurrentLocation.Text = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory);
+            CurrentLocation = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory);
         }
 
         public FormMain(string location)
         {
             InitializeComponent();
-            tsslCurrentLocation.Text = location;
+            CurrentLocation = location;
         }
 
         private void FormMain_Load(object sender, EventArgs e)
@@ -49,8 +66,7 @@ namespace PasteEx
         private string GenerateFileName()
         {
             string defaultFileName = "CB_" + DateTime.Now.ToString("yyyyMMdd");
-            tsslCurrentLocation.Text = tsslCurrentLocation.Text.EndsWith("\\") ? tsslCurrentLocation.Text : tsslCurrentLocation.Text + "\\";
-            string path = tsslCurrentLocation.Text + defaultFileName + "." + cboExtension.Text;
+            string path = CurrentLocation + defaultFileName + "." + cboExtension.Text;
 
             string result;
             string newFileName = defaultFileName;
@@ -60,7 +76,7 @@ namespace PasteEx
                 if (File.Exists(path))
                 {
                     newFileName = defaultFileName + " (" + ++i + ")";
-                    path = tsslCurrentLocation.Text + newFileName + "." + cboExtension.Text;
+                    path = CurrentLocation + newFileName + "." + cboExtension.Text;
                 }
                 else
                 {
@@ -77,9 +93,96 @@ namespace PasteEx
             return result;
         }
 
+        private string GenerateDisplayLocation(string location)
+        {
+            const int maxLength = 47;
+            const string ellipsis = "...";
+
+            int length = Encoding.Default.GetBytes(location).Length;
+            if (length <= maxLength)
+            {
+                return location;
+            }
+
+            // short display location
+            int i;
+            byte[] b;
+            int tail = 0;
+            char[] tailChars = new char[location.Length];
+            int k = 0;
+            for (i = location.Length - 1; i >= 0; i--)
+            {
+                b = Encoding.Default.GetBytes(location[i].ToString());
+                if (b.Length > 1)
+                {
+                    tail += 2;
+                }
+                else
+                {
+                    tail++;
+                }
+                tailChars[k++] = location[i];
+                if (location[i] == '\\' && i != location.Length - 1)
+                {
+                    break;
+                }
+            }
+            int head = maxLength - ellipsis.Length - tail;
+            if (head >= 3)
+            {
+                // c:\xxx\xxx\xx...\xxxxx\
+                StringBuilder sb = new StringBuilder();
+                sb.Append(StrCut(location, head));
+                sb.Append(ellipsis);
+                string tailStr = "";
+                for (i = tailChars.Length -1; i >=0; i--)
+                {
+                    if(tailChars[i] != '\0')
+                    {
+                        tailStr += tailChars[i];
+                    }
+                }
+                sb.Append(tailStr);
+                return sb.ToString();
+            }
+            else
+            {
+                // c:\xxx\xxx\xxxx\xxxxx...
+                return StrCut(location, maxLength - ellipsis.Length) + ellipsis;
+            }
+        }
+
+        private string StrCut(string str, int length)
+        {
+            int len = 0;
+            byte[] b;
+            StringBuilder sb = new StringBuilder();
+
+            for (int i = 0; i < str.Length; i++)
+            {
+                b = Encoding.Default.GetBytes(str[i].ToString());
+                if (b.Length > 1)
+                {
+                    len += 2;
+                }
+                else
+                {
+                    len++;
+                }
+
+                if (len >= length)
+                {
+                    break;
+                }
+                sb.Append(str[i]);
+            }
+
+            return sb.ToString();
+        }
+
         private void btnSave_Click(object sender, EventArgs e)
         {
-            data.SaveAs(tsslCurrentLocation.Text, txtFileName.Text, cboExtension.Text);
+            data.SaveAs(CurrentLocation, txtFileName.Text, cboExtension.Text);
             Application.Exit();
         }
 
@@ -95,7 +198,7 @@ namespace PasteEx
                 }
                 else
                 {
-                    tsslCurrentLocation.Text = dialog.SelectedPath;
+                    CurrentLocation = dialog.SelectedPath;
                 }
             }
         }

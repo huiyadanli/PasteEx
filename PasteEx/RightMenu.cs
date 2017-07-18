@@ -31,10 +31,12 @@ namespace PasteEx
             else if (command != Application.ExecutablePath + " \"%V\"")
             {
                 if (MessageBox.Show(Resources.Resource_zh_CN.TipWrongValueInMenu, Resources.Resource_zh_CN.Title, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                {
+                { 
+                    try { UnRegister(); }
+                    catch { }
+
                     try
-                    {
-                        UnRegister();
+                    { 
                         Register();
                         MessageBox.Show(Resources.Resource_zh_CN.TipReRegister, Resources.Resource_zh_CN.Title, MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
