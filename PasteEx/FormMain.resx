@@ -218,6 +218,12 @@
   <metadata name="statusStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <data name="tsslCurrentLocation.Size" type="System.Drawing.Size, System.Drawing">
+    <value>104, 17</value>
+  </data>
+  <data name="tsslCurrentLocation.Text" xml:space="preserve">
+    <value>Current Location</value>
+  </data>
   <data name="statusStrip.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 85</value>
   </data>
@@ -241,12 +247,6 @@
   </data>
   <data name="&gt;&gt;statusStrip.ZOrder" xml:space="preserve">
     <value>3</value>
-  </data>
-  <data name="tsslCurrentLocation.Size" type="System.Drawing.Size, System.Drawing">
-    <value>104, 17</value>
-  </data>
-  <data name="tsslCurrentLocation.Text" xml:space="preserve">
-    <value>Current Location</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="btnSave.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
@@ -296,84 +296,6 @@
   </data>
   <data name="&gt;&gt;btnChooseLocation.ZOrder" xml:space="preserve">
     <value>1</value>
-  </data>
-  <data name="button1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        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
-</value>
   </data>
   <data name="button1.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
     <value>Zoom</value>

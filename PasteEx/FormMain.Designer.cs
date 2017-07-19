@@ -95,6 +95,7 @@
             // 
             // button1
             // 
+            this.button1.BackgroundImage = global::PasteEx.Properties.Resources.setting;
             resources.ApplyResources(this.button1, "button1");
             this.button1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.button1.Name = "button1";
