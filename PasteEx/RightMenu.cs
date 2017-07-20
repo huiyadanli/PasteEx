@@ -15,7 +15,8 @@ namespace PasteEx
             string command = (string)Registry.GetValue(@"HKEY_CLASSES_ROOT\Directory\Background\shell\PasteEx\command", "", "");
             if (command == "")
             {
-                if (MessageBox.Show(Resources.Resource_zh_CN.TipFirstRegister, Resources.Resource_zh_CN.Title, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                DialogResult result = MessageBox.Show(Resources.Resource_zh_CN.TipFirstRegister, Resources.Resource_zh_CN.Title, MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
                 {
                     try
                     {
@@ -26,6 +27,10 @@ namespace PasteEx
                         MessageBox.Show(ex.Message + "\n" + Resources.Resource_zh_CN.TipRunAsAdmin, Resources.Resource_zh_CN.Title, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return false;
                     }
+                }
+                else if(result == DialogResult.No)
+                {
+
                 }
             }
             else if (command != Application.ExecutablePath + " \"%V\"")

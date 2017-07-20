@@ -56,8 +56,19 @@ namespace PasteEx
             }
             else
             {
-                MessageBox.Show(this, Resources.Resource_zh_CN.TipAnalyzeFailed, Resources.Resource_zh_CN.Title, MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                Environment.Exit(0);
+                if(MessageBox.Show(this, Resources.Resource_zh_CN.TipAnalyzeFailed, Resources.Resource_zh_CN.Title, MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                {
+                    btnChooseLocation.Enabled = false;
+                    btnSave.Enabled = false;
+                    txtFileName.Enabled = false;
+                    cboExtension.Enabled = false;
+                    tsslCurrentLocation.Text = "当前你可以使用设置功能";
+                }
+                else
+{
+                    Environment.Exit(0);
+                }
+                
             }
 
             txtFileName.Text = GenerateFileName();
@@ -65,7 +76,7 @@ namespace PasteEx
 
         private string GenerateFileName()
         {
-            string defaultFileName = "CB_" + DateTime.Now.ToString("yyyyMMdd");
+            string defaultFileName = "Clipboard_" + DateTime.Now.ToString("yyyyMMdd");
             string path = CurrentLocation + defaultFileName + "." + cboExtension.Text;
 
             string result;

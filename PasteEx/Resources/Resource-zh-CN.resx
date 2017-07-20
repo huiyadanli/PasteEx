@@ -130,7 +130,7 @@
     <value>文件名:</value>
   </data>
   <data name="TipAnalyzeFailed" xml:space="preserve">
-    <value>剪贴板为空</value>
+    <value>剪贴板为空，仍旧进入软件主界面？</value>
   </data>
   <data name="TipDuplicateFileName" xml:space="preserve">
     <value>存在相同的文件名，是否覆盖？</value>
