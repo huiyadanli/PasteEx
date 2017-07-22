@@ -38,7 +38,7 @@ namespace PasteEx
 
             if (IData.GetDataPresent(DataFormats.Html, false))
             {
-                extensions.Add("html");
+                extensions.Add("HTMLFormat");
             }
             if (IData.GetDataPresent(DataFormats.Rtf, false))
             {
@@ -48,10 +48,13 @@ namespace PasteEx
             {
                 extensions.Add("txt");
 
-                string defaultExt = GetTextExtension(IData);
-                if (!String.IsNullOrEmpty(defaultExt))
+                if (Properties.Settings.Default.autoExtSwitch)
                 {
-                    extensions.Add(defaultExt);
+                    string defaultExt = GetTextExtension(IData);
+                    if (!String.IsNullOrEmpty(defaultExt))
+                    {
+                        extensions.Add(defaultExt);
+                    }
                 }
             }
             if (IData.GetDataPresent(DataFormats.Bitmap, false))
@@ -100,27 +103,56 @@ namespace PasteEx
         }
 
         /// <summary>
-        /// 
+        /// Get custom text extension by rules
+        /// Find the first non-null line to compare, 50 empty lines at most
         /// </summary>
         /// <param name="data"></param>
-        /// <returns></returns>
+        /// <returns>Custom Extension</returns>
         public string GetTextExtension(IDataObject data)
         {
+            Dictionary<String, String> rules = GetRules();
             string content = data.GetData(DataFormats.Text) as string;
+
+            using (StringReader sr = new StringReader(content))
+            {
+                for (int i = 0; i < 50; i++)
+                {
+                    string line = sr.ReadLine();
+                    if (!String.IsNullOrEmpty(line))
+                    {
+                        foreach (var rule in rules)
+                        {
+                            if (Regex.IsMatch(line.Trim(), rule.Value))
+                            {
+                                return rule.Key;
+                            }
+                        }
+                        break;
+                    }
+                }
+            }
             return null;
         }
 
-        private static Dictionary<String, String> GetRules()
+        private Dictionary<String, String> GetRules()
         {
             Dictionary<String, String> dic = new Dictionary<String, String>();
 
-            string[] rules = Properties.Settings.Default.autoExtRule.Split('\n');
-
-            foreach (string r in rules)
+            using (StringReader sr = new StringReader(Properties.Settings.Default.autoExtRule))
             {
-                if (String.IsNullOrEmpty(r))
+                while (true)
                 {
-                    string[] kv = r.Split('=');
+                    string line = sr.ReadLine();
+                    if (line == null)
+                    {
+                        break;
+                    }
+                    else if (line == "")
+                    {
+                        continue;
+                    }
+
+                    string[] kv = line.Split('=');
                     if (kv.Length != 2)
                     {
                         return null;
@@ -147,7 +179,7 @@ namespace PasteEx
 
             try
             {
-                if (extension == "html")
+                if (extension == "htmlformat")
                 {
                     File.WriteAllText(path, IData.GetData(DataFormats.Html) as string, Encoding.UTF8);
                 }

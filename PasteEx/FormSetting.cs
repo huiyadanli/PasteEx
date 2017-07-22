@@ -42,6 +42,12 @@ namespace PasteEx
             Get();
         }
 
+        private void btnApply_Click(object sender, EventArgs e)
+        {
+            Set();
+            Properties.Settings.Default.Save();
+        }
+
         private void btnOK_Click(object sender, EventArgs e)
         {
             Set();
@@ -68,5 +74,7 @@ namespace PasteEx
         {
             txtAutoExtRule.Enabled = chkAutoExtSwitch.Checked;
         }
+
+
     }
 }
