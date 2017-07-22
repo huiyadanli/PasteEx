@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data.cs" />
+    <Compile Include="Extension.cs" />
     <Compile Include="FormMain.cs">
       <SubType>Form</SubType>
     </Compile>

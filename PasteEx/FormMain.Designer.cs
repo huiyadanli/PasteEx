@@ -37,7 +37,7 @@
             this.tsslCurrentLocation = new System.Windows.Forms.ToolStripStatusLabel();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnChooseLocation = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnSettings = new System.Windows.Forms.Button();
             this.statusStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -93,19 +93,20 @@
             this.btnChooseLocation.UseVisualStyleBackColor = true;
             this.btnChooseLocation.Click += new System.EventHandler(this.btnChooseLocation_Click);
             // 
-            // button1
+            // btnSettings
             // 
-            this.button1.BackgroundImage = global::PasteEx.Properties.Resources.setting;
-            resources.ApplyResources(this.button1, "button1");
-            this.button1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button1.Name = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnSettings.BackgroundImage = global::PasteEx.Properties.Resources.setting;
+            resources.ApplyResources(this.btnSettings, "btnSettings");
+            this.btnSettings.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnSettings.Name = "btnSettings";
+            this.btnSettings.UseVisualStyleBackColor = true;
+            this.btnSettings.Click += new System.EventHandler(this.btnSettings_Click);
             // 
             // FormMain
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnSettings);
             this.Controls.Add(this.btnChooseLocation);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.statusStrip);
@@ -134,7 +135,7 @@
         private System.Windows.Forms.ToolStripStatusLabel tsslCurrentLocation;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnChooseLocation;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnSettings;
     }
 }
 

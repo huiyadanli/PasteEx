@@ -13,9 +13,15 @@ namespace PasteEx
         public static bool Init()
         {
             string command = (string)Registry.GetValue(@"HKEY_CLASSES_ROOT\Directory\Background\shell\PasteEx\command", "", "");
-            if (command == "")
+            if (String.IsNullOrEmpty(command) )
             {
-                DialogResult result = MessageBox.Show(Resources.Resource_zh_CN.TipFirstRegister, Resources.Resource_zh_CN.Title, MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+                if(Properties.Settings.Default.firstTipFlag)
+                {
+                    return true;
+                }
+
+                DialogResult result = MessageBox.Show(Resources.Resource_zh_CN.TipFirstRegister,
+                    Resources.Resource_zh_CN.Title, MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
                 {
                     try
@@ -24,30 +30,34 @@ namespace PasteEx
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show(ex.Message + "\n" + Resources.Resource_zh_CN.TipRunAsAdmin, Resources.Resource_zh_CN.Title, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show(ex.Message + "\n" + Resources.Resource_zh_CN.TipRunAsAdmin,
+                            Resources.Resource_zh_CN.Title, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return false;
                     }
                 }
-                else if(result == DialogResult.No)
+                else if (result == DialogResult.No)
                 {
-
+                    Properties.Settings.Default.firstTipFlag = false;
+                    Properties.Settings.Default.Save();
                 }
             }
             else if (command != Application.ExecutablePath + " \"%V\"")
             {
-                if (MessageBox.Show(Resources.Resource_zh_CN.TipWrongValueInMenu, Resources.Resource_zh_CN.Title, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                { 
-                    try { UnRegister(); }
-                    catch { }
+                if (MessageBox.Show(Resources.Resource_zh_CN.TipWrongValueInMenu, Resources.Resource_zh_CN.Title,
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    try { UnRegister(); } catch { }
 
                     try
-                    { 
+                    {
                         Register();
-                        MessageBox.Show(Resources.Resource_zh_CN.TipReRegister, Resources.Resource_zh_CN.Title, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show(Resources.Resource_zh_CN.TipReRegister, Resources.Resource_zh_CN.Title,
+                            MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     catch (Exception ex)
                     {
-                        MessageBox.Show(ex.Message + "\n" + Resources.Resource_zh_CN.TipRunAsAdmin, Resources.Resource_zh_CN.Title, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show(ex.Message + "\n" + Resources.Resource_zh_CN.TipRunAsAdmin,
+                            Resources.Resource_zh_CN.Title, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return false;
                     }
                 }
@@ -57,14 +67,18 @@ namespace PasteEx
 
         public static void Add()
         {
+            try { UnRegister(); } catch { }
+
             try
             {
                 Register();
-                MessageBox.Show(Resources.Resource_zh_CN.TipRegister, Resources.Resource_zh_CN.Title, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(Resources.Resource_zh_CN.TipRegister, Resources.Resource_zh_CN.Title,
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message + "\n" + Resources.Resource_zh_CN.TipRunAsAdmin, Resources.Resource_zh_CN.Title, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(ex.Message + "\n" + Resources.Resource_zh_CN.TipRunAsAdmin,
+                    Resources.Resource_zh_CN.Title, MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -73,11 +87,13 @@ namespace PasteEx
             try
             {
                 UnRegister();
-                MessageBox.Show(Resources.Resource_zh_CN.TipUnRegister, Resources.Resource_zh_CN.Title, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(Resources.Resource_zh_CN.TipUnRegister, Resources.Resource_zh_CN.Title,
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message + "\n" + Resources.Resource_zh_CN.TipRunAsAdmin, Resources.Resource_zh_CN.Title, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(ex.Message + "\n" + Resources.Resource_zh_CN.TipRunAsAdmin,
+                    Resources.Resource_zh_CN.Title, MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 

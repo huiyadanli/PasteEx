@@ -56,7 +56,8 @@ namespace PasteEx
             }
             else
             {
-                if(MessageBox.Show(this, Resources.Resource_zh_CN.TipAnalyzeFailed, Resources.Resource_zh_CN.Title, MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                if (MessageBox.Show(this, Resources.Resource_zh_CN.TipAnalyzeFailed, Resources.Resource_zh_CN.Title,
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                 {
                     btnChooseLocation.Enabled = false;
                     btnSave.Enabled = false;
@@ -65,15 +66,16 @@ namespace PasteEx
                     tsslCurrentLocation.Text = "当前你可以使用设置功能";
                 }
                 else
-{
+                {
                     Environment.Exit(0);
                 }
-                
+
             }
 
             txtFileName.Text = GenerateFileName();
         }
 
+        #region Generate Path
         private string GenerateFileName()
         {
             string defaultFileName = "Clipboard_" + DateTime.Now.ToString("yyyyMMdd");
@@ -146,9 +148,9 @@ namespace PasteEx
                 sb.Append(StrCut(location, head));
                 sb.Append(ellipsis);
                 string tailStr = "";
-                for (i = tailChars.Length -1; i >=0; i--)
+                for (i = tailChars.Length - 1; i >= 0; i--)
                 {
-                    if(tailChars[i] != '\0')
+                    if (tailChars[i] != '\0')
                     {
                         tailStr += tailChars[i];
                     }
@@ -190,6 +192,7 @@ namespace PasteEx
 
             return sb.ToString();
         }
+        #endregion
 
         private void btnSave_Click(object sender, EventArgs e)
         {
@@ -204,7 +207,8 @@ namespace PasteEx
             {
                 if (string.IsNullOrEmpty(dialog.SelectedPath))
                 {
-                    MessageBox.Show(this, Resources.Resource_zh_CN.TipPathNotNull, Resources.Resource_zh_CN.Title, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show(this, Resources.Resource_zh_CN.TipPathNotNull,
+                        Resources.Resource_zh_CN.Title, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
                 else
@@ -212,6 +216,12 @@ namespace PasteEx
                     CurrentLocation = dialog.SelectedPath;
                 }
             }
+        }
+
+        private void btnSettings_Click(object sender, EventArgs e)
+        {
+            Form f = new FormSetting();
+            f.Show();
         }
     }
 }

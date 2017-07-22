@@ -28,106 +28,101 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormSetting));
             this.btnRegister = new System.Windows.Forms.Button();
             this.btnUnRegister = new System.Windows.Forms.Button();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.chkAutoExtSwitch = new System.Windows.Forms.CheckBox();
+            this.txtAutoExtRule = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblHelp = new System.Windows.Forms.Label();
+            this.btnOK = new System.Windows.Forms.Button();
+            this.btnRestore = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnRegister
             // 
-            this.btnRegister.Location = new System.Drawing.Point(15, 25);
+            resources.ApplyResources(this.btnRegister, "btnRegister");
             this.btnRegister.Name = "btnRegister";
-            this.btnRegister.Size = new System.Drawing.Size(53, 23);
-            this.btnRegister.TabIndex = 0;
-            this.btnRegister.Text = "添加";
             this.btnRegister.UseVisualStyleBackColor = true;
+            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
             // btnUnRegister
             // 
-            this.btnUnRegister.Location = new System.Drawing.Point(15, 54);
+            resources.ApplyResources(this.btnUnRegister, "btnUnRegister");
             this.btnUnRegister.Name = "btnUnRegister";
-            this.btnUnRegister.Size = new System.Drawing.Size(53, 23);
-            this.btnUnRegister.TabIndex = 1;
-            this.btnUnRegister.Text = "移除";
             this.btnUnRegister.UseVisualStyleBackColor = true;
+            this.btnUnRegister.Click += new System.EventHandler(this.btnUnRegister_Click);
             // 
-            // checkBox1
+            // chkAutoExtSwitch
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(22, 20);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(48, 16);
-            this.checkBox1.TabIndex = 2;
-            this.checkBox1.Text = "启用";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.chkAutoExtSwitch, "chkAutoExtSwitch");
+            this.chkAutoExtSwitch.Name = "chkAutoExtSwitch";
+            this.chkAutoExtSwitch.UseVisualStyleBackColor = true;
+            this.chkAutoExtSwitch.CheckedChanged += new System.EventHandler(this.chkAutoExtSwitch_CheckedChanged);
             // 
-            // textBox1
+            // txtAutoExtRule
             // 
-            this.textBox1.Location = new System.Drawing.Point(22, 42);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.textBox1.Size = new System.Drawing.Size(315, 172);
-            this.textBox1.TabIndex = 3;
+            resources.ApplyResources(this.txtAutoExtRule, "txtAutoExtRule");
+            this.txtAutoExtRule.Name = "txtAutoExtRule";
             // 
             // groupBox1
             // 
+            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Controls.Add(this.btnUnRegister);
             this.groupBox1.Controls.Add(this.btnRegister);
-            this.groupBox1.Location = new System.Drawing.Point(382, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(80, 94);
-            this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "右键菜单";
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Controls.Add(this.textBox1);
-            this.groupBox2.Controls.Add(this.checkBox1);
-            this.groupBox2.Location = new System.Drawing.Point(12, 12);
+            resources.ApplyResources(this.groupBox2, "groupBox2");
+            this.groupBox2.Controls.Add(this.lblHelp);
+            this.groupBox2.Controls.Add(this.txtAutoExtRule);
+            this.groupBox2.Controls.Add(this.chkAutoExtSwitch);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(364, 232);
-            this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "文本扩展名自定义设置";
             // 
-            // button1
+            // lblHelp
             // 
-            this.button1.Location = new System.Drawing.Point(387, 221);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "保存";
-            this.button1.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.lblHelp, "lblHelp");
+            this.lblHelp.Name = "lblHelp";
             // 
-            // label1
+            // btnOK
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(223, 21);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(89, 12);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "How to use it?";
+            resources.ApplyResources(this.btnOK, "btnOK");
+            this.btnOK.Name = "btnOK";
+            this.btnOK.UseVisualStyleBackColor = true;
+            this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
+            // 
+            // btnRestore
+            // 
+            resources.ApplyResources(this.btnRestore, "btnRestore");
+            this.btnRestore.Name = "btnRestore";
+            this.btnRestore.UseVisualStyleBackColor = true;
+            this.btnRestore.Click += new System.EventHandler(this.btnRestore_Click);
+            // 
+            // btnCancel
+            // 
+            resources.ApplyResources(this.btnCancel, "btnCancel");
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // FormSetting
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(474, 258);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnCancel);
+            this.Controls.Add(this.btnRestore);
+            this.Controls.Add(this.btnOK);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "FormSetting";
-            this.Text = "FormSetting";
+            this.Load += new System.EventHandler(this.FormSetting_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
@@ -139,11 +134,13 @@
 
         private System.Windows.Forms.Button btnRegister;
         private System.Windows.Forms.Button btnUnRegister;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.CheckBox chkAutoExtSwitch;
+        private System.Windows.Forms.TextBox txtAutoExtRule;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnOK;
+        private System.Windows.Forms.Label lblHelp;
+        private System.Windows.Forms.Button btnRestore;
+        private System.Windows.Forms.Button btnCancel;
     }
 }

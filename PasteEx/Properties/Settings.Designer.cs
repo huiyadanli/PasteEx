@@ -23,12 +23,39 @@ namespace PasteEx.Properties {
             }
         }
         
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string 设置 {
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool firstTipFlag {
             get {
-                return ((string)(this["设置"]));
+                return ((bool)(this["firstTipFlag"]));
+            }
+            set {
+                this["firstTipFlag"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("using .*;\\npackage .*;")]
+        public string autoExtRule {
+            get {
+                return ((string)(this["autoExtRule"]));
+            }
+            set {
+                this["autoExtRule"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool autoExtSwitch {
+            get {
+                return ((bool)(this["autoExtSwitch"]));
+            }
+            set {
+                this["autoExtSwitch"] = value;
             }
         }
     }

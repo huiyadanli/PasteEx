@@ -15,7 +15,7 @@ namespace PasteEx
     {
         public IDataObject IData { get; set; }
 
-        private static readonly string[] imageExt = { "ico", "bmp", "gif", "jpg", "png" };
+        public static readonly string[] imageExt = { "ico", "bmp", "gif", "jpg", "png" };
 
         //private static readonly Dictionary<String, String> otherExtDic = new Dictionary<String, String>
         //{
@@ -47,13 +47,19 @@ namespace PasteEx
             if (IData.GetDataPresent(DataFormats.Text, false))
             {
                 extensions.Add("txt");
+
+                string defaultExt = GetTextExtension(IData);
+                if (!String.IsNullOrEmpty(defaultExt))
+                {
+                    extensions.Add(defaultExt);
+                }
             }
             if (IData.GetDataPresent(DataFormats.Bitmap, false))
             {
                 extensions.AddRange(imageExt);
 
                 // Get image format
-                string defaultExt = GetImageFormat(IData);
+                string defaultExt = GetImageExtension(IData);
                 if (!String.IsNullOrEmpty(defaultExt))
                 {
                     // Modify sequence oder
@@ -71,7 +77,7 @@ namespace PasteEx
         /// </summary>
         /// <param name="data"></param>
         /// <returns>Image extension</returns>
-        private string GetImageFormat(IDataObject data)
+        public string GetImageExtension(IDataObject data)
         {
             if (data.GetDataPresent("HTML Format", false))
             {
@@ -91,6 +97,38 @@ namespace PasteEx
                 }
             }
             return null;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="data"></param>
+        /// <returns></returns>
+        public string GetTextExtension(IDataObject data)
+        {
+            string content = data.GetData(DataFormats.Text) as string;
+            return null;
+        }
+
+        private static Dictionary<String, String> GetRules()
+        {
+            Dictionary<String, String> dic = new Dictionary<String, String>();
+
+            string[] rules = Properties.Settings.Default.autoExtRule.Split('\n');
+
+            foreach (string r in rules)
+            {
+                if (String.IsNullOrEmpty(r))
+                {
+                    string[] kv = r.Split('=');
+                    if (kv.Length != 2)
+                    {
+                        return null;
+                    }
+                    dic.Add(kv[0], kv[1]);
+                }
+            }
+            return dic;
         }
 
         public void SaveAs(string location, string fileName, string extension)
