@@ -169,6 +169,15 @@ namespace PasteEx.Resources {
         }
         
         /// <summary>
+        ///   查找类似 自定义规则格式不正确，请重新修改 的本地化字符串。
+        /// </summary>
+        internal static string TipRulesError {
+            get {
+                return ResourceManager.GetString("TipRulesError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 添加右键菜单时，请以管理员的身份运行本软件！ 的本地化字符串。
         /// </summary>
         internal static string TipRunAsAdmin {

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -45,12 +46,30 @@ namespace PasteEx
         private void btnApply_Click(object sender, EventArgs e)
         {
             Set();
+
+            if (!CheckRules(txtAutoExtRule.Text) && chkAutoExtSwitch.Checked)
+            {
+                MessageBox.Show(Resources.Resource_zh_CN.TipRulesError, Resources.Resource_zh_CN.Title,
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtAutoExtRule.Focus();
+                return;
+            }
+
             Properties.Settings.Default.Save();
         }
 
         private void btnOK_Click(object sender, EventArgs e)
         {
             Set();
+
+            if (!CheckRules(txtAutoExtRule.Text) && chkAutoExtSwitch.Checked)
+            {
+                MessageBox.Show(Resources.Resource_zh_CN.TipRulesError, Resources.Resource_zh_CN.Title,
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtAutoExtRule.Focus();
+                return;
+            }
+
             Properties.Settings.Default.Save();
             this.Close();
         }
@@ -75,6 +94,30 @@ namespace PasteEx
             txtAutoExtRule.Enabled = chkAutoExtSwitch.Checked;
         }
 
+        private bool CheckRules(string rules)
+        {
+            using (StringReader sr = new StringReader(rules))
+            {
+                while (true)
+                {
+                    string line = sr.ReadLine();
+                    if (line == null)
+                    {
+                        break;
+                    }
+                    else if (line == "")
+                    {
+                        continue;
+                    }
 
+                    string[] kv = line.Split('=');
+                    if (kv.Length != 2)
+                    {
+                        return false;
+                    }
+                }
+            }
+            return true;
+        }
     }
 }

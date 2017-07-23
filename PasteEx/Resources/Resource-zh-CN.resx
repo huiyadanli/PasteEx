@@ -168,4 +168,10 @@
   <data name="TipGetImageExtFailed" xml:space="preserve">
     <value>自动提取图片扩展名失败！</value>
   </data>
+  <data name="TxtCanOnlyUse" xml:space="preserve">
+    <value>当前你可以使用设置功能</value>
+  </data>
+  <data name="TipRulesError" xml:space="preserve">
+    <value>自定义规则格式不正确，请重新修改</value>
+  </data>
 </root>
