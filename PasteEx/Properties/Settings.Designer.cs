@@ -37,7 +37,7 @@ namespace PasteEx.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("using .*;\\npackage .*;")]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
         public string autoExtRule {
             get {
                 return ((string)(this["autoExtRule"]));

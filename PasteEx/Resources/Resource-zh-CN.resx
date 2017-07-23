@@ -162,4 +162,10 @@
   <data name="Title" xml:space="preserve">
     <value>粘贴为文件</value>
   </data>
+  <data name="TipGetCustomExtFailed" xml:space="preserve">
+    <value>自定义扩展名规则匹配出错，请检查规则是否正确！</value>
+  </data>
+  <data name="TipGetImageExtFailed" xml:space="preserve">
+    <value>自动提取图片扩展名失败！</value>
+  </data>
 </root>

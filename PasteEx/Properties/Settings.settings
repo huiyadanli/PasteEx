@@ -6,7 +6,7 @@
       <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="autoExtRule" Type="System.String" Scope="User">
-      <Value Profile="(Default)">using .*;\npackage .*;</Value>
+      <Value Profile="(Default)" />
     </Setting>
     <Setting Name="autoExtSwitch" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>

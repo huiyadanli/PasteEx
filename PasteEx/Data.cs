@@ -15,6 +15,8 @@ namespace PasteEx
     {
         public IDataObject IData { get; set; }
 
+        public DataObject DataStorage { get; set; }
+
         public static readonly string[] imageExt = { "ico", "bmp", "gif", "jpg", "png" };
 
         //private static readonly Dictionary<String, String> otherExtDic = new Dictionary<String, String>
@@ -30,6 +32,7 @@ namespace PasteEx
         public Data(IDataObject iDataObject)
         {
             IData = iDataObject;
+            DataStorage = new DataObject();
         }
 
         public string[] Analyze()
@@ -38,19 +41,34 @@ namespace PasteEx
 
             if (IData.GetDataPresent(DataFormats.Html, false))
             {
+                DataStorage.SetData(DataFormats.Html, IData.GetData(DataFormats.Html));
                 extensions.Add("HTMLFormat");
             }
             if (IData.GetDataPresent(DataFormats.Rtf, false))
             {
+                DataStorage.SetData(DataFormats.Rtf, IData.GetData(DataFormats.Rtf));
                 extensions.Add("rtf");
             }
             if (IData.GetDataPresent(DataFormats.Text, false))
             {
+                DataStorage.SetData(DataFormats.Text, IData.GetData(DataFormats.Text));
                 extensions.Add("txt");
 
                 if (Properties.Settings.Default.autoExtSwitch)
                 {
-                    string defaultExt = GetTextExtension(IData);
+                    string defaultExt = null;
+
+                    try
+                    {
+                        defaultExt = GetTextExtension(IData);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(Resources.Resource_zh_CN.TipGetCustomExtFailed + Environment.NewLine + ex.Message,
+                            Resources.Resource_zh_CN.Title, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        defaultExt = null;
+                    }
+
                     if (!String.IsNullOrEmpty(defaultExt))
                     {
                         extensions.Add(defaultExt);
@@ -59,10 +77,21 @@ namespace PasteEx
             }
             if (IData.GetDataPresent(DataFormats.Bitmap, false))
             {
+                DataStorage.SetData(DataFormats.Bitmap, IData.GetData(DataFormats.Bitmap));
                 extensions.AddRange(imageExt);
 
                 // Get image format
                 string defaultExt = GetImageExtension(IData);
+                try
+                {
+                    defaultExt = GetImageExtension(IData);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(Resources.Resource_zh_CN.TipGetImageExtFailed + Environment.NewLine + ex.Message,
+                        Resources.Resource_zh_CN.Title, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    defaultExt = null;
+                }
                 if (!String.IsNullOrEmpty(defaultExt))
                 {
                     // Modify sequence oder
@@ -171,7 +200,8 @@ namespace PasteEx
 
             if (File.Exists(path))
             {
-                if (MessageBox.Show(Resources.Resource_zh_CN.TipDuplicateFileName, Resources.Resource_zh_CN.Title, MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.Cancel)
+                if (MessageBox.Show(Resources.Resource_zh_CN.TipDuplicateFileName,
+                    Resources.Resource_zh_CN.Title, MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.Cancel)
                 {
                     return;
                 }
@@ -181,19 +211,19 @@ namespace PasteEx
             {
                 if (extension == "htmlformat")
                 {
-                    File.WriteAllText(path, IData.GetData(DataFormats.Html) as string, Encoding.UTF8);
+                    File.WriteAllText(path, DataStorage.GetData(DataFormats.Html) as string, Encoding.UTF8);
                 }
                 else if (extension == "rtf")
                 {
                     using (RichTextBox rtb = new RichTextBox())
                     {
-                        rtb.Rtf = IData.GetData(DataFormats.Rtf) as string;
+                        rtb.Rtf = DataStorage.GetData(DataFormats.Rtf) as string;
                         rtb.SaveFile(path, RichTextBoxStreamType.RichText);
                     }
                 }
                 else if (imageExt.Contains(extension))
                 {
-                    Bitmap bitmap = (Bitmap)IData.GetData(DataFormats.Bitmap);
+                    Bitmap bitmap = (Bitmap)DataStorage.GetData(DataFormats.Bitmap);
                     switch (extension)
                     {
                         case "png":
@@ -218,7 +248,7 @@ namespace PasteEx
                 }
                 else
                 {
-                    File.WriteAllText(path, IData.GetData(DataFormats.Text) as string, Encoding.UTF8);
+                    File.WriteAllText(path, DataStorage.GetData(DataFormats.Text) as string, Encoding.UTF8);
                 }
             }
             catch

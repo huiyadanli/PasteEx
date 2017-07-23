@@ -124,6 +124,24 @@ namespace PasteEx.Resources {
         }
         
         /// <summary>
+        ///   查找类似 自定义扩展名规则匹配出错，请检查规则是否正确！ 的本地化字符串。
+        /// </summary>
+        internal static string TipGetCustomExtFailed {
+            get {
+                return ResourceManager.GetString("TipGetCustomExtFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 自动提取图片扩展名失败！ 的本地化字符串。
+        /// </summary>
+        internal static string TipGetImageExtFailed {
+            get {
+                return ResourceManager.GetString("TipGetImageExtFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 文件夹路径不能为空 的本地化字符串。
         /// </summary>
         internal static string TipPathNotNull {
@@ -192,6 +210,15 @@ namespace PasteEx.Resources {
         internal static string Title {
             get {
                 return ResourceManager.GetString("Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 当前你可以使用设置功能 的本地化字符串。
+        /// </summary>
+        internal static string TxtCanOnlyUse {
+            get {
+                return ResourceManager.GetString("TxtCanOnlyUse", resourceCulture);
             }
         }
     }

@@ -63,7 +63,7 @@ namespace PasteEx
                     btnSave.Enabled = false;
                     txtFileName.Enabled = false;
                     cboExtension.Enabled = false;
-                    tsslCurrentLocation.Text = "当前你可以使用设置功能";
+                    tsslCurrentLocation.Text = Resources.Resource_zh_CN.TxtCanOnlyUse;
                 }
                 else
                 {

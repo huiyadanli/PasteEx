@@ -97,6 +97,114 @@ namespace PasteEx.Resources {
         }
         
         /// <summary>
+        ///   查找类似 剪贴板为空，仍旧进入软件主界面？ 的本地化字符串。
+        /// </summary>
+        internal static string TipAnalyzeFailed {
+            get {
+                return ResourceManager.GetString("TipAnalyzeFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 存在相同的文件名，是否覆盖？ 的本地化字符串。
+        /// </summary>
+        internal static string TipDuplicateFileName {
+            get {
+                return ResourceManager.GetString("TipDuplicateFileName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 你是第一次启动本软件，是否添加“粘贴为文件”到系统右键菜单中？ 的本地化字符串。
+        /// </summary>
+        internal static string TipFirstRegister {
+            get {
+                return ResourceManager.GetString("TipFirstRegister", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 自定义扩展名规则匹配出错，请检查规则是否正确！ 的本地化字符串。
+        /// </summary>
+        internal static string TipGetCustomExtFailed {
+            get {
+                return ResourceManager.GetString("TipGetCustomExtFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 自动提取图片扩展名失败！ 的本地化字符串。
+        /// </summary>
+        internal static string TipGetImageExtFailed {
+            get {
+                return ResourceManager.GetString("TipGetImageExtFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 文件夹路径不能为空 的本地化字符串。
+        /// </summary>
+        internal static string TipPathNotNull {
+            get {
+                return ResourceManager.GetString("TipPathNotNull", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 右键菜单添加成功！ 的本地化字符串。
+        /// </summary>
+        internal static string TipRegister {
+            get {
+                return ResourceManager.GetString("TipRegister", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 重新添加菜单成功！ 的本地化字符串。
+        /// </summary>
+        internal static string TipReRegister {
+            get {
+                return ResourceManager.GetString("TipReRegister", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 添加右键菜单时，请以管理员的身份运行本软件！ 的本地化字符串。
+        /// </summary>
+        internal static string TipRunAsAdmin {
+            get {
+                return ResourceManager.GetString("TipRunAsAdmin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 保存失败，请选择正确的扩展名 的本地化字符串。
+        /// </summary>
+        internal static string TipSaveFailed {
+            get {
+                return ResourceManager.GetString("TipSaveFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 右键菜单移除成功！ 的本地化字符串。
+        /// </summary>
+        internal static string TipUnRegister {
+            get {
+                return ResourceManager.GetString("TipUnRegister", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 检测到右键菜单“粘贴为文件”中的路径与现在的软件启动路径不同，是否重新添加右键菜单？ 的本地化字符串。
+        /// </summary>
+        internal static string TipWrongValueInMenu {
+            get {
+                return ResourceManager.GetString("TipWrongValueInMenu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 PasteEx 的本地化字符串。
         /// </summary>
         internal static string Title {
