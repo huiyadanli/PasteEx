@@ -47,6 +47,13 @@ namespace PasteEx
 
         private void FormMain_Load(object sender, EventArgs e)
         {
+            if(Properties.Settings.Default.callUpgrade)
+            {
+                Properties.Settings.Default.Upgrade();
+                Properties.Settings.Default.callUpgrade = false;
+                Properties.Settings.Default.Save();
+            }
+
             data = new Data(Clipboard.GetDataObject());
             string[] extensions = data.Analyze();
             cboExtension.Items.AddRange(extensions);
