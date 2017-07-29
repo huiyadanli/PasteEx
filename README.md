@@ -15,6 +15,7 @@
 
 ## Thanks
 [PasteIntoFiles](https://github.com/EslaMx7/PasteIntoFiles)
+[PortableSettingsProvider](https://github.com/crdx/PortableSettingsProvider)
 
 ## License
 不得用于商业用途。
