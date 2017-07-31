@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormSetting));
             this.btnRegister = new System.Windows.Forms.Button();
             this.btnUnRegister = new System.Windows.Forms.Button();
@@ -40,6 +41,7 @@
             this.btnRestore = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnApply = new System.Windows.Forms.Button();
+            this.tipHelp = new System.Windows.Forms.ToolTip(this.components);
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -91,6 +93,7 @@
             // 
             resources.ApplyResources(this.lblHelp, "lblHelp");
             this.lblHelp.Name = "lblHelp";
+            this.lblHelp.MouseHover += new System.EventHandler(this.lblHelp_MouseHover);
             // 
             // btnOK
             // 
@@ -119,6 +122,14 @@
             this.btnApply.Name = "btnApply";
             this.btnApply.UseVisualStyleBackColor = true;
             this.btnApply.Click += new System.EventHandler(this.btnApply_Click);
+            // 
+            // tipHelp
+            // 
+            this.tipHelp.AutomaticDelay = 0;
+            this.tipHelp.AutoPopDelay = 1000000;
+            this.tipHelp.InitialDelay = 0;
+            this.tipHelp.ReshowDelay = 0;
+            this.tipHelp.ShowAlways = true;
             // 
             // FormSetting
             // 
@@ -152,5 +163,6 @@
         private System.Windows.Forms.Button btnRestore;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnApply;
+        private System.Windows.Forms.ToolTip tipHelp;
     }
 }

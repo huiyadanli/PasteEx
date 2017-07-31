@@ -214,7 +214,7 @@
     <value>Both</value>
   </data>
   <data name="txtAutoExtRule.Size" type="System.Drawing.Size, System.Drawing">
-    <value>262, 213</value>
+    <value>267, 213</value>
   </data>
   <data name="txtAutoExtRule.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -426,6 +426,9 @@
   <data name="&gt;&gt;btnApply.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <metadata name="tipHelp.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -2091,11 +2094,14 @@
         BwAAAAcAAAAHAAAABwAAAAcAAAAPAAAAHwAAAD8AAAB/AAA=
 </value>
   </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>设置</value>
+  </data>
+  <data name="&gt;&gt;tipHelp.Name" xml:space="preserve">
+    <value>tipHelp</value>
+  </data>
+  <data name="&gt;&gt;tipHelp.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolTip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>FormSetting</value>

@@ -32,6 +32,17 @@ namespace PasteEx
 
         private void FormSetting_Load(object sender, EventArgs e)
         {
+            string tip = @"规则格式：扩展名=与此扩展名相对应文本的第一行特征（支持正则）
+
+对于文本类型的文件，将会取第一个非空行对特征进行匹配，
+匹配成功默认使用对应的自定义扩展名。
+
+比如：
+    cs=^using .*;$
+    java =^ package.*;$
+    html = (? i) ^ &lt; !DOCTYPE html
+    cpp =^#include.*";
+            tipHelp.SetToolTip(lblHelp, tip);
             Get();
         }
 
@@ -118,6 +129,21 @@ namespace PasteEx
                 }
             }
             return true;
+        }
+
+        private void lblHelp_MouseHover(object sender, EventArgs e)
+        {
+            string tip = @"规则格式：扩展名=与此扩展名相对应文本的第一行特征（支持正则）
+
+对于文本类型的文件，将会取第一个非空行对特征进行匹配，
+匹配成功默认使用对应的自定义扩展名。
+
+比如：
+    cs=^using .*;$
+    java =^ package.*;$
+    html = (? i) ^ &lt; !DOCTYPE html
+    cpp =^#include.*";
+            tipHelp.SetToolTip(lblHelp, tip);
         }
     }
 }

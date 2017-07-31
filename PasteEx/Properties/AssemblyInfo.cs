@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("PasteEx")]
 [assembly: AssemblyDescription("Paste As File")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("IceEgg")]
+[assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("PasteEx")]
 [assembly: AssemblyCopyright("Copyright ©  2017")]
 [assembly: AssemblyTrademark("")]
