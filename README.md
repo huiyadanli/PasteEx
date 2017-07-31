@@ -1,7 +1,7 @@
 # PasteEx
 把剪贴板的内容粘贴为文件。
 
-支持图片的扩展名自动识别，以及自定义文本扩展名规则。
+可以自动识别图片的扩展名，以及自定义文本扩展名规则。
 
 ## 截图
 ![Screenshot](https://raw.githubusercontent.com/huiyadanli/PasteEx/master/Screenshot/Screenshot.png)
@@ -15,6 +15,7 @@
 
 ## Thanks
 [PasteIntoFiles](https://github.com/EslaMx7/PasteIntoFiles)
+
 [PortableSettingsProvider](https://github.com/crdx/PortableSettingsProvider)
 
 ## License
