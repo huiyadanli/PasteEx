@@ -115,7 +115,7 @@ namespace PasteEx.Resources {
         }
         
         /// <summary>
-        ///   查找类似 你是第一次启动本软件，是否添加“粘贴为文件”到系统右键菜单中？ 的本地化字符串。
+        ///   查找类似 检测到右键菜单未添加，是否添加“粘贴为文件”到系统右键菜单中？ 的本地化字符串。
         /// </summary>
         internal static string TipFirstRegister {
             get {

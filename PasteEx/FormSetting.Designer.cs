@@ -92,6 +92,7 @@
             // lblHelp
             // 
             resources.ApplyResources(this.lblHelp, "lblHelp");
+            this.lblHelp.Cursor = System.Windows.Forms.Cursors.Help;
             this.lblHelp.Name = "lblHelp";
             this.lblHelp.MouseHover += new System.EventHandler(this.lblHelp_MouseHover);
             // 

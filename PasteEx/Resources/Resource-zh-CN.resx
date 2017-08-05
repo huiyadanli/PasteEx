@@ -136,7 +136,7 @@
     <value>存在相同的文件名，是否覆盖？</value>
   </data>
   <data name="TipFirstRegister" xml:space="preserve">
-    <value>你是第一次启动本软件，是否添加“粘贴为文件”到系统右键菜单中？</value>
+    <value>检测到右键菜单未添加，是否添加“粘贴为文件”到系统右键菜单中？</value>
   </data>
   <data name="TipPathNotNull" xml:space="preserve">
     <value>文件夹路径不能为空</value>

@@ -19,16 +19,6 @@ namespace PasteEx
 
         public static readonly string[] imageExt = { "ico", "bmp", "gif", "jpg", "png" };
 
-        //private static readonly Dictionary<String, String> otherExtDic = new Dictionary<String, String>
-        //{
-        //    ["java"] = "package ",
-        //    ["cs"] = "using ",
-        //    ["html"] = "<!DOCTYPE  ",
-        //    ["cpp"] = "#include ",
-        //    ["php"] = "<?php ",
-        //    ["cs"] = "using ",
-        //};
-
         public Data(IDataObject iDataObject)
         {
             IData = iDataObject;
@@ -186,7 +176,7 @@ namespace PasteEx
                     {
                         return null;
                     }
-                    dic.Add(kv[0], kv[1]);
+                    dic.Add(kv[0].Trim(), kv[1].Trim());
                 }
             }
             return dic;
