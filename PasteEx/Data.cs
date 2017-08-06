@@ -89,6 +89,21 @@ namespace PasteEx
                     extensions.Add(defaultExt);
                 }
             }
+            if (IData.GetDataPresent(DataFormats.FileDrop, false))
+            {
+                if (IData.GetData(DataFormats.FileDrop) is string[] filePaths)
+                {
+                    if (filePaths.Length == 1)
+                    {
+                        if (!String.IsNullOrEmpty(filePaths[0]))
+                        {
+                            DataStorage.SetData(DataFormats.FileDrop, IData.GetData(DataFormats.FileDrop));
+                            extensions.Clear();
+                            extensions.Add(Path.GetExtension(filePaths[0]).Remove(0, 1));
+                        }
+                    }
+                }
+            }
 
             extensions.Reverse();
             return extensions.ToArray();
@@ -112,7 +127,7 @@ namespace PasteEx
                 {
                     string ext = url.Substring(i + 1);
 
-                    // a case of "*.png?SomeParameters"
+                    // a case of "*.png?SomeParameters" 
                     if (ext.Length > 3) { ext = ext.Substring(0, 3); }
 
                     if (imageExt.Contains(ext)) { return ext; } else { return null; }
@@ -199,6 +214,18 @@ namespace PasteEx
 
             try
             {
+                // copy file priority
+                if (DataStorage.GetDataPresent(DataFormats.FileDrop, false))
+                {
+                    string[] filePaths = DataStorage.GetData(DataFormats.FileDrop) as string[];
+                    if (filePaths.Length > 0 && !String.IsNullOrEmpty(filePaths[0]))
+                    {
+                        File.Copy(filePaths[0], path);
+                    }
+                    return;
+                }
+
+                // html/text/image
                 if (extension == "htmlformat")
                 {
                     File.WriteAllText(path, DataStorage.GetData(DataFormats.Html) as string, Encoding.UTF8);

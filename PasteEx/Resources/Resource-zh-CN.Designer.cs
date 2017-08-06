@@ -97,7 +97,7 @@ namespace PasteEx.Resources {
         }
         
         /// <summary>
-        ///   查找类似 剪贴板为空，仍旧进入软件主界面？ 的本地化字符串。
+        ///   查找类似 剪贴板内容为空或不被支持，仍旧进入软件主界面？ 的本地化字符串。
         /// </summary>
         internal static string TipAnalyzeFailed {
             get {
@@ -187,7 +187,7 @@ namespace PasteEx.Resources {
         }
         
         /// <summary>
-        ///   查找类似 保存失败，请选择正确的扩展名 的本地化字符串。
+        ///   查找类似 保存失败，可能是选择的扩展名不正确 的本地化字符串。
         /// </summary>
         internal static string TipSaveFailed {
             get {

@@ -130,7 +130,7 @@
     <value>文件名:</value>
   </data>
   <data name="TipAnalyzeFailed" xml:space="preserve">
-    <value>剪贴板为空，仍旧进入软件主界面？</value>
+    <value>剪贴板内容为空或不被支持，仍旧进入软件主界面？</value>
   </data>
   <data name="TipDuplicateFileName" xml:space="preserve">
     <value>存在相同的文件名，是否覆盖？</value>
@@ -151,7 +151,7 @@
     <value>添加右键菜单时，请以管理员的身份运行本软件！</value>
   </data>
   <data name="TipSaveFailed" xml:space="preserve">
-    <value>保存失败，请选择正确的扩展名</value>
+    <value>保存失败，可能是选择的扩展名不正确</value>
   </data>
   <data name="TipUnRegister" xml:space="preserve">
     <value>右键菜单移除成功！</value>
