@@ -71,6 +71,7 @@
             // 
             resources.ApplyResources(this.txtAutoExtRule, "txtAutoExtRule");
             this.txtAutoExtRule.Name = "txtAutoExtRule";
+            this.txtAutoExtRule.TextChanged += new System.EventHandler(this.SettingsChanged);
             // 
             // groupBox1
             // 
