@@ -203,6 +203,9 @@ namespace PasteEx
             string path = location + fileName + "." + extension;
             extension = extension.ToLower();
 
+            // UTF-8 NO BOM
+            UTF8Encoding utf8 = new UTF8Encoding(false);
+
             if (File.Exists(path))
             {
                 if (MessageBox.Show(Resources.Resource_zh_CN.TipDuplicateFileName,
@@ -228,7 +231,7 @@ namespace PasteEx
                 // html/text/image
                 if (extension == "htmlformat")
                 {
-                    File.WriteAllText(path, DataStorage.GetData(DataFormats.Html) as string, Encoding.UTF8);
+                    File.WriteAllText(path, DataStorage.GetData(DataFormats.Html) as string, utf8);
                 }
                 else if (extension == "rtf")
                 {
@@ -265,7 +268,7 @@ namespace PasteEx
                 }
                 else
                 {
-                    File.WriteAllText(path, DataStorage.GetData(DataFormats.Text) as string, Encoding.UTF8);
+                    File.WriteAllText(path, DataStorage.GetData(DataFormats.Text) as string, utf8);
                 }
             }
             catch
