@@ -18,11 +18,6 @@ namespace PasteEx
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            if (!RightMenu.Init())
-            {
-                return;
-            }
-
             if (args.Length > 0)
             {
                 if (args[0] == "-reg")
@@ -39,6 +34,10 @@ namespace PasteEx
             }
             else
             {
+                if (!RightMenu.Init())
+                {
+                    return;
+                }
                 Application.Run(new FormMain());
             }
         }

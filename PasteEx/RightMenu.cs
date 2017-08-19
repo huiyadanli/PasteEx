@@ -1,7 +1,9 @@
 ﻿using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
+using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -13,9 +15,9 @@ namespace PasteEx
         public static bool Init()
         {
             string command = (string)Registry.GetValue(@"HKEY_CLASSES_ROOT\Directory\Background\shell\PasteEx\command", "", "");
-            if (String.IsNullOrEmpty(command) )
+            if (String.IsNullOrEmpty(command))
             {
-                if(!Properties.Settings.Default.firstTipFlag)
+                if (!Properties.Settings.Default.firstTipFlag)
                 {
                     return true;
                 }
@@ -24,16 +26,7 @@ namespace PasteEx
                     Resources.Resource_zh_CN.Title, MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
                 {
-                    try
-                    {
-                        Register();
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.Message + "\n" + Resources.Resource_zh_CN.TipRunAsAdmin,
-                            Resources.Resource_zh_CN.Title, MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        return false;
-                    }
+                    Add();
                 }
                 else if (result == DialogResult.No)
                 {
@@ -46,20 +39,7 @@ namespace PasteEx
                 if (MessageBox.Show(Resources.Resource_zh_CN.TipWrongValueInMenu, Resources.Resource_zh_CN.Title,
                     MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    try { UnRegister(); } catch { }
-
-                    try
-                    {
-                        Register();
-                        MessageBox.Show(Resources.Resource_zh_CN.TipReRegister, Resources.Resource_zh_CN.Title,
-                            MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.Message + "\n" + Resources.Resource_zh_CN.TipRunAsAdmin,
-                            Resources.Resource_zh_CN.Title, MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        return false;
-                    }
+                    Add();
                 }
             }
             return true;
@@ -67,33 +47,71 @@ namespace PasteEx
 
         public static void Add()
         {
-            try { UnRegister(); } catch { }
+            bool isAdmin = IsUserAdministrator();
 
-            try
+            if (isAdmin)
             {
-                Register();
-                MessageBox.Show(Resources.Resource_zh_CN.TipRegister, Resources.Resource_zh_CN.Title,
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                try { UnRegister(); } catch { }
+
+                try
+                {
+                    Register();
+                    MessageBox.Show(Resources.Resource_zh_CN.TipRegister, Resources.Resource_zh_CN.Title,
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message + "\n" + Resources.Resource_zh_CN.TipRunAsAdmin,
+                        Resources.Resource_zh_CN.Title, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show(ex.Message + "\n" + Resources.Resource_zh_CN.TipRunAsAdmin,
-                    Resources.Resource_zh_CN.Title, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                // restart and run as admin
+                ProcessStartInfo startInfo = new ProcessStartInfo()
+                {
+                    Arguments = "-reg",
+                    CreateNoWindow = true,
+                    UseShellExecute = true,
+                    WorkingDirectory = Environment.CurrentDirectory,
+                    FileName = Application.ExecutablePath,
+                    Verb = "runas" // run as admin
+                };
+                Process.Start(startInfo);
             }
         }
 
         public static void Delete()
         {
-            try
+            bool isAdmin = IsUserAdministrator();
+
+            if (isAdmin)
             {
-                UnRegister();
-                MessageBox.Show(Resources.Resource_zh_CN.TipUnRegister, Resources.Resource_zh_CN.Title,
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                try
+                {
+                    UnRegister();
+                    MessageBox.Show(Resources.Resource_zh_CN.TipUnRegister, Resources.Resource_zh_CN.Title,
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message + "\n" + Resources.Resource_zh_CN.TipRunAsAdmin,
+                        Resources.Resource_zh_CN.Title, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show(ex.Message + "\n" + Resources.Resource_zh_CN.TipRunAsAdmin,
-                    Resources.Resource_zh_CN.Title, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                // restart and run as admin
+                ProcessStartInfo startInfo = new ProcessStartInfo()
+                {
+                    Arguments = "-unreg",
+                    CreateNoWindow = true,
+                    UseShellExecute = true,
+                    WorkingDirectory = Environment.CurrentDirectory,
+                    FileName = Application.ExecutablePath,
+                    Verb = "runas" // run as admin
+                };
+                Process.Start(startInfo);
             }
         }
 
@@ -122,6 +140,20 @@ namespace PasteEx
             key.DeleteSubKeyTree("PasteEx");
         }
 
-
+        public static bool IsUserAdministrator()
+        {
+            bool isAdmin;
+            try
+            {
+                WindowsIdentity user = WindowsIdentity.GetCurrent();
+                WindowsPrincipal principal = new WindowsPrincipal(user);
+                isAdmin = principal.IsInRole(WindowsBuiltInRole.Administrator);
+            }
+            catch
+            {
+                isAdmin = false;
+            }
+            return isAdmin;
+        }
     }
 }

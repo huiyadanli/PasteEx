@@ -160,15 +160,6 @@ namespace PasteEx.Resources {
         }
         
         /// <summary>
-        ///   查找类似 重新添加菜单成功！ 的本地化字符串。
-        /// </summary>
-        internal static string TipReRegister {
-            get {
-                return ResourceManager.GetString("TipReRegister", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   查找类似 自定义规则格式不正确，请重新修改 的本地化字符串。
         /// </summary>
         internal static string TipRulesError {

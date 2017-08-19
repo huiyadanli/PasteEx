@@ -25,6 +25,10 @@ namespace PasteEx
             DataStorage = new DataObject();
         }
 
+        /// <summary>
+        /// Analyze the clipboard data
+        /// </summary>
+        /// <returns>extensions</returns>
         public string[] Analyze()
         {
             List<String> extensions = new List<String>();
@@ -168,6 +172,10 @@ namespace PasteEx
             return null;
         }
 
+        /// <summary>
+        /// Get the text extension rules
+        /// </summary>
+        /// <returns>rules dictionary</returns>
         private Dictionary<String, String> GetRules()
         {
             Dictionary<String, String> dic = new Dictionary<String, String>();
@@ -197,6 +205,13 @@ namespace PasteEx
             return dic;
         }
 
+        /// <summary>
+        /// Save clipboard data as file,
+        /// the file type depends on the extension.
+        /// </summary>
+        /// <param name="location">file location</param>
+        /// <param name="fileName">file name</param>
+        /// <param name="extension">file extension</param>
         public void SaveAs(string location, string fileName, string extension)
         {
             location = location.EndsWith("\\") ? location : location + "\\";

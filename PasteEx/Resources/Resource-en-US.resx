@@ -150,9 +150,6 @@
   <data name="TipRegister" xml:space="preserve">
     <value>右键菜单添加成功！</value>
   </data>
-  <data name="TipReRegister" xml:space="preserve">
-    <value>重新添加菜单成功！</value>
-  </data>
   <data name="TipRunAsAdmin" xml:space="preserve">
     <value>添加右键菜单时，请以管理员的身份运行本软件！</value>
   </data>
