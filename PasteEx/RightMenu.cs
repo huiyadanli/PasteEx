@@ -47,9 +47,7 @@ namespace PasteEx
 
         public static void Add()
         {
-            bool isAdmin = IsUserAdministrator();
-
-            if (isAdmin)
+            if (IsUserAdministrator())
             {
                 try { UnRegister(); } catch { }
 
@@ -67,25 +65,13 @@ namespace PasteEx
             }
             else
             {
-                // restart and run as admin
-                ProcessStartInfo startInfo = new ProcessStartInfo()
-                {
-                    Arguments = "-reg",
-                    CreateNoWindow = true,
-                    UseShellExecute = true,
-                    WorkingDirectory = Environment.CurrentDirectory,
-                    FileName = Application.ExecutablePath,
-                    Verb = "runas" // run as admin
-                };
-                Process.Start(startInfo);
+                StartSelf("-reg");
             }
         }
 
         public static void Delete()
         {
-            bool isAdmin = IsUserAdministrator();
-
-            if (isAdmin)
+            if (IsUserAdministrator())
             {
                 try
                 {
@@ -101,17 +87,7 @@ namespace PasteEx
             }
             else
             {
-                // restart and run as admin
-                ProcessStartInfo startInfo = new ProcessStartInfo()
-                {
-                    Arguments = "-unreg",
-                    CreateNoWindow = true,
-                    UseShellExecute = true,
-                    WorkingDirectory = Environment.CurrentDirectory,
-                    FileName = Application.ExecutablePath,
-                    Verb = "runas" // run as admin
-                };
-                Process.Start(startInfo);
+                StartSelf("-unreg");
             }
         }
 
@@ -154,6 +130,21 @@ namespace PasteEx
                 isAdmin = false;
             }
             return isAdmin;
+        }
+
+        public static void StartSelf(string args)
+        {
+            // restart and run as admin
+            ProcessStartInfo startInfo = new ProcessStartInfo()
+            {
+                Arguments = args,
+                CreateNoWindow = true,
+                UseShellExecute = true,
+                WorkingDirectory = Environment.CurrentDirectory,
+                FileName = Application.ExecutablePath,
+                Verb = "runas" // run as admin
+            };
+            Process.Start(startInfo);
         }
     }
 }
