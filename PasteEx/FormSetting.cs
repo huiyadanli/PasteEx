@@ -13,9 +13,20 @@ namespace PasteEx
 {
     public partial class FormSetting : Form
     {
+        private static FormSetting dialogue = null;
+
         public FormSetting()
         {
             InitializeComponent();
+        }
+
+        public static FormSetting GetInstance()
+        {
+            if (dialogue == null)
+            {
+                dialogue = new FormSetting();
+            }
+            return dialogue;
         }
 
         private void Get()
@@ -141,6 +152,11 @@ namespace PasteEx
         private void SettingsChanged(object sender, EventArgs e)
         {
             btnApply.Enabled = true;
+        }
+
+        private void FormSetting_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            dialogue = null;
         }
     }
 }

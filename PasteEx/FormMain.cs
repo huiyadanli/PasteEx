@@ -220,8 +220,9 @@ namespace PasteEx
 
         private void btnSettings_Click(object sender, EventArgs e)
         {
-            Form f = new FormSetting();
+            Form f = FormSetting.GetInstance();
             f.Show();
+            f.Focus();
         }
     }
 }
