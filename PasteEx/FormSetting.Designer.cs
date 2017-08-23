@@ -38,7 +38,6 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.lblHelp = new System.Windows.Forms.Label();
             this.btnOK = new System.Windows.Forms.Button();
-            this.btnRestore = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnApply = new System.Windows.Forms.Button();
             this.tipHelp = new System.Windows.Forms.ToolTip(this.components);
@@ -104,13 +103,6 @@
             this.btnOK.UseVisualStyleBackColor = true;
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
-            // btnRestore
-            // 
-            resources.ApplyResources(this.btnRestore, "btnRestore");
-            this.btnRestore.Name = "btnRestore";
-            this.btnRestore.UseVisualStyleBackColor = true;
-            this.btnRestore.Click += new System.EventHandler(this.btnRestore_Click);
-            // 
             // btnCancel
             // 
             resources.ApplyResources(this.btnCancel, "btnCancel");
@@ -139,7 +131,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.btnApply);
             this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.btnRestore);
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -162,7 +153,6 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btnOK;
         private System.Windows.Forms.Label lblHelp;
-        private System.Windows.Forms.Button btnRestore;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnApply;
         private System.Windows.Forms.ToolTip tipHelp;

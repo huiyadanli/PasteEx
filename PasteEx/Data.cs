@@ -124,17 +124,20 @@ namespace PasteEx
             {
                 string content = data.GetData("HTML Format") as string;
                 MatchCollection matches = Regex.Matches(content, @"<img\b[^<>]*?\bsrc[\s\t\r\n]*=[\s\t\r\n]*[""']?[\s\t\r\n]*(?<url>[^\t\r\n""'<>]*)[^<>]*?/?[\s\t\r\n]*>", RegexOptions.IgnoreCase);
-                string url = matches[0].Groups["url"].Value;
-                // extension
-                int i = url.LastIndexOf(".");
-                if (i > 0)
+                if (matches.Count > 0)
                 {
-                    string ext = url.Substring(i + 1);
+                    string url = matches[0].Groups["url"].Value;
+                    // extension
+                    int i = url.LastIndexOf(".");
+                    if (i > 0)
+                    {
+                        string ext = url.Substring(i + 1);
 
-                    // a case of "*.png?SomeParameters" 
-                    if (ext.Length > 3) { ext = ext.Substring(0, 3); }
+                        // a case of "*.png?SomeParameters" 
+                        if (ext.Length > 3) { ext = ext.Substring(0, 3); }
 
-                    if (imageExt.Contains(ext)) { return ext; } else { return null; }
+                        if (imageExt.Contains(ext)) { return ext; } else { return null; }
+                    }
                 }
             }
             return null;
