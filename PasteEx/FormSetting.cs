@@ -144,7 +144,7 @@ namespace PasteEx
 比如：
     cs=^using .*;$
     java=^package.*;$
-    html=(? i)^&lt; !DOCTYPE html
+    html=(? i)<!DOCTYPE html
     cpp=^#include.*";
             tipHelp.SetToolTip(lblHelp, tip);
         }

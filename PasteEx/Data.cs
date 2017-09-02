@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
@@ -151,7 +152,7 @@ namespace PasteEx
         /// <returns>Custom Extension</returns>
         public string GetTextExtension(IDataObject data)
         {
-            Dictionary<String, String> rules = GetRules();
+            List<Tuple<String, String>> rules = GetRules();
             string content = data.GetData(DataFormats.Text) as string;
 
             using (StringReader sr = new StringReader(content))
@@ -161,11 +162,11 @@ namespace PasteEx
                     string line = sr.ReadLine();
                     if (!String.IsNullOrEmpty(line))
                     {
-                        foreach (var rule in rules)
+                        for (int j = 0; j < rules.Count; j++)
                         {
-                            if (Regex.IsMatch(line.Trim(), rule.Value))
+                            if (Regex.IsMatch(line.Trim(), rules[j].Item2))
                             {
-                                return rule.Key;
+                                return rules[j].Item1;
                             }
                         }
                         break;
@@ -179,9 +180,9 @@ namespace PasteEx
         /// Get the text extension rules
         /// </summary>
         /// <returns>rules dictionary</returns>
-        private Dictionary<String, String> GetRules()
+        private List<Tuple<String, String>> GetRules()
         {
-            Dictionary<String, String> dic = new Dictionary<String, String>();
+            List<Tuple<String, String>> nvs = new List<Tuple<String, String>>();
 
             using (StringReader sr = new StringReader(Properties.Settings.Default.autoExtRule))
             {
@@ -202,10 +203,10 @@ namespace PasteEx
                     {
                         return null;
                     }
-                    dic.Add(kv[0].Trim(), kv[1].Trim());
+                    nvs.Add(new Tuple<String, String>(kv[0].Trim(), kv[1].Trim()));
                 }
             }
-            return dic;
+            return nvs;
         }
 
         /// <summary>
