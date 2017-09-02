@@ -115,6 +115,7 @@
             this.Controls.Add(this.cboExtension);
             this.Controls.Add(this.txtFileName);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.KeyPreview = true;
             this.MaximizeBox = false;
             this.Name = "FormMain";
             this.Load += new System.EventHandler(this.FormMain_Load);

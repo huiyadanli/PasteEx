@@ -224,5 +224,18 @@ namespace PasteEx
             f.Show();
             f.Focus();
         }
+
+
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            // (keyData == (Keys.Control | Keys.S))
+            if (keyData == Keys.Enter)
+            {
+                btnSave_Click(null, null);
+                return true;
+            }
+            return base.ProcessCmdKey(ref msg, keyData);
+        }
+
     }
 }
