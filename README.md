@@ -24,6 +24,4 @@
 [PortableSettingsProvider](https://github.com/crdx/PortableSettingsProvider)
 
 ## License
-代码不得用于商业用途。
-
-Code shall not be used for commercial purposes.
+GPLv3
