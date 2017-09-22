@@ -17,20 +17,26 @@ namespace PasteEx
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-
             if (args.Length > 0)
             {
-                if (args[0] == "-reg")
+                string command = args[0];
+                if (command == "-reg")
                 {
                     RightMenu.Add();
                     return;
                 }
-                else if (args[0] == "-unreg")
+                else if (command == "-unreg")
                 {
                     RightMenu.Delete();
                     return;
                 }
-                Application.Run(new FormMain(args[0]));
+                // why the root directory has '"' ??
+                if (command.LastIndexOf('"') == command.Length - 1)
+                {
+                    command = command.Substring(0, command.Length - 1);
+                }
+                
+                Application.Run(new FormMain(command));
             }
             else
             {
