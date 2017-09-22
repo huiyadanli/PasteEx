@@ -214,6 +214,15 @@ namespace PasteEx.Resources {
         }
         
         /// <summary>
+        ///   查找类似 系统错误 的本地化字符串。
+        /// </summary>
+        internal static string TitleError {
+            get {
+                return ResourceManager.GetString("TitleError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 当前你可以使用设置功能 的本地化字符串。
         /// </summary>
         internal static string TxtCanOnlyUse {

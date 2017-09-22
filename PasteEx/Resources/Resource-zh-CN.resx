@@ -171,4 +171,7 @@
   <data name="TipRulesError" xml:space="preserve">
     <value>自定义规则格式不正确，请重新修改</value>
   </data>
+  <data name="TitleError" xml:space="preserve">
+    <value>系统错误</value>
+  </data>
 </root>

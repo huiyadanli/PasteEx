@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
+using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
@@ -9,6 +10,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static PasteEx.Logger;
 
 namespace PasteEx
 {
@@ -290,8 +292,15 @@ namespace PasteEx
                     File.WriteAllText(path, DataStorage.GetData(DataFormats.Text) as string, utf8);
                 }
             }
-            catch
+            catch (UnauthorizedAccessException ex)
             {
+                Logger.Error(ex);
+                MessageBox.Show(ex.Message, Resources.Resource_zh_CN.Title, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                // TODO: maybe add run as admin 
+            }
+            catch (Exception ex)
+            {
+                Logger.Error(ex);
                 MessageBox.Show(Resources.Resource_zh_CN.TipSaveFailed, Resources.Resource_zh_CN.Title, MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
