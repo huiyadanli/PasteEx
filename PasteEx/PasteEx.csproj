@@ -132,6 +132,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ico.ico" />
+    <None Include="ico.png" />
     <None Include="setting.ico" />
   </ItemGroup>
   <ItemGroup>

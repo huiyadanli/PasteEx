@@ -18,8 +18,7 @@ namespace PasteEx
         private const string _globalSettingsNodeName = "globalSettings";
         private const string _className = "MySettingsProvider";
 
-        private string _path = Path.Combine(Environment.GetEnvironmentVariable("ALLUSERSPROFILE"), "PasteEx", "PasteEx.settings");
-        private string _portablePath = Path.Combine(Path.GetDirectoryName(Application.ExecutablePath), "PasteEx.settings");
+        public string _path = Path.Combine(Path.GetDirectoryName(Application.ExecutablePath), "PasteEx", "PasteEx.settings");
 
         private XmlDocument _xmlDocument;
 
@@ -43,11 +42,7 @@ namespace PasteEx
                 {
                     try
                     {
-
-                        if (File.Exists(_portablePath))
-                            _filePath = _portablePath;
-                        else
-                            _filePath = _path;
+                        _filePath = _path;
 
                         _xmlDocument = new XmlDocument();
                         _xmlDocument.Load(_filePath);

@@ -45,7 +45,7 @@ namespace PasteEx
             return true;
         }
 
-        public static void Add()
+        public static void Add(bool needShiftKey = false)
         {
             if (IsUserAdministrator())
             {
@@ -53,7 +53,7 @@ namespace PasteEx
 
                 try
                 {
-                    Register();
+                    Register(needShiftKey);
                     MessageBox.Show(Resources.Resource_zh_CN.TipRegister, Resources.Resource_zh_CN.Title,
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -65,7 +65,8 @@ namespace PasteEx
             }
             else
             {
-                StartSelf("-reg");
+                if (needShiftKey) StartSelf("-reg -shift");
+                else StartSelf("-reg");
             }
         }
 
@@ -91,17 +92,41 @@ namespace PasteEx
             }
         }
 
-        private static void Register()
+        public static bool NeedShiftKey()
+        {
+            try
+            {
+                var key = Registry.ClassesRoot.OpenSubKey("Directory").OpenSubKey("Background").OpenSubKey("shell").OpenSubKey("PasteEx");
+                if (key != null)
+                {
+                    string[] names = key.GetValueNames();
+                    return names.Contains("Extended");
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.Error(ex);
+                return false;
+            }
+        }
+
+        private static void Register(bool needShiftKey)
         {
             var key = Registry.ClassesRoot.OpenSubKey("Directory").OpenSubKey("Background").OpenSubKey("shell", true).CreateSubKey("PasteEx"); ;
             key.SetValue("", Resources.Resource_zh_CN.Title);
             key.SetValue("Icon", Application.ExecutablePath);
+            if (needShiftKey) key.SetValue("Extended", "");
             key = key.CreateSubKey("command");
             key.SetValue("", Application.ExecutablePath + " \"%V\"");
 
             key = Registry.ClassesRoot.OpenSubKey("Directory").OpenSubKey("shell", true).CreateSubKey("PasteEx");
             key.SetValue("", Resources.Resource_zh_CN.Title);
             key.SetValue("Icon", Application.ExecutablePath);
+            if (needShiftKey) key.SetValue("Extended", "");
             key = key.CreateSubKey("command");
             key.SetValue("", Application.ExecutablePath + " \"%1\"");
 

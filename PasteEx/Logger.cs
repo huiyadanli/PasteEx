@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Diagnostics;
 using System.IO;
+using System.Windows.Forms;
 
 namespace PasteEx
 {
     public static class Logger
     {
-        private static string path = Path.Combine(Environment.GetEnvironmentVariable("ALLUSERSPROFILE"), "PasteEx", "PasteEx.log");
+        private static string path = Path.Combine(Path.GetDirectoryName(Application.ExecutablePath), "PasteEx", "PasteEx.log");
 
         static Logger()
         {

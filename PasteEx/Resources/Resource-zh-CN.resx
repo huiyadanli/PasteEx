@@ -169,7 +169,7 @@
     <value>当前你可以使用设置功能</value>
   </data>
   <data name="TipRulesError" xml:space="preserve">
-    <value>自定义规则格式不正确，请重新修改</value>
+    <value>规则格式有误，将不被启用</value>
   </data>
   <data name="TitleError" xml:space="preserve">
     <value>系统错误</value>

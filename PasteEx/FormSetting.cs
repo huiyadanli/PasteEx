@@ -24,6 +24,8 @@ namespace PasteEx
 
         private void Get()
         {
+            chkNeedShiftKey.Checked = RightMenu.NeedShiftKey();
+
             txtAutoExtRule.Text = Properties.Settings.Default.autoExtRule;
             chkAutoExtSwitch.Checked = Properties.Settings.Default.autoExtSwitch;
             txtAutoExtRule.Enabled = chkAutoExtSwitch.Checked;
@@ -37,7 +39,6 @@ namespace PasteEx
         private void FormSetting_Load(object sender, EventArgs e)
         {
             Get();
-            btnApply.Enabled = false;
         }
 
         [Obsolete]
@@ -46,48 +47,12 @@ namespace PasteEx
             // confirmneed confirm
             Properties.Settings.Default.Reset();
             Get();
-        }
-
-        private void btnApply_Click(object sender, EventArgs e)
-        {
-            if (!CheckRules(txtAutoExtRule.Text) && chkAutoExtSwitch.Checked)
-            {
-                MessageBox.Show(Resources.Resource_zh_CN.TipRulesError, Resources.Resource_zh_CN.Title,
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
-                txtAutoExtRule.Focus();
-                return;
-            }
-
-            Set();
-            btnApply.Enabled = false;
-
-            Properties.Settings.Default.Save();
-        }
-
-        private void btnOK_Click(object sender, EventArgs e)
-        {
-            if (!CheckRules(txtAutoExtRule.Text) && chkAutoExtSwitch.Checked)
-            {
-                MessageBox.Show(Resources.Resource_zh_CN.TipRulesError, Resources.Resource_zh_CN.Title,
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
-                txtAutoExtRule.Focus();
-                return;
-            }
-
-            Set();
-
-            Properties.Settings.Default.Save();
-            this.Close();
-        }
-
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-            this.Close();
+            txtAutoExtRuleValidate(null, null);
         }
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
-            RightMenu.Add();
+            RightMenu.Add(chkNeedShiftKey.Checked);
         }
 
         private void btnUnRegister_Click(object sender, EventArgs e)
@@ -98,7 +63,6 @@ namespace PasteEx
         private void chkAutoExtSwitch_CheckedChanged(object sender, EventArgs e)
         {
             txtAutoExtRule.Enabled = chkAutoExtSwitch.Checked;
-            SettingsChanged(sender, e);
         }
 
         private bool CheckRules(string rules)
@@ -142,14 +106,25 @@ namespace PasteEx
             tipHelp.SetToolTip(lblHelp, tip);
         }
 
-        private void SettingsChanged(object sender, EventArgs e)
-        {
-            btnApply.Enabled = true;
-        }
-
         private void FormSetting_FormClosed(object sender, FormClosedEventArgs e)
         {
             dialogue = null;
+
+            if (!CheckRules(txtAutoExtRule.Text))
+            {
+                chkAutoExtSwitch.Checked = false;
+            }
+            Set();
+            Properties.Settings.Default.Save();
+        }
+
+        private void txtAutoExtRuleValidate(object sender, EventArgs e)
+        {
+            lblTipError.Visible = false;
+            if (!CheckRules(txtAutoExtRule.Text))
+            {
+                lblTipError.Visible = true;
+            }
         }
     }
 }

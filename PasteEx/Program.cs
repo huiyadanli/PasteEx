@@ -27,6 +27,15 @@ namespace PasteEx
                     string command = args[0];
                     if (command == "-reg")
                     {
+                        if(args.Length > 1)
+                        {
+                            command = args[1];
+                            if(command == "-shift")
+                            {
+                                RightMenu.Add(true);
+                                return;
+                            }
+                        }
                         RightMenu.Add();
                         return;
                     }

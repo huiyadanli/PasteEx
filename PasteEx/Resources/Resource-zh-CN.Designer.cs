@@ -160,7 +160,7 @@ namespace PasteEx.Resources {
         }
         
         /// <summary>
-        ///   查找类似 自定义规则格式不正确，请重新修改 的本地化字符串。
+        ///   查找类似 规则格式有误，将不被启用 的本地化字符串。
         /// </summary>
         internal static string TipRulesError {
             get {
