@@ -201,80 +201,35 @@
   <data name="&gt;&gt;tabPageCustom.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="linkLabel3.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="linkLabel1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
   </data>
-  <data name="linkLabel3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>155, 98</value>
-  </data>
-  <data name="linkLabel3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>47, 12</value>
-  </data>
-  <data name="linkLabel3.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="linkLabel3.Text" xml:space="preserve">
-    <value>PasteEx</value>
-  </data>
-  <data name="&gt;&gt;linkLabel3.Name" xml:space="preserve">
-    <value>linkLabel3</value>
-  </data>
-  <data name="&gt;&gt;linkLabel3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;linkLabel3.Parent" xml:space="preserve">
-    <value>tabPageAbout</value>
-  </data>
-  <data name="&gt;&gt;linkLabel3.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="linkLabel2.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="linkLabel2.LinkArea" type="System.Windows.Forms.LinkArea, System.Windows.Forms">
-    <value>0, 44</value>
-  </data>
-  <data name="linkLabel2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>46, 212</value>
-  </data>
-  <data name="linkLabel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>269, 12</value>
-  </data>
-  <data name="linkLabel2.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="linkLabel2.Text" xml:space="preserve">
-    <value>https://github.com/huiyadanli/PasteEx/issues</value>
-  </data>
-  <data name="&gt;&gt;linkLabel2.Name" xml:space="preserve">
-    <value>linkLabel2</value>
-  </data>
-  <data name="&gt;&gt;linkLabel2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;linkLabel2.Parent" xml:space="preserve">
-    <value>tabPageAbout</value>
-  </data>
-  <data name="&gt;&gt;linkLabel2.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="linkLabel1.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="linkLabel1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>微软雅黑, 9pt</value>
   </data>
   <data name="linkLabel1.LinkArea" type="System.Windows.Forms.LinkArea, System.Windows.Forms">
-    <value>3, 10</value>
+    <value>23, 0</value>
   </data>
   <data name="linkLabel1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>130, 150</value>
+    <value>17, 96</value>
   </data>
   <data name="linkLabel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>103, 19</value>
+    <value>328, 142</value>
   </data>
   <data name="linkLabel1.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+    <value>6</value>
   </data>
   <data name="linkLabel1.Text" xml:space="preserve">
-    <value>作者：huiyadanli</value>
+    <value>PasteEx
+
+版本：1.0.0.7
+
+作者：huiyadanli
+
+如果遇到问题，欢迎在 GitHub 上面给我提 Issues，或者发送邮件到 huiyadanli@126.com</value>
+  </data>
+  <data name="linkLabel1.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopCenter</value>
   </data>
   <data name="&gt;&gt;linkLabel1.Name" xml:space="preserve">
     <value>linkLabel1</value>
@@ -286,22 +241,16 @@
     <value>tabPageAbout</value>
   </data>
   <data name="&gt;&gt;linkLabel1.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="label2.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+    <value>0</value>
   </data>
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>137, 125</value>
+    <value>0, 0</value>
   </data>
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>83, 12</value>
+    <value>100, 23</value>
   </data>
   <data name="label2.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="label2.Text" xml:space="preserve">
-    <value>版本：1.0.0.7</value>
+    <value>7</value>
   </data>
   <data name="&gt;&gt;label2.Name" xml:space="preserve">
     <value>label2</value>
@@ -313,16 +262,19 @@
     <value>tabPageAbout</value>
   </data>
   <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>1</value>
+  </data>
+  <data name="pictureBox1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
   </data>
   <data name="pictureBox1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="pictureBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>130, 15</value>
+    <value>135, 15</value>
   </data>
   <data name="pictureBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>97, 69</value>
+    <value>96, 69</value>
   </data>
   <data name="pictureBox1.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
     <value>Zoom</value>
@@ -340,7 +292,7 @@
     <value>tabPageAbout</value>
   </data>
   <data name="&gt;&gt;pictureBox1.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>2</value>
   </data>
   <data name="tabPageAbout.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>
@@ -390,6 +342,27 @@
   <data name="&gt;&gt;tabControl1.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="groupBox1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="chkNeedShiftKey.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="chkNeedShiftKey.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="chkNeedShiftKey.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 24</value>
+  </data>
+  <data name="chkNeedShiftKey.Size" type="System.Drawing.Size, System.Drawing">
+    <value>138, 16</value>
+  </data>
+  <data name="chkNeedShiftKey.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="chkNeedShiftKey.Text" xml:space="preserve">
+    <value>按住 Shift 显示菜单</value>
+  </data>
   <data name="&gt;&gt;chkNeedShiftKey.Name" xml:space="preserve">
     <value>chkNeedShiftKey</value>
   </data>
@@ -402,6 +375,24 @@
   <data name="&gt;&gt;chkNeedShiftKey.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="btnUnRegister.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="btnUnRegister.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnUnRegister.Location" type="System.Drawing.Point, System.Drawing">
+    <value>266, 20</value>
+  </data>
+  <data name="btnUnRegister.Size" type="System.Drawing.Size, System.Drawing">
+    <value>86, 23</value>
+  </data>
+  <data name="btnUnRegister.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="btnUnRegister.Text" xml:space="preserve">
+    <value>移除</value>
+  </data>
   <data name="&gt;&gt;btnUnRegister.Name" xml:space="preserve">
     <value>btnUnRegister</value>
   </data>
@@ -413,6 +404,24 @@
   </data>
   <data name="&gt;&gt;btnUnRegister.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="btnRegister.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="btnRegister.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnRegister.Location" type="System.Drawing.Point, System.Drawing">
+    <value>174, 20</value>
+  </data>
+  <data name="btnRegister.Size" type="System.Drawing.Size, System.Drawing">
+    <value>86, 23</value>
+  </data>
+  <data name="btnRegister.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="btnRegister.Text" xml:space="preserve">
+    <value>添加</value>
   </data>
   <data name="&gt;&gt;btnRegister.Name" xml:space="preserve">
     <value>btnRegister</value>
@@ -449,90 +458,6 @@
   </data>
   <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
     <value>0</value>
-  </data>
-  <data name="chkNeedShiftKey.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="chkNeedShiftKey.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="chkNeedShiftKey.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 24</value>
-  </data>
-  <data name="chkNeedShiftKey.Size" type="System.Drawing.Size, System.Drawing">
-    <value>138, 16</value>
-  </data>
-  <data name="chkNeedShiftKey.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <data name="chkNeedShiftKey.Text" xml:space="preserve">
-    <value>按住 Shift 显示菜单</value>
-  </data>
-  <data name="&gt;&gt;chkNeedShiftKey.Name" xml:space="preserve">
-    <value>chkNeedShiftKey</value>
-  </data>
-  <data name="&gt;&gt;chkNeedShiftKey.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;chkNeedShiftKey.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;chkNeedShiftKey.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="btnUnRegister.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btnUnRegister.Location" type="System.Drawing.Point, System.Drawing">
-    <value>266, 20</value>
-  </data>
-  <data name="btnUnRegister.Size" type="System.Drawing.Size, System.Drawing">
-    <value>86, 23</value>
-  </data>
-  <data name="btnUnRegister.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="btnUnRegister.Text" xml:space="preserve">
-    <value>移除</value>
-  </data>
-  <data name="&gt;&gt;btnUnRegister.Name" xml:space="preserve">
-    <value>btnUnRegister</value>
-  </data>
-  <data name="&gt;&gt;btnUnRegister.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnUnRegister.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;btnUnRegister.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="btnRegister.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btnRegister.Location" type="System.Drawing.Point, System.Drawing">
-    <value>174, 20</value>
-  </data>
-  <data name="btnRegister.Size" type="System.Drawing.Size, System.Drawing">
-    <value>86, 23</value>
-  </data>
-  <data name="btnRegister.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="btnRegister.Text" xml:space="preserve">
-    <value>添加</value>
-  </data>
-  <data name="&gt;&gt;btnRegister.Name" xml:space="preserve">
-    <value>btnRegister</value>
-  </data>
-  <data name="&gt;&gt;btnRegister.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnRegister.Parent" xml:space="preserve">
-    <value>groupBox1</value>
-  </data>
-  <data name="&gt;&gt;btnRegister.ZOrder" xml:space="preserve">
-    <value>2</value>
   </data>
   <data name="groupBox2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
@@ -2400,8 +2325,8 @@
         BwAAAAcAAAAHAAAABwAAAAcAAAAPAAAAHwAAAD8AAAB/AAA=
 </value>
   </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
+    <value>407, 354</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>设置</value>

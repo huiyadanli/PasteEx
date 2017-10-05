@@ -39,6 +39,11 @@ namespace PasteEx
         private void FormSetting_Load(object sender, EventArgs e)
         {
             Get();
+
+            // About Tab Page
+            linkLabel1.Links.Add(28, 10, @"https://huiyadanli.github.io/");
+            linkLabel1.Links.Add(53, 6, @"https://github.com/huiyadanli/PasteEx/issues");
+            linkLabel1.Links.Add(81, 18, @"mailto:huiyadanli@126.com");
         }
 
         [Obsolete]
@@ -125,6 +130,11 @@ namespace PasteEx
             {
                 lblTipError.Visible = true;
             }
+        }
+
+        private void linkLabels_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            System.Diagnostics.Process.Start(e.Link.LinkData as string);
         }
     }
 }

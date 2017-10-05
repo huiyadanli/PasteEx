@@ -44,11 +44,9 @@
             this.txtAutoExtRule = new System.Windows.Forms.TextBox();
             this.chkAutoExtSwitch = new System.Windows.Forms.CheckBox();
             this.tabPageAbout = new System.Windows.Forms.TabPage();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
-            this.linkLabel3 = new System.Windows.Forms.LinkLabel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabControl1.SuspendLayout();
             this.tabPageNomal.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -75,6 +73,7 @@
             this.tabControl1.Multiline = true;
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             // 
             // tabPageNomal
             // 
@@ -85,10 +84,10 @@
             // 
             // groupBox1
             // 
+            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Controls.Add(this.chkNeedShiftKey);
             this.groupBox1.Controls.Add(this.btnUnRegister);
             this.groupBox1.Controls.Add(this.btnRegister);
-            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.TabStop = false;
             // 
@@ -159,8 +158,6 @@
             // 
             // tabPageAbout
             // 
-            this.tabPageAbout.Controls.Add(this.linkLabel3);
-            this.tabPageAbout.Controls.Add(this.linkLabel2);
             this.tabPageAbout.Controls.Add(this.linkLabel1);
             this.tabPageAbout.Controls.Add(this.label2);
             this.tabPageAbout.Controls.Add(this.pictureBox1);
@@ -168,38 +165,24 @@
             this.tabPageAbout.Name = "tabPageAbout";
             this.tabPageAbout.UseVisualStyleBackColor = true;
             // 
-            // pictureBox1
+            // linkLabel1
             // 
-            this.pictureBox1.Image = global::PasteEx.Properties.Resources.ico1;
-            resources.ApplyResources(this.pictureBox1, "pictureBox1");
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.TabStop = false;
+            resources.ApplyResources(this.linkLabel1, "linkLabel1");
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.UseCompatibleTextRendering = true;
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabels_LinkClicked);
             // 
             // label2
             // 
             resources.ApplyResources(this.label2, "label2");
             this.label2.Name = "label2";
             // 
-            // linkLabel1
+            // pictureBox1
             // 
-            resources.ApplyResources(this.linkLabel1, "linkLabel1");
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.UseCompatibleTextRendering = true;
-            // 
-            // linkLabel2
-            // 
-            resources.ApplyResources(this.linkLabel2, "linkLabel2");
-            this.linkLabel2.Name = "linkLabel2";
-            this.linkLabel2.TabStop = true;
-            // 
-            // linkLabel3
-            // 
-            resources.ApplyResources(this.linkLabel3, "linkLabel3");
-            this.linkLabel3.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this.linkLabel3.LinkColor = System.Drawing.Color.Black;
-            this.linkLabel3.Name = "linkLabel3";
-            this.linkLabel3.TabStop = true;
+            resources.ApplyResources(this.pictureBox1, "pictureBox1");
+            this.pictureBox1.Image = global::PasteEx.Properties.Resources.png;
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.TabStop = false;
             // 
             // FormSetting
             // 
@@ -217,7 +200,6 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.tabPageAbout.ResumeLayout(false);
-            this.tabPageAbout.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -239,8 +221,6 @@
         private System.Windows.Forms.CheckBox chkNeedShiftKey;
         private System.Windows.Forms.Label lblTipError;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.LinkLabel linkLabel3;
-        private System.Windows.Forms.LinkLabel linkLabel2;
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.Label label2;
     }
