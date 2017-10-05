@@ -46,8 +46,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>
-    </ApplicationIcon>
+    <ApplicationIcon>ico.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -139,6 +138,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ico.ico" />
     <Content Include="Resources\Image\ico.ico" />
     <Content Include="Resources\Image\ico.png" />
     <Content Include="Resources\Image\setting.ico" />
