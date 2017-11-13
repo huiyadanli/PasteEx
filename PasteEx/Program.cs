@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PasteEx.Util;
+using System;
 using System.Windows.Forms;
 
 namespace PasteEx
@@ -22,6 +23,9 @@ namespace PasteEx
 
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
+
+                Client.Start();
+
                 if (args.Length > 0)
                 {
                     string command = args[0];

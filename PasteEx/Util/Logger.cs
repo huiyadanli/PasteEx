@@ -3,8 +3,11 @@ using System.Diagnostics;
 using System.IO;
 using System.Windows.Forms;
 
-namespace PasteEx
+namespace PasteEx.Util
 {
+    /// <summary>
+    /// Simple log
+    /// </summary>
     public static class Logger
     {
         private static string path = Path.Combine(Path.GetDirectoryName(Application.ExecutablePath), "PasteEx", "PasteEx.log");
@@ -41,8 +44,7 @@ namespace PasteEx
                     string.Format("{0} - [{1}] - {2}",
                                   DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"),
                                   type,
-                                  message));
-            Trace.WriteLine("");
+                                  message) + Environment.NewLine);
         }
     }
 }

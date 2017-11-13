@@ -70,5 +70,28 @@ namespace PasteEx.Properties {
                 this["callUpgrade"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string guid {
+            get {
+                return ((string)(this["guid"]));
+            }
+            set {
+                this["guid"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        public global::System.DateTime lastBootTime {
+            get {
+                return ((global::System.DateTime)(this["lastBootTime"]));
+            }
+            set {
+                this["lastBootTime"] = value;
+            }
+        }
     }
 }
