@@ -42,7 +42,12 @@ namespace PasteEx.Util
 
         public static void Record()
         {
-            Send("POST", " https://xmfwudah.api.lncld.net/1.1/classes/User_Statistics", Device.ToJSONString());
+            Send("POST", "https://xmfwudah.api.lncld.net/1.1/classes/User_Statistics", Device.ToJSONString());
+        }
+
+        public static string GetSoftInfo()
+        {
+            return Send("GET", "https://xmfwudah.api.lncld.net/1.1/classes/SoftInfo/5a09c614570c350063cf410e");
         }
     }
 }

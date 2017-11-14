@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace PasteEx
@@ -19,8 +20,8 @@ namespace PasteEx
                 {
                     DateTime last = Properties.Settings.Default.lastBootTime;
                     DateTime now = DateTime.Now;
-                    int day = now.Day - last.Day;
-                    if (day < 17) { return; }
+                    TimeSpan interval = now.Subtract(last);
+                    if (interval.Days < 17) { return; }
 
                     GUID = Device.Value();
                     string oldGUID = Properties.Settings.Default.guid;
@@ -32,11 +33,26 @@ namespace PasteEx
                     Properties.Settings.Default.lastBootTime = now;
                     Properties.Settings.Default.Save();
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     Logger.Error(ex);
                 }
             });
+        }
+
+        public static Dictionary<String, String> GetUpdateInfo()
+        {
+            try
+            {
+                string json = LCHelper.GetSoftInfo();
+                Dictionary<String, String> dic = EasyJson.Parse(json);
+                return dic;
+            }
+            catch (Exception ex)
+            {
+                Logger.Error(ex);
+            }
+            return null;
         }
     }
 }

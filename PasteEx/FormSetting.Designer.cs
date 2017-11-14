@@ -47,6 +47,7 @@
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnGetUpdateInfo = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPageNomal.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -158,6 +159,7 @@
             // 
             // tabPageAbout
             // 
+            this.tabPageAbout.Controls.Add(this.btnGetUpdateInfo);
             this.tabPageAbout.Controls.Add(this.linkLabel1);
             this.tabPageAbout.Controls.Add(this.label2);
             this.tabPageAbout.Controls.Add(this.pictureBox1);
@@ -183,6 +185,13 @@
             this.pictureBox1.Image = global::PasteEx.Properties.Resources.png;
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.TabStop = false;
+            // 
+            // btnGetUpdateInfo
+            // 
+            resources.ApplyResources(this.btnGetUpdateInfo, "btnGetUpdateInfo");
+            this.btnGetUpdateInfo.Name = "btnGetUpdateInfo";
+            this.btnGetUpdateInfo.UseVisualStyleBackColor = true;
+            this.btnGetUpdateInfo.Click += new System.EventHandler(this.btnGetUpdateInfo_Click);
             // 
             // FormSetting
             // 
@@ -223,5 +232,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnGetUpdateInfo;
     }
 }

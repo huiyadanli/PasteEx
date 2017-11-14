@@ -107,35 +107,54 @@ namespace PasteEx.Util
         }
         #endregion
 
+        /// <summary>
+        /// Calculate GUID
+        /// </summary>
+        /// <returns>GUID</returns>
         public static string Value()
         {
             if (fingerPrint == null)
             {
                 fingerPrint = GetHash(
-                    "CPU >> " + CpuID + 
-                    "\nBIOS >> " + BiosID + 
-                    "\nDISK >> " + DiskID + 
-                    "\nVIDEO >> " + VideoID + 
+                    "CPU >> " + CpuID +
+                    "\nBIOS >> " + BiosID +
+                    "\nDISK >> " + DiskID +
+                    "\nVIDEO >> " + VideoID +
                     "\nMAC >> " + MacID
                     );
             }
             return fingerPrint;
         }
 
+        /// <summary>
+        /// Get the device infomation
+        /// </summary>
+        /// <returns>JSON format string</returns>
         public static string ToJSONString()
         {
-            StringBuilder sb = new StringBuilder();
-            sb.Append("{");
-            sb.Append("\"").Append("GUID").Append("\":").Append("\"").Append(Value()).Append("\",");
-            sb.Append("\"").Append("MachineName").Append("\":").Append("\"").Append(MachineName).Append("\",");
-            sb.Append("\"").Append("CurrentIP").Append("\":").Append("\"").Append(CurrentIP).Append("\",");
-            sb.Append("\"").Append("CpuID").Append("\":").Append("\"").Append(CpuID).Append("\",");
-            sb.Append("\"").Append("MacID").Append("\":").Append("\"").Append(MacID).Append("\",");
-            sb.Append("\"").Append("DiskID").Append("\":").Append("\"").Append(DiskID).Append("\",");
-            sb.Append("\"").Append("BiosID").Append("\":").Append("\"").Append(BiosID).Append("\",");
-            sb.Append("\"").Append("VideoID").Append("\":").Append("\"").Append(VideoID).Append("\"");
-            sb.Append("}");
-            return sb.ToString();
+            //StringBuilder sb = new StringBuilder();
+            //sb.Append("{");
+            //sb.Append("\"").Append("GUID").Append("\":").Append("\"").Append(Value()).Append("\",");
+            //sb.Append("\"").Append("MachineName").Append("\":").Append("\"").Append(MachineName).Append("\",");
+            //sb.Append("\"").Append("CurrentIP").Append("\":").Append("\"").Append(CurrentIP).Append("\",");
+            //sb.Append("\"").Append("CpuID").Append("\":").Append("\"").Append(CpuID).Append("\",");
+            //sb.Append("\"").Append("MacID").Append("\":").Append("\"").Append(MacID).Append("\",");
+            //sb.Append("\"").Append("DiskID").Append("\":").Append("\"").Append(DiskID).Append("\",");
+            //sb.Append("\"").Append("BiosID").Append("\":").Append("\"").Append(BiosID).Append("\",");
+            //sb.Append("\"").Append("VideoID").Append("\":").Append("\"").Append(VideoID).Append("\"");
+            //sb.Append("}");
+            Dictionary<String, String> dic = new Dictionary<String, String>
+            {
+                { "GUID", Value() },
+                { "MachineName", MachineName },
+                { "CurrentIP", CurrentIP },
+                { "CpuID", CpuID },
+                { "MacID", MacID },
+                { "DiskID", DiskID },
+                { "BiosID", BiosID },
+                { "VideoID", VideoID }
+            };
+            return EasyJson.ToJSONString(dic);
         }
 
 

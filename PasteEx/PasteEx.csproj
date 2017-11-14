@@ -46,7 +46,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>ico.ico</ApplicationIcon>
+    <ApplicationIcon>
+    </ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -79,6 +80,7 @@
     </Compile>
     <Compile Include="Client.cs" />
     <Compile Include="Util\Device.cs" />
+    <Compile Include="Util\EasyJson.cs" />
     <Compile Include="Util\LCHelper.cs" />
     <Compile Include="Util\Logger.cs" />
     <Compile Include="MySettingsProvider.cs" />
@@ -100,7 +102,6 @@
       <DependentUpon>Resource-zh-CN.resx</DependentUpon>
     </Compile>
     <Compile Include="RightMenu.cs" />
-    <Compile Include="Settings.cs" />
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -142,7 +143,6 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="ico.ico" />
     <Content Include="Resources\Image\ico.ico" />
     <Content Include="Resources\Image\ico.png" />
     <Content Include="Resources\Image\setting.ico" />

@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PasteEx
@@ -135,6 +137,17 @@ namespace PasteEx
         private void linkLabels_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             System.Diagnostics.Process.Start(e.Link.LinkData as string);
+        }
+
+        private async void btnGetUpdateInfo_Click(object sender, EventArgs e)
+        {
+            Task<Dictionary<String, String>> t = new Task<Dictionary<String, String>>(Client.GetUpdateInfo);
+            t.Start();
+            var dic = await t;
+            if (dic != null)
+            {
+                MessageBox.Show(dic["version"]);
+            }
         }
     }
 }

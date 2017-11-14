@@ -44,7 +44,8 @@ namespace PasteEx.Util
                     string.Format("{0} - [{1}] - {2}",
                                   DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"),
                                   type,
-                                  message) + Environment.NewLine);
+                                  message) 
+                           + Environment.NewLine);
         }
     }
 }
