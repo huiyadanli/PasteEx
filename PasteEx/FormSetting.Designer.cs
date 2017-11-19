@@ -44,16 +44,18 @@
             this.txtAutoExtRule = new System.Windows.Forms.TextBox();
             this.chkAutoExtSwitch = new System.Windows.Forms.CheckBox();
             this.tabPageAbout = new System.Windows.Forms.TabPage();
+            this.picLoading = new System.Windows.Forms.PictureBox();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnGetUpdateInfo = new System.Windows.Forms.Button();
+            this.labelUpdateinfo = new System.Windows.Forms.LinkLabel();
             this.tabControl1.SuspendLayout();
             this.tabPageNomal.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tabPageCustom.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tabPageAbout.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picLoading)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -75,6 +77,7 @@
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
+            this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
             // tabPageNomal
             // 
@@ -159,13 +162,21 @@
             // 
             // tabPageAbout
             // 
-            this.tabPageAbout.Controls.Add(this.btnGetUpdateInfo);
+            this.tabPageAbout.Controls.Add(this.labelUpdateinfo);
+            this.tabPageAbout.Controls.Add(this.picLoading);
             this.tabPageAbout.Controls.Add(this.linkLabel1);
             this.tabPageAbout.Controls.Add(this.label2);
             this.tabPageAbout.Controls.Add(this.pictureBox1);
             resources.ApplyResources(this.tabPageAbout, "tabPageAbout");
             this.tabPageAbout.Name = "tabPageAbout";
             this.tabPageAbout.UseVisualStyleBackColor = true;
+            // 
+            // picLoading
+            // 
+            this.picLoading.Image = global::PasteEx.Properties.Resources.loading;
+            resources.ApplyResources(this.picLoading, "picLoading");
+            this.picLoading.Name = "picLoading";
+            this.picLoading.TabStop = false;
             // 
             // linkLabel1
             // 
@@ -186,12 +197,13 @@
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.TabStop = false;
             // 
-            // btnGetUpdateInfo
+            // labelUpdateinfo
             // 
-            resources.ApplyResources(this.btnGetUpdateInfo, "btnGetUpdateInfo");
-            this.btnGetUpdateInfo.Name = "btnGetUpdateInfo";
-            this.btnGetUpdateInfo.UseVisualStyleBackColor = true;
-            this.btnGetUpdateInfo.Click += new System.EventHandler(this.btnGetUpdateInfo_Click);
+            this.labelUpdateinfo.ForeColor = System.Drawing.Color.Green;
+            resources.ApplyResources(this.labelUpdateinfo, "labelUpdateinfo");
+            this.labelUpdateinfo.LinkColor = System.Drawing.Color.Green;
+            this.labelUpdateinfo.Name = "labelUpdateinfo";
+            this.labelUpdateinfo.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabels_LinkClicked);
             // 
             // FormSetting
             // 
@@ -209,6 +221,8 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.tabPageAbout.ResumeLayout(false);
+            this.tabPageAbout.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picLoading)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -232,6 +246,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btnGetUpdateInfo;
+        private System.Windows.Forms.PictureBox picLoading;
+        private System.Windows.Forms.LinkLabel labelUpdateinfo;
     }
 }

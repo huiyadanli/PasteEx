@@ -14,9 +14,11 @@
 ## 使用方法
 需要 .NET Framework 4.5 的支持。
 
-先把本程序移动到你存放软件的位置，比如 Program Files 文件夹内。
+先把本程序置于一个空文件夹内（运行过程中会在当前目录下释放配置文件）。
 
 然后直接运行，根据提示添加右键菜单即可（添加菜单时会有 UAC 提示，放行即可）。
+
+卸载：纯绿色便携软件，只要在设置页面移除右键菜单，然后删除软件本体即可。
 
 ## Thanks
 [PasteIntoFiles](https://github.com/EslaMx7/PasteIntoFiles)

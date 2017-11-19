@@ -145,6 +145,7 @@
   <ItemGroup>
     <Content Include="Resources\Image\ico.ico" />
     <Content Include="Resources\Image\ico.png" />
+    <Content Include="Resources\Image\loading.gif" />
     <Content Include="Resources\Image\setting.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

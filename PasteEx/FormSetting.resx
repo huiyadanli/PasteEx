@@ -201,38 +201,71 @@
   <data name="&gt;&gt;tabPageCustom.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="btnGetUpdateInfo.Font" type="System.Drawing.Font, System.Drawing">
-    <value>微软雅黑, 9pt</value>
+  <data name="labelUpdateinfo.LinkArea" type="System.Windows.Forms.LinkArea, System.Windows.Forms">
+    <value>0, 0</value>
   </data>
-  <data name="btnGetUpdateInfo.Location" type="System.Drawing.Point, System.Drawing">
-    <value>227, 123</value>
+  <data name="labelUpdateinfo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>17, 241</value>
   </data>
-  <data name="btnGetUpdateInfo.Size" type="System.Drawing.Size, System.Drawing">
-    <value>20, 24</value>
+  <data name="labelUpdateinfo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>328, 23</value>
   </data>
-  <data name="btnGetUpdateInfo.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
+  <data name="labelUpdateinfo.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
   </data>
-  <data name="btnGetUpdateInfo.Text" xml:space="preserve">
-    <value>↑</value>
+  <data name="labelUpdateinfo.Text" xml:space="preserve">
+    <value>已经是最新版本</value>
   </data>
-  <data name="&gt;&gt;btnGetUpdateInfo.Name" xml:space="preserve">
-    <value>btnGetUpdateInfo</value>
+  <data name="labelUpdateinfo.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>TopCenter</value>
   </data>
-  <data name="&gt;&gt;btnGetUpdateInfo.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="labelUpdateinfo.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
-  <data name="&gt;&gt;btnGetUpdateInfo.Parent" xml:space="preserve">
+  <data name="&gt;&gt;labelUpdateinfo.Name" xml:space="preserve">
+    <value>labelUpdateinfo</value>
+  </data>
+  <data name="&gt;&gt;labelUpdateinfo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelUpdateinfo.Parent" xml:space="preserve">
     <value>tabPageAbout</value>
   </data>
-  <data name="&gt;&gt;btnGetUpdateInfo.ZOrder" xml:space="preserve">
+  <data name="&gt;&gt;labelUpdateinfo.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="picLoading.Location" type="System.Drawing.Point, System.Drawing">
+    <value>169, 241</value>
+  </data>
+  <data name="picLoading.Size" type="System.Drawing.Size, System.Drawing">
+    <value>16, 16</value>
+  </data>
+  <data name="picLoading.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>AutoSize</value>
+  </data>
+  <data name="picLoading.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;picLoading.Name" xml:space="preserve">
+    <value>picLoading</value>
+  </data>
+  <data name="&gt;&gt;picLoading.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;picLoading.Parent" xml:space="preserve">
+    <value>tabPageAbout</value>
+  </data>
+  <data name="&gt;&gt;picLoading.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="linkLabel1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
   </data>
   <data name="linkLabel1.Font" type="System.Drawing.Font, System.Drawing">
     <value>微软雅黑, 9pt</value>
+  </data>
+  <data name="linkLabel1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="linkLabel1.LinkArea" type="System.Windows.Forms.LinkArea, System.Windows.Forms">
     <value>23, 0</value>
@@ -268,7 +301,10 @@
     <value>tabPageAbout</value>
   </data>
   <data name="&gt;&gt;linkLabel1.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
+  </data>
+  <data name="label2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
@@ -289,7 +325,7 @@
     <value>tabPageAbout</value>
   </data>
   <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="pictureBox1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
@@ -319,7 +355,7 @@
     <value>tabPageAbout</value>
   </data>
   <data name="&gt;&gt;pictureBox1.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="tabPageAbout.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PasteEx.Util;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -139,14 +140,74 @@ namespace PasteEx
             System.Diagnostics.Process.Start(e.Link.LinkData as string);
         }
 
-        private async void btnGetUpdateInfo_Click(object sender, EventArgs e)
+        private int VersionToNumber(string version)
         {
-            Task<Dictionary<String, String>> t = new Task<Dictionary<String, String>>(Client.GetUpdateInfo);
-            t.Start();
-            var dic = await t;
-            if (dic != null)
+            int res = 0;
+            try
             {
-                MessageBox.Show(dic["version"]);
+                string[] nums = version.Split('.');
+                if (nums.Length == 4)
+                {
+                    int rate = 1000;
+                    for (int i = nums.Length - 1; i >= 0; i--)
+                    {
+                        res += Convert.ToInt32(nums[i]) * rate;
+                        rate *= 10;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.Error(ex);
+            }
+            return res;
+        }
+
+        private async void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (tabControl1.SelectedIndex == 2)
+            {
+                Task<Dictionary<String, String>> t = new Task<Dictionary<String, String>>(Client.GetUpdateInfo);
+                t.Start();
+                var dic = await t;
+                if (dic != null)
+                {
+                    string latestVersion = dic["version"];
+                    string currentVersion = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
+
+                    int latestVersionNum = VersionToNumber(latestVersion);
+                    int currentVersionNum = VersionToNumber(currentVersion);
+                    if (latestVersionNum > 1000000 && currentVersionNum > 1000000)
+                    {
+                        if (latestVersionNum > currentVersionNum)
+                        {
+                            // have new version
+                            labelUpdateinfo.Text = "存在新版本：" + latestVersion;
+                            labelUpdateinfo.ForeColor = System.Drawing.Color.Red;
+                            labelUpdateinfo.LinkColor = System.Drawing.Color.Red;
+                            labelUpdateinfo.Links.Clear();
+                            labelUpdateinfo.Links.Add(0, labelUpdateinfo.Text.Length, dic["page"].Replace(@"\/",@"/"));
+                            labelUpdateinfo.LinkBehavior = LinkBehavior.AlwaysUnderline;
+                            labelUpdateinfo.Visible = true;
+                        }
+                        else
+                        {
+                            labelUpdateinfo.Text = "已经是最新版本";
+                            labelUpdateinfo.ForeColor = System.Drawing.Color.Green;
+                            labelUpdateinfo.LinkColor = System.Drawing.Color.Green;
+                            labelUpdateinfo.Links.Clear();
+                            labelUpdateinfo.LinkBehavior = LinkBehavior.NeverUnderline;
+                            labelUpdateinfo.Visible = true;
+                        }
+                    }
+                    else
+                    {
+                        Logger.Error("错误的版本号:" + latestVersion + "|" + currentVersion);
+                    }
+                }
+
+                picLoading.Enabled = false;
+                picLoading.Visible = false;
             }
         }
     }
