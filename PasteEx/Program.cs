@@ -24,8 +24,6 @@ namespace PasteEx
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
 
-                Client.Start();
-
                 if (args.Length > 0)
                 {
                     string command = args[0];
@@ -58,6 +56,7 @@ namespace PasteEx
                 }
                 else
                 {
+                    Client.Start();
                     if (!RightMenu.Init())
                     {
                         return;
