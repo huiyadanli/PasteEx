@@ -52,6 +52,7 @@ namespace PasteEx
                         command = command.Substring(0, command.Length - 1);
                     }
 
+                    Client.Start();
                     Application.Run(new FormMain(command));
                 }
                 else

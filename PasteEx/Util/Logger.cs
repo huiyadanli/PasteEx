@@ -10,10 +10,15 @@ namespace PasteEx.Util
     /// </summary>
     public static class Logger
     {
-        private static string path = Path.Combine(Path.GetDirectoryName(Application.ExecutablePath), "PasteEx", "PasteEx.log");
-
         static Logger()
         {
+            string folder = Path.Combine(Path.GetDirectoryName(Application.ExecutablePath), "PasteEx");
+            if (!Directory.Exists(folder))
+            {
+                Directory.CreateDirectory(folder);
+            }
+
+            string path = Path.Combine(folder, "PasteEx.log");
             Trace.Listeners.Add(new TextWriterTraceListener(path));
             Trace.AutoFlush = true;
         }
