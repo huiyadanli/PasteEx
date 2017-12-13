@@ -6,7 +6,7 @@
 
 可以自动识别图片的扩展名，以及自定义文本扩展名规则。
 
-[:zap:最新版本 v1.0.1.8 下载](https://github.com/huiyadanli/PasteEx/releases/download/1.0.1.8/PasteEx.v1.0.1.8.zip)
+[:zap:最新版本 v1.0.1.8 下载](https://github.com/huiyadanli/PasteEx/releases/download/1.0.1.8/PasteEx.v1.0.1.8.fix.zip)
 
 ## 截图
 ![Screenshot](https://raw.githubusercontent.com/huiyadanli/PasteEx/master/Screenshot/Screenshot.png)
