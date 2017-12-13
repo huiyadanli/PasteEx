@@ -44,11 +44,11 @@
             this.txtAutoExtRule = new System.Windows.Forms.TextBox();
             this.chkAutoExtSwitch = new System.Windows.Forms.CheckBox();
             this.tabPageAbout = new System.Windows.Forms.TabPage();
+            this.labelUpdateinfo = new System.Windows.Forms.LinkLabel();
             this.picLoading = new System.Windows.Forms.PictureBox();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.labelUpdateinfo = new System.Windows.Forms.LinkLabel();
             this.tabControl1.SuspendLayout();
             this.tabPageNomal.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -171,6 +171,14 @@
             this.tabPageAbout.Name = "tabPageAbout";
             this.tabPageAbout.UseVisualStyleBackColor = true;
             // 
+            // labelUpdateinfo
+            // 
+            this.labelUpdateinfo.ForeColor = System.Drawing.Color.Green;
+            resources.ApplyResources(this.labelUpdateinfo, "labelUpdateinfo");
+            this.labelUpdateinfo.LinkColor = System.Drawing.Color.Green;
+            this.labelUpdateinfo.Name = "labelUpdateinfo";
+            this.labelUpdateinfo.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabels_LinkClicked);
+            // 
             // picLoading
             // 
             this.picLoading.Image = global::PasteEx.Properties.Resources.loading;
@@ -196,14 +204,6 @@
             this.pictureBox1.Image = global::PasteEx.Properties.Resources.png;
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.TabStop = false;
-            // 
-            // labelUpdateinfo
-            // 
-            this.labelUpdateinfo.ForeColor = System.Drawing.Color.Green;
-            resources.ApplyResources(this.labelUpdateinfo, "labelUpdateinfo");
-            this.labelUpdateinfo.LinkColor = System.Drawing.Color.Green;
-            this.labelUpdateinfo.Name = "labelUpdateinfo";
-            this.labelUpdateinfo.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabels_LinkClicked);
             // 
             // FormSetting
             // 
