@@ -27,7 +27,7 @@ namespace PasteEx
                     string oldGUID = Properties.Settings.Default.guid;
                     if (oldGUID != GUID)
                     {
-                        LCHelper.Record();
+                        LCHelper.Record(GUID);
                         Properties.Settings.Default.guid = GUID;
                     }
                     Properties.Settings.Default.lastBootTime = now;

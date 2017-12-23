@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace PasteEx.Util
@@ -40,8 +41,29 @@ namespace PasteEx.Util
             return retStr;
         }
 
-        public static void Record()
+        public static void Record(string guid)
         {
+            string queryParam = "{\"GUID\":\"" + guid + "\"}";
+            string queryRes = Send("GET", "https://xmfwudah.api.lncld.net/1.1/classes/User_Statistics?count=1&limit=0&where=" + queryParam);
+
+            try
+            {
+                Regex regex = new Regex("\"count\":(\\d?)}");
+                MatchCollection matches = regex.Matches(queryRes);
+                if (matches.Count > 0)
+                {
+                    string n = matches[0].Groups[1].Value;
+                    int num = Convert.ToInt32(n);
+                    if (num > 0)
+                    {
+                        return;
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+                Logger.Error(ex);
+            }
             Send("POST", "https://xmfwudah.api.lncld.net/1.1/classes/User_Statistics", Device.ToJSONString());
         }
 
