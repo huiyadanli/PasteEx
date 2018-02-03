@@ -28,6 +28,7 @@ namespace PasteEx
         private void Get()
         {
             chkNeedShiftKey.Checked = RightMenu.NeedShiftKey();
+            chkFastNeedShiftKey.Checked = RightMenu.NeedShiftKey(RightMenu.FastSetting.True);
 
             txtAutoExtRule.Text = Properties.Settings.Default.autoExtRule;
             chkAutoExtSwitch.Checked = Properties.Settings.Default.autoExtSwitch;
@@ -45,14 +46,14 @@ namespace PasteEx
 
             // About Tab Page
             linkLabel1.Links.Add(28, 10, @"https://huiyadanli.github.io/");
-            linkLabel1.Links.Add(53, 6, @"https://github.com/huiyadanli/PasteEx/issues");
-            linkLabel1.Links.Add(81, 18, @"mailto:huiyadanli@126.com");
+            linkLabel1.Links.Add(56, 6, @"https://github.com/huiyadanli/PasteEx/issues");
+            linkLabel1.Links.Add(84, 18, @"mailto:huiyadanli@126.com");
         }
 
         [Obsolete]
         private void btnRestore_Click(object sender, EventArgs e)
         {
-            // confirmneed confirm
+            // need confirm
             Properties.Settings.Default.Reset();
             Get();
             txtAutoExtRuleValidate(null, null);
@@ -60,7 +61,8 @@ namespace PasteEx
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
-            RightMenu.Add(chkNeedShiftKey.Checked);
+            RightMenu.ShiftSetting shift = chkNeedShiftKey.Checked ? RightMenu.ShiftSetting.True : RightMenu.ShiftSetting.False;
+            RightMenu.Add(shift);
         }
 
         private void btnUnRegister_Click(object sender, EventArgs e)
@@ -186,7 +188,7 @@ namespace PasteEx
                             labelUpdateinfo.ForeColor = System.Drawing.Color.Red;
                             labelUpdateinfo.LinkColor = System.Drawing.Color.Red;
                             labelUpdateinfo.Links.Clear();
-                            labelUpdateinfo.Links.Add(0, labelUpdateinfo.Text.Length, dic["page"].Replace(@"\/",@"/"));
+                            labelUpdateinfo.Links.Add(0, labelUpdateinfo.Text.Length, dic["page"].Replace(@"\/", @"/"));
                             labelUpdateinfo.LinkBehavior = LinkBehavior.AlwaysUnderline;
                             labelUpdateinfo.Visible = true;
                         }
@@ -209,6 +211,17 @@ namespace PasteEx
                 picLoading.Enabled = false;
                 picLoading.Visible = false;
             }
+        }
+
+        private void btnFastRegister_Click(object sender, EventArgs e)
+        {
+            RightMenu.ShiftSetting shift = chkFastNeedShiftKey.Checked ? RightMenu.ShiftSetting.True : RightMenu.ShiftSetting.False;
+            RightMenu.Add(shift, RightMenu.FastSetting.True);
+        }
+
+        private void btnFastUnRegister_Click(object sender, EventArgs e)
+        {
+            RightMenu.Delete(RightMenu.FastSetting.True);
         }
     }
 }

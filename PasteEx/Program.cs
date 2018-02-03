@@ -1,5 +1,6 @@
 ﻿using PasteEx.Util;
 using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace PasteEx
@@ -26,33 +27,42 @@ namespace PasteEx
 
                 if (args.Length > 0)
                 {
-                    string command = args[0];
-                    if (command == "-reg")
+                    List<string> commands = new List<string>(args);
+                    if (commands[0] == "/reg")
                     {
-                        if(args.Length > 1)
+                        if (args.Length > 1)
                         {
-                            command = args[1];
-                            if(command == "-shift")
-                            {
-                                RightMenu.Add(true);
-                                return;
-                            }
+                            commands.Remove("/reg");
+                            RightMenu.ShiftSetting shift = commands.Contains("/shift") ? RightMenu.ShiftSetting.True : RightMenu.ShiftSetting.False;
+                            RightMenu.FastSetting fast = commands.Contains("/fast") ? RightMenu.FastSetting.True : RightMenu.FastSetting.False;
+                            RightMenu.Add(shift, fast);
+                            return;
                         }
                         RightMenu.Add();
                         return;
                     }
-                    else if (command == "-unreg")
+                    else if (commands[0] == "/unreg")
                     {
-                        RightMenu.Delete();
+                        RightMenu.FastSetting fast = commands.Contains("/fast") ? RightMenu.FastSetting.True : RightMenu.FastSetting.False;
+                        RightMenu.Delete(fast);
                         return;
                     }
-                    // why the disk root directory has '"' ??
-                    if (command.LastIndexOf('"') == command.Length - 1)
+                    else if (commands[0] == "/q")
                     {
-                        command = command.Substring(0, command.Length - 1);
+                        if (args.Length > 1)
+                        {
+                            FormMain.QuickPasteEx(commands[1]);
+                            return;
+                        }    
                     }
 
-                    Application.Run(new FormMain(command));
+                    // why the disk root directory has '"' ??
+                    if (commands[0].LastIndexOf('"') == commands[0].Length - 1)
+                    {
+                        commands[0] = commands[0].Substring(0, commands[0].Length - 1);
+                    }
+
+                    Application.Run(new FormMain(commands[0]));
                 }
                 else
                 {

@@ -9,10 +9,24 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+/// <summary>
+/// Operate the right button menu.
+/// Need refactoring!
+/// </summary>
 namespace PasteEx
 {
     public class RightMenu
     {
+        public enum ShiftSetting
+        {
+            True, False
+        };
+
+        public enum FastSetting
+        {
+            True, False
+        };
+
         public static bool Init()
         {
             string command = (string)Registry.GetValue(@"HKEY_CLASSES_ROOT\Directory\Background\shell\PasteEx\command", "", "");
@@ -46,15 +60,17 @@ namespace PasteEx
             return true;
         }
 
-        public static void Add(bool needShiftKey = false)
+        public static void Add(
+            ShiftSetting shift = ShiftSetting.False,
+            FastSetting fast = FastSetting.False)
         {
             if (IsUserAdministrator())
             {
-                try { UnRegister(); } catch { }
+                try { UnRegister(fast); } catch { }
 
                 try
                 {
-                    Register(needShiftKey);
+                    Register(shift, fast);
                     MessageBox.Show(Resources.Resource_zh_CN.TipRegister, Resources.Resource_zh_CN.Title,
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -66,18 +82,23 @@ namespace PasteEx
             }
             else
             {
-                if (needShiftKey) StartSelf("-reg -shift");
-                else StartSelf("-reg");
+                string cmd = "/reg";
+                if (shift == ShiftSetting.True)
+                    cmd += " /shift";
+                if (fast == FastSetting.True)
+                    cmd += " /fast";
+
+                StartSelf(cmd);
             }
         }
 
-        public static void Delete()
+        public static void Delete(FastSetting fast = FastSetting.False)
         {
             if (IsUserAdministrator())
             {
                 try
                 {
-                    UnRegister();
+                    UnRegister(fast);
                     MessageBox.Show(Resources.Resource_zh_CN.TipUnRegister, Resources.Resource_zh_CN.Title,
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -89,15 +110,19 @@ namespace PasteEx
             }
             else
             {
-                StartSelf("-unreg");
+                string cmd = "/unreg";
+                if (fast == FastSetting.True)
+                    cmd += " /fast";
+
+                StartSelf(cmd);
             }
         }
 
-        public static bool NeedShiftKey()
+        public static bool NeedShiftKey(FastSetting fast = FastSetting.False)
         {
             try
             {
-                var key = Registry.ClassesRoot.OpenSubKey("Directory").OpenSubKey("Background").OpenSubKey("shell").OpenSubKey("PasteEx");
+                var key = Registry.ClassesRoot.OpenSubKey("Directory").OpenSubKey("Background").OpenSubKey("shell").OpenSubKey(GetLastSubKeyName(fast));
                 if (key != null)
                 {
                     string[] names = key.GetValueNames();
@@ -115,32 +140,63 @@ namespace PasteEx
             }
         }
 
-        private static void Register(bool needShiftKey)
+        private static void Register(
+            ShiftSetting shift = ShiftSetting.False,
+            FastSetting fast = FastSetting.False)
         {
-            var key = Registry.ClassesRoot.OpenSubKey("Directory").OpenSubKey("Background").OpenSubKey("shell", true).CreateSubKey("PasteEx"); ;
-            key.SetValue("", Resources.Resource_zh_CN.Title);
+            // Background
+            var key = Registry.ClassesRoot.OpenSubKey("Directory").OpenSubKey("Background").OpenSubKey("shell", true).CreateSubKey(GetLastSubKeyName(fast));
+            var cmdKey = key.CreateSubKey("command");
             key.SetValue("Icon", Application.ExecutablePath);
-            if (needShiftKey) key.SetValue("Extended", "");
-            key = key.CreateSubKey("command");
-            key.SetValue("", Application.ExecutablePath + " \"%V\"");
+            if (shift == ShiftSetting.True)
+                key.SetValue("Extended", "");
 
-            key = Registry.ClassesRoot.OpenSubKey("Directory").OpenSubKey("shell", true).CreateSubKey("PasteEx");
-            key.SetValue("", Resources.Resource_zh_CN.Title);
+            if (fast == FastSetting.False)
+            {
+                key.SetValue("", Resources.Resource_zh_CN.Title);
+                cmdKey.SetValue("", Application.ExecutablePath + " \"%V\"");
+
+            }
+            else
+            {
+                key.SetValue("", "快速粘贴为文件");
+                cmdKey.SetValue("", Application.ExecutablePath + " /q \"%V\"");
+            }
+
+            // shell
+            key = Registry.ClassesRoot.OpenSubKey("Directory").OpenSubKey("shell", true).CreateSubKey(GetLastSubKeyName(fast));
+            cmdKey = key.CreateSubKey("command");
             key.SetValue("Icon", Application.ExecutablePath);
-            if (needShiftKey) key.SetValue("Extended", "");
-            key = key.CreateSubKey("command");
-            key.SetValue("", Application.ExecutablePath + " \"%1\"");
+            if (shift == ShiftSetting.True)
+                key.SetValue("Extended", "");
 
+
+            if (fast == FastSetting.False)
+            {
+                key.SetValue("", Resources.Resource_zh_CN.Title);
+                cmdKey.SetValue("", Application.ExecutablePath + " \"%1\"");
+            }
+            else
+            {
+                key.SetValue("", "快速粘贴为文件");
+                cmdKey.SetValue("", Application.ExecutablePath + " /q \"%1\"");
+            }
         }
 
-        private static void UnRegister()
+        private static void UnRegister(FastSetting fast = FastSetting.False)
         {
             var key = Registry.ClassesRoot.OpenSubKey("Directory").OpenSubKey("Background").OpenSubKey("shell", true);
-            key.DeleteSubKeyTree("PasteEx");
+            key.DeleteSubKeyTree(GetLastSubKeyName(fast));
 
             key = Registry.ClassesRoot.OpenSubKey("Directory").OpenSubKey("shell", true);
-            key.DeleteSubKeyTree("PasteEx");
+            key.DeleteSubKeyTree(GetLastSubKeyName(fast));
         }
+
+        private static string GetLastSubKeyName(FastSetting fast)
+        {
+            return FastSetting.True == fast ? "PasteExFast" : "PasteEx";
+        }
+
 
         public static bool IsUserAdministrator()
         {

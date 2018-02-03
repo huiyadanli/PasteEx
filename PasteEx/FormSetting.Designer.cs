@@ -33,6 +33,10 @@
             this.tipHelp = new System.Windows.Forms.ToolTip(this.components);
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPageNomal = new System.Windows.Forms.TabPage();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.chkFastNeedShiftKey = new System.Windows.Forms.CheckBox();
+            this.btnFastUnRegister = new System.Windows.Forms.Button();
+            this.btnFastRegister = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.chkNeedShiftKey = new System.Windows.Forms.CheckBox();
             this.btnUnRegister = new System.Windows.Forms.Button();
@@ -51,6 +55,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabControl1.SuspendLayout();
             this.tabPageNomal.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tabPageCustom.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -81,10 +86,40 @@
             // 
             // tabPageNomal
             // 
+            this.tabPageNomal.Controls.Add(this.groupBox3);
             this.tabPageNomal.Controls.Add(this.groupBox1);
             resources.ApplyResources(this.tabPageNomal, "tabPageNomal");
             this.tabPageNomal.Name = "tabPageNomal";
             this.tabPageNomal.UseVisualStyleBackColor = true;
+            // 
+            // groupBox3
+            // 
+            resources.ApplyResources(this.groupBox3, "groupBox3");
+            this.groupBox3.Controls.Add(this.chkFastNeedShiftKey);
+            this.groupBox3.Controls.Add(this.btnFastUnRegister);
+            this.groupBox3.Controls.Add(this.btnFastRegister);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.TabStop = false;
+            // 
+            // chkFastNeedShiftKey
+            // 
+            resources.ApplyResources(this.chkFastNeedShiftKey, "chkFastNeedShiftKey");
+            this.chkFastNeedShiftKey.Name = "chkFastNeedShiftKey";
+            this.chkFastNeedShiftKey.UseVisualStyleBackColor = true;
+            // 
+            // btnFastUnRegister
+            // 
+            resources.ApplyResources(this.btnFastUnRegister, "btnFastUnRegister");
+            this.btnFastUnRegister.Name = "btnFastUnRegister";
+            this.btnFastUnRegister.UseVisualStyleBackColor = true;
+            this.btnFastUnRegister.Click += new System.EventHandler(this.btnFastUnRegister_Click);
+            // 
+            // btnFastRegister
+            // 
+            resources.ApplyResources(this.btnFastRegister, "btnFastRegister");
+            this.btnFastRegister.Name = "btnFastRegister";
+            this.btnFastRegister.UseVisualStyleBackColor = true;
+            this.btnFastRegister.Click += new System.EventHandler(this.btnFastRegister_Click);
             // 
             // groupBox1
             // 
@@ -215,6 +250,8 @@
             this.Load += new System.EventHandler(this.FormSetting_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPageNomal.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.tabPageCustom.ResumeLayout(false);
@@ -237,16 +274,20 @@
         private System.Windows.Forms.TextBox txtAutoExtRule;
         private System.Windows.Forms.CheckBox chkAutoExtSwitch;
         private System.Windows.Forms.TabPage tabPageNomal;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button btnUnRegister;
-        private System.Windows.Forms.Button btnRegister;
         private System.Windows.Forms.TabPage tabPageAbout;
-        private System.Windows.Forms.CheckBox chkNeedShiftKey;
         private System.Windows.Forms.Label lblTipError;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox picLoading;
         private System.Windows.Forms.LinkLabel labelUpdateinfo;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.CheckBox chkNeedShiftKey;
+        private System.Windows.Forms.Button btnUnRegister;
+        private System.Windows.Forms.Button btnRegister;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.CheckBox chkFastNeedShiftKey;
+        private System.Windows.Forms.Button btnFastUnRegister;
+        private System.Windows.Forms.Button btnFastRegister;
     }
 }

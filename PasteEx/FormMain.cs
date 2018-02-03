@@ -66,14 +66,14 @@ namespace PasteEx
 
             }
 
-            txtFileName.Text = GenerateFileName();
+            txtFileName.Text = GenerateFileName(CurrentLocation, cboExtension.Text);
         }
 
         #region Generate Path
-        private string GenerateFileName()
+        private static string GenerateFileName(string fileName, string extension)
         {
             string defaultFileName = "Clipboard_" + DateTime.Now.ToString("yyyyMMdd");
-            string path = CurrentLocation + defaultFileName + "." + cboExtension.Text;
+            string path = fileName + defaultFileName + "." + extension;
 
             string result;
             string newFileName = defaultFileName;
@@ -83,7 +83,7 @@ namespace PasteEx
                 if (File.Exists(path))
                 {
                     newFileName = defaultFileName + " (" + ++i + ")";
-                    path = CurrentLocation + newFileName + "." + cboExtension.Text;
+                    path = fileName + newFileName + "." + extension;
                 }
                 else
                 {
@@ -229,6 +229,36 @@ namespace PasteEx
                 return true;
             }
             return base.ProcessCmdKey(ref msg, keyData);
+        }
+
+        public static void QuickPasteEx(string location)
+        {
+            Data data = new Data(Clipboard.GetDataObject());
+            string[] extensions = data.Analyze();
+
+            if (extensions.Length > 0)
+            {
+                // why the disk root directory has '"' ??
+                if (location.LastIndexOf('"') == location.Length - 1)
+                {
+                    location = location.Substring(0, location.Length - 1);
+                }
+                string currentLocation = location.EndsWith("\\") ? location : location + "\\";
+                if (!Directory.Exists(currentLocation))
+                {
+                    MessageBox.Show("粘贴目标路径不存在",
+                            Resources.Resource_zh_CN.Title, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    data.SaveAs(currentLocation, GenerateFileName(currentLocation, extensions[0]), extensions[0]);
+                }
+            }
+            else
+            {
+                MessageBox.Show("剪贴板内容为空或不被支持",
+                            Resources.Resource_zh_CN.Title, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
     }
