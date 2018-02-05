@@ -64,6 +64,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Core\Processor\BaseProcessor.cs" />
+    <Compile Include="Core\ClipData.cs" />
+    <Compile Include="Core\Processor\FileProcessor.cs" />
+    <Compile Include="Core\Processor\HtmlProcessor.cs" />
+    <Compile Include="Core\Processor\ImageProcessor.cs" />
+    <Compile Include="Core\Processor\RtfProcessor.cs" />
+    <Compile Include="Core\Processor\TextProcessor.cs" />
     <Compile Include="Data.cs" />
     <Compile Include="FormMain.cs">
       <SubType>Form</SubType>
@@ -147,5 +154,6 @@
     <Content Include="Resources\Image\loading.gif" />
     <Content Include="Resources\Image\setting.ico" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
