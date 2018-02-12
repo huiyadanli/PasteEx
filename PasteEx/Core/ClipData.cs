@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using System.Collections.Generic;
+using System.Windows.Forms;
 
 namespace PasteEx.Core
 {
@@ -8,10 +9,43 @@ namespace PasteEx.Core
 
         public DataObject Storage { get; set; }
 
+        private List<BaseProcessor> analyzers;
+
+        private List<BaseProcessor> savers;
+
         public ClipData(IDataObject iDataObject)
         {
             IAcquisition = iDataObject;
             Storage = new DataObject();
+
+            InitProcessor();
+        }
+
+        private void InitProcessor()
+        {
+            HtmlProcessor htmlProcessor = new HtmlProcessor(this);
+            RtfProcessor rtfProcessor = new RtfProcessor(this);
+            TextProcessor textProcessor = new TextProcessor(this);
+            ImageProcessor imageProcessor = new ImageProcessor(this);
+            FileProcessor fileProcessor = new FileProcessor(this);
+
+            analyzers = new List<BaseProcessor>
+            {
+                htmlProcessor,
+                rtfProcessor,
+                textProcessor,
+                imageProcessor,
+                fileProcessor
+            };
+
+            savers = new List<BaseProcessor>
+            {
+                fileProcessor,
+                htmlProcessor,
+                rtfProcessor,
+                imageProcessor,
+                textProcessor
+            };
         }
 
         /// <summary>
@@ -20,7 +54,38 @@ namespace PasteEx.Core
         /// <returns>extensions</returns>
         public string[] Analyze()
         {
-            return null;
+            List<string> extensions = new List<string>();
+            foreach (BaseProcessor analyzer in analyzers)
+            {
+                string[] es = analyzer.Analyze();
+                if (es != null)
+                {
+                    extensions.AddRange(es);
+                }
+            }
+            extensions.Reverse();
+            return extensions.ToArray();
+        }
+
+        /// <summary>
+        /// Save clipboard data as file,
+        /// the file type depends on the extension.
+        /// </summary>
+        /// <param name="location">file location</param>
+        /// <param name="fileName">file name</param>
+        /// <param name="extension">file extension</param>
+        public void SaveAs(string location, string fileName, string extension)
+        {
+            location = location.EndsWith("\\") ? location : location + "\\";
+            string path = location + fileName + "." + extension;
+
+            foreach (BaseProcessor saver in savers)
+            {
+                if(saver.SaveAs(path, extension))
+                {
+                    break;
+                }
+            }
         }
     }
 }

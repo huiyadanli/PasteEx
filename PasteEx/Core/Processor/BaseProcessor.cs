@@ -12,6 +12,11 @@ namespace PasteEx.Core
 
         public ClipData Data { get; set; }
 
+        public BaseProcessor(ClipData clipData)
+        {
+            Data = clipData;
+        }
+
         public abstract string[] Analyze();
 
         public abstract bool SaveAs(string path, string extension);

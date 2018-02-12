@@ -8,6 +8,11 @@ namespace PasteEx.Core
 {
     public class FileProcessor : BaseProcessor
     {
+        public FileProcessor(ClipData clipData) : base(clipData)
+        {
+            Data = clipData;
+        }
+
         public override string[] Analyze()
         {
             if (Data.IAcquisition.GetDataPresent(DataFormats.FileDrop, false))

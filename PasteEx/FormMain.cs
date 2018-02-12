@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PasteEx.Core;
+using System;
 using System.IO;
 using System.Text;
 using System.Windows.Forms;
@@ -8,7 +9,7 @@ namespace PasteEx
     public partial class FormMain : Form
     {
 
-        private Data data;
+        private ClipData data;
 
         private string currentLocation;
 
@@ -41,7 +42,7 @@ namespace PasteEx
 
         private void FormMain_Load(object sender, EventArgs e)
         {
-            data = new Data(Clipboard.GetDataObject());
+            data = new ClipData(Clipboard.GetDataObject());
             string[] extensions = data.Analyze();
             cboExtension.Items.AddRange(extensions);
             if (extensions.Length > 0)
@@ -233,7 +234,7 @@ namespace PasteEx
 
         public static void QuickPasteEx(string location)
         {
-            Data data = new Data(Clipboard.GetDataObject());
+            ClipData data = new ClipData(Clipboard.GetDataObject());
             string[] extensions = data.Analyze();
 
             if (extensions.Length > 0)

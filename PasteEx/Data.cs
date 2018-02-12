@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace PasteEx
 {
-    public class Data
+    public class DataTMP
     {
         public IDataObject IData { get; set; }
 
@@ -19,7 +19,7 @@ namespace PasteEx
 
         public static readonly string[] imageExt = { "ico", "bmp", "gif", "jpg", "png" };
 
-        public Data(IDataObject iDataObject)
+        public DataTMP(IDataObject iDataObject)
         {
             IData = iDataObject;
             DataStorage = new DataObject();

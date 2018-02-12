@@ -10,6 +10,11 @@ namespace PasteEx.Core
 {
     public class TextProcessor : BaseProcessor
     {
+        public TextProcessor(ClipData clipData) : base(clipData)
+        {
+            Data = clipData;
+        }
+
         public override string[] Analyze()
         {
             if (Data.IAcquisition.GetDataPresent(DataFormats.Text, false))

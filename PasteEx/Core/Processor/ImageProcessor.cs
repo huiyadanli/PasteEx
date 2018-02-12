@@ -14,6 +14,11 @@ namespace PasteEx.Core
     {
         public static readonly string[] imageExt = { "ico", "bmp", "gif", "jpg", "png" };
 
+        public ImageProcessor(ClipData clipData) : base(clipData)
+        {
+            Data = clipData;
+        }
+
         public override string[] Analyze()
         {
             if (Data.IAcquisition.GetDataPresent(DataFormats.Bitmap, false))

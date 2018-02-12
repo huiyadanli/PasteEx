@@ -7,6 +7,11 @@ namespace PasteEx.Core
 {
     public class HtmlProcessor : BaseProcessor
     {
+        public HtmlProcessor(ClipData clipData) : base(clipData)
+        {
+            Data = clipData;
+        }
+
         public override string[] Analyze()
         {
             if (Data.IAcquisition.GetDataPresent(DataFormats.Html, false))

@@ -7,6 +7,11 @@ namespace PasteEx.Core
 {
     public class RtfProcessor : BaseProcessor
     {
+        public RtfProcessor(ClipData clipData) : base(clipData)
+        {
+            Data = clipData;
+        }
+
         public override string[] Analyze()
         {
             if (Data.IAcquisition.GetDataPresent(DataFormats.Rtf, false))
