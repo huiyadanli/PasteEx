@@ -71,14 +71,10 @@ namespace PasteEx.Core
         /// Save clipboard data as file,
         /// the file type depends on the extension.
         /// </summary>
-        /// <param name="location">file location</param>
-        /// <param name="fileName">file name</param>
+        /// <param name="path">file path</param>
         /// <param name="extension">file extension</param>
-        public void SaveAs(string location, string fileName, string extension)
+        public void SaveAs(string path, string extension)
         {
-            location = location.EndsWith("\\") ? location : location + "\\";
-            string path = location + fileName + "." + extension;
-
             foreach (BaseProcessor saver in savers)
             {
                 if(saver.SaveAs(path, extension))

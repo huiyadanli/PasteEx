@@ -4,7 +4,7 @@ using System.IO;
 using System.Text;
 using System.Windows.Forms;
 
-namespace PasteEx                        
+namespace PasteEx
 {
     public partial class FormMain : Form
     {
@@ -40,19 +40,8 @@ namespace PasteEx
             CurrentLocation = location;
         }
 
-        private string Print(string[] a)
-        {
-            string r = "";
-            foreach(string b in a)
-            {
-                r += b + "|";
-            }
-            return r;
-        }
-
         private void FormMain_Load(object sender, EventArgs e)
         {
-            //MessageBox.Show(Print(Clipboard.GetDataObject().GetFormats()));
             data = new ClipData(Clipboard.GetDataObject());
             string[] extensions = data.Analyze();
             cboExtension.Items.AddRange(extensions);
@@ -202,7 +191,26 @@ namespace PasteEx
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            data.SaveAs(CurrentLocation, txtFileName.Text, cboExtension.Text);
+            string location = CurrentLocation.EndsWith("\\") ? CurrentLocation : CurrentLocation + "\\";
+            string path = location + txtFileName.Text + "." + cboExtension.Text;
+
+            if (File.Exists(path))
+            {
+                DialogResult result = MessageBox.Show(String.Format("目标文件{0}已经存在，是否覆盖？", path),
+                    Resources.Resource_zh_CN.Title, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes)
+                {
+                    data.SaveAs(path, cboExtension.Text);
+                }
+                else if (result == DialogResult.No)
+                {
+                    return;
+                }
+            }
+            else
+            {
+                data.SaveAs(path, cboExtension.Text);
+            }
             Application.Exit();
         }
 
@@ -256,6 +264,7 @@ namespace PasteEx
                     location = location.Substring(0, location.Length - 1);
                 }
                 string currentLocation = location.EndsWith("\\") ? location : location + "\\";
+                string path = location + GenerateFileName(currentLocation, extensions[0]) + "." + extensions[0];
                 if (!Directory.Exists(currentLocation))
                 {
                     MessageBox.Show("粘贴目标路径不存在",
@@ -263,7 +272,23 @@ namespace PasteEx
                 }
                 else
                 {
-                    data.SaveAs(currentLocation, GenerateFileName(currentLocation, extensions[0]), extensions[0]);
+                    if (File.Exists(path))
+                    {
+                        DialogResult result = MessageBox.Show(String.Format("目标文件{0}已经存在，是否覆盖？", path),
+                            Resources.Resource_zh_CN.Title, MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+                        if (result == DialogResult.Yes)
+                        {
+                            data.SaveAs(path, extensions[0]);
+                        }
+                        else if (result == DialogResult.No)
+                        {
+                            return;
+                        }
+                    }
+                    else
+                    {
+                        data.SaveAs(path, extensions[0]);
+                    }
                 }
             }
             else
