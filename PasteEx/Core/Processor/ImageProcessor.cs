@@ -1,10 +1,10 @@
-﻿using System;
+﻿using PasteEx.Util;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
@@ -25,6 +25,10 @@ namespace PasteEx.Core
             {
                 List<string> extensions = new List<string>();
                 Data.Storage.SetData(DataFormats.Bitmap, Data.IAcquisition.GetData(DataFormats.Bitmap));
+                Data.Storage.SetData("DeviceIndependentBitmap", Data.IAcquisition.GetData("DeviceIndependentBitmap")); // CF_DIB
+                Data.Storage.SetData("Format17", Data.IAcquisition.GetData("Format17")); // CF_DIBV5
+                Data.Storage.SetData("PNG", Data.IAcquisition.GetData("PNG")); // PNG
+
                 extensions.AddRange(imageExt);
 
                 // Get image format
@@ -54,7 +58,8 @@ namespace PasteEx.Core
         {
             if (imageExt.Contains(extension))
             {
-                Bitmap bitmap = (Bitmap)Data.Storage.GetData(DataFormats.Bitmap);
+                Bitmap bitmap = GetImageFromDataObject(Data.Storage);
+
                 switch (extension)
                 {
                     case "png":
@@ -96,7 +101,7 @@ namespace PasteEx.Core
                 if (matches.Count > 0)
                 {
                     string url = matches[0].Groups["url"].Value;
-                    // extension
+                    // get extension, can use Path.GetExtension(url)
                     int i = url.LastIndexOf(".");
                     if (i > 0)
                     {
@@ -110,6 +115,75 @@ namespace PasteEx.Core
                 }
             }
             return null;
+        }
+
+        /// <summary>
+        /// Retrieves an image from the given clipboard data object, in the order PNG, DIB, Bitmap, Image object.
+        /// </summary>
+        /// <param name="retrievedData">The clipboard data.</param>
+        /// <returns>The extracted image, or null if no supported image type was found.</returns>
+        public Bitmap GetImageFromDataObject(DataObject retrievedData)
+        {
+            Bitmap clipboardimage = null;
+            // Order: try PNG, move on to try 32-bit ARGB DIB, then try the normal Bitmap and Image types.
+            if (retrievedData.GetDataPresent("PNG"))
+            {
+                MemoryStream png_stream = retrievedData.GetData("PNG") as MemoryStream;
+                if (png_stream != null)
+                {
+                    using (Bitmap bm = new Bitmap(png_stream))
+                    {
+                        clipboardimage = ImageHelper.CloneImage(bm);
+                    }
+                }
+            }
+            if (clipboardimage == null && retrievedData.GetDataPresent(DataFormats.Dib))
+            {
+                MemoryStream dib = retrievedData.GetData(DataFormats.Dib) as MemoryStream;
+                if (dib != null)
+                {
+                    clipboardimage = ImageHelper.ImageFromClipboardDib(dib.ToArray());
+                }
+            }
+            if (clipboardimage == null && retrievedData.GetDataPresent(DataFormats.Bitmap))
+            {
+                clipboardimage = new Bitmap(retrievedData.GetData(DataFormats.Bitmap) as Image);
+            }
+            if (clipboardimage == null && retrievedData.GetDataPresent(typeof(Image)))
+            {
+                clipboardimage = new Bitmap(retrievedData.GetData(typeof(Image)) as Image);
+            }
+            return clipboardimage;
+        }
+
+        /// <summary>
+        /// Has some problems
+        /// Discarding the method
+        /// </summary>
+        /// <param name="retrievedData"></param>
+        /// <returns></returns>
+        [Obsolete]
+        public Bitmap GetImageFromDataObjectOld(DataObject retrievedData)
+        {
+            Bitmap bitmap = (Bitmap)Data.Storage.GetData(DataFormats.Bitmap);
+            MemoryStream ms = Data.Storage.GetData("Format17") as MemoryStream;
+            if (ms != null)
+            {
+                Bitmap hasAlphaChannel = null;
+                try
+                {
+                    hasAlphaChannel = ImageHelper.CF_DIBV5ToBitmap(ms.ToArray());
+                }
+                catch (Exception ex)
+                {
+                    Logger.Warning("Fail to convert CF_DIBV5 To Bitmap" + Environment.NewLine + ex.ToString());
+                }
+                if (hasAlphaChannel != null)
+                {
+                    bitmap = hasAlphaChannel;
+                }
+            }
+            return bitmap;
         }
     }
 }

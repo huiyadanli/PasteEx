@@ -4,7 +4,7 @@ using System.IO;
 using System.Text;
 using System.Windows.Forms;
 
-namespace PasteEx
+namespace PasteEx                        
 {
     public partial class FormMain : Form
     {
@@ -40,8 +40,19 @@ namespace PasteEx
             CurrentLocation = location;
         }
 
+        private string Print(string[] a)
+        {
+            string r = "";
+            foreach(string b in a)
+            {
+                r += b + "|";
+            }
+            return r;
+        }
+
         private void FormMain_Load(object sender, EventArgs e)
         {
+            //MessageBox.Show(Print(Clipboard.GetDataObject().GetFormats()));
             data = new ClipData(Clipboard.GetDataObject());
             string[] extensions = data.Analyze();
             cboExtension.Items.AddRange(extensions);

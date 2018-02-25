@@ -71,7 +71,6 @@
     <Compile Include="Core\Processor\ImageProcessor.cs" />
     <Compile Include="Core\Processor\RtfProcessor.cs" />
     <Compile Include="Core\Processor\TextProcessor.cs" />
-    <Compile Include="Data.cs" />
     <Compile Include="FormMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,6 +86,7 @@
     <Compile Include="Client.cs" />
     <Compile Include="Util\Device.cs" />
     <Compile Include="Util\EasyJson.cs" />
+    <Compile Include="Util\ImageHelper.cs" />
     <Compile Include="Util\LCHelper.cs" />
     <Compile Include="Util\Logger.cs" />
     <Compile Include="MySettingsProvider.cs" />
