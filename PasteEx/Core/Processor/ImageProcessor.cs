@@ -5,6 +5,7 @@ using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
@@ -13,6 +14,10 @@ namespace PasteEx.Core
     public class ImageProcessor : BaseProcessor
     {
         public static readonly string[] imageExt = { "ico", "bmp", "gif", "jpg", "png" };
+
+        private string imageUrl;
+
+        private string analyzeExt;
 
         public ImageProcessor(ClipData clipData) : base(clipData)
         {
@@ -32,10 +37,11 @@ namespace PasteEx.Core
                 extensions.AddRange(imageExt);
 
                 // Get image format
-                string defaultExt = GetImageExtension(Data.IAcquisition);
+                string defaultExt = null;
                 try
                 {
                     defaultExt = GetImageExtension(Data.IAcquisition);
+                    analyzeExt = defaultExt;
                 }
                 catch (Exception ex)
                 {
@@ -56,6 +62,14 @@ namespace PasteEx.Core
 
         public override bool SaveAs(string path, string extension)
         {
+            // save .gif from HTML Format url
+            if (extension == "gif" && (extension == analyzeExt || imageUrl != null))
+            {
+                GetImageFromUrl(imageUrl, path);
+                return true;
+            }
+
+            // save image from Bitmap data
             if (imageExt.Contains(extension))
             {
                 Bitmap bitmap = GetImageFromDataObject(Data.Storage);
@@ -92,7 +106,7 @@ namespace PasteEx.Core
         /// </summary>
         /// <param name="data"></param>
         /// <returns>Image extension</returns>
-        public string GetImageExtension(IDataObject data)
+        private string GetImageExtension(IDataObject data)
         {
             if (data.GetDataPresent("HTML Format", false))
             {
@@ -101,6 +115,7 @@ namespace PasteEx.Core
                 if (matches.Count > 0)
                 {
                     string url = matches[0].Groups["url"].Value;
+                    imageUrl = url;
                     // get extension, can use Path.GetExtension(url)
                     int i = url.LastIndexOf(".");
                     if (i > 0)
@@ -122,7 +137,7 @@ namespace PasteEx.Core
         /// </summary>
         /// <param name="retrievedData">The clipboard data.</param>
         /// <returns>The extracted image, or null if no supported image type was found.</returns>
-        public Bitmap GetImageFromDataObject(DataObject retrievedData)
+        private Bitmap GetImageFromDataObject(DataObject retrievedData)
         {
             Bitmap clipboardimage = null;
             // Order: try PNG, move on to try 32-bit ARGB DIB, then try the normal Bitmap and Image types.
@@ -163,7 +178,7 @@ namespace PasteEx.Core
         /// <param name="retrievedData"></param>
         /// <returns></returns>
         [Obsolete]
-        public Bitmap GetImageFromDataObjectOld(DataObject retrievedData)
+        private Bitmap GetImageFromDataObjectOld(DataObject retrievedData)
         {
             Bitmap bitmap = (Bitmap)Data.Storage.GetData(DataFormats.Bitmap);
             MemoryStream ms = Data.Storage.GetData("Format17") as MemoryStream;
@@ -184,6 +199,12 @@ namespace PasteEx.Core
                 }
             }
             return bitmap;
+        }
+
+        private void GetImageFromUrl(string url, string path)
+        {
+            WebClient client = new WebClient();
+            client.DownloadFile(url, path);
         }
     }
 }
