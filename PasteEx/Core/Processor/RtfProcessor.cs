@@ -31,6 +31,7 @@ namespace PasteEx.Core
                     rtb.Rtf = Data.Storage.GetData(DataFormats.Rtf) as string;
                     rtb.SaveFile(path, RichTextBoxStreamType.RichText);
                 }
+                OnSaveAsFileCompleted();
                 return true;
             }
             return false;

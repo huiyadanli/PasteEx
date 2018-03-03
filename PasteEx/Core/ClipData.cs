@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using System.Windows.Forms;
+using static PasteEx.Core.BaseProcessor;
 
 namespace PasteEx.Core
 {
@@ -12,6 +14,12 @@ namespace PasteEx.Core
         private List<BaseProcessor> analyzers;
 
         private List<BaseProcessor> savers;
+
+        public event AsyncCompletedEventHandler SaveCompleted;
+        protected virtual void OnSaveCompleted()
+        {
+            SaveCompleted?.Invoke();
+        }
 
         public ClipData(IDataObject iDataObject)
         {
@@ -28,6 +36,12 @@ namespace PasteEx.Core
             TextProcessor textProcessor = new TextProcessor(this);
             ImageProcessor imageProcessor = new ImageProcessor(this);
             FileProcessor fileProcessor = new FileProcessor(this);
+
+            htmlProcessor.SaveAsFileCompleted += OnSaveCompleted;
+            rtfProcessor.SaveAsFileCompleted += OnSaveCompleted;
+            textProcessor.SaveAsFileCompleted += OnSaveCompleted;
+            imageProcessor.SaveAsFileCompleted += OnSaveCompleted;
+            fileProcessor.SaveAsFileCompleted += OnSaveCompleted;
 
             analyzers = new List<BaseProcessor>
             {
@@ -73,15 +87,23 @@ namespace PasteEx.Core
         /// </summary>
         /// <param name="path">file path</param>
         /// <param name="extension">file extension</param>
-        public void SaveAs(string path, string extension)
+        public void Save(string path, string extension)
         {
             foreach (BaseProcessor saver in savers)
             {
-                if(saver.SaveAs(path, extension))
+                if (saver.SaveAs(path, extension))
                 {
                     break;
                 }
             }
+        }
+
+        public void SaveAsync(string path, string extension)
+        {
+            Task.Run(() =>
+            {
+                Save(path, extension);
+            });
         }
     }
 }

@@ -45,6 +45,7 @@ namespace PasteEx.Core
                 {
                     File.Copy(filePaths[0], path);
                 }
+                OnSaveAsFileCompleted();
                 return true;
             }
             return false;

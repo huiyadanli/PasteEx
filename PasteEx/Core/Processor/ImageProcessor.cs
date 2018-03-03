@@ -65,8 +65,15 @@ namespace PasteEx.Core
             // save .gif from HTML Format url
             if (extension == "gif" && (extension == analyzeExt || imageUrl != null))
             {
-                GetImageFromUrl(imageUrl, path);
-                return true;
+                try
+                {
+                    GetImageFromUrl(imageUrl, path);
+                    return true;
+                }
+                catch (Exception ex)
+                {
+                    Logger.Error(ex);
+                }
             }
 
             // save image from Bitmap data
@@ -95,6 +102,7 @@ namespace PasteEx.Core
                         bitmap.Save(path, ImageFormat.Png);
                         break;
                 }
+                OnSaveAsFileCompleted();
                 return true;
             }
             return false;
@@ -204,7 +212,18 @@ namespace PasteEx.Core
         private void GetImageFromUrl(string url, string path)
         {
             WebClient client = new WebClient();
-            client.DownloadFile(url, path);
+            client.DownloadFileCompleted += (sender, e) =>
+            {
+                OnSaveAsFileCompleted();
+            };
+            client.DownloadProgressChanged += (sender, e) =>
+            {
+                //this.proBarDownLoad.Minimum = 0;
+                //this.proBarDownLoad.Maximum = (int)e.TotalBytesToReceive;
+                //this.proBarDownLoad.Value = (int)e.BytesReceived;
+                FormMain.GetInstance().ChangeTsslCurrentLocation($"下载图片中...{e.ProgressPercentage}%");
+            };
+            client.DownloadFileTaskAsync(new Uri(url), path);
         }
     }
 }

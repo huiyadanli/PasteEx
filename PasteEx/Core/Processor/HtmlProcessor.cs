@@ -27,6 +27,7 @@ namespace PasteEx.Core
             if (String.Equals(extension, "htmlformat", StringComparison.CurrentCultureIgnoreCase))
             {
                 File.WriteAllText(path, Data.Storage.GetData(DataFormats.Html) as string, new UTF8Encoding(false));
+                OnSaveAsFileCompleted();
                 return true;
             }
             return false;

@@ -51,6 +51,7 @@
             this.cboExtension.FormattingEnabled = true;
             resources.ApplyResources(this.cboExtension, "cboExtension");
             this.cboExtension.Name = "cboExtension";
+            this.cboExtension.SelectedIndexChanged += new System.EventHandler(this.cboExtension_SelectedIndexChanged);
             // 
             // lblExtension
             // 

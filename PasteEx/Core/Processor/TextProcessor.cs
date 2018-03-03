@@ -51,6 +51,7 @@ namespace PasteEx.Core
         public override bool SaveAs(string path, string extension)
         {
             File.WriteAllText(path, Data.Storage.GetData(DataFormats.Text) as string, new UTF8Encoding(false));
+            OnSaveAsFileCompleted();
             return true;
         }
 

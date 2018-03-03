@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿
+using System;
 
 namespace PasteEx.Core
 {
@@ -15,6 +11,13 @@ namespace PasteEx.Core
         public BaseProcessor(ClipData clipData)
         {
             Data = clipData;
+        }
+
+        public delegate void AsyncCompletedEventHandler();
+        public event AsyncCompletedEventHandler SaveAsFileCompleted;
+        protected virtual void OnSaveAsFileCompleted()
+        {
+            SaveAsFileCompleted?.Invoke();
         }
 
         public abstract string[] Analyze();
