@@ -129,11 +129,20 @@
   <data name="LblFileNameText" xml:space="preserve">
     <value>File Name:</value>
   </data>
+  <data name="MenuPasteAsFile" xml:space="preserve">
+    <value>Paste As File</value>
+  </data>
+  <data name="MenuQuickPasteAsFile" xml:space="preserve">
+    <value>Quick Paste As File</value>
+  </data>
   <data name="TipAnalyzeFailed" xml:space="preserve">
     <value>剪贴板为空，仍旧进入软件主界面？</value>
   </data>
-  <data name="TipDuplicateFileName" xml:space="preserve">
-    <value>存在相同的文件名，是否覆盖？</value>
+  <data name="TipAnalyzeFailedWithoutPrompt" xml:space="preserve">
+    <value>The clipboard content is empty or not supported</value>
+  </data>
+  <data name="TipDownloadFailed" xml:space="preserve">
+    <value>Failed to download</value>
   </data>
   <data name="TipFirstRegister" xml:space="preserve">
     <value>你是第一次启动本软件，是否添加“粘贴为文件”到系统右键菜单中？</value>
@@ -147,14 +156,26 @@
   <data name="TipPathNotNull" xml:space="preserve">
     <value>文件夹路径不能为空</value>
   </data>
+  <data name="TipPictureDownloading" xml:space="preserve">
+    <value>Downloading...{0}%</value>
+  </data>
   <data name="TipRegister" xml:space="preserve">
     <value>右键菜单添加成功！</value>
+  </data>
+  <data name="TipRulesError" xml:space="preserve">
+    <value>规则格式有误，将不被启用</value>
   </data>
   <data name="TipRunAsAdmin" xml:space="preserve">
     <value>添加右键菜单时，请以管理员的身份运行本软件！</value>
   </data>
   <data name="TipSaveFailed" xml:space="preserve">
     <value>保存失败，请选择正确的扩展名</value>
+  </data>
+  <data name="TipTargetFileExisted" xml:space="preserve">
+    <value>The target file {0} has already existed. Overwrite?</value>
+  </data>
+  <data name="TipTargetPathNotExist" xml:space="preserve">
+    <value>The target path does not exist</value>
   </data>
   <data name="TipUnRegister" xml:space="preserve">
     <value>右键菜单移除成功！</value>
@@ -167,5 +188,8 @@
   </data>
   <data name="TitleError" xml:space="preserve">
     <value>Error</value>
+  </data>
+  <data name="TxtCanOnlyUse" xml:space="preserve">
+    <value>当前你可以使用设置功能</value>
   </data>
 </root>

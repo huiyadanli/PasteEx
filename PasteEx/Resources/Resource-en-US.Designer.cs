@@ -97,6 +97,24 @@ namespace PasteEx.Resources {
         }
         
         /// <summary>
+        ///   查找类似 Paste As File 的本地化字符串。
+        /// </summary>
+        internal static string MenuPasteAsFile {
+            get {
+                return ResourceManager.GetString("MenuPasteAsFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Quick Paste As File 的本地化字符串。
+        /// </summary>
+        internal static string MenuQuickPasteAsFile {
+            get {
+                return ResourceManager.GetString("MenuQuickPasteAsFile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 剪贴板为空，仍旧进入软件主界面？ 的本地化字符串。
         /// </summary>
         internal static string TipAnalyzeFailed {
@@ -106,11 +124,20 @@ namespace PasteEx.Resources {
         }
         
         /// <summary>
-        ///   查找类似 存在相同的文件名，是否覆盖？ 的本地化字符串。
+        ///   查找类似 The clipboard content is empty or not supported 的本地化字符串。
         /// </summary>
-        internal static string TipDuplicateFileName {
+        internal static string TipAnalyzeFailedWithoutPrompt {
             get {
-                return ResourceManager.GetString("TipDuplicateFileName", resourceCulture);
+                return ResourceManager.GetString("TipAnalyzeFailedWithoutPrompt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Failed to download 的本地化字符串。
+        /// </summary>
+        internal static string TipDownloadFailed {
+            get {
+                return ResourceManager.GetString("TipDownloadFailed", resourceCulture);
             }
         }
         
@@ -151,11 +178,29 @@ namespace PasteEx.Resources {
         }
         
         /// <summary>
+        ///   查找类似 Downloading...{0}% 的本地化字符串。
+        /// </summary>
+        internal static string TipPictureDownloading {
+            get {
+                return ResourceManager.GetString("TipPictureDownloading", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 右键菜单添加成功！ 的本地化字符串。
         /// </summary>
         internal static string TipRegister {
             get {
                 return ResourceManager.GetString("TipRegister", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 规则格式有误，将不被启用 的本地化字符串。
+        /// </summary>
+        internal static string TipRulesError {
+            get {
+                return ResourceManager.GetString("TipRulesError", resourceCulture);
             }
         }
         
@@ -174,6 +219,24 @@ namespace PasteEx.Resources {
         internal static string TipSaveFailed {
             get {
                 return ResourceManager.GetString("TipSaveFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 The target file {0} has already existed. Overwrite? 的本地化字符串。
+        /// </summary>
+        internal static string TipTargetFileExisted {
+            get {
+                return ResourceManager.GetString("TipTargetFileExisted", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 The target path does not exist 的本地化字符串。
+        /// </summary>
+        internal static string TipTargetPathNotExist {
+            get {
+                return ResourceManager.GetString("TipTargetPathNotExist", resourceCulture);
             }
         }
         
@@ -210,6 +273,15 @@ namespace PasteEx.Resources {
         internal static string TitleError {
             get {
                 return ResourceManager.GetString("TitleError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 当前你可以使用设置功能 的本地化字符串。
+        /// </summary>
+        internal static string TxtCanOnlyUse {
+            get {
+                return ResourceManager.GetString("TxtCanOnlyUse", resourceCulture);
             }
         }
     }

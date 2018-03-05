@@ -19,7 +19,7 @@ namespace PasteEx.Core
 
         private string analyzeExt;
 
-        public ImageProcessor(ClipData clipData) : base(clipData)
+        public ImageProcessor(ClipboardData clipData) : base(clipData)
         {
             Data = clipData;
         }
@@ -209,21 +209,32 @@ namespace PasteEx.Core
             return bitmap;
         }
 
-        private void GetImageFromUrl(string url, string path)
+        private async void GetImageFromUrl(string url, string path)
         {
             WebClient client = new WebClient();
             client.DownloadFileCompleted += (sender, e) =>
             {
-                OnSaveAsFileCompleted();
+                //...
             };
             client.DownloadProgressChanged += (sender, e) =>
             {
                 //this.proBarDownLoad.Minimum = 0;
                 //this.proBarDownLoad.Maximum = (int)e.TotalBytesToReceive;
                 //this.proBarDownLoad.Value = (int)e.BytesReceived;
-                FormMain.GetInstance().ChangeTsslCurrentLocation($"下载图片中...{e.ProgressPercentage}%");
+                FormMain.GetInstance().ChangeTsslCurrentLocation(
+                    String.Format(Resources.Resource_zh_CN.TipPictureDownloading, e.ProgressPercentage));
             };
-            client.DownloadFileTaskAsync(new Uri(url), path);
+            try
+            {
+                await client.DownloadFileTaskAsync(new Uri(url), path);
+            }
+            catch (Exception ex)
+            {
+                Logger.Error(ex);
+                MessageBox.Show(Resources.Resource_zh_CN.TipDownloadFailed + " : " + ex.Message,
+                            Resources.Resource_zh_CN.TitleError, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            OnSaveAsFileCompleted();
         }
     }
 }

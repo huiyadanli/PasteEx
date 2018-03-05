@@ -153,13 +153,13 @@ namespace PasteEx
 
             if (fast == FastSetting.False)
             {
-                key.SetValue("", Resources.Resource_zh_CN.Title);
+                key.SetValue("", Resources.Resource_zh_CN.MenuPasteAsFile);
                 cmdKey.SetValue("", Application.ExecutablePath + " \"%V\"");
 
             }
             else
             {
-                key.SetValue("", "快速粘贴为文件");
+                key.SetValue("", Resources.Resource_zh_CN.MenuQuickPasteAsFile);
                 cmdKey.SetValue("", Application.ExecutablePath + " /q \"%V\"");
             }
 
@@ -173,12 +173,12 @@ namespace PasteEx
 
             if (fast == FastSetting.False)
             {
-                key.SetValue("", Resources.Resource_zh_CN.Title);
+                key.SetValue("", Resources.Resource_zh_CN.MenuPasteAsFile);
                 cmdKey.SetValue("", Application.ExecutablePath + " \"%1\"");
             }
             else
             {
-                key.SetValue("", "快速粘贴为文件");
+                key.SetValue("", Resources.Resource_zh_CN.MenuQuickPasteAsFile);
                 cmdKey.SetValue("", Application.ExecutablePath + " /q \"%1\"");
             }
         }

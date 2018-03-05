@@ -6,9 +6,9 @@ namespace PasteEx.Core
     public abstract class BaseProcessor
     {
 
-        public ClipData Data { get; set; }
+        public ClipboardData Data { get; set; }
 
-        public BaseProcessor(ClipData clipData)
+        public BaseProcessor(ClipboardData clipData)
         {
             Data = clipData;
         }

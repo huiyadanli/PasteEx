@@ -10,7 +10,7 @@ namespace PasteEx.Core
 {
     public class TextProcessor : BaseProcessor
     {
-        public TextProcessor(ClipData clipData) : base(clipData)
+        public TextProcessor(ClipboardData clipData) : base(clipData)
         {
             Data = clipData;
         }

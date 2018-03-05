@@ -5,7 +5,7 @@ using static PasteEx.Core.BaseProcessor;
 
 namespace PasteEx.Core
 {
-    public class ClipData
+    public class ClipboardData
     {
         public IDataObject IAcquisition { get; set; }
 
@@ -21,7 +21,7 @@ namespace PasteEx.Core
             SaveCompleted?.Invoke();
         }
 
-        public ClipData(IDataObject iDataObject)
+        public ClipboardData(IDataObject iDataObject)
         {
             IAcquisition = iDataObject;
             Storage = new DataObject();

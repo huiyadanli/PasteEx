@@ -1,10 +1,7 @@
 ﻿using PasteEx.Core;
 using System;
-using System.ComponentModel;
 using System.IO;
-using System.Net;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PasteEx
@@ -13,7 +10,7 @@ namespace PasteEx
     {
         private static FormMain dialogue = null;
 
-        private ClipData data;
+        private ClipboardData data;
 
         private string currentLocation;
 
@@ -54,7 +51,7 @@ namespace PasteEx
 
         private void FormMain_Load(object sender, EventArgs e)
         {
-            data = new ClipData(Clipboard.GetDataObject());
+            data = new ClipboardData(Clipboard.GetDataObject());
             data.SaveCompleted += () => Application.Exit(); // exit when save completed
             string[] extensions = data.Analyze();
             cboExtension.Items.AddRange(extensions);
@@ -214,7 +211,7 @@ namespace PasteEx
 
             if (File.Exists(path))
             {
-                DialogResult result = MessageBox.Show(String.Format("目标文件{0}已经存在，是否覆盖？", path),
+                DialogResult result = MessageBox.Show(String.Format(Resources.Resource_zh_CN.TipTargetFileExisted, path),
                     Resources.Resource_zh_CN.Title, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
                 {
@@ -279,7 +276,7 @@ namespace PasteEx
 
         public static void QuickPasteEx(string location)
         {
-            ClipData data = new ClipData(Clipboard.GetDataObject());
+            ClipboardData data = new ClipboardData(Clipboard.GetDataObject());
             string[] extensions = data.Analyze();
 
             if (extensions.Length > 0)
@@ -293,14 +290,15 @@ namespace PasteEx
                 string path = location + GenerateFileName(currentLocation, extensions[0]) + "." + extensions[0];
                 if (!Directory.Exists(currentLocation))
                 {
-                    MessageBox.Show("粘贴目标路径不存在",
+                    Console.WriteLine(Resources.Resource_zh_CN.TipTargetPathNotExist);
+                    MessageBox.Show(Resources.Resource_zh_CN.TipTargetPathNotExist,
                             Resources.Resource_zh_CN.Title, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else
                 {
                     if (File.Exists(path))
                     {
-                        DialogResult result = MessageBox.Show(String.Format("目标文件{0}已经存在，是否覆盖？", path),
+                        DialogResult result = MessageBox.Show(String.Format(Resources.Resource_zh_CN.TipTargetFileExisted, path),
                             Resources.Resource_zh_CN.Title, MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
                         if (result == DialogResult.Yes)
                         {
@@ -319,7 +317,8 @@ namespace PasteEx
             }
             else
             {
-                MessageBox.Show("剪贴板内容为空或不被支持",
+                Console.WriteLine(Resources.Resource_zh_CN.TipAnalyzeFailedWithoutPrompt);
+                MessageBox.Show(Resources.Resource_zh_CN.TipAnalyzeFailedWithoutPrompt,
                             Resources.Resource_zh_CN.Title, MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }

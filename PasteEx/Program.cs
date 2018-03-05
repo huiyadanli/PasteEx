@@ -24,9 +24,10 @@ namespace PasteEx
 
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
-
+                CommandLine.RedirectConsoleOutput();
                 if (args.Length > 0)
                 {
+                    
                     List<string> commands = new List<string>(args);
                     if (commands[0] == "/reg")
                     {
@@ -91,5 +92,6 @@ namespace PasteEx
             Logger.Error(e.ExceptionObject as Exception);
             MessageBox.Show((e.ExceptionObject as Exception).Message, Resources.Resource_zh_CN.TitleError, MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
+
     }
 }

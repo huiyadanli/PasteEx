@@ -132,9 +132,6 @@
   <data name="TipAnalyzeFailed" xml:space="preserve">
     <value>剪贴板内容为空或不被支持，仍旧进入软件主界面？</value>
   </data>
-  <data name="TipDuplicateFileName" xml:space="preserve">
-    <value>存在相同的文件名，是否覆盖？</value>
-  </data>
   <data name="TipFirstRegister" xml:space="preserve">
     <value>检测到右键菜单未添加，是否添加“粘贴为文件”到系统右键菜单中？</value>
   </data>
@@ -173,5 +170,26 @@
   </data>
   <data name="TitleError" xml:space="preserve">
     <value>系统错误</value>
+  </data>
+  <data name="TipAnalyzeFailedWithoutPrompt" xml:space="preserve">
+    <value>剪贴板内容为空或不被支持</value>
+  </data>
+  <data name="TipTargetFileExisted" xml:space="preserve">
+    <value>目标文件{0}已经存在，是否覆盖？</value>
+  </data>
+  <data name="TipTargetPathNotExist" xml:space="preserve">
+    <value>粘贴目标路径不存在</value>
+  </data>
+  <data name="MenuPasteAsFile" xml:space="preserve">
+    <value>粘贴为文件</value>
+  </data>
+  <data name="MenuQuickPasteAsFile" xml:space="preserve">
+    <value>快速粘贴为文件</value>
+  </data>
+  <data name="TipPictureDownloading" xml:space="preserve">
+    <value>下载图片中...{0}%</value>
+  </data>
+  <data name="TipDownloadFailed" xml:space="preserve">
+    <value>下载失败</value>
   </data>
 </root>

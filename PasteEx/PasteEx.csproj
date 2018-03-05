@@ -64,6 +64,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Library\Kernel32.cs" />
     <Compile Include="Core\Processor\BaseProcessor.cs" />
     <Compile Include="Core\ClipData.cs" />
     <Compile Include="Core\Processor\FileProcessor.cs" />
@@ -84,6 +85,7 @@
       <DependentUpon>FormSetting.cs</DependentUpon>
     </Compile>
     <Compile Include="Client.cs" />
+    <Compile Include="Util\CommandLine.cs" />
     <Compile Include="Util\Device.cs" />
     <Compile Include="Util\EasyJson.cs" />
     <Compile Include="Util\ImageHelper.cs" />

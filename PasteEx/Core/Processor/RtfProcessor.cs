@@ -7,7 +7,7 @@ namespace PasteEx.Core
 {
     public class RtfProcessor : BaseProcessor
     {
-        public RtfProcessor(ClipData clipData) : base(clipData)
+        public RtfProcessor(ClipboardData clipData) : base(clipData)
         {
             Data = clipData;
         }

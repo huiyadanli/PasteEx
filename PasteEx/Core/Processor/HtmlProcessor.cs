@@ -7,7 +7,7 @@ namespace PasteEx.Core
 {
     public class HtmlProcessor : BaseProcessor
     {
-        public HtmlProcessor(ClipData clipData) : base(clipData)
+        public HtmlProcessor(ClipboardData clipData) : base(clipData)
         {
             Data = clipData;
         }

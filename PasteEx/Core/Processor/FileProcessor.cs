@@ -8,7 +8,7 @@ namespace PasteEx.Core
 {
     public class FileProcessor : BaseProcessor
     {
-        public FileProcessor(ClipData clipData) : base(clipData)
+        public FileProcessor(ClipboardData clipData) : base(clipData)
         {
             Data = clipData;
         }
