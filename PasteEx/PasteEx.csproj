@@ -64,9 +64,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Core\ClipboardData.cs" />
     <Compile Include="Library\Kernel32.cs" />
     <Compile Include="Core\Processor\BaseProcessor.cs" />
-    <Compile Include="Core\ClipData.cs" />
     <Compile Include="Core\Processor\FileProcessor.cs" />
     <Compile Include="Core\Processor\HtmlProcessor.cs" />
     <Compile Include="Core\Processor\ImageProcessor.cs" />
