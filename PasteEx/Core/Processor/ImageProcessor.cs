@@ -212,18 +212,22 @@ namespace PasteEx.Core
         private async void GetImageFromUrl(string url, string path)
         {
             WebClient client = new WebClient();
-            client.DownloadFileCompleted += (sender, e) =>
+            //client.DownloadFileCompleted += (sender, e) =>
+            //{
+            //};
+            FormMain formMain = FormMain.GetInstance();
+            if (formMain != null)
             {
-                //...
-            };
-            client.DownloadProgressChanged += (sender, e) =>
-            {
-                //this.proBarDownLoad.Minimum = 0;
-                //this.proBarDownLoad.Maximum = (int)e.TotalBytesToReceive;
-                //this.proBarDownLoad.Value = (int)e.BytesReceived;
-                FormMain.GetInstance().ChangeTsslCurrentLocation(
-                    String.Format(Resources.Resource_zh_CN.TipPictureDownloading, e.ProgressPercentage));
-            };
+                client.DownloadProgressChanged += (sender, e) =>
+                {
+                    if (formMain != null)
+                    {
+                        formMain.ChangeTsslCurrentLocation(
+                            String.Format(Resources.Resource_zh_CN.TipPictureDownloading, e.ProgressPercentage));
+                    }
+                };
+            }
+
             try
             {
                 await client.DownloadFileTaskAsync(new Uri(url), path);

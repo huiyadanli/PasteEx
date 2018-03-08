@@ -2,6 +2,7 @@
 using System;
 using System.IO;
 using System.Text;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace PasteEx
@@ -276,7 +277,10 @@ namespace PasteEx
 
         public static void QuickPasteEx(string location)
         {
+            ManualResetEvent allDone = new ManualResetEvent(false);
+
             ClipboardData data = new ClipboardData(Clipboard.GetDataObject());
+            data.SaveCompleted += () => allDone.Set();
             string[] extensions = data.Analyze();
 
             if (extensions.Length > 0)
@@ -287,7 +291,7 @@ namespace PasteEx
                     location = location.Substring(0, location.Length - 1);
                 }
                 string currentLocation = location.EndsWith("\\") ? location : location + "\\";
-                string path = location + GenerateFileName(currentLocation, extensions[0]) + "." + extensions[0];
+                string path = currentLocation + GenerateFileName(currentLocation, extensions[0]) + "." + extensions[0];
                 if (!Directory.Exists(currentLocation))
                 {
                     Console.WriteLine(Resources.Resource_zh_CN.TipTargetPathNotExist);
@@ -321,6 +325,7 @@ namespace PasteEx
                 MessageBox.Show(Resources.Resource_zh_CN.TipAnalyzeFailedWithoutPrompt,
                             Resources.Resource_zh_CN.Title, MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+            allDone.WaitOne();
         }
 
         public void ChangeTsslCurrentLocation(string str)
