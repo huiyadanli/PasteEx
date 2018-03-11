@@ -1,7 +1,6 @@
 ﻿using PasteEx.Util;
 using System;
 using System.Collections.Generic;
-using System.Threading;
 using System.Windows.Forms;
 
 namespace PasteEx
@@ -24,7 +23,6 @@ namespace PasteEx
                 AppDomain.CurrentDomain.UnhandledException += new UnhandledExceptionEventHandler(CurrentDomain_UnhandledException);
 
                 I18n.InitCurrentCulture();
-                //HookResolver hr = new HookResolver();
 
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
