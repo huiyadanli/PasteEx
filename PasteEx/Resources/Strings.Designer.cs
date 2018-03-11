@@ -22,14 +22,14 @@ namespace PasteEx.Resources {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resource_en_US {
+    internal class Strings {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal Resource_en_US() {
+        internal Strings() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace PasteEx.Resources {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("PasteEx.Resources.Resource-en-US", typeof(Resource_en_US).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("PasteEx.Resources.Strings", typeof(Strings).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -57,42 +57,6 @@ namespace PasteEx.Resources {
             }
             set {
                 resourceCulture = value;
-            }
-        }
-        
-        /// <summary>
-        ///   查找类似 Choose Location 的本地化字符串。
-        /// </summary>
-        internal static string BtnChooseLocationText {
-            get {
-                return ResourceManager.GetString("BtnChooseLocationText", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   查找类似 Save 的本地化字符串。
-        /// </summary>
-        internal static string BtnSaveText {
-            get {
-                return ResourceManager.GetString("BtnSaveText", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   查找类似 Extension: 的本地化字符串。
-        /// </summary>
-        internal static string LblExtensionText {
-            get {
-                return ResourceManager.GetString("LblExtensionText", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   查找类似 File Name: 的本地化字符串。
-        /// </summary>
-        internal static string LblFileNameText {
-            get {
-                return ResourceManager.GetString("LblFileNameText", resourceCulture);
             }
         }
         
@@ -115,7 +79,7 @@ namespace PasteEx.Resources {
         }
         
         /// <summary>
-        ///   查找类似 剪贴板为空，仍旧进入软件主界面？ 的本地化字符串。
+        ///   查找类似 Clipboard is empty, still enter the main interface? 的本地化字符串。
         /// </summary>
         internal static string TipAnalyzeFailed {
             get {
@@ -142,7 +106,7 @@ namespace PasteEx.Resources {
         }
         
         /// <summary>
-        ///   查找类似 你是第一次启动本软件，是否添加“粘贴为文件”到系统右键菜单中？ 的本地化字符串。
+        ///   查找类似 For the first start, whether to add &quot;Paste As File&quot; to the system context menu? 的本地化字符串。
         /// </summary>
         internal static string TipFirstRegister {
             get {
@@ -151,7 +115,7 @@ namespace PasteEx.Resources {
         }
         
         /// <summary>
-        ///   查找类似 自定义扩展名规则匹配出错，请检查规则是否正确！ 的本地化字符串。
+        ///   查找类似 Custom extension rule matching error, please check the rules! 的本地化字符串。
         /// </summary>
         internal static string TipGetCustomExtFailed {
             get {
@@ -160,7 +124,7 @@ namespace PasteEx.Resources {
         }
         
         /// <summary>
-        ///   查找类似 自动提取图片扩展名失败！ 的本地化字符串。
+        ///   查找类似 Failed to automatically extract picture extensions! 的本地化字符串。
         /// </summary>
         internal static string TipGetImageExtFailed {
             get {
@@ -169,7 +133,7 @@ namespace PasteEx.Resources {
         }
         
         /// <summary>
-        ///   查找类似 文件夹路径不能为空 的本地化字符串。
+        ///   查找类似 Folder path cannot be empty. 的本地化字符串。
         /// </summary>
         internal static string TipPathNotNull {
             get {
@@ -187,7 +151,7 @@ namespace PasteEx.Resources {
         }
         
         /// <summary>
-        ///   查找类似 右键菜单添加成功！ 的本地化字符串。
+        ///   查找类似 Right-click context menu added successfully! 的本地化字符串。
         /// </summary>
         internal static string TipRegister {
             get {
@@ -196,7 +160,7 @@ namespace PasteEx.Resources {
         }
         
         /// <summary>
-        ///   查找类似 规则格式有误，将不被启用 的本地化字符串。
+        ///   查找类似 The format of the rule is incorrect and will not be enabled. 的本地化字符串。
         /// </summary>
         internal static string TipRulesError {
             get {
@@ -205,7 +169,7 @@ namespace PasteEx.Resources {
         }
         
         /// <summary>
-        ///   查找类似 添加右键菜单时，请以管理员的身份运行本软件！ 的本地化字符串。
+        ///   查找类似 When adding a context menu, please run this software as Administrator! 的本地化字符串。
         /// </summary>
         internal static string TipRunAsAdmin {
             get {
@@ -214,7 +178,7 @@ namespace PasteEx.Resources {
         }
         
         /// <summary>
-        ///   查找类似 保存失败，请选择正确的扩展名 的本地化字符串。
+        ///   查找类似 Save failed, please select the correct extension. 的本地化字符串。
         /// </summary>
         internal static string TipSaveFailed {
             get {
@@ -241,7 +205,7 @@ namespace PasteEx.Resources {
         }
         
         /// <summary>
-        ///   查找类似 右键菜单移除成功！ 的本地化字符串。
+        ///   查找类似 Right-click context menu removed successfully! 的本地化字符串。
         /// </summary>
         internal static string TipUnRegister {
             get {
@@ -250,7 +214,7 @@ namespace PasteEx.Resources {
         }
         
         /// <summary>
-        ///   查找类似 检测到右键菜单“粘贴为文件”中的路径与现在的软件启动路径不同，是否重新添加右键菜单？ 的本地化字符串。
+        ///   查找类似 It is detected that the path in the &quot;Paste As File&quot; context menu is different from the current software startup path. Do you want to add the right-click menu again? 的本地化字符串。
         /// </summary>
         internal static string TipWrongValueInMenu {
             get {
@@ -277,11 +241,71 @@ namespace PasteEx.Resources {
         }
         
         /// <summary>
-        ///   查找类似 当前你可以使用设置功能 的本地化字符串。
+        ///   查找类似 PasteEx
+        ///
+        ///Version：{0}
+        ///
+        ///Author：huiyadanli
+        ///
+        ///If you have questions or suggestions, please feel free to email me at huiyadanli@gmail.com, or create an Issue here. 的本地化字符串。
+        /// </summary>
+        internal static string TxtAbout {
+            get {
+                return ResourceManager.GetString("TxtAbout", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Currently you can only use settings 的本地化字符串。
         /// </summary>
         internal static string TxtCanOnlyUse {
             get {
                 return ResourceManager.GetString("TxtCanOnlyUse", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 It&apos;s the latest version 的本地化字符串。
+        /// </summary>
+        internal static string TxtLatestVersin {
+            get {
+                return ResourceManager.GetString("TxtLatestVersin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 There is a new version:  的本地化字符串。
+        /// </summary>
+        internal static string TxtNewVersion {
+            get {
+                return ResourceManager.GetString("TxtNewVersion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 规则格式：扩展名=与此扩展名相对应文本的第一行特征（支持正则）
+        ///
+        ///对于文本类型的文件，将会取第一个非空行对特征进行匹配，
+        ///匹配成功则在保存时默认使用对应的自定义扩展名。
+        ///
+        ///比如：
+        ///    cs=^using .*;$
+        ///    java=^package.*;$
+        ///    html=(? i)&lt;!DOCTYPE html
+        ///    cpp=^#include.* 的本地化字符串。
+        /// </summary>
+        internal static string TxtRuleFormat {
+            get {
+                return ResourceManager.GetString("TxtRuleFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Wrong version number:  的本地化字符串。
+        /// </summary>
+        internal static string TxtWrongVersion {
+            get {
+                return ResourceManager.GetString("TxtWrongVersion", resourceCulture);
             }
         }
     }

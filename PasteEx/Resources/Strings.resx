@@ -117,18 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="BtnChooseLocationText" xml:space="preserve">
-    <value>Choose Location</value>
-  </data>
-  <data name="BtnSaveText" xml:space="preserve">
-    <value>Save</value>
-  </data>
-  <data name="LblExtensionText" xml:space="preserve">
-    <value>Extension:</value>
-  </data>
-  <data name="LblFileNameText" xml:space="preserve">
-    <value>File Name:</value>
-  </data>
   <data name="MenuPasteAsFile" xml:space="preserve">
     <value>Paste As File</value>
   </data>
@@ -136,7 +124,7 @@
     <value>Quick Paste As File</value>
   </data>
   <data name="TipAnalyzeFailed" xml:space="preserve">
-    <value>剪贴板为空，仍旧进入软件主界面？</value>
+    <value>Clipboard is empty, still enter the main interface?</value>
   </data>
   <data name="TipAnalyzeFailedWithoutPrompt" xml:space="preserve">
     <value>The clipboard content is empty or not supported</value>
@@ -145,31 +133,31 @@
     <value>Failed to download</value>
   </data>
   <data name="TipFirstRegister" xml:space="preserve">
-    <value>你是第一次启动本软件，是否添加“粘贴为文件”到系统右键菜单中？</value>
+    <value>For the first start, whether to add "Paste As File" to the system context menu?</value>
   </data>
   <data name="TipGetCustomExtFailed" xml:space="preserve">
-    <value>自定义扩展名规则匹配出错，请检查规则是否正确！</value>
+    <value>Custom extension rule matching error, please check the rules!</value>
   </data>
   <data name="TipGetImageExtFailed" xml:space="preserve">
-    <value>自动提取图片扩展名失败！</value>
+    <value>Failed to automatically extract picture extensions!</value>
   </data>
   <data name="TipPathNotNull" xml:space="preserve">
-    <value>文件夹路径不能为空</value>
+    <value>Folder path cannot be empty.</value>
   </data>
   <data name="TipPictureDownloading" xml:space="preserve">
     <value>Downloading...{0}%</value>
   </data>
   <data name="TipRegister" xml:space="preserve">
-    <value>右键菜单添加成功！</value>
+    <value>Right-click context menu added successfully!</value>
   </data>
   <data name="TipRulesError" xml:space="preserve">
-    <value>规则格式有误，将不被启用</value>
+    <value>The format of the rule is incorrect and will not be enabled.</value>
   </data>
   <data name="TipRunAsAdmin" xml:space="preserve">
-    <value>添加右键菜单时，请以管理员的身份运行本软件！</value>
+    <value>When adding a context menu, please run this software as Administrator!</value>
   </data>
   <data name="TipSaveFailed" xml:space="preserve">
-    <value>保存失败，请选择正确的扩展名</value>
+    <value>Save failed, please select the correct extension.</value>
   </data>
   <data name="TipTargetFileExisted" xml:space="preserve">
     <value>The target file {0} has already existed. Overwrite?</value>
@@ -178,10 +166,10 @@
     <value>The target path does not exist</value>
   </data>
   <data name="TipUnRegister" xml:space="preserve">
-    <value>右键菜单移除成功！</value>
+    <value>Right-click context menu removed successfully!</value>
   </data>
   <data name="TipWrongValueInMenu" xml:space="preserve">
-    <value>检测到右键菜单“粘贴为文件”中的路径与现在的软件启动路径不同，是否重新添加右键菜单？</value>
+    <value>It is detected that the path in the "Paste As File" context menu is different from the current software startup path. Do you want to add the right-click menu again?</value>
   </data>
   <data name="Title" xml:space="preserve">
     <value>PasteEx</value>
@@ -189,7 +177,37 @@
   <data name="TitleError" xml:space="preserve">
     <value>Error</value>
   </data>
+  <data name="TxtAbout" xml:space="preserve">
+    <value>PasteEx
+
+Version：{0}
+
+Author：huiyadanli
+
+If you have questions or suggestions, please feel free to email me at huiyadanli@gmail.com, or create an Issue here.</value>
+  </data>
   <data name="TxtCanOnlyUse" xml:space="preserve">
-    <value>当前你可以使用设置功能</value>
+    <value>Currently you can only use settings</value>
+  </data>
+  <data name="TxtLatestVersin" xml:space="preserve">
+    <value>It's the latest version</value>
+  </data>
+  <data name="TxtNewVersion" xml:space="preserve">
+    <value>There is a new version: </value>
+  </data>
+  <data name="TxtRuleFormat" xml:space="preserve">
+    <value>规则格式：扩展名=与此扩展名相对应文本的第一行特征（支持正则）
+
+对于文本类型的文件，将会取第一个非空行对特征进行匹配，
+匹配成功则在保存时默认使用对应的自定义扩展名。
+
+比如：
+    cs=^using .*;$
+    java=^package.*;$
+    html=(? i)&lt;!DOCTYPE html
+    cpp=^#include.*</value>
+  </data>
+  <data name="TxtWrongVersion" xml:space="preserve">
+    <value>Wrong version number: </value>
   </data>
 </root>

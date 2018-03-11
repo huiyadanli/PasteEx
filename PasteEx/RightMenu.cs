@@ -37,8 +37,8 @@ namespace PasteEx
                     return true;
                 }
 
-                DialogResult result = MessageBox.Show(Resources.Resource_zh_CN.TipFirstRegister,
-                    Resources.Resource_zh_CN.Title, MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+                DialogResult result = MessageBox.Show(Resources.Strings.TipFirstRegister,
+                    Resources.Strings.Title, MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
                 {
                     Add();
@@ -51,7 +51,7 @@ namespace PasteEx
             }
             else if (command != Application.ExecutablePath + " \"%V\"")
             {
-                if (MessageBox.Show(Resources.Resource_zh_CN.TipWrongValueInMenu, Resources.Resource_zh_CN.Title,
+                if (MessageBox.Show(Resources.Strings.TipWrongValueInMenu, Resources.Strings.Title,
                     MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     Add();
@@ -71,13 +71,13 @@ namespace PasteEx
                 try
                 {
                     Register(shift, fast);
-                    MessageBox.Show(Resources.Resource_zh_CN.TipRegister, Resources.Resource_zh_CN.Title,
+                    MessageBox.Show(Resources.Strings.TipRegister, Resources.Strings.Title,
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message + "\n" + Resources.Resource_zh_CN.TipRunAsAdmin,
-                        Resources.Resource_zh_CN.Title, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show(ex.Message + "\n" + Resources.Strings.TipRunAsAdmin,
+                        Resources.Strings.Title, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             else
@@ -99,13 +99,13 @@ namespace PasteEx
                 try
                 {
                     UnRegister(fast);
-                    MessageBox.Show(Resources.Resource_zh_CN.TipUnRegister, Resources.Resource_zh_CN.Title,
+                    MessageBox.Show(Resources.Strings.TipUnRegister, Resources.Strings.Title,
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message + "\n" + Resources.Resource_zh_CN.TipRunAsAdmin,
-                        Resources.Resource_zh_CN.Title, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show(ex.Message + "\n" + Resources.Strings.TipRunAsAdmin,
+                        Resources.Strings.Title, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
             else
@@ -153,13 +153,13 @@ namespace PasteEx
 
             if (fast == FastSetting.False)
             {
-                key.SetValue("", Resources.Resource_zh_CN.MenuPasteAsFile);
+                key.SetValue("", Resources.Strings.MenuPasteAsFile);
                 cmdKey.SetValue("", Application.ExecutablePath + " \"%V\"");
 
             }
             else
             {
-                key.SetValue("", Resources.Resource_zh_CN.MenuQuickPasteAsFile);
+                key.SetValue("", Resources.Strings.MenuQuickPasteAsFile);
                 cmdKey.SetValue("", Application.ExecutablePath + " /q \"%V\"");
             }
 
@@ -173,12 +173,12 @@ namespace PasteEx
 
             if (fast == FastSetting.False)
             {
-                key.SetValue("", Resources.Resource_zh_CN.MenuPasteAsFile);
+                key.SetValue("", Resources.Strings.MenuPasteAsFile);
                 cmdKey.SetValue("", Application.ExecutablePath + " \"%1\"");
             }
             else
             {
-                key.SetValue("", Resources.Resource_zh_CN.MenuQuickPasteAsFile);
+                key.SetValue("", Resources.Strings.MenuQuickPasteAsFile);
                 cmdKey.SetValue("", Application.ExecutablePath + " /q \"%1\"");
             }
         }

@@ -23,6 +23,9 @@ namespace PasteEx
                 //处理非UI线程异常  
                 AppDomain.CurrentDomain.UnhandledException += new UnhandledExceptionEventHandler(CurrentDomain_UnhandledException);
 
+                Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("en");
+                Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("en");
+
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
                 CommandLine.RedirectConsoleOutput();
@@ -85,13 +88,13 @@ namespace PasteEx
         static void Application_ThreadException(object sender, System.Threading.ThreadExceptionEventArgs e)
         {
             Logger.Error(e.Exception);
-            MessageBox.Show(e.Exception.Message, Resources.Resource_zh_CN.TitleError, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            MessageBox.Show(e.Exception.Message, Resources.Strings.TitleError, MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         static void CurrentDomain_UnhandledException(object sender, UnhandledExceptionEventArgs e)
         {
             Logger.Error(e.ExceptionObject as Exception);
-            MessageBox.Show((e.ExceptionObject as Exception).Message, Resources.Resource_zh_CN.TitleError, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            MessageBox.Show((e.ExceptionObject as Exception).Message, Resources.Strings.TitleError, MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
     }

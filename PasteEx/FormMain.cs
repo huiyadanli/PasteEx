@@ -62,14 +62,14 @@ namespace PasteEx
             }
             else
             {
-                if (MessageBox.Show(this, Resources.Resource_zh_CN.TipAnalyzeFailed, Resources.Resource_zh_CN.Title,
+                if (MessageBox.Show(this, Resources.Strings.TipAnalyzeFailed, Resources.Strings.Title,
                     MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                 {
                     btnChooseLocation.Enabled = false;
                     btnSave.Enabled = false;
                     txtFileName.Enabled = false;
                     cboExtension.Enabled = false;
-                    tsslCurrentLocation.Text = Resources.Resource_zh_CN.TxtCanOnlyUse;
+                    tsslCurrentLocation.Text = Resources.Strings.TxtCanOnlyUse;
                 }
                 else
                 {
@@ -212,9 +212,9 @@ namespace PasteEx
 
             if (File.Exists(path))
             {
-                DialogResult result = MessageBox.Show(String.Format(Resources.Resource_zh_CN.TipTargetFileExisted, path),
-                    Resources.Resource_zh_CN.Title, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (result == DialogResult.Yes)
+                DialogResult result = MessageBox.Show(String.Format(Resources.Strings.TipTargetFileExisted, path),
+                    Resources.Strings.Title, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (result == DialogResult.Yes) 
                 {
                     data.SaveAsync(path, cboExtension.Text);
                 }
@@ -236,8 +236,8 @@ namespace PasteEx
             {
                 if (string.IsNullOrEmpty(dialog.SelectedPath))
                 {
-                    MessageBox.Show(this, Resources.Resource_zh_CN.TipPathNotNull,
-                        Resources.Resource_zh_CN.Title, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show(this, Resources.Strings.TipPathNotNull,
+                        Resources.Strings.Title, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
                 else
@@ -294,16 +294,16 @@ namespace PasteEx
                 string path = currentLocation + GenerateFileName(currentLocation, extensions[0]) + "." + extensions[0];
                 if (!Directory.Exists(currentLocation))
                 {
-                    Console.WriteLine(Resources.Resource_zh_CN.TipTargetPathNotExist);
-                    MessageBox.Show(Resources.Resource_zh_CN.TipTargetPathNotExist,
-                            Resources.Resource_zh_CN.Title, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    Console.WriteLine(Resources.Strings.TipTargetPathNotExist);
+                    MessageBox.Show(Resources.Strings.TipTargetPathNotExist,
+                            Resources.Strings.Title, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 else
                 {
                     if (File.Exists(path))
                     {
-                        DialogResult result = MessageBox.Show(String.Format(Resources.Resource_zh_CN.TipTargetFileExisted, path),
-                            Resources.Resource_zh_CN.Title, MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
+                        DialogResult result = MessageBox.Show(String.Format(Resources.Strings.TipTargetFileExisted, path),
+                            Resources.Strings.Title, MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
                         if (result == DialogResult.Yes)
                         {
                             data.Save(path, extensions[0]);
@@ -321,9 +321,9 @@ namespace PasteEx
             }
             else
             {
-                Console.WriteLine(Resources.Resource_zh_CN.TipAnalyzeFailedWithoutPrompt);
-                MessageBox.Show(Resources.Resource_zh_CN.TipAnalyzeFailedWithoutPrompt,
-                            Resources.Resource_zh_CN.Title, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                Console.WriteLine(Resources.Strings.TipAnalyzeFailedWithoutPrompt);
+                MessageBox.Show(Resources.Strings.TipAnalyzeFailedWithoutPrompt,
+                            Resources.Strings.Title, MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             allDone.WaitOne();
         }

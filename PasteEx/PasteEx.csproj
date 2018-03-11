@@ -85,6 +85,11 @@
       <DependentUpon>FormSetting.cs</DependentUpon>
     </Compile>
     <Compile Include="Client.cs" />
+    <Compile Include="Resources\Strings.Designer.cs">
+      <DependentUpon>Strings.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Util\CommandLine.cs" />
     <Compile Include="Util\Device.cs" />
     <Compile Include="Util\EasyJson.cs" />
@@ -99,36 +104,33 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Resources\Resource-en-US.Designer.cs">
-      <DependentUpon>Resource-en-US.resx</DependentUpon>
+    <Compile Include="Resources\Strings.zh-CN.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-    </Compile>
-    <Compile Include="Resources\Resource-zh-CN.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resource-zh-CN.resx</DependentUpon>
+      <DependentUpon>Strings.zh-CN.resx</DependentUpon>
     </Compile>
     <Compile Include="RightMenu.cs" />
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormMain.zh-CN.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormSetting.resx">
       <DependentUpon>FormSetting.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <SubType>Designer</SubType>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    <EmbeddedResource Include="FormSetting.zh-CN.resx">
+      <DependentUpon>FormSetting.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources\Resource-en-US.resx">
+    <EmbeddedResource Include="Properties\Resources.resx" />
+    <EmbeddedResource Include="Resources\Strings.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resource-en-US.Designer.cs</LastGenOutput>
+      <LastGenOutput>Strings.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Resources\Resource-zh-CN.resx">
+    <EmbeddedResource Include="Resources\Strings.zh-CN.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resource-zh-CN.Designer.cs</LastGenOutput>
+      <LastGenOutput>Strings.zh-CN.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>PublicSettingsSingleFileGenerator</Generator>

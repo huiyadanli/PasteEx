@@ -33,8 +33,8 @@ namespace PasteEx.Core
                     catch (Exception ex)
                     {
                         Logger.Error(ex);
-                        MessageBox.Show(Resources.Resource_zh_CN.TipGetCustomExtFailed + Environment.NewLine + ex.Message,
-                            Resources.Resource_zh_CN.Title, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show(Resources.Strings.TipGetCustomExtFailed + Environment.NewLine + ex.Message,
+                            Resources.Strings.Title, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         defaultExt = null;
                     }
 

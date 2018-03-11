@@ -48,8 +48,8 @@
             // 
             // cboExtension
             // 
-            this.cboExtension.FormattingEnabled = true;
             resources.ApplyResources(this.cboExtension, "cboExtension");
+            this.cboExtension.FormattingEnabled = true;
             this.cboExtension.Name = "cboExtension";
             this.cboExtension.SelectedIndexChanged += new System.EventHandler(this.cboExtension_SelectedIndexChanged);
             // 
@@ -65,24 +65,23 @@
             // 
             // statusStrip
             // 
+            resources.ApplyResources(this.statusStrip, "statusStrip");
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsslCurrentLocation});
-            resources.ApplyResources(this.statusStrip, "statusStrip");
             this.statusStrip.Name = "statusStrip";
             this.statusStrip.ShowItemToolTips = true;
             this.statusStrip.SizingGrip = false;
             // 
             // tsslCurrentLocation
             // 
+            resources.ApplyResources(this.tsslCurrentLocation, "tsslCurrentLocation");
             this.tsslCurrentLocation.AutoToolTip = true;
             this.tsslCurrentLocation.Name = "tsslCurrentLocation";
-            resources.ApplyResources(this.tsslCurrentLocation, "tsslCurrentLocation");
             // 
             // btnSave
             // 
             resources.ApplyResources(this.btnSave, "btnSave");
             this.btnSave.Name = "btnSave";
-            this.btnSave.Text = global::PasteEx.Resources.Resource_zh_CN.BtnSaveText;
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
@@ -90,14 +89,13 @@
             // 
             resources.ApplyResources(this.btnChooseLocation, "btnChooseLocation");
             this.btnChooseLocation.Name = "btnChooseLocation";
-            this.btnChooseLocation.Text = global::PasteEx.Resources.Resource_zh_CN.BtnChooseLocationText;
             this.btnChooseLocation.UseVisualStyleBackColor = true;
             this.btnChooseLocation.Click += new System.EventHandler(this.btnChooseLocation_Click);
             // 
             // btnSettings
             // 
-            this.btnSettings.BackgroundImage = global::PasteEx.Properties.Resources.setting;
             resources.ApplyResources(this.btnSettings, "btnSettings");
+            this.btnSettings.BackgroundImage = global::PasteEx.Properties.Resources.setting;
             this.btnSettings.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnSettings.Name = "btnSettings";
             this.btnSettings.UseVisualStyleBackColor = true;

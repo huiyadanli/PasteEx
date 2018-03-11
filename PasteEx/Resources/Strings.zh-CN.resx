@@ -117,18 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="BtnChooseLocationText" xml:space="preserve">
-    <value>选择路径</value>
-  </data>
-  <data name="BtnSaveText" xml:space="preserve">
-    <value>保存</value>
-  </data>
-  <data name="LblExtensionText" xml:space="preserve">
-    <value>扩展名:</value>
-  </data>
-  <data name="LblFileNameText" xml:space="preserve">
-    <value>文件名:</value>
-  </data>
   <data name="TipAnalyzeFailed" xml:space="preserve">
     <value>剪贴板内容为空或不被支持，仍旧进入软件主界面？</value>
   </data>
@@ -175,7 +163,7 @@
     <value>剪贴板内容为空或不被支持</value>
   </data>
   <data name="TipTargetFileExisted" xml:space="preserve">
-    <value>目标文件{0}已经存在，是否覆盖？</value>
+    <value>目标文件 {0} 已经存在，是否覆盖？</value>
   </data>
   <data name="TipTargetPathNotExist" xml:space="preserve">
     <value>粘贴目标路径不存在</value>
@@ -191,5 +179,35 @@
   </data>
   <data name="TipDownloadFailed" xml:space="preserve">
     <value>下载失败</value>
+  </data>
+  <data name="TxtAbout" xml:space="preserve">
+    <value>PasteEx
+
+版本：{0}
+
+作者：huiyadanli
+
+如果有问题或者建议，欢迎在 GitHub 上面给我提 Issues，或者发送邮件到 huiyadanli@126.com</value>
+  </data>
+  <data name="TxtLatestVersin" xml:space="preserve">
+    <value>已经是最新版本</value>
+  </data>
+  <data name="TxtNewVersion" xml:space="preserve">
+    <value>存在新版本: </value>
+  </data>
+  <data name="TxtRuleFormat" xml:space="preserve">
+    <value>规则格式：扩展名=与此扩展名相对应文本的第一行特征（支持正则）
+
+对于文本类型的文件，将会取第一个非空行对特征进行匹配，
+匹配成功则在保存时默认使用对应的自定义扩展名。
+
+比如：
+    cs=^using .*;$
+    java=^package.*;$
+    html=(? i)&lt;!DOCTYPE html
+    cpp=^#include.*</value>
+  </data>
+  <data name="TxtWrongVersion" xml:space="preserve">
+    <value>错误的版本号: </value>
   </data>
 </root>

@@ -22,14 +22,14 @@ namespace PasteEx.Resources {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resource_zh_CN {
+    internal class Resource {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal Resource_zh_CN() {
+        internal Resource() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace PasteEx.Resources {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("PasteEx.Resources.Resource-zh-CN", typeof(Resource_zh_CN).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("PasteEx.Resources.Resource", typeof(Resource).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -61,7 +61,7 @@ namespace PasteEx.Resources {
         }
         
         /// <summary>
-        ///   查找类似 选择路径 的本地化字符串。
+        ///   查找类似 Choose Location 的本地化字符串。
         /// </summary>
         internal static string BtnChooseLocationText {
             get {
@@ -70,7 +70,7 @@ namespace PasteEx.Resources {
         }
         
         /// <summary>
-        ///   查找类似 保存 的本地化字符串。
+        ///   查找类似 Save 的本地化字符串。
         /// </summary>
         internal static string BtnSaveText {
             get {
@@ -79,7 +79,7 @@ namespace PasteEx.Resources {
         }
         
         /// <summary>
-        ///   查找类似 扩展名: 的本地化字符串。
+        ///   查找类似 Extension: 的本地化字符串。
         /// </summary>
         internal static string LblExtensionText {
             get {
@@ -88,7 +88,7 @@ namespace PasteEx.Resources {
         }
         
         /// <summary>
-        ///   查找类似 文件名: 的本地化字符串。
+        ///   查找类似 File Name: 的本地化字符串。
         /// </summary>
         internal static string LblFileNameText {
             get {
@@ -97,7 +97,7 @@ namespace PasteEx.Resources {
         }
         
         /// <summary>
-        ///   查找类似 粘贴为文件 的本地化字符串。
+        ///   查找类似 Paste As File 的本地化字符串。
         /// </summary>
         internal static string MenuPasteAsFile {
             get {
@@ -106,7 +106,7 @@ namespace PasteEx.Resources {
         }
         
         /// <summary>
-        ///   查找类似 快速粘贴为文件 的本地化字符串。
+        ///   查找类似 Quick Paste As File 的本地化字符串。
         /// </summary>
         internal static string MenuQuickPasteAsFile {
             get {
@@ -115,7 +115,7 @@ namespace PasteEx.Resources {
         }
         
         /// <summary>
-        ///   查找类似 剪贴板内容为空或不被支持，仍旧进入软件主界面？ 的本地化字符串。
+        ///   查找类似 剪贴板为空，仍旧进入软件主界面？ 的本地化字符串。
         /// </summary>
         internal static string TipAnalyzeFailed {
             get {
@@ -124,7 +124,7 @@ namespace PasteEx.Resources {
         }
         
         /// <summary>
-        ///   查找类似 剪贴板内容为空或不被支持 的本地化字符串。
+        ///   查找类似 The clipboard content is empty or not supported 的本地化字符串。
         /// </summary>
         internal static string TipAnalyzeFailedWithoutPrompt {
             get {
@@ -133,7 +133,7 @@ namespace PasteEx.Resources {
         }
         
         /// <summary>
-        ///   查找类似 下载失败 的本地化字符串。
+        ///   查找类似 Failed to download 的本地化字符串。
         /// </summary>
         internal static string TipDownloadFailed {
             get {
@@ -142,7 +142,7 @@ namespace PasteEx.Resources {
         }
         
         /// <summary>
-        ///   查找类似 检测到右键菜单未添加，是否添加“粘贴为文件”到系统右键菜单中？ 的本地化字符串。
+        ///   查找类似 你是第一次启动本软件，是否添加“粘贴为文件”到系统右键菜单中？ 的本地化字符串。
         /// </summary>
         internal static string TipFirstRegister {
             get {
@@ -178,7 +178,7 @@ namespace PasteEx.Resources {
         }
         
         /// <summary>
-        ///   查找类似 下载图片中...{0}% 的本地化字符串。
+        ///   查找类似 Downloading...{0}% 的本地化字符串。
         /// </summary>
         internal static string TipPictureDownloading {
             get {
@@ -214,7 +214,7 @@ namespace PasteEx.Resources {
         }
         
         /// <summary>
-        ///   查找类似 保存失败，可能是选择的扩展名不正确 的本地化字符串。
+        ///   查找类似 保存失败，请选择正确的扩展名 的本地化字符串。
         /// </summary>
         internal static string TipSaveFailed {
             get {
@@ -223,7 +223,7 @@ namespace PasteEx.Resources {
         }
         
         /// <summary>
-        ///   查找类似 目标文件{0}已经存在，是否覆盖？ 的本地化字符串。
+        ///   查找类似 The target file {0} has already existed. Overwrite? 的本地化字符串。
         /// </summary>
         internal static string TipTargetFileExisted {
             get {
@@ -232,7 +232,7 @@ namespace PasteEx.Resources {
         }
         
         /// <summary>
-        ///   查找类似 粘贴目标路径不存在 的本地化字符串。
+        ///   查找类似 The target path does not exist 的本地化字符串。
         /// </summary>
         internal static string TipTargetPathNotExist {
             get {
@@ -259,7 +259,7 @@ namespace PasteEx.Resources {
         }
         
         /// <summary>
-        ///   查找类似 粘贴为文件 的本地化字符串。
+        ///   查找类似 PasteEx 的本地化字符串。
         /// </summary>
         internal static string Title {
             get {
@@ -268,7 +268,7 @@ namespace PasteEx.Resources {
         }
         
         /// <summary>
-        ///   查找类似 系统错误 的本地化字符串。
+        ///   查找类似 Error 的本地化字符串。
         /// </summary>
         internal static string TitleError {
             get {

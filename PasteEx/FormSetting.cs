@@ -45,9 +45,21 @@ namespace PasteEx
             Get();
 
             // About Tab Page
-            linkLabel1.Links.Add(28, 10, @"https://huiyadanli.github.io/");
-            linkLabel1.Links.Add(56, 6, @"https://github.com/huiyadanli/PasteEx/issues");
-            linkLabel1.Links.Add(84, 18, @"mailto:huiyadanli@126.com");
+            linkLabel1.Text = String.Format(Resources.Strings.TxtAbout, System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString());
+
+            System.Globalization.CultureInfo ci = System.Threading.Thread.CurrentThread.CurrentUICulture;
+            if (ci.Name.Contains("zh"))
+            {
+                linkLabel1.Links.Add(28, 10, @"https://huiyadanli.github.io/");
+                linkLabel1.Links.Add(56, 6, @"https://github.com/huiyadanli/PasteEx/issues");
+                linkLabel1.Links.Add(84, 18, @"mailto:huiyadanli@126.com");
+            }
+            else
+            {
+                linkLabel1.Links.Add(37, 10, @"https://huiyadanli.github.io/");
+                linkLabel1.Links.Add(162, 4, @"https://github.com/huiyadanli/PasteEx/issues");
+                linkLabel1.Links.Add(121, 20, @"mailto:huiyadanli@gmail.com");
+            }
         }
 
         [Obsolete]
@@ -103,16 +115,7 @@ namespace PasteEx
 
         private void lblHelp_MouseHover(object sender, EventArgs e)
         {
-            string tip = @"规则格式：扩展名=与此扩展名相对应文本的第一行特征（支持正则）
-
-对于文本类型的文件，将会取第一个非空行对特征进行匹配，
-匹配成功则在保存时默认使用对应的自定义扩展名。
-
-比如：
-    cs=^using .*;$
-    java=^package.*;$
-    html=(? i)<!DOCTYPE html
-    cpp=^#include.*";
+            string tip = Resources.Strings.TxtRuleFormat;
             tipHelp.SetToolTip(lblHelp, tip);
         }
 
@@ -184,7 +187,7 @@ namespace PasteEx
                         if (latestVersionNum > currentVersionNum)
                         {
                             // have new version
-                            labelUpdateinfo.Text = "存在新版本：" + latestVersion;
+                            labelUpdateinfo.Text = Resources.Strings.TxtNewVersion + latestVersion;
                             labelUpdateinfo.ForeColor = System.Drawing.Color.Red;
                             labelUpdateinfo.LinkColor = System.Drawing.Color.Red;
                             labelUpdateinfo.Links.Clear();
@@ -194,7 +197,7 @@ namespace PasteEx
                         }
                         else
                         {
-                            labelUpdateinfo.Text = "已经是最新版本";
+                            labelUpdateinfo.Text = Resources.Strings.TxtLatestVersin;
                             labelUpdateinfo.ForeColor = System.Drawing.Color.Green;
                             labelUpdateinfo.LinkColor = System.Drawing.Color.Green;
                             labelUpdateinfo.Links.Clear();
@@ -204,7 +207,7 @@ namespace PasteEx
                     }
                     else
                     {
-                        Logger.Error("错误的版本号:" + latestVersion + "|" + currentVersion);
+                        Logger.Error(Resources.Strings.TxtWrongVersion + latestVersion + "|" + currentVersion);
                     }
                 }
 

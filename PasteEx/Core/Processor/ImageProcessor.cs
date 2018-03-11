@@ -45,8 +45,8 @@ namespace PasteEx.Core
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(Resources.Resource_zh_CN.TipGetImageExtFailed + Environment.NewLine + ex.Message,
-                        Resources.Resource_zh_CN.Title, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show(Resources.Strings.TipGetImageExtFailed + Environment.NewLine + ex.Message,
+                        Resources.Strings.Title, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     defaultExt = null;
                 }
                 if (!String.IsNullOrEmpty(defaultExt))
@@ -223,7 +223,7 @@ namespace PasteEx.Core
                     if (formMain != null)
                     {
                         formMain.ChangeTsslCurrentLocation(
-                            String.Format(Resources.Resource_zh_CN.TipPictureDownloading, e.ProgressPercentage));
+                            String.Format(Resources.Strings.TipPictureDownloading, e.ProgressPercentage));
                     }
                 };
             }
@@ -235,8 +235,8 @@ namespace PasteEx.Core
             catch (Exception ex)
             {
                 Logger.Error(ex);
-                MessageBox.Show(Resources.Resource_zh_CN.TipDownloadFailed + " : " + ex.Message,
-                            Resources.Resource_zh_CN.TitleError, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(Resources.Strings.TipDownloadFailed + " : " + ex.Message,
+                            Resources.Strings.TitleError, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             OnSaveAsFileCompleted();
         }
