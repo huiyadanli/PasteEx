@@ -220,6 +220,9 @@ namespace PasteEx
                 }
                 else if (result == DialogResult.No)
                 {
+                    btnChooseLocation.Enabled = true;
+                    btnSettings.Enabled = true;
+                    btnSave.Enabled = true;
                     return;
                 }
             }
@@ -250,7 +253,7 @@ namespace PasteEx
         private void btnSettings_Click(object sender, EventArgs e)
         {
             Form f = FormSetting.GetInstance();
-            f.Show();
+            f.ShowDialog();
             f.Focus();
         }
 
