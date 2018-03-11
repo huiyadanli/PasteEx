@@ -117,15 +117,15 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="&gt;&gt;tsslCurrentLocation.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="btnChooseLocation.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
-  <data name="tsslCurrentLocation.Text" xml:space="preserve">
-    <value>Current Location</value>
-  </data>
-  <data name="btnSave.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="&gt;&gt;txtFileName.Name" xml:space="preserve">
+    <value>txtFileName</value>
   </data>
   <data name="statusStrip.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
@@ -155,11 +155,11 @@
   <data name="lblExtension.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>FormMain</value>
+  <data name="btnSave.Text" xml:space="preserve">
+    <value>Save</value>
   </data>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 12</value>
+  <data name="&gt;&gt;cboExtension.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;statusStrip.Name" xml:space="preserve">
     <value>statusStrip</value>
@@ -186,8 +186,8 @@
   <data name="&gt;&gt;statusStrip.Type" xml:space="preserve">
     <value>System.Windows.Forms.StatusStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;txtFileName.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="txtFileName.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
   </data>
   <data name="&gt;&gt;txtFileName.Parent" xml:space="preserve">
     <value>$this</value>
@@ -210,14 +210,14 @@
   <data name="lblExtension.Location" type="System.Drawing.Point, System.Drawing">
     <value>212, 6</value>
   </data>
-  <data name="&gt;&gt;txtFileName.Name" xml:space="preserve">
-    <value>txtFileName</value>
+  <data name="btnSettings.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 23</value>
+  </data>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 12</value>
   </data>
   <data name="&gt;&gt;btnSettings.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="lblFileName.Text" xml:space="preserve">
-    <value>File Name:</value>
   </data>
   <data name="&gt;&gt;lblExtension.Parent" xml:space="preserve">
     <value>$this</value>
@@ -231,17 +231,14 @@
   <data name="lblFileName.Location" type="System.Drawing.Point, System.Drawing">
     <value>23, 6</value>
   </data>
-  <data name="btnSave.Text" xml:space="preserve">
-    <value>Save</value>
+  <data name="btnSave.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="&gt;&gt;txtFileName.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
   <data name="&gt;&gt;btnChooseLocation.Name" xml:space="preserve">
     <value>btnChooseLocation</value>
-  </data>
-  <data name="&gt;&gt;lblExtension.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;cboExtension.ZOrder" xml:space="preserve">
     <value>6</value>
@@ -254,9 +251,6 @@
   </data>
   <data name="tsslCurrentLocation.Size" type="System.Drawing.Size, System.Drawing">
     <value>104, 17</value>
-  </data>
-  <data name="btnSettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>23, 23</value>
   </data>
   <data name="lblFileName.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -275,6 +269,9 @@
   </data>
   <data name="&gt;&gt;btnChooseLocation.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cboExtension.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="&gt;&gt;lblFileName.Parent" xml:space="preserve">
     <value>$this</value>
@@ -1950,6 +1947,9 @@
   <data name="&gt;&gt;btnSave.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;cboExtension.Name" xml:space="preserve">
     <value>cboExtension</value>
   </data>
@@ -1965,11 +1965,11 @@
   <data name="btnSave.Size" type="System.Drawing.Size, System.Drawing">
     <value>58, 23</value>
   </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>PasteEx</value>
+  <data name="&gt;&gt;lblExtension.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;cboExtension.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="tsslCurrentLocation.Text" xml:space="preserve">
+    <value>Current Location</value>
   </data>
   <data name="&gt;&gt;btnSave.Name" xml:space="preserve">
     <value>btnSave</value>
@@ -1983,11 +1983,11 @@
   <data name="&gt;&gt;tsslCurrentLocation.Name" xml:space="preserve">
     <value>tsslCurrentLocation</value>
   </data>
-  <data name="&gt;&gt;tsslCurrentLocation.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="lblFileName.Text" xml:space="preserve">
+    <value>File Name:</value>
   </data>
-  <data name="txtFileName.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
+  <data name="$this.Text" xml:space="preserve">
+    <value>PasteEx</value>
   </data>
   <data name="&gt;&gt;btnSettings.Parent" xml:space="preserve">
     <value>$this</value>
@@ -1995,11 +1995,11 @@
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>301, 107</value>
   </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>FormMain</value>
   </data>
-  <data name="&gt;&gt;cboExtension.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;txtFileName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="statusStrip.Text" xml:space="preserve">
     <value>statusStrip1</value>
@@ -2009,8 +2009,5 @@
   </metadata>
   <metadata name="statusStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
-  </metadata>
-  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>zh-CN</value>
   </metadata>
 </root>

@@ -1,6 +1,7 @@
 ﻿using PasteEx.Util;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -38,6 +39,7 @@ namespace PasteEx
         {
             Properties.Settings.Default.autoExtRule = txtAutoExtRule.Text;
             Properties.Settings.Default.autoExtSwitch = chkAutoExtSwitch.Checked;
+            Properties.Settings.Default.language = cboLanguage.SelectedIndex.ToString();
         }
 
         private void FormSetting_Load(object sender, EventArgs e)
@@ -47,13 +49,16 @@ namespace PasteEx
             // About Tab Page
             linkLabel1.Text = String.Format(Resources.Strings.TxtAbout, System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString());
 
-            System.Globalization.CultureInfo ci = System.Threading.Thread.CurrentThread.CurrentUICulture;
-            if (ci.Name.Contains("zh"))
+            int index = I18n.FindLanguageByCurrentThreadInfo().Index;
+            cboLanguage.SelectedIndex = index;
+            // zh-CN
+            if (index == 1)
             {
                 linkLabel1.Links.Add(28, 10, @"https://huiyadanli.github.io/");
                 linkLabel1.Links.Add(56, 6, @"https://github.com/huiyadanli/PasteEx/issues");
                 linkLabel1.Links.Add(84, 18, @"mailto:huiyadanli@126.com");
             }
+            // en-US
             else
             {
                 linkLabel1.Links.Add(37, 10, @"https://huiyadanli.github.io/");
@@ -226,5 +231,17 @@ namespace PasteEx
         {
             RightMenu.Delete(RightMenu.FastSetting.True);
         }
+
+        private void cboLanguage_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string language = (sender as ComboBox).SelectedItem.ToString();
+            string preLanguage = I18n.FindLanguageByCurrentThreadInfo().LocalName;
+            if (language != preLanguage)
+            {
+                I18n.SetWinFormLanguage(I18n.FindLanguageByLocalName(language).CultureInfoName);
+            }
+        }
+
+
     }
 }

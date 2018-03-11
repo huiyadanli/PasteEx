@@ -23,8 +23,8 @@ namespace PasteEx
                 //处理非UI线程异常  
                 AppDomain.CurrentDomain.UnhandledException += new UnhandledExceptionEventHandler(CurrentDomain_UnhandledException);
 
-                Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo("en");
-                Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("en");
+                I18n.InitCurrentCulture();
+                //HookResolver hr = new HookResolver();
 
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
