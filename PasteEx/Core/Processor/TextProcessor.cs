@@ -17,10 +17,14 @@ namespace PasteEx.Core
 
         public override string[] Analyze()
         {
-            if (Data.IAcquisition.GetDataPresent(DataFormats.Text, false))
+            if (Data.IAcquisition.GetDataPresent(DataFormats.UnicodeText))
             {
                 List<string> extensions = new List<string>();
-                Data.Storage.SetData(DataFormats.Text, Data.IAcquisition.GetData(DataFormats.Text));
+                Data.Storage.SetData(DataFormats.UnicodeText, Data.IAcquisition.GetData(DataFormats.UnicodeText));
+                if (Data.IAcquisition.GetDataPresent(DataFormats.Text, false))
+                {
+                    Data.Storage.SetData(DataFormats.Text, Data.IAcquisition.GetData(DataFormats.Text));
+                }
                 extensions.Add("txt");
                 if (Properties.Settings.Default.autoExtSwitch)
                 {
@@ -50,7 +54,16 @@ namespace PasteEx.Core
 
         public override bool SaveAs(string path, string extension)
         {
-            File.WriteAllText(path, Data.Storage.GetData(DataFormats.Text) as string, new UTF8Encoding(false));
+            string content = null;
+            if (Data.Storage.GetDataPresent(DataFormats.UnicodeText, false))
+            {
+                content = Data.Storage.GetData(DataFormats.UnicodeText) as string;
+            }
+            else if (Data.Storage.GetDataPresent(DataFormats.Text, false))
+            {
+                content = Data.Storage.GetData(DataFormats.Text) as string;
+            }
+            File.WriteAllText(path, content, new UTF8Encoding(false));
             OnSaveAsFileCompleted();
             return true;
         }
@@ -64,7 +77,7 @@ namespace PasteEx.Core
         public string GetTextExtension(IDataObject data)
         {
             List<Tuple<String, String>> rules = GetRules();
-            string content = data.GetData(DataFormats.Text) as string;
+            string content = data.GetData(DataFormats.UnicodeText) as string;
 
             using (StringReader sr = new StringReader(content))
             {
