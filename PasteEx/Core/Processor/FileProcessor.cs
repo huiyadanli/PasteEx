@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Text;
 using System.Windows.Forms;
 
 namespace PasteEx.Core
@@ -22,7 +21,7 @@ namespace PasteEx.Core
                 {
                     if (filePaths.Length == 1)
                     {
-                        if (!String.IsNullOrEmpty(filePaths[0]))
+                        if (!String.IsNullOrEmpty(filePaths[0]) && File.Exists(filePaths[0]))
                         {
                             Data.Storage.SetData(DataFormats.FileDrop, Data.IAcquisition.GetData(DataFormats.FileDrop));
                             extensions.Clear();
