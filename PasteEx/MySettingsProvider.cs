@@ -18,7 +18,7 @@ namespace PasteEx
         private const string _globalSettingsNodeName = "globalSettings";
         private const string _className = "MySettingsProvider";
 
-        public string _path = Path.Combine(Path.GetDirectoryName(Application.ExecutablePath), "PasteEx", "PasteEx.settings");
+        public string _path = Path.Combine(Path.GetDirectoryName(Application.ExecutablePath), "User", "PasteEx.settings");
 
         private XmlDocument _xmlDocument;
 

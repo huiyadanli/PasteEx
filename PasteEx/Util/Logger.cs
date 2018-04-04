@@ -12,7 +12,7 @@ namespace PasteEx.Util
     {
         static Logger()
         {
-            string folder = Path.Combine(Path.GetDirectoryName(Application.ExecutablePath), "PasteEx");
+            string folder = Path.Combine(Path.GetDirectoryName(Application.ExecutablePath), "User");
             if (!Directory.Exists(folder))
             {
                 Directory.CreateDirectory(folder);
