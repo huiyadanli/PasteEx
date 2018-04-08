@@ -90,6 +90,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="Resources\Strings.zh-Hant.Designer.cs">
+      <DependentUpon>Strings.zh-Hant.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Settings.cs" />
     <Compile Include="Util\CommandLine.cs" />
     <Compile Include="Util\Device.cs" />
@@ -112,6 +117,7 @@
       <DependentUpon>Strings.zh-CN.resx</DependentUpon>
     </Compile>
     <Compile Include="RightMenu.cs" />
+    <Compile Include="Util\UpdateRepairer.cs" />
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -119,10 +125,16 @@
     <EmbeddedResource Include="FormMain.zh-CN.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormMain.zh-Hant.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormSetting.resx">
       <DependentUpon>FormSetting.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormSetting.zh-CN.resx">
+      <DependentUpon>FormSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSetting.zh-Hant.resx">
       <DependentUpon>FormSetting.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -132,6 +144,10 @@
     <EmbeddedResource Include="Resources\Strings.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Strings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Strings.zh-Hant.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Strings.zh-Hant.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\Strings.zh-CN.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -148,7 +164,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
@@ -167,6 +185,8 @@
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>xcopy /s /y zh-CN Language\zh-CN\
-rd /s /q zh-CN</PostBuildEvent>
+xcopy /s /y zh-Hant Language\zh-Hant\
+rd /s /q zh-CN
+rd /s /q zh-Hant</PostBuildEvent>
   </PropertyGroup>
 </Project>

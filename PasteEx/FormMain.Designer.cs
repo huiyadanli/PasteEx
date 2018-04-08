@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
-            this.Icon = Properties.Resources.ico;
             this.txtFileName = new System.Windows.Forms.TextBox();
             this.cboExtension = new System.Windows.Forms.ComboBox();
             this.lblExtension = new System.Windows.Forms.Label();
@@ -49,8 +48,8 @@
             // 
             // cboExtension
             // 
-            this.cboExtension.FormattingEnabled = true;
             resources.ApplyResources(this.cboExtension, "cboExtension");
+            this.cboExtension.FormattingEnabled = true;
             this.cboExtension.Name = "cboExtension";
             this.cboExtension.SelectedIndexChanged += new System.EventHandler(this.cboExtension_SelectedIndexChanged);
             // 
@@ -66,18 +65,18 @@
             // 
             // statusStrip
             // 
+            resources.ApplyResources(this.statusStrip, "statusStrip");
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsslCurrentLocation});
-            resources.ApplyResources(this.statusStrip, "statusStrip");
             this.statusStrip.Name = "statusStrip";
             this.statusStrip.ShowItemToolTips = true;
             this.statusStrip.SizingGrip = false;
             // 
             // tsslCurrentLocation
             // 
+            resources.ApplyResources(this.tsslCurrentLocation, "tsslCurrentLocation");
             this.tsslCurrentLocation.AutoToolTip = true;
             this.tsslCurrentLocation.Name = "tsslCurrentLocation";
-            resources.ApplyResources(this.tsslCurrentLocation, "tsslCurrentLocation");
             // 
             // btnSave
             // 
@@ -95,8 +94,8 @@
             // 
             // btnSettings
             // 
-            this.btnSettings.BackgroundImage = global::PasteEx.Properties.Resources.setting;
             resources.ApplyResources(this.btnSettings, "btnSettings");
+            this.btnSettings.BackgroundImage = global::PasteEx.Properties.Resources.setting;
             this.btnSettings.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnSettings.Name = "btnSettings";
             this.btnSettings.UseVisualStyleBackColor = true;
@@ -115,6 +114,7 @@
             this.Controls.Add(this.cboExtension);
             this.Controls.Add(this.txtFileName);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = global::PasteEx.Properties.Resources.ico;
             this.KeyPreview = true;
             this.MaximizeBox = false;
             this.Name = "FormMain";

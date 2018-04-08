@@ -27,7 +27,8 @@ namespace PasteEx.Util
         public static List<Language> SupportLanguage = new List<Language>
         {
             new Language(0,"English","en-US"),
-            new Language(1,"简体中文","zh-CN")
+            new Language(1,"简体中文","zh-CN"),
+            new Language(2,"繁體中文","zh-Hant")
         };
 
         internal static Language FindLanguageByIndex(int index)
@@ -66,7 +67,12 @@ namespace PasteEx.Util
         internal static Language FindLanguageByCurrentThreadInfo()
         {
             CultureInfo ci = System.Threading.Thread.CurrentThread.CurrentUICulture;
-            if (ci.Name.Contains("zh"))
+            string name = ci.Name;
+            if (name.Contains("zh-Hant") || name.Contains("zh-HK") || name.Contains("zh-TW"))
+            {
+                return SupportLanguage[2];
+            }
+            else if (name.Contains("zh"))
             {
                 return SupportLanguage[1];
             }
@@ -75,10 +81,12 @@ namespace PasteEx.Util
 
         internal static void InitCurrentCulture()
         {
+            #pragma warning disable 0618
+            AppDomain.CurrentDomain.AppendPrivatePath("Language");
             int index = -1;
             try
             {
-                if(!String.IsNullOrWhiteSpace(Properties.Settings.Default.language))
+                if (!String.IsNullOrWhiteSpace(Properties.Settings.Default.language))
                 {
                     index = Convert.ToInt32(Properties.Settings.Default.language);
                     Language language = FindLanguageByIndex(index);

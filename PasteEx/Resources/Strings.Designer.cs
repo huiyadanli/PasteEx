@@ -187,7 +187,7 @@ namespace PasteEx.Resources {
         }
         
         /// <summary>
-        ///   查找类似 The target file {0} has already existed. Overwrite? 的本地化字符串。
+        ///   查找类似 The target file {0} already exists. Do you want to overwrite it? 的本地化字符串。
         /// </summary>
         internal static string TipTargetFileExisted {
             get {

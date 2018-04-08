@@ -1,7 +1,6 @@
 ﻿using PasteEx.Util;
 using System;
 using System.Collections.Generic;
-using System.Globalization;
 using System.IO;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -49,10 +48,16 @@ namespace PasteEx
             // About Tab Page
             linkLabel1.Text = String.Format(Resources.Strings.TxtAbout, System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString());
 
-            int index = I18n.FindLanguageByCurrentThreadInfo().Index;
+            string i = Properties.Settings.Default.language;
+            if (String.IsNullOrWhiteSpace(i))
+            {
+                i = I18n.FindLanguageByCurrentThreadInfo().Index.ToString();
+            }
+
+            int index = Convert.ToInt32(i);
             cboLanguage.SelectedIndex = index;
-            // zh-CN
-            if (index == 1)
+            // zh-CN || zh-Hant
+            if (index == 1 || index == 2)
             {
                 linkLabel1.Links.Add(28, 10, @"https://huiyadanli.github.io/");
                 linkLabel1.Links.Add(56, 6, @"https://github.com/huiyadanli/PasteEx/issues");
@@ -239,6 +244,9 @@ namespace PasteEx
             if (language != preLanguage)
             {
                 I18n.SetWinFormLanguage(I18n.FindLanguageByLocalName(language).CultureInfoName);
+
+                // About Tab Page Reload
+                linkLabel1.Text = String.Format(Resources.Strings.TxtAbout, System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString());
             }
         }
 

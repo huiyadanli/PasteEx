@@ -121,23 +121,14 @@
   <data name="cboLanguage.Location" type="System.Drawing.Point, System.Drawing">
     <value>62, 23</value>
   </data>
-  <data name="cboLanguage.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="labelLanguage.Size" type="System.Drawing.Size, System.Drawing">
     <value>35, 12</value>
   </data>
   <data name="labelLanguage.Text" xml:space="preserve">
     <value>语言:</value>
   </data>
-  <data name="labelLanguage.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="groupBox4.Text" xml:space="preserve">
     <value>界面</value>
-  </data>
-  <data name="groupBox4.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="chkFastNeedShiftKey.Size" type="System.Drawing.Size, System.Drawing">
     <value>138, 16</value>
@@ -145,26 +136,14 @@
   <data name="chkFastNeedShiftKey.Text" xml:space="preserve">
     <value>按住 Shift 显示菜单</value>
   </data>
-  <data name="chkFastNeedShiftKey.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="btnFastUnRegister.Text" xml:space="preserve">
     <value>移除</value>
-  </data>
-  <data name="btnFastUnRegister.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="btnFastRegister.Text" xml:space="preserve">
     <value>添加</value>
   </data>
-  <data name="btnFastRegister.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="groupBox3.Text" xml:space="preserve">
     <value>快速粘贴右键菜单</value>
-  </data>
-  <data name="groupBox3.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="chkNeedShiftKey.Size" type="System.Drawing.Size, System.Drawing">
     <value>138, 16</value>
@@ -172,32 +151,17 @@
   <data name="chkNeedShiftKey.Text" xml:space="preserve">
     <value>按住 Shift 显示菜单</value>
   </data>
-  <data name="chkNeedShiftKey.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="btnUnRegister.Text" xml:space="preserve">
     <value>移除</value>
-  </data>
-  <data name="btnUnRegister.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="btnRegister.Text" xml:space="preserve">
     <value>添加</value>
   </data>
-  <data name="btnRegister.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="groupBox1.Text" xml:space="preserve">
     <value>右键菜单</value>
   </data>
-  <data name="groupBox1.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="tabPageNomal.Text" xml:space="preserve">
     <value>常规</value>
-  </data>
-  <data name="tabPageNomal.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="lblTipError.Size" type="System.Drawing.Size, System.Drawing">
     <value>149, 12</value>
@@ -205,20 +169,11 @@
   <data name="lblTipError.Text" xml:space="preserve">
     <value>规则格式有误，将不被启用</value>
   </data>
-  <data name="lblTipError.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="lblHelp.Size" type="System.Drawing.Size, System.Drawing">
     <value>65, 12</value>
   </data>
   <data name="lblHelp.Text" xml:space="preserve">
     <value>如何使用？</value>
-  </data>
-  <data name="lblHelp.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="txtAutoExtRule.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="chkAutoExtSwitch.Size" type="System.Drawing.Size, System.Drawing">
     <value>48, 16</value>
@@ -226,29 +181,14 @@
   <data name="chkAutoExtSwitch.Text" xml:space="preserve">
     <value>启用</value>
   </data>
-  <data name="chkAutoExtSwitch.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="groupBox2.Text" xml:space="preserve">
     <value>文本扩展名规则</value>
-  </data>
-  <data name="groupBox2.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="tabPageCustom.Text" xml:space="preserve">
     <value>自定义</value>
   </data>
-  <data name="tabPageCustom.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="labelUpdateinfo.Text" xml:space="preserve">
     <value>已经是最新版本</value>
-  </data>
-  <data name="labelUpdateinfo.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="picLoading.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="linkLabel1.Text" xml:space="preserve">
     <value>PasteEx
@@ -259,28 +199,10 @@
 
 如果有问题或者建议，欢迎在 GitHub 上面给我提 Issues，或者发送邮件到 huiyadanli@126.com</value>
   </data>
-  <data name="linkLabel1.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="label2.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="pictureBox1.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="tabPageAbout.Text" xml:space="preserve">
     <value>关于</value>
   </data>
-  <data name="tabPageAbout.ToolTip" xml:space="preserve">
-    <value />
-  </data>
-  <data name="tabControl1.ToolTip" xml:space="preserve">
-    <value />
-  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>设置</value>
-  </data>
-  <data name="$this.ToolTip" xml:space="preserve">
-    <value />
   </data>
 </root>
