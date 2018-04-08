@@ -8,7 +8,7 @@
 
 支持透明 PNG 与 GIF 动态图的粘贴。
 
-[:zap:最新版本 v1.0.2.6 下载](https://github.com/huiyadanli/PasteEx/releases/download/1.0.2.6/PasteEx.v1.0.2.6.zip)
+[:zap:最新版本 v1.0.3.5 下载](https://github.com/huiyadanli/PasteEx/releases/download/1.0.3.5/PasteEx.v1.0.3.5.zip)
 
 ## 截图
 ![Screenshot](https://raw.githubusercontent.com/huiyadanli/PasteEx/master/Screenshot/Screenshot.png)
