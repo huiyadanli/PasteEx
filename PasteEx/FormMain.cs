@@ -214,7 +214,7 @@ namespace PasteEx
             {
                 DialogResult result = MessageBox.Show(String.Format(Resources.Strings.TipTargetFileExisted, path),
                     Resources.Strings.Title, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (result == DialogResult.Yes) 
+                if (result == DialogResult.Yes)
                 {
                     data.SaveAsync(path, cboExtension.Text);
                 }
@@ -278,13 +278,23 @@ namespace PasteEx
             return base.ProcessCmdKey(ref msg, keyData);
         }
 
-        public static void QuickPasteEx(string location)
+        public static void QuickPasteEx(string location, string fileName = null)
         {
             ManualResetEvent allDone = new ManualResetEvent(false);
 
             ClipboardData data = new ClipboardData(Clipboard.GetDataObject());
             data.SaveCompleted += () => allDone.Set();
+
             string[] extensions = data.Analyze();
+            if (!String.IsNullOrEmpty(fileName))
+            {
+                string ext = Path.GetExtension(fileName);
+                extensions = new string[1] { ext };
+                if (Array.IndexOf(extensions, ext) == -1)
+                {
+                    // maybe need some tips
+                }
+            }
 
             if (extensions.Length > 0)
             {
@@ -294,7 +304,19 @@ namespace PasteEx
                     location = location.Substring(0, location.Length - 1);
                 }
                 string currentLocation = location.EndsWith("\\") ? location : location + "\\";
-                string path = currentLocation + GenerateFileName(currentLocation, extensions[0]) + "." + extensions[0];
+
+                string path = null;
+                if (String.IsNullOrEmpty(fileName))
+                {
+                    path = currentLocation + GenerateFileName(currentLocation, extensions[0]) + "." + extensions[0];
+                }
+                else
+                {
+                    path = currentLocation + fileName;
+                }
+
+                Console.WriteLine(fileName);
+
                 if (!Directory.Exists(currentLocation))
                 {
                     Console.WriteLine(Resources.Strings.TipTargetPathNotExist);

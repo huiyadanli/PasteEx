@@ -52,11 +52,16 @@ namespace PasteEx
                     }
                     else if (commands[0] == "/q")
                     {
-                        if (args.Length > 1)
+                        if (args.Length == 2)
                         {
                             FormMain.QuickPasteEx(commands[1]);
                             return;
-                        }    
+                        }
+                        else if (args.Length == 3)
+                        {
+                            FormMain.QuickPasteEx(commands[1], commands[2]);
+                            return;
+                        }
                     }
 
                     // why the disk root directory has '"' ??
