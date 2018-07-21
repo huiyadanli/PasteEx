@@ -3,16 +3,18 @@ using System.Runtime.InteropServices;
 
 namespace PasteEx.Library
 {
-    internal class Kernel32
+    public class Kernel32
     {
         [DllImport("kernel32.dll", EntryPoint = "GetStdHandle", SetLastError = true, CharSet = CharSet.Auto, CallingConvention = CallingConvention.StdCall)]
-        internal static extern IntPtr GetStdHandle(int nStdHandle);
+        public static extern IntPtr GetStdHandle(int nStdHandle);
 
         [DllImport("kernel32.dll", EntryPoint = "AllocConsole", SetLastError = true, CharSet = CharSet.Auto, CallingConvention = CallingConvention.StdCall)]
-        internal static extern int AllocConsole();
+        public static extern int AllocConsole();
 
         [DllImport("kernel32.dll")]
-        internal static extern bool AttachConsole(int dwProcessId);
+        public static extern bool AttachConsole(int dwProcessId);
 
+        [DllImport("kernel32.dll")]
+        public static extern uint GetLastError();
     }
 }
