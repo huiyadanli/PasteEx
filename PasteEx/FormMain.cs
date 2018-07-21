@@ -47,14 +47,14 @@ namespace PasteEx
 
             // register the event that is fired after the key press.
             hotkeyHook.KeyPressed += new EventHandler<KeyPressedEventArgs>(btnSave_Click);
-            try
-            {
-                hotkeyHook.RegisterHotKey(Util.ModifierKeys.Control | Util.ModifierKeys.Alt, Keys.J);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            //try
+            //{
+            //    hotkeyHook.RegisterHotKey(Util.ModifierKeys.Control | Util.ModifierKeys.Alt, Keys.J);
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //}
 
         }
 
