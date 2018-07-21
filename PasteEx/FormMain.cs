@@ -46,16 +46,16 @@ namespace PasteEx
             CurrentLocation = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory);
 
             // register the event that is fired after the key press.
-            //hotkeyHook.KeyPressed += new EventHandler<KeyPressedEventArgs>(btnSave_Click);
-            //try
-            //{
-            //    hotkeyHook.RegisterHotKey(Util.ModifierKeys.Control | Util.ModifierKeys.Alt, Keys.J);
-            //}
-            //catch(Exception ex)
-            //{
-            //    MessageBox.Show(ex.Message);
-            //}
-             
+            hotkeyHook.KeyPressed += new EventHandler<KeyPressedEventArgs>(btnSave_Click);
+            try
+            {
+                hotkeyHook.RegisterHotKey(Util.ModifierKeys.Control | Util.ModifierKeys.Alt, Keys.J);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
         }
 
         public FormMain(string location)
