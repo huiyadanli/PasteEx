@@ -44,18 +44,6 @@ namespace PasteEx
             dialogue = this;
             InitializeComponent();
             CurrentLocation = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory);
-
-            // register the event that is fired after the key press.
-            hotkeyHook.KeyPressed += new EventHandler<KeyPressedEventArgs>(btnSave_Click);
-            //try
-            //{
-            //    hotkeyHook.RegisterHotKey(Util.ModifierKeys.Control | Util.ModifierKeys.Alt, Keys.J);
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show(ex.Message);
-            //}
-
         }
 
         public FormMain(string location)
@@ -267,6 +255,26 @@ namespace PasteEx
 
         private void btnSettings_Click(object sender, EventArgs e)
         {
+            Button btnSender = (Button)sender;
+            System.Drawing.Point ptLowerLeft = new System.Drawing.Point(0, btnSender.Height);
+            ptLowerLeft = btnSender.PointToScreen(ptLowerLeft);
+            contextMenuStripSetting.Show(ptLowerLeft);
+
+
+        }
+
+        private void monitorModeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            StartMonitorMode();
+        }
+
+        private void collectModeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void settingToolStripMenuItem_Click(object sender, EventArgs e)
+        {
             Form f = FormSetting.GetInstance();
             f.ShowDialog();
             f.Focus();
@@ -368,9 +376,86 @@ namespace PasteEx
             allDone.WaitOne();
         }
 
+        public static void StartMonitorMode()
+        {
+            if(dialogue == null)
+            {
+                dialogue = new FormMain();
+            }
+
+            // register the event that is fired after the key press.
+            dialogue.hotkeyHook.KeyPressed += new EventHandler<KeyPressedEventArgs>(dialogue.btnSave_Click);
+            try
+            {
+                dialogue.hotkeyHook.RegisterHotKey(Util.ModifierKeys.Control | Util.ModifierKeys.Alt, Keys.X);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            // start monitor
+            //ClipboardMonitor2.OnClipboardChange += (ClipboardFormat format, object data) => {
+            //    MessageBox.Show("ctrl + c");
+            //};
+            ClipboardMonitor.OnClipboardChange += ClipboardMonitor_OnClipboardChange;
+            ClipboardMonitor.Start();
+
+            // hide main window and display system tray icon
+            dialogue.Hide();
+            dialogue.notifyIcon.Visible = true;
+        }
+
+
+        public static void StopMonitorMode()
+        {
+            if (dialogue == null)
+            {
+                MessageBox.Show("无法返回正常模式");
+                return;
+            }
+
+            dialogue.hotkeyHook.UnregisterHotKey();
+            ClipboardMonitor.OnClipboardChange -= ClipboardMonitor_OnClipboardChange;
+            ClipboardMonitor.Stop();
+
+            dialogue.Show();
+            dialogue.notifyIcon.Visible = false;
+        }
+
+        private static void ClipboardMonitor_OnClipboardChange(ClipboardFormat format, object data)
+        {
+            MessageBox.Show("ctrl + c");
+        }
+
+        public static void StartCollectionMode()
+        {
+
+        }
+
         public void ChangeTsslCurrentLocation(string str)
         {
             tsslCurrentLocation.Text = str;
+        }
+
+        private void autoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            autoToolStripMenuItem.Checked = !autoToolStripMenuItem.Checked;
+            if(autoToolStripMenuItem.Checked)
+            {
+
+            }
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            StopMonitorMode();
+            this.Close();
+        }
+
+        private void notifyIcon_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            StopMonitorMode();
         }
     }
 }

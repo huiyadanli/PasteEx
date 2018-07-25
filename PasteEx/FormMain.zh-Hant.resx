@@ -118,14 +118,14 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="lblFileName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>47, 12</value>
-  </data>
   <data name="lblExtension.Size" type="System.Drawing.Size, System.Drawing">
     <value>47, 12</value>
   </data>
   <data name="lblExtension.Text" xml:space="preserve">
     <value>副檔名:</value>
+  </data>
+  <data name="lblFileName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>47, 12</value>
   </data>
   <data name="lblFileName.Text" xml:space="preserve">
     <value>資料名:</value>

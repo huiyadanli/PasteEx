@@ -94,6 +94,15 @@ namespace PasteEx.Util
             }
         }
 
+        public void UnregisterHotKey()
+        {
+            // unregister all the registered hot keys.
+            for (int i = _currentId; i > 0; i--)
+            {
+                User32.UnregisterHotKey(_window.Handle, i);
+            }
+        }
+
         /// <summary>
         /// A hot key has been pressed.
         /// </summary>
@@ -103,12 +112,7 @@ namespace PasteEx.Util
 
         public void Dispose()
         {
-            // unregister all the registered hot keys.
-            for (int i = _currentId; i > 0; i--)
-            {
-                User32.UnregisterHotKey(_window.Handle, i);
-            }
-
+            UnregisterHotKey();
             // dispose the inner native window.
             _window.Dispose();
         }

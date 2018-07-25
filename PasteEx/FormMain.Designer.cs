@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.txtFileName = new System.Windows.Forms.TextBox();
             this.cboExtension = new System.Windows.Forms.ComboBox();
@@ -38,7 +39,18 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.btnChooseLocation = new System.Windows.Forms.Button();
             this.btnSettings = new System.Windows.Forms.Button();
+            this.contextMenuStripSetting = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.monitorModeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.collectModeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.settingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
+            this.contextMenuStripMonitorMode = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.settingToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.autoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip.SuspendLayout();
+            this.contextMenuStripSetting.SuspendLayout();
+            this.contextMenuStripMonitorMode.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtFileName
@@ -48,8 +60,8 @@
             // 
             // cboExtension
             // 
-            resources.ApplyResources(this.cboExtension, "cboExtension");
             this.cboExtension.FormattingEnabled = true;
+            resources.ApplyResources(this.cboExtension, "cboExtension");
             this.cboExtension.Name = "cboExtension";
             this.cboExtension.SelectedIndexChanged += new System.EventHandler(this.cboExtension_SelectedIndexChanged);
             // 
@@ -65,18 +77,18 @@
             // 
             // statusStrip
             // 
-            resources.ApplyResources(this.statusStrip, "statusStrip");
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsslCurrentLocation});
+            resources.ApplyResources(this.statusStrip, "statusStrip");
             this.statusStrip.Name = "statusStrip";
             this.statusStrip.ShowItemToolTips = true;
             this.statusStrip.SizingGrip = false;
             // 
             // tsslCurrentLocation
             // 
-            resources.ApplyResources(this.tsslCurrentLocation, "tsslCurrentLocation");
             this.tsslCurrentLocation.AutoToolTip = true;
             this.tsslCurrentLocation.Name = "tsslCurrentLocation";
+            resources.ApplyResources(this.tsslCurrentLocation, "tsslCurrentLocation");
             // 
             // btnSave
             // 
@@ -94,12 +106,76 @@
             // 
             // btnSettings
             // 
-            resources.ApplyResources(this.btnSettings, "btnSettings");
             this.btnSettings.BackgroundImage = global::PasteEx.Properties.Resources.setting;
+            resources.ApplyResources(this.btnSettings, "btnSettings");
+            this.btnSettings.ContextMenuStrip = this.contextMenuStripSetting;
             this.btnSettings.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnSettings.Name = "btnSettings";
             this.btnSettings.UseVisualStyleBackColor = true;
             this.btnSettings.Click += new System.EventHandler(this.btnSettings_Click);
+            // 
+            // contextMenuStripSetting
+            // 
+            this.contextMenuStripSetting.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.monitorModeToolStripMenuItem,
+            this.collectModeToolStripMenuItem,
+            this.settingToolStripMenuItem});
+            this.contextMenuStripSetting.Name = "contextMenuStripSetting";
+            resources.ApplyResources(this.contextMenuStripSetting, "contextMenuStripSetting");
+            // 
+            // monitorModeToolStripMenuItem
+            // 
+            this.monitorModeToolStripMenuItem.Name = "monitorModeToolStripMenuItem";
+            resources.ApplyResources(this.monitorModeToolStripMenuItem, "monitorModeToolStripMenuItem");
+            this.monitorModeToolStripMenuItem.Click += new System.EventHandler(this.monitorModeToolStripMenuItem_Click);
+            // 
+            // collectModeToolStripMenuItem
+            // 
+            this.collectModeToolStripMenuItem.Name = "collectModeToolStripMenuItem";
+            resources.ApplyResources(this.collectModeToolStripMenuItem, "collectModeToolStripMenuItem");
+            this.collectModeToolStripMenuItem.Click += new System.EventHandler(this.collectModeToolStripMenuItem_Click);
+            // 
+            // settingToolStripMenuItem
+            // 
+            this.settingToolStripMenuItem.Image = global::PasteEx.Properties.Resources.setting;
+            this.settingToolStripMenuItem.Name = "settingToolStripMenuItem";
+            resources.ApplyResources(this.settingToolStripMenuItem, "settingToolStripMenuItem");
+            this.settingToolStripMenuItem.Click += new System.EventHandler(this.settingToolStripMenuItem_Click);
+            // 
+            // notifyIcon
+            // 
+            this.notifyIcon.ContextMenuStrip = this.contextMenuStripMonitorMode;
+            this.notifyIcon.Icon = global::PasteEx.Properties.Resources.ico;
+            resources.ApplyResources(this.notifyIcon, "notifyIcon");
+            this.notifyIcon.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon_MouseDoubleClick);
+            // 
+            // contextMenuStripMonitorMode
+            // 
+            this.contextMenuStripMonitorMode.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.settingToolStripMenuItem1,
+            this.autoToolStripMenuItem,
+            this.exitToolStripMenuItem});
+            this.contextMenuStripMonitorMode.Name = "contextMenuStripMonitorMode";
+            resources.ApplyResources(this.contextMenuStripMonitorMode, "contextMenuStripMonitorMode");
+            // 
+            // settingToolStripMenuItem1
+            // 
+            this.settingToolStripMenuItem1.Image = global::PasteEx.Properties.Resources.setting;
+            this.settingToolStripMenuItem1.Name = "settingToolStripMenuItem1";
+            resources.ApplyResources(this.settingToolStripMenuItem1, "settingToolStripMenuItem1");
+            this.settingToolStripMenuItem1.Click += new System.EventHandler(this.settingToolStripMenuItem_Click);
+            // 
+            // autoToolStripMenuItem
+            // 
+            this.autoToolStripMenuItem.Name = "autoToolStripMenuItem";
+            resources.ApplyResources(this.autoToolStripMenuItem, "autoToolStripMenuItem");
+            this.autoToolStripMenuItem.Click += new System.EventHandler(this.autoToolStripMenuItem_Click);
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            resources.ApplyResources(this.exitToolStripMenuItem, "exitToolStripMenuItem");
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // FormMain
             // 
@@ -121,6 +197,8 @@
             this.Load += new System.EventHandler(this.FormMain_Load);
             this.statusStrip.ResumeLayout(false);
             this.statusStrip.PerformLayout();
+            this.contextMenuStripSetting.ResumeLayout(false);
+            this.contextMenuStripMonitorMode.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -137,6 +215,15 @@
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnChooseLocation;
         private System.Windows.Forms.Button btnSettings;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStripSetting;
+        private System.Windows.Forms.ToolStripMenuItem monitorModeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem collectModeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem settingToolStripMenuItem;
+        private System.Windows.Forms.NotifyIcon notifyIcon;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStripMonitorMode;
+        private System.Windows.Forms.ToolStripMenuItem settingToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem autoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
     }
 }
 
