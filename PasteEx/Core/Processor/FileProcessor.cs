@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.IO;
 using System.Windows.Forms;
 
@@ -49,5 +50,6 @@ namespace PasteEx.Core
             }
             return false;
         }
+
     }
 }

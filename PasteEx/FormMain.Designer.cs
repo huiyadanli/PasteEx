@@ -48,6 +48,7 @@
             this.settingToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.autoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.stopMonitorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip.SuspendLayout();
             this.contextMenuStripSetting.SuspendLayout();
             this.contextMenuStripMonitorMode.SuspendLayout();
@@ -152,8 +153,9 @@
             // contextMenuStripMonitorMode
             // 
             this.contextMenuStripMonitorMode.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.settingToolStripMenuItem1,
+            this.stopMonitorToolStripMenuItem,
             this.autoToolStripMenuItem,
+            this.settingToolStripMenuItem1,
             this.exitToolStripMenuItem});
             this.contextMenuStripMonitorMode.Name = "contextMenuStripMonitorMode";
             resources.ApplyResources(this.contextMenuStripMonitorMode, "contextMenuStripMonitorMode");
@@ -176,6 +178,12 @@
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             resources.ApplyResources(this.exitToolStripMenuItem, "exitToolStripMenuItem");
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            // 
+            // stopMonitorToolStripMenuItem
+            // 
+            this.stopMonitorToolStripMenuItem.Name = "stopMonitorToolStripMenuItem";
+            resources.ApplyResources(this.stopMonitorToolStripMenuItem, "stopMonitorToolStripMenuItem");
+            this.stopMonitorToolStripMenuItem.Click += new System.EventHandler(this.stopMonitorToolStripMenuItem_Click);
             // 
             // FormMain
             // 
@@ -224,6 +232,7 @@
         private System.Windows.Forms.ToolStripMenuItem settingToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem autoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem stopMonitorToolStripMenuItem;
     }
 }
 

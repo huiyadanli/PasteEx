@@ -1,4 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Collections.Specialized;
+using System.IO;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static PasteEx.Core.BaseProcessor;
@@ -105,5 +109,6 @@ namespace PasteEx.Core
                 Save(path, extension);
             });
         }
+
     }
 }

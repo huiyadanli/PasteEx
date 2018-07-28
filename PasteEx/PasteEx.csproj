@@ -120,6 +120,7 @@
       <DependentUpon>Strings.zh-CN.resx</DependentUpon>
     </Compile>
     <Compile Include="RightMenu.cs" />
+    <Compile Include="Util\ThreadHelper.cs" />
     <Compile Include="Util\UpdateRepairer.cs" />
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>

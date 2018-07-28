@@ -30,11 +30,21 @@ namespace PasteEx.Core
             {
                 List<string> extensions = new List<string>();
                 Data.Storage.SetData(DataFormats.Bitmap, Data.IAcquisition.GetData(DataFormats.Bitmap));
-                Data.Storage.SetData("DeviceIndependentBitmap", Data.IAcquisition.GetData("DeviceIndependentBitmap")); // CF_DIB
-                Data.Storage.SetData("Format17", Data.IAcquisition.GetData("Format17")); // CF_DIBV5
-                Data.Storage.SetData("PNG", Data.IAcquisition.GetData("PNG")); // PNG
 
+                if (Data.IAcquisition.GetDataPresent("DeviceIndependentBitmap", false))
+                {
+                    Data.Storage.SetData("DeviceIndependentBitmap", Data.IAcquisition.GetData("DeviceIndependentBitmap")); // CF_DIB
+                }
+                if (Data.IAcquisition.GetDataPresent("Format17", false))
+                {
+                    Data.Storage.SetData("Format17", Data.IAcquisition.GetData("Format17")); // CF_DIBV5
+                }
+                if (Data.IAcquisition.GetDataPresent("PNG", false))
+                {
+                    Data.Storage.SetData("PNG", Data.IAcquisition.GetData("PNG")); // PNG
+                }
                 extensions.AddRange(imageExt);
+
 
                 // Get image format
                 string defaultExt = null;
@@ -107,7 +117,6 @@ namespace PasteEx.Core
             }
             return false;
         }
-
 
         /// <summary>
         /// Get image format form HTML Format data
