@@ -5,7 +5,7 @@ using System.IO;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PasteEx
+namespace PasteEx.Forms
 {
     public partial class FormSetting : Form
     {

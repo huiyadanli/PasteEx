@@ -1,4 +1,5 @@
-﻿using PasteEx.Util;
+﻿using PasteEx.Forms;
+using PasteEx.Util;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;

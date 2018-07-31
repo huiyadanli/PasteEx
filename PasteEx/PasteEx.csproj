@@ -66,6 +66,12 @@
   <ItemGroup>
     <Compile Include="Core\ClipboardData.cs" />
     <Compile Include="Core\ClipboardMonitor.cs" />
+    <Compile Include="Forms\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Library\Kernel32.cs" />
     <Compile Include="Core\Processor\BaseProcessor.cs" />
     <Compile Include="Core\Processor\FileProcessor.cs" />
@@ -73,16 +79,16 @@
     <Compile Include="Core\Processor\ImageProcessor.cs" />
     <Compile Include="Core\Processor\RtfProcessor.cs" />
     <Compile Include="Core\Processor\TextProcessor.cs" />
-    <Compile Include="FormMain.cs">
+    <Compile Include="Forms\FormMain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormMain.Designer.cs">
+    <Compile Include="Forms\FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormSetting.cs">
+    <Compile Include="Forms\FormSetting.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormSetting.Designer.cs">
+    <Compile Include="Forms\FormSetting.Designer.cs">
       <DependentUpon>FormSetting.cs</DependentUpon>
     </Compile>
     <Compile Include="Client.cs" />
@@ -122,23 +128,23 @@
     <Compile Include="RightMenu.cs" />
     <Compile Include="Util\ThreadHelper.cs" />
     <Compile Include="Util\UpdateRepairer.cs" />
-    <EmbeddedResource Include="FormMain.resx">
+    <EmbeddedResource Include="Forms\FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormMain.zh-CN.resx">
+    <EmbeddedResource Include="Forms\FormMain.zh-CN.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormMain.zh-Hant.resx">
+    <EmbeddedResource Include="Forms\FormMain.zh-Hant.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormSetting.resx">
+    <EmbeddedResource Include="Forms\FormSetting.resx">
       <DependentUpon>FormSetting.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormSetting.zh-CN.resx">
+    <EmbeddedResource Include="Forms\FormSetting.zh-CN.resx">
       <DependentUpon>FormSetting.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormSetting.zh-Hant.resx">
+    <EmbeddedResource Include="Forms\FormSetting.zh-Hant.resx">
       <DependentUpon>FormSetting.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">

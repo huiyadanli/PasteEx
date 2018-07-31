@@ -1,4 +1,4 @@
-﻿namespace PasteEx
+﻿namespace PasteEx.Forms
 {
     partial class FormMain
     {

@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 
-namespace PasteEx
+namespace PasteEx.Forms
 {
     public partial class FormMain : Form
     {

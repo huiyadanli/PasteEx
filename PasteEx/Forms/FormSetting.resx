@@ -468,6 +468,75 @@
   <data name="&gt;&gt;tabPageNomal.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="textBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 20</value>
+  </data>
+  <data name="textBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>195, 21</value>
+  </data>
+  <data name="textBox1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;textBox1.Name" xml:space="preserve">
+    <value>textBox1</value>
+  </data>
+  <data name="&gt;&gt;textBox1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textBox1.Parent" xml:space="preserve">
+    <value>groupBox5</value>
+  </data>
+  <data name="&gt;&gt;textBox1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="groupBox5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 6</value>
+  </data>
+  <data name="groupBox5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>371, 100</value>
+  </data>
+  <data name="groupBox5.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="groupBox5.Text" xml:space="preserve">
+    <value>groupBox5</value>
+  </data>
+  <data name="&gt;&gt;groupBox5.Name" xml:space="preserve">
+    <value>groupBox5</value>
+  </data>
+  <data name="&gt;&gt;groupBox5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox5.Parent" xml:space="preserve">
+    <value>tabPageHotKey</value>
+  </data>
+  <data name="&gt;&gt;groupBox5.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="tabPageHotKey.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 22</value>
+  </data>
+  <data name="tabPageHotKey.Size" type="System.Drawing.Size, System.Drawing">
+    <value>383, 289</value>
+  </data>
+  <data name="tabPageHotKey.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="tabPageHotKey.Text" xml:space="preserve">
+    <value>HotKey</value>
+  </data>
+  <data name="&gt;&gt;tabPageHotKey.Name" xml:space="preserve">
+    <value>tabPageHotKey</value>
+  </data>
+  <data name="&gt;&gt;tabPageHotKey.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabPageHotKey.Parent" xml:space="preserve">
+    <value>tabControl1</value>
+  </data>
+  <data name="&gt;&gt;tabPageHotKey.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <data name="groupBox2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
@@ -550,7 +619,7 @@
     <value>Both</value>
   </data>
   <data name="txtAutoExtRule.Size" type="System.Drawing.Size, System.Drawing">
-    <value>329, 215</value>
+    <value>333, 215</value>
   </data>
   <data name="txtAutoExtRule.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -601,7 +670,7 @@
     <value>6, 6</value>
   </data>
   <data name="groupBox2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>367, 275</value>
+    <value>371, 275</value>
   </data>
   <data name="groupBox2.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
@@ -634,7 +703,7 @@
     <value>0</value>
   </data>
   <data name="tabPageCustom.Text" xml:space="preserve">
-    <value>Custom</value>
+    <value>Rules</value>
   </data>
   <data name="&gt;&gt;tabPageCustom.Name" xml:space="preserve">
     <value>tabPageCustom</value>
@@ -646,7 +715,7 @@
     <value>tabControl1</value>
   </data>
   <data name="&gt;&gt;tabPageCustom.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
   <data name="labelUpdateinfo.LinkArea" type="System.Windows.Forms.LinkArea, System.Windows.Forms">
     <value>0, 0</value>
@@ -826,7 +895,7 @@ If you have questions or suggestions, please feel free to email me at huiyadanli
     <value>tabControl1</value>
   </data>
   <data name="&gt;&gt;tabPageAbout.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="tabControl1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
