@@ -64,6 +64,11 @@ namespace PasteEx.Core
             // stop listening (dispose form)
             public static void Stop()
             {
+                if(mInstance == null)
+                {
+                    return;
+                }
+
                 mInstance.Invoke(new MethodInvoker(() =>
                 {
                     bool b = User32.RemoveClipboardFormatListener(mInstance.Handle);

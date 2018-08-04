@@ -14,7 +14,7 @@ namespace PasteEx.Forms
 
         private static FormMain dialogue = null;
 
-        private ClipboardData data;
+        private ClipboardData data, monitorModeData;
 
         private string currentLocation;
 
@@ -345,10 +345,10 @@ namespace PasteEx.Forms
         {
             ManualResetEvent allDone = new ManualResetEvent(false);
 
-            ClipboardData data = new ClipboardData(Clipboard.GetDataObject());
-            data.SaveCompleted += () => allDone.Set();
+            ClipboardData quickPasteData = new ClipboardData(Clipboard.GetDataObject());
+            quickPasteData.SaveCompleted += () => allDone.Set();
 
-            string[] extensions = data.Analyze();
+            string[] extensions = quickPasteData.Analyze();
             if (!String.IsNullOrEmpty(fileName))
             {
                 string ext = Path.GetExtension(fileName);
@@ -395,7 +395,7 @@ namespace PasteEx.Forms
                             Resources.Strings.Title, MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
                         if (result == DialogResult.Yes)
                         {
-                            data.Save(path, extensions[0]);
+                            quickPasteData.Save(path, extensions[0]);
                         }
                         else if (result == DialogResult.No)
                         {
@@ -404,7 +404,7 @@ namespace PasteEx.Forms
                     }
                     else
                     {
-                        data.Save(path, extensions[0]);
+                        quickPasteData.Save(path, extensions[0]);
                     }
                 }
             }
@@ -417,6 +417,50 @@ namespace PasteEx.Forms
             allDone.WaitOne();
         }
 
+        public static void QuickPasteEx(object sender, EventArgs e)
+        {
+            string activeLocation = GetActiveExplorerLocation();
+
+            if (!String.IsNullOrEmpty(activeLocation)) {
+                QuickPasteEx(activeLocation);
+            }
+
+        }
+
+        public static string GetActiveExplorerLocation()
+        {
+            int handle = (int)Library.User32.GetForegroundWindow();
+
+            const int maxChars = 256;
+            StringBuilder className = new StringBuilder(maxChars);
+            if (Library.User32.GetClassName(handle, className, maxChars) > 0)
+            {
+                string cName = className.ToString();
+                if (cName == "Progman" || cName == "WorkerW")
+                {
+                    // desktop is active
+                    return Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory);
+                }
+                else
+                {
+                    // desktop is not active, find explorer
+                    foreach (SHDocVw.InternetExplorer window in new SHDocVw.ShellWindows())
+                    {
+                        if (window.HWND == handle)
+                        {
+                            string filename = Path.GetFileNameWithoutExtension(window.FullName).ToLower();
+                            if (filename.ToLowerInvariant() == "explorer")
+                            {
+                                Uri uri = new Uri(window.LocationURL);
+                                return uri.LocalPath;
+                            }
+                        }
+                    }
+                }
+            }
+            return null;
+        }
+
         #endregion
 
         #region MonitorMode
@@ -427,8 +471,10 @@ namespace PasteEx.Forms
                 dialogue = new FormMain();
             }
 
+            dialogue.monitorModeData = new ClipboardData(Clipboard.GetDataObject());
+
             // register the event that is fired after the key press.
-            dialogue.hotkeyHook.KeyPressed += new EventHandler<KeyPressedEventArgs>(dialogue.btnSave_Click);
+            dialogue.hotkeyHook.KeyPressed += new EventHandler<KeyPressedEventArgs>(QuickPasteEx);
             try
             {
                 dialogue.hotkeyHook.RegisterHotKey(Util.ModifierKeys.Control | Util.ModifierKeys.Alt, Keys.X);
@@ -439,7 +485,10 @@ namespace PasteEx.Forms
             }
 
             dialogue.data.SaveCompleted -= dialogue.Exit;
-            dialogue.data.SaveCompleted += dialogue.ClipboardMonitor_OnPasteExSaveAsync;
+            dialogue.data = null;
+
+            dialogue.monitorModeData.SaveCompleted += dialogue.ClipboardMonitor_OnPasteExSaveAsync;
+
             // start monitor
             ClipboardMonitor.OnClipboardChange += dialogue.ClipboardMonitor_OnClipboardChange;
             ClipboardMonitor.Start();
@@ -463,8 +512,7 @@ namespace PasteEx.Forms
 
             dialogue.hotkeyHook.UnregisterHotKey();
 
-            dialogue.data.SaveCompleted -= dialogue.ClipboardMonitor_OnPasteExSaveAsync;
-            dialogue.data.SaveCompleted += dialogue.Exit;
+            dialogue.monitorModeData.SaveCompleted -= dialogue.ClipboardMonitor_OnPasteExSaveAsync;
             ClipboardMonitor.OnClipboardChange -= dialogue.ClipboardMonitor_OnClipboardChange;
             ClipboardMonitor.Stop();
 
@@ -476,26 +524,26 @@ namespace PasteEx.Forms
 
         private void ClipboardMonitor_OnClipboardChange()
         {
-            data.IAcquisition  = Clipboard.GetDataObject();
-            data.Storage = new DataObject();
-            string[] exts = data.Analyze();
+            monitorModeData.IAcquisition  = Clipboard.GetDataObject();
+            monitorModeData.Storage = new DataObject();
+            string[] exts = monitorModeData.Analyze();
             if (exts.Length > 0)
             {
                 String folder = Path.Combine(Path.GetDirectoryName(Application.ExecutablePath), "User", "Temp") + "\\";
                 clipboardChangePath = Path.Combine(folder, GenerateFileName(folder, exts[0]) + "." + exts[0]);
 
                 ClipboardMonitor.Stop();
-                data.SaveAsync(clipboardChangePath, exts[0]);
+                monitorModeData.SaveAsync(clipboardChangePath, exts[0]);
             }
         }
 
         private async void ClipboardMonitor_OnPasteExSaveAsync()
         {
             string[] paths = new string[] { clipboardChangePath };
-            data.Storage.SetData(DataFormats.FileDrop, true, paths);
+            monitorModeData.Storage.SetData(DataFormats.FileDrop, true, paths);
             await ThreadHelper.StartSTATask(() =>
             {
-                Clipboard.SetDataObject(data.Storage, true);
+                Clipboard.SetDataObject(monitorModeData.Storage, true);
             });
             ClipboardMonitor.Start();
         }

@@ -13,7 +13,7 @@ using System.Windows.Forms;
 /// Operate the right button menu.
 /// Need refactoring!
 /// </summary>
-namespace PasteEx
+namespace PasteEx.Util
 {
     public class RightMenu
     {
