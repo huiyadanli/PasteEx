@@ -66,6 +66,7 @@
   <ItemGroup>
     <Compile Include="Core\ClipboardData.cs" />
     <Compile Include="Core\ClipboardMonitor.cs" />
+    <Compile Include="Core\ModeController.cs" />
     <Compile Include="Forms\Form1.cs">
       <SubType>Form</SubType>
     </Compile>

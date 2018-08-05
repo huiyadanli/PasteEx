@@ -1,4 +1,5 @@
-﻿using PasteEx.Forms;
+﻿using PasteEx.Core;
+using PasteEx.Forms;
 using PasteEx.Util;
 using System;
 using System.Collections.Generic;
@@ -55,12 +56,12 @@ namespace PasteEx
                     {
                         if (args.Length == 2)
                         {
-                            FormMain.QuickPasteEx(commands[1]);
+                            ModeController.QuickPasteEx(commands[1]);
                             return;
                         }
                         else if (args.Length == 3)
                         {
-                            FormMain.QuickPasteEx(commands[1], commands[2]);
+                            ModeController.QuickPasteEx(commands[1], commands[2]);
                             return;
                         }
                     }
