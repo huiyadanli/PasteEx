@@ -45,10 +45,11 @@
             this.settingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
             this.contextMenuStripMonitorMode = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.settingToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.autoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.stopMonitorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.autoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.settingToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.startMonitorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip.SuspendLayout();
             this.contextMenuStripSetting.SuspendLayout();
             this.contextMenuStripMonitorMode.SuspendLayout();
@@ -153,12 +154,25 @@
             // contextMenuStripMonitorMode
             // 
             this.contextMenuStripMonitorMode.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.startMonitorToolStripMenuItem,
             this.stopMonitorToolStripMenuItem,
             this.autoToolStripMenuItem,
             this.settingToolStripMenuItem1,
             this.exitToolStripMenuItem});
             this.contextMenuStripMonitorMode.Name = "contextMenuStripMonitorMode";
             resources.ApplyResources(this.contextMenuStripMonitorMode, "contextMenuStripMonitorMode");
+            // 
+            // stopMonitorToolStripMenuItem
+            // 
+            this.stopMonitorToolStripMenuItem.Name = "stopMonitorToolStripMenuItem";
+            resources.ApplyResources(this.stopMonitorToolStripMenuItem, "stopMonitorToolStripMenuItem");
+            this.stopMonitorToolStripMenuItem.Click += new System.EventHandler(this.stopMonitorToolStripMenuItem_Click);
+            // 
+            // autoToolStripMenuItem
+            // 
+            this.autoToolStripMenuItem.Name = "autoToolStripMenuItem";
+            resources.ApplyResources(this.autoToolStripMenuItem, "autoToolStripMenuItem");
+            this.autoToolStripMenuItem.Click += new System.EventHandler(this.autoToolStripMenuItem_Click);
             // 
             // settingToolStripMenuItem1
             // 
@@ -167,23 +181,17 @@
             resources.ApplyResources(this.settingToolStripMenuItem1, "settingToolStripMenuItem1");
             this.settingToolStripMenuItem1.Click += new System.EventHandler(this.settingToolStripMenuItem_Click);
             // 
-            // autoToolStripMenuItem
-            // 
-            this.autoToolStripMenuItem.Name = "autoToolStripMenuItem";
-            resources.ApplyResources(this.autoToolStripMenuItem, "autoToolStripMenuItem");
-            this.autoToolStripMenuItem.Click += new System.EventHandler(this.autoToolStripMenuItem_Click);
-            // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             resources.ApplyResources(this.exitToolStripMenuItem, "exitToolStripMenuItem");
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
-            // stopMonitorToolStripMenuItem
+            // startMonitorToolStripMenuItem
             // 
-            this.stopMonitorToolStripMenuItem.Name = "stopMonitorToolStripMenuItem";
-            resources.ApplyResources(this.stopMonitorToolStripMenuItem, "stopMonitorToolStripMenuItem");
-            this.stopMonitorToolStripMenuItem.Click += new System.EventHandler(this.stopMonitorToolStripMenuItem_Click);
+            this.startMonitorToolStripMenuItem.Name = "startMonitorToolStripMenuItem";
+            resources.ApplyResources(this.startMonitorToolStripMenuItem, "startMonitorToolStripMenuItem");
+            this.startMonitorToolStripMenuItem.Click += new System.EventHandler(this.startMonitorToolStripMenuItem_Click);
             // 
             // FormMain
             // 
@@ -233,6 +241,7 @@
         private System.Windows.Forms.ToolStripMenuItem autoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem stopMonitorToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem startMonitorToolStripMenuItem;
     }
 }
 

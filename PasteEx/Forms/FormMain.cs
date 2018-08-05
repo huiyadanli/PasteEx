@@ -2,6 +2,7 @@
 using PasteEx.Util;
 using System;
 using System.IO;
+using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Windows.Forms;
@@ -269,6 +270,9 @@ namespace PasteEx.Forms
 
         private void monitorModeToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            autoToolStripMenuItem.Checked = Properties.Settings.Default.autoImageTofile;
+            startMonitorToolStripMenuItem.Visible = false;
+            stopMonitorToolStripMenuItem.Visible = true;
             StartMonitorMode();
         }
 
@@ -314,9 +318,15 @@ namespace PasteEx.Forms
         private void autoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             autoToolStripMenuItem.Checked = !autoToolStripMenuItem.Checked;
+            Properties.Settings.Default.autoImageTofile = autoToolStripMenuItem.Checked;
+            Properties.Settings.Default.Save();
             if (autoToolStripMenuItem.Checked)
             {
-
+                ClipboardMonitor.Start();
+            }
+            else
+            {
+                ClipboardMonitor.Stop();
             }
         }
 
@@ -333,9 +343,18 @@ namespace PasteEx.Forms
             f.Activate();
         }
 
+        private void startMonitorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ClipboardMonitor.Start();
+            startMonitorToolStripMenuItem.Visible = false;
+            stopMonitorToolStripMenuItem.Visible = true;
+        }
+
         private void stopMonitorToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ClipboardMonitor.Stop();
+            startMonitorToolStripMenuItem.Visible = true;
+            stopMonitorToolStripMenuItem.Visible = false;
         }
 
         #endregion
@@ -424,7 +443,6 @@ namespace PasteEx.Forms
             if (!String.IsNullOrEmpty(activeLocation)) {
                 QuickPasteEx(activeLocation);
             }
-
         }
 
         public static string GetActiveExplorerLocation()
@@ -524,16 +542,19 @@ namespace PasteEx.Forms
 
         private void ClipboardMonitor_OnClipboardChange()
         {
-            monitorModeData.IAcquisition  = Clipboard.GetDataObject();
-            monitorModeData.Storage = new DataObject();
-            string[] exts = monitorModeData.Analyze();
-            if (exts.Length > 0)
+            if (Properties.Settings.Default.autoImageTofile)
             {
-                String folder = Path.Combine(Path.GetDirectoryName(Application.ExecutablePath), "User", "Temp") + "\\";
-                clipboardChangePath = Path.Combine(folder, GenerateFileName(folder, exts[0]) + "." + exts[0]);
+                monitorModeData.IAcquisition = Clipboard.GetDataObject();
+                monitorModeData.Storage = new DataObject();
+                string[] exts = monitorModeData.Analyze();
+                if (exts.Length > 0 && ImageProcessor.imageExt.Contains(exts[0]))
+                {
+                    String folder = Path.Combine(Path.GetDirectoryName(Application.ExecutablePath), "User", "Temp") + "\\";
+                    clipboardChangePath = Path.Combine(folder, GenerateFileName(folder, exts[0]) + "." + exts[0]);
 
-                ClipboardMonitor.Stop();
-                monitorModeData.SaveAsync(clipboardChangePath, exts[0]);
+                    ClipboardMonitor.Stop();
+                    monitorModeData.SaveAsync(clipboardChangePath, exts[0]);
+                }
             }
         }
 
