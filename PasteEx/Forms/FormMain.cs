@@ -284,7 +284,8 @@ namespace PasteEx.Forms
 
         private void collectModeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            FormCollection formCollection = new FormCollection();
+            formCollection.Show();
         }
 
         private void settingToolStripMenuItem_Click(object sender, EventArgs e)
@@ -326,14 +327,6 @@ namespace PasteEx.Forms
             autoToolStripMenuItem.Checked = !autoToolStripMenuItem.Checked;
             Properties.Settings.Default.autoImageTofile = autoToolStripMenuItem.Checked;
             Properties.Settings.Default.Save();
-            if (autoToolStripMenuItem.Checked)
-            {
-                ClipboardMonitor.Start();
-            }
-            else
-            {
-                ClipboardMonitor.Stop();
-            }
         }
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
