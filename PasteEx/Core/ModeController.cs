@@ -49,13 +49,22 @@ namespace PasteEx.Core
         }
 
         private static string clipboardChangePath = null;
+        private static string prevClipDataHash = null;
 
         private static void ClipboardMonitor_OnClipboardChange()
         {
+            // Duplicate replication is not processed.
+            monitorModeData.Refresh();
+            string currentClipDataHash = monitorModeData.GetDataPresentHash();
+            if(prevClipDataHash == currentClipDataHash)
+            {
+                return;
+            }
+            prevClipDataHash = currentClipDataHash;
+            Console.WriteLine(prevClipDataHash);
+
             if (Properties.Settings.Default.autoImageTofile)
             {
-                monitorModeData.IAcquisition = Clipboard.GetDataObject();
-                monitorModeData.Storage = new DataObject();
                 string[] exts = monitorModeData.Analyze();
                 if (exts.Length > 0 && ImageProcessor.imageExt.Contains(exts[0]))
                 {

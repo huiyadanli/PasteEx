@@ -1,7 +1,11 @@
-﻿using System;
+﻿using PasteEx.Util;
+using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -28,6 +32,14 @@ namespace PasteEx.Core
         public ClipboardData(IDataObject iDataObject)
         {
             IAcquisition = iDataObject;
+            Storage = new DataObject();
+
+            InitProcessor();
+        }
+
+        public ClipboardData()
+        {
+            IAcquisition = Clipboard.GetDataObject();
             Storage = new DataObject();
 
             InitProcessor();
@@ -110,5 +122,26 @@ namespace PasteEx.Core
             });
         }
 
+        public void Refresh()
+        {
+            IAcquisition = Clipboard.GetDataObject();
+            Storage = new DataObject();
+        }
+
+        public string GetDataPresentHash()
+        {
+            Hashtable hashtable = new Hashtable();
+            string[] formats = IAcquisition.GetFormats();
+            foreach(string format in formats)
+            {
+                if(IAcquisition.GetDataPresent(format, false))
+                {
+                    hashtable.Add(format, IAcquisition.GetData(format));
+                }
+            }
+            byte[] b = ObjectHelper.SerializeObject(hashtable);
+            return ObjectHelper.ComputeMD5(b);
+
+        }
     }
 }

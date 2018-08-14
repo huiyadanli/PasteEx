@@ -66,6 +66,7 @@
   <ItemGroup>
     <Compile Include="Core\ClipboardData.cs" />
     <Compile Include="Core\ClipboardMonitor.cs" />
+    <Compile Include="Core\Collection\ImageCollection.cs" />
     <Compile Include="Core\ModeController.cs" />
     <Compile Include="Forms\FormCollection.cs">
       <SubType>Form</SubType>
@@ -129,6 +130,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Strings.zh-CN.resx</DependentUpon>
     </Compile>
+    <Compile Include="Util\ObjectHelper.cs" />
     <Compile Include="Util\RightMenu.cs" />
     <Compile Include="Util\ThreadHelper.cs" />
     <Compile Include="Util\UpdateRepairer.cs" />
