@@ -53,7 +53,7 @@ namespace PasteEx.Forms
 
         private void FormMain_Load(object sender, EventArgs e)
         {
-            data = new ClipboardData(Clipboard.GetDataObject());
+            data = new ClipboardData();
             data.SaveCompleted += () => Application.Exit(); // exit when save completed
             string[] extensions = data.Analyze();
             cboExtension.Items.AddRange(extensions);

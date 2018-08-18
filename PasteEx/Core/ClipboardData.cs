@@ -15,7 +15,7 @@ namespace PasteEx.Core
 {
     public class ClipboardData
     {
-        public IDataObject IAcquisition { get; set; }
+        public DataObject FromClipboard { get; set; }
 
         public DataObject Storage { get; set; }
 
@@ -29,17 +29,9 @@ namespace PasteEx.Core
             SaveCompleted?.Invoke();
         }
 
-        public ClipboardData(IDataObject iDataObject)
-        {
-            IAcquisition = iDataObject;
-            Storage = new DataObject();
-
-            InitProcessor();
-        }
-
         public ClipboardData()
         {
-            IAcquisition = Clipboard.GetDataObject();
+            FromClipboard = (DataObject)Clipboard.GetDataObject();
             Storage = new DataObject();
 
             InitProcessor();
@@ -124,19 +116,19 @@ namespace PasteEx.Core
 
         public void Refresh()
         {
-            IAcquisition = Clipboard.GetDataObject();
+            FromClipboard = (DataObject)Clipboard.GetDataObject();
             Storage = new DataObject();
         }
 
         public string GetDataPresentHash()
         {
             Hashtable hashtable = new Hashtable();
-            string[] formats = IAcquisition.GetFormats();
+            string[] formats = FromClipboard.GetFormats();
             foreach(string format in formats)
             {
-                if(IAcquisition.GetDataPresent(format, false))
+                if(FromClipboard.GetDataPresent(format, false))
                 {
-                    hashtable.Add(format, IAcquisition.GetData(format));
+                    hashtable.Add(format, FromClipboard.GetData(format));
                 }
             }
             byte[] b = ObjectHelper.SerializeObject(hashtable);

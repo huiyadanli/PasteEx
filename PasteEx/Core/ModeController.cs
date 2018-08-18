@@ -19,7 +19,7 @@ namespace PasteEx.Core
 
         public static void StartMonitorMode()
         {
-            monitorModeData = new ClipboardData(Clipboard.GetDataObject());
+            monitorModeData = new ClipboardData();
 
             // register the event that is fired after the key press.
             hotkeyHook.KeyPressed += new EventHandler<KeyPressedEventArgs>(QuickPasteEx);
@@ -49,22 +49,22 @@ namespace PasteEx.Core
         }
 
         private static string clipboardChangePath = null;
-        private static string prevClipDataHash = null;
+        //private static string prevClipDataHash = null;
 
         private static void ClipboardMonitor_OnClipboardChange()
         {
-            // Duplicate replication is not processed.
-            monitorModeData.Refresh();
-            string currentClipDataHash = monitorModeData.GetDataPresentHash();
-            if(prevClipDataHash == currentClipDataHash)
-            {
-                return;
-            }
-            prevClipDataHash = currentClipDataHash;
-            Console.WriteLine(prevClipDataHash);
+            // Duplicate copy will not be executed.
+           
+            //string currentClipDataHash = monitorModeData.GetDataPresentHash();
+            //if (prevClipDataHash == currentClipDataHash)
+            //{
+            //    return;
+            //}
+            //prevClipDataHash = currentClipDataHash;
 
             if (Properties.Settings.Default.autoImageTofile)
             {
+                monitorModeData.Refresh();
                 string[] exts = monitorModeData.Analyze();
                 if (exts.Length > 0 && ImageProcessor.imageExt.Contains(exts[0]))
                 {
@@ -104,7 +104,7 @@ namespace PasteEx.Core
         {
             ManualResetEvent allDone = new ManualResetEvent(false);
 
-            ClipboardData quickPasteData = new ClipboardData(Clipboard.GetDataObject());
+            ClipboardData quickPasteData = new ClipboardData();
             quickPasteData.SaveCompleted += () => allDone.Set();
 
             string[] extensions = quickPasteData.Analyze();

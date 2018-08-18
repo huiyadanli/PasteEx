@@ -14,9 +14,9 @@ namespace PasteEx.Core
 
         public override string[] Analyze()
         {
-            if (Data.IAcquisition.GetDataPresent(DataFormats.Rtf, false))
+            if (Data.FromClipboard.GetDataPresent(DataFormats.Rtf, false))
             {
-                Data.Storage.SetData(DataFormats.Rtf, Data.IAcquisition.GetData(DataFormats.Rtf));
+                Data.Storage.SetData(DataFormats.Rtf, Data.FromClipboard.GetData(DataFormats.Rtf));
                 return new string[] { "rtf" };
             }
             return null;
@@ -24,7 +24,7 @@ namespace PasteEx.Core
 
         public override bool SaveAs(string path, string extension)
         {
-            if (String.Equals(extension, "htmlformat", StringComparison.CurrentCultureIgnoreCase))
+            if (String.Equals(extension, "rtf", StringComparison.CurrentCultureIgnoreCase))
             {
                 using (RichTextBox rtb = new RichTextBox())
                 {

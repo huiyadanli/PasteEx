@@ -17,13 +17,13 @@ namespace PasteEx.Core
 
         public override string[] Analyze()
         {
-            if (Data.IAcquisition.GetDataPresent(DataFormats.UnicodeText))
+            if (Data.FromClipboard.GetDataPresent(DataFormats.UnicodeText))
             {
                 List<string> extensions = new List<string>();
-                Data.Storage.SetData(DataFormats.UnicodeText, Data.IAcquisition.GetData(DataFormats.UnicodeText));
-                if (Data.IAcquisition.GetDataPresent(DataFormats.Text, false))
+                Data.Storage.SetData(DataFormats.UnicodeText, Data.FromClipboard.GetData(DataFormats.UnicodeText));
+                if (Data.FromClipboard.GetDataPresent(DataFormats.Text, false))
                 {
-                    Data.Storage.SetData(DataFormats.Text, Data.IAcquisition.GetData(DataFormats.Text));
+                    Data.Storage.SetData(DataFormats.Text, Data.FromClipboard.GetData(DataFormats.Text));
                 }
                 extensions.Add("txt");
                 if (Properties.Settings.Default.autoExtSwitch)
@@ -32,7 +32,7 @@ namespace PasteEx.Core
 
                     try
                     {
-                        defaultExt = GetTextExtension(Data.IAcquisition);
+                        defaultExt = GetTextExtension(Data.FromClipboard);
                     }
                     catch (Exception ex)
                     {

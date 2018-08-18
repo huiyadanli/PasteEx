@@ -27,22 +27,22 @@ namespace PasteEx.Core
 
         public override string[] Analyze()
         {
-            if (Data.IAcquisition.GetDataPresent(DataFormats.Bitmap, false))
+            if (Data.FromClipboard.GetDataPresent(DataFormats.Bitmap, false))
             {
                 List<string> extensions = new List<string>();
-                Data.Storage.SetData(DataFormats.Bitmap, Data.IAcquisition.GetData(DataFormats.Bitmap));
+                Data.Storage.SetData(DataFormats.Bitmap, Data.FromClipboard.GetData(DataFormats.Bitmap));
 
-                if (Data.IAcquisition.GetDataPresent("DeviceIndependentBitmap", false))
+                if (Data.FromClipboard.GetDataPresent("DeviceIndependentBitmap", false))
                 {
-                    Data.Storage.SetData("DeviceIndependentBitmap", Data.IAcquisition.GetData("DeviceIndependentBitmap")); // CF_DIB
+                    Data.Storage.SetData("DeviceIndependentBitmap", Data.FromClipboard.GetData("DeviceIndependentBitmap")); // CF_DIB
                 }
-                if (Data.IAcquisition.GetDataPresent("Format17", false))
+                if (Data.FromClipboard.GetDataPresent("Format17", false))
                 {
-                    Data.Storage.SetData("Format17", Data.IAcquisition.GetData("Format17")); // CF_DIBV5
+                    Data.Storage.SetData("Format17", Data.FromClipboard.GetData("Format17")); // CF_DIBV5
                 }
-                if (Data.IAcquisition.GetDataPresent("PNG", false))
+                if (Data.FromClipboard.GetDataPresent("PNG", false))
                 {
-                    Data.Storage.SetData("PNG", Data.IAcquisition.GetData("PNG")); // PNG
+                    Data.Storage.SetData("PNG", Data.FromClipboard.GetData("PNG")); // PNG
                 }
                 extensions.AddRange(imageExt);
 
@@ -51,7 +51,7 @@ namespace PasteEx.Core
                 string defaultExt = null;
                 try
                 {
-                    defaultExt = GetImageExtension(Data.IAcquisition);
+                    defaultExt = GetImageExtension(Data.FromClipboard);
                     analyzeExt = defaultExt;
                 }
                 catch (Exception ex)
