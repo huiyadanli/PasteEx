@@ -15,6 +15,11 @@ namespace PasteEx.Core
             Data = clipData;
         }
 
+        public override void Reload()
+        {
+            ResultObject = null;
+        }
+
         public override string[] Analyze()
         {
             if (Data.FromClipboard.GetDataPresent(DataFormats.UnicodeText))
@@ -52,18 +57,33 @@ namespace PasteEx.Core
             return null;
         }
 
-        public override bool SaveAs(string path, string extension)
+        public override object GetObject(string extension)
         {
-            string content = null;
             if (Data.Storage.GetDataPresent(DataFormats.UnicodeText, false))
             {
-                content = Data.Storage.GetData(DataFormats.UnicodeText) as string;
+                ResultObject = Data.Storage.GetData(DataFormats.UnicodeText);
             }
             else if (Data.Storage.GetDataPresent(DataFormats.Text, false))
             {
-                content = Data.Storage.GetData(DataFormats.Text) as string;
+                ResultObject = Data.Storage.GetData(DataFormats.Text);
             }
-            File.WriteAllText(path, content, new UTF8Encoding(false));
+            return ResultObject;
+        }
+
+        public override bool SaveAs(string path, string extension)
+        {
+            if (ResultObject == null)
+            {
+                if (Data.Storage.GetDataPresent(DataFormats.UnicodeText, false))
+                {
+                    ResultObject = Data.Storage.GetData(DataFormats.UnicodeText);
+                }
+                else if (Data.Storage.GetDataPresent(DataFormats.Text, false))
+                {
+                    ResultObject = Data.Storage.GetData(DataFormats.Text);
+                }
+            }
+            File.WriteAllText(path, ResultObject as string, new UTF8Encoding(false));
             OnSaveAsFileCompleted();
             return true;
         }

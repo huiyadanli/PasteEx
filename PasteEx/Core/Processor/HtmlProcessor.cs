@@ -12,6 +12,11 @@ namespace PasteEx.Core
             Data = clipData;
         }
 
+        public override void Reload()
+        {
+            ResultObject = null;
+        }
+
         public override string[] Analyze()
         {
             if (Data.FromClipboard.GetDataPresent(DataFormats.Html, false))
@@ -22,15 +27,30 @@ namespace PasteEx.Core
             return null;
         }
 
+        public override object GetObject(string extension)
+        {
+            if (String.Equals(extension, "htmlformat", StringComparison.CurrentCultureIgnoreCase))
+            {
+                ResultObject = Data.Storage.GetData(DataFormats.Html);
+            }
+            return ResultObject;
+        }
+
         public override bool SaveAs(string path, string extension)
         {
             if (String.Equals(extension, "htmlformat", StringComparison.CurrentCultureIgnoreCase))
             {
-                File.WriteAllText(path, Data.Storage.GetData(DataFormats.Html) as string, new UTF8Encoding(false));
+                if(ResultObject == null)
+                {
+                    ResultObject = Data.Storage.GetData(DataFormats.Html);
+                }
+
+                File.WriteAllText(path, ResultObject as string, new UTF8Encoding(false));
                 OnSaveAsFileCompleted();
                 return true;
             }
             return false;
         }
+
     }
 }

@@ -25,6 +25,13 @@ namespace PasteEx.Core
             Data = clipData;
         }
 
+        public override void Reload()
+        {
+            imageUrl = null;
+            analyzeExt = null;
+            ResultObject = null;
+        }
+
         public override string[] Analyze()
         {
             if (Data.FromClipboard.GetDataPresent(DataFormats.Bitmap, false))
@@ -71,11 +78,25 @@ namespace PasteEx.Core
             return null;
         }
 
+        public override object GetObject(string extension)
+        {
+            if (imageExt.Contains(extension))
+            {
+                ResultObject = GetImageFromDataObject(Data.Storage);
+            }
+            return ResultObject;
+        }
+
         public override bool SaveAs(string path, string extension)
         {
             // save .gif from HTML Format url
             if (extension == "gif" && (extension == analyzeExt || imageUrl != null))
             {
+                if (ResultObject == null)
+                {
+                    ResultObject = GetImageFromDataObject(Data.Storage);
+                }
+
                 try
                 {
                     GetImageFromUrl(imageUrl, path);
@@ -90,7 +111,11 @@ namespace PasteEx.Core
             // save image from Bitmap data
             if (imageExt.Contains(extension))
             {
-                Bitmap bitmap = GetImageFromDataObject(Data.Storage);
+                if (ResultObject == null)
+                {
+                    ResultObject = GetImageFromDataObject(Data.Storage);
+                }
+                Bitmap bitmap = ResultObject as Bitmap;
 
                 switch (extension)
                 {
@@ -250,5 +275,6 @@ namespace PasteEx.Core
             }
             OnSaveAsFileCompleted();
         }
+
     }
 }

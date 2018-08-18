@@ -13,6 +13,11 @@ namespace PasteEx.Core
             Data = clipData;
         }
 
+        public override void Reload()
+        {
+            ResultObject = null;
+        }
+
         public override string[] Analyze()
         {
             if (Data.FromClipboard.GetDataPresent(DataFormats.FileDrop, false))
@@ -35,11 +40,30 @@ namespace PasteEx.Core
             return null;
         }
 
+        public override object GetObject(string extension)
+        {
+            if (Data.Storage.GetDataPresent(DataFormats.FileDrop, false))
+            {
+                string[] filePaths = Data.Storage.GetData(DataFormats.FileDrop) as string[];
+                if (filePaths.Length > 0 && !String.IsNullOrEmpty(filePaths[0]))
+                {
+                    ResultObject = new FileInfo(filePaths[0]);
+                }
+            }
+            return ResultObject;
+        }
+
         public override bool SaveAs(string path, string extension)
         {
             // copy file priority
             if (Data.Storage.GetDataPresent(DataFormats.FileDrop, false))
             {
+                if (ResultObject != null)
+                {
+                    (ResultObject as FileInfo).CopyTo(path);
+                    return true;
+                }
+
                 string[] filePaths = Data.Storage.GetData(DataFormats.FileDrop) as string[];
                 if (filePaths.Length > 0 && !String.IsNullOrEmpty(filePaths[0]))
                 {

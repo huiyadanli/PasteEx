@@ -64,7 +64,7 @@ namespace PasteEx.Core
 
             if (Properties.Settings.Default.autoImageTofile)
             {
-                monitorModeData.Refresh();
+                monitorModeData.Reload();
                 string[] exts = monitorModeData.Analyze();
                 if (exts.Length > 0 && ImageProcessor.imageExt.Contains(exts[0]))
                 {

@@ -8,6 +8,8 @@ namespace PasteEx.Core
 
         public ClipboardData Data { get; set; }
 
+        public Object ResultObject { get; set; }
+
         public BaseProcessor(ClipboardData clipData)
         {
             Data = clipData;
@@ -20,7 +22,11 @@ namespace PasteEx.Core
             SaveAsFileCompleted?.Invoke();
         }
 
+        public abstract void Reload();
+
         public abstract string[] Analyze();
+
+        public abstract Object GetObject(string extension);
 
         public abstract bool SaveAs(string path, string extension);
     }

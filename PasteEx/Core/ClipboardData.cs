@@ -114,10 +114,14 @@ namespace PasteEx.Core
             });
         }
 
-        public void Refresh()
+        public void Reload()
         {
             FromClipboard = (DataObject)Clipboard.GetDataObject();
             Storage = new DataObject();
+            foreach (BaseProcessor analyzer in analyzers)
+            {
+                analyzer.Reload();
+            }
         }
 
         public string GetDataPresentHash()
