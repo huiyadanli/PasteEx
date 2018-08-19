@@ -15,8 +15,6 @@ namespace PasteEx.Core
 {
     public class ClipboardData
     {
-        public DataObject FromClipboard { get; set; }
-
         public DataObject Storage { get; set; }
 
         private List<BaseProcessor> analyzers;
@@ -31,9 +29,7 @@ namespace PasteEx.Core
 
         public ClipboardData()
         {
-            FromClipboard = (DataObject)Clipboard.GetDataObject();
-            Storage = new DataObject();
-
+            Storage = CloneDataObject(Clipboard.GetDataObject());
             InitProcessor();
         }
 
@@ -89,6 +85,20 @@ namespace PasteEx.Core
             return extensions.ToArray();
         }
 
+        public object GetObject(string extension)
+        {
+            object o = null;
+            foreach (BaseProcessor saver in savers)
+            {
+                o = saver.GetObject(extension);
+                if (o != null)
+                {
+                    break;
+                }
+            }
+            return o;
+        }
+
         /// <summary>
         /// Save clipboard data as file,
         /// the file type depends on the extension.
@@ -116,28 +126,40 @@ namespace PasteEx.Core
 
         public void Reload()
         {
-            FromClipboard = (DataObject)Clipboard.GetDataObject();
-            Storage = new DataObject();
+            Storage = CloneDataObject(Clipboard.GetDataObject());
             foreach (BaseProcessor analyzer in analyzers)
             {
                 analyzer.Reload();
             }
         }
 
-        public string GetDataPresentHash()
+        public static string GetDataPresentHash(DataObject dataObject)
         {
             Hashtable hashtable = new Hashtable();
-            string[] formats = FromClipboard.GetFormats();
-            foreach(string format in formats)
+            string[] formats = dataObject.GetFormats();
+            foreach (string format in formats)
             {
-                if(FromClipboard.GetDataPresent(format, false))
+                if (dataObject.GetDataPresent(format, false))
                 {
-                    hashtable.Add(format, FromClipboard.GetData(format));
+                    hashtable.Add(format, dataObject.GetData(format));
                 }
             }
             byte[] b = ObjectHelper.SerializeObject(hashtable);
             return ObjectHelper.ComputeMD5(b);
+        }
 
+        public static DataObject CloneDataObject(IDataObject iDataObject)
+        {
+            DataObject o = new DataObject();
+            string[] formats = iDataObject.GetFormats();
+            foreach (string format in formats)
+            {
+                if (iDataObject.GetDataPresent(format, false))
+                {
+                    o.SetData(format, iDataObject.GetData(format));
+                }
+            }
+            return o;
         }
     }
 }

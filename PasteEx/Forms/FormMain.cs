@@ -269,7 +269,7 @@ namespace PasteEx.Forms
             data = null;
 
             // init control properties
-            autoToolStripMenuItem.Checked = Properties.Settings.Default.autoImageTofile;
+            autoToolStripMenuItem.Checked = Properties.Settings.Default.autoImageToFileEnabled;
             startMonitorToolStripMenuItem.Visible = false;
             stopMonitorToolStripMenuItem.Visible = true;
 
@@ -284,7 +284,7 @@ namespace PasteEx.Forms
 
         private void collectModeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormCollection formCollection = new FormCollection();
+            FormCollector formCollection = new FormCollector();
             formCollection.Show();
         }
 
@@ -325,7 +325,7 @@ namespace PasteEx.Forms
         private void autoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             autoToolStripMenuItem.Checked = !autoToolStripMenuItem.Checked;
-            Properties.Settings.Default.autoImageTofile = autoToolStripMenuItem.Checked;
+            Properties.Settings.Default.autoImageToFileEnabled = autoToolStripMenuItem.Checked;
             Properties.Settings.Default.Save();
         }
 
@@ -337,7 +337,8 @@ namespace PasteEx.Forms
 
         private void notifyIcon_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            Form f = FormSetting.GetInstance();
+            //Form f = FormSetting.GetInstance();
+            Form f = FormCollector.GetInstance();
             f.Show();
             f.Activate();
         }

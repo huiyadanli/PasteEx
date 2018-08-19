@@ -20,16 +20,15 @@ namespace PasteEx.Core
 
         public override string[] Analyze()
         {
-            if (Data.FromClipboard.GetDataPresent(DataFormats.FileDrop, false))
+            if (Data.Storage.GetDataPresent(DataFormats.FileDrop, false))
             {
                 List<string> extensions = new List<string>();
-                if (Data.FromClipboard.GetData(DataFormats.FileDrop) is string[] filePaths)
+                if (Data.Storage.GetData(DataFormats.FileDrop) is string[] filePaths)
                 {
                     if (filePaths.Length == 1)
                     {
                         if (!String.IsNullOrEmpty(filePaths[0]) && File.Exists(filePaths[0]))
                         {
-                            Data.Storage.SetData(DataFormats.FileDrop, Data.FromClipboard.GetData(DataFormats.FileDrop));
                             extensions.Clear();
                             extensions.Add(Path.GetExtension(filePaths[0]).Remove(0, 1));
                         }

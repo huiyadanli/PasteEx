@@ -8,7 +8,7 @@ namespace PasteEx.Core
 
         public ClipboardData Data { get; set; }
 
-        public Object ResultObject { get; set; }
+        public object ResultObject { get; set; }
 
         public BaseProcessor(ClipboardData clipData)
         {

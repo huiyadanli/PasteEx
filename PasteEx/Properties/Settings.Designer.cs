@@ -121,12 +121,24 @@ namespace PasteEx.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool autoImageTofile {
+        public bool autoImageToFileEnabled {
             get {
-                return ((bool)(this["autoImageTofile"]));
+                return ((bool)(this["autoImageToFileEnabled"]));
             }
             set {
-                this["autoImageTofile"] = value;
+                this["autoImageToFileEnabled"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool collectorEnabled {
+            get {
+                return ((bool)(this["collectorEnabled"]));
+            }
+            set {
+                this["collectorEnabled"] = value;
             }
         }
     }

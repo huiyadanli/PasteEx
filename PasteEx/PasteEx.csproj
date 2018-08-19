@@ -66,13 +66,13 @@
   <ItemGroup>
     <Compile Include="Core\ClipboardData.cs" />
     <Compile Include="Core\ClipboardMonitor.cs" />
-    <Compile Include="Core\Collection\ImageCollection.cs" />
+    <Compile Include="Core\CollectionEntity.cs" />
     <Compile Include="Core\ModeController.cs" />
-    <Compile Include="Forms\FormCollection.cs">
+    <Compile Include="Forms\FormCollector.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\FormCollection.Designer.cs">
-      <DependentUpon>FormCollection.cs</DependentUpon>
+    <Compile Include="Forms\FormCollector.Designer.cs">
+      <DependentUpon>FormCollector.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\WaterfallFlowPanel.cs">
       <SubType>Component</SubType>
@@ -132,10 +132,9 @@
     </Compile>
     <Compile Include="Util\ObjectHelper.cs" />
     <Compile Include="Util\RightMenu.cs" />
-    <Compile Include="Util\ThreadHelper.cs" />
     <Compile Include="Util\UpdateRepairer.cs" />
-    <EmbeddedResource Include="Forms\FormCollection.resx">
-      <DependentUpon>FormCollection.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\FormCollector.resx">
+      <DependentUpon>FormCollector.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PasteEx.Core;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,11 +11,22 @@ using System.Windows.Forms;
 
 namespace PasteEx.Forms
 {
-    public partial class FormCollection : Form
+    public partial class FormCollector : Form
     {
+        private static FormCollector dialogue = null;
+
         WaterfallFlowPanel panel = new WaterfallFlowPanel();
 
-        public FormCollection()
+        public static FormCollector GetInstance()
+        {
+            if (dialogue == null)
+            {
+                dialogue = new FormCollector();
+            }
+            return dialogue;
+        }
+
+        public FormCollector()
         {
             InitializeComponent();
 
@@ -32,6 +44,22 @@ namespace PasteEx.Forms
             {
                 splitContainer1.Panel1.VerticalScroll.Value = splitContainer1.Panel1.VerticalScroll.Maximum;
             };
+        }
+
+        public void AddCollecction(CollectionEntity collectionEntity)
+        {
+            if(ImageProcessor.imageExt.Contains(collectionEntity.Extension))
+            {
+                PictureBox p1 = new PictureBox();
+                p1.Image = (collectionEntity.ResultObject as Bitmap).Clone() as Bitmap;
+                p1.SizeMode = PictureBoxSizeMode.Zoom;
+                p1.Width = WaterfallFlowLayout.width;
+                p1.Height = (int)Math.Round(p1.Width * 1.0 / p1.Image.Width * p1.Image.Height, 0);
+                p1.BorderStyle = BorderStyle.FixedSingle;
+
+
+                panel.Controls.Add(p1);
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)

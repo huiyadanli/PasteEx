@@ -19,9 +19,8 @@ namespace PasteEx.Core
 
         public override string[] Analyze()
         {
-            if (Data.FromClipboard.GetDataPresent(DataFormats.Rtf, false))
+            if (Data.Storage.GetDataPresent(DataFormats.Rtf, false))
             {
-                Data.Storage.SetData(DataFormats.Rtf, Data.FromClipboard.GetData(DataFormats.Rtf));
                 return new string[] { "rtf" };
             }
             return null;

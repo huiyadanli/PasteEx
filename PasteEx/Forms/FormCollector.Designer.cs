@@ -1,6 +1,6 @@
 ﻿namespace PasteEx.Forms
 {
-    partial class FormCollection
+    partial class FormCollector
     {
         /// <summary>
         /// Required designer variable.
