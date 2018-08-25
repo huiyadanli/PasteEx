@@ -19,8 +19,6 @@ namespace PasteEx.Core
 
         private static ClipboardData monitorModeData;
 
-        private static Hashtable collectionTable = new Hashtable();
-
         public static void StartMonitorMode()
         {
             // register the event that is fired after the key press.
@@ -52,7 +50,7 @@ namespace PasteEx.Core
 
         private static void ClipboardMonitor_OnClipboardChange()
         {
-            if (!Properties.Settings.Default.autoImageToFileEnabled && !Properties.Settings.Default.collectorEnabled)
+            if (!Properties.Settings.Default.autoImageToFileEnabled)
             {
                 return;
             }
@@ -64,45 +62,22 @@ namespace PasteEx.Core
             {
                 return;
             }
-            
-            // 2. Get result object
-            CollectionEntity collectionEntity = new CollectionEntity(monitorModeData.Storage);
-            if (Properties.Settings.Default.collectorEnabled && !collectionTable.ContainsKey(collectionEntity.Id))
-            {
-                collectionTable.Add(collectionEntity.Id, collectionEntity);
-                object o = monitorModeData.GetObject(exts[0]);
-                collectionEntity.ResultObject = o;
-                collectionEntity.Extension = exts[0];
-            }
-            else
-            {
-                collectionEntity = collectionTable[collectionEntity.Id] as CollectionEntity;
-            }
 
-            // 3. Save image data to disk
+            // 2. Save image data to disk
             if (ImageProcessor.imageExt.Contains(exts[0]))
             {
-                string filePath = collectionEntity.FilePath;
-                // If Auto Image To File Enabled
                 if (Properties.Settings.Default.autoImageToFileEnabled)
                 {
                     // Append FileDrop type data into clipboard
                     String folder = Path.Combine(Path.GetDirectoryName(Application.ExecutablePath), "User", "Temp") + "\\";
-                    filePath = Path.Combine(folder, FormMain.GenerateFileName(folder, exts[0]) + "." + exts[0]);
+                    string filePath = Path.Combine(folder, FormMain.GenerateFileName(folder, exts[0]) + "." + exts[0]);
 
                     AppendFileToClipboard(filePath);
-                }
-                if(!File.Exists(filePath))
-                {
+
                     monitorModeData.SaveAsync(filePath, exts[0]);
                 }
             }
 
-            // 4. Collector
-            if (Properties.Settings.Default.collectorEnabled)
-            {
-                FormCollector.GetInstance().AddCollecction(collectionEntity);
-            }
         }
 
         private static void AppendFileToClipboard(string filePath)
@@ -117,17 +92,15 @@ namespace PasteEx.Core
 
         #endregion
 
-        #region CollectionMode
+        #region CollectionMode(Abandoned)
 
-        public static void StartCollectionMode()
-        {
-        }
+        //public static void StartCollectionMode()
+        //{
+        //}
 
-        public static void StopCollectionMode()
-        {
-        }
-
-
+        //public static void StopCollectionMode()
+        //{
+        //}
 
         #endregion
 

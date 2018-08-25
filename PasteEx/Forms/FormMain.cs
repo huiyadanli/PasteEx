@@ -282,12 +282,6 @@ namespace PasteEx.Forms
             ModeController.StartMonitorMode();
         }
 
-        private void collectModeToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            FormCollector formCollection = new FormCollector();
-            formCollection.Show();
-        }
-
         private void settingToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form f = FormSetting.GetInstance();
@@ -337,8 +331,7 @@ namespace PasteEx.Forms
 
         private void notifyIcon_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            //Form f = FormSetting.GetInstance();
-            Form f = FormCollector.GetInstance();
+            Form f = FormSetting.GetInstance();
             f.Show();
             f.Activate();
         }

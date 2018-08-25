@@ -66,17 +66,7 @@
   <ItemGroup>
     <Compile Include="Core\ClipboardData.cs" />
     <Compile Include="Core\ClipboardMonitor.cs" />
-    <Compile Include="Core\CollectionEntity.cs" />
     <Compile Include="Core\ModeController.cs" />
-    <Compile Include="Forms\FormCollector.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\FormCollector.Designer.cs">
-      <DependentUpon>FormCollector.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\WaterfallFlowPanel.cs">
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="Library\Kernel32.cs" />
     <Compile Include="Core\Processor\BaseProcessor.cs" />
     <Compile Include="Core\Processor\FileProcessor.cs" />
@@ -130,12 +120,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Strings.zh-CN.resx</DependentUpon>
     </Compile>
-    <Compile Include="Util\ObjectHelper.cs" />
     <Compile Include="Util\RightMenu.cs" />
     <Compile Include="Util\UpdateRepairer.cs" />
-    <EmbeddedResource Include="Forms\FormCollector.resx">
-      <DependentUpon>FormCollector.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
       <SubType>Designer</SubType>

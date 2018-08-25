@@ -124,6 +124,7 @@ namespace PasteEx.Core
                         bitmap.Save(path, ImageFormat.Png);
                         break;
                 }
+                bitmap.Dispose();
                 OnSaveAsFileCompleted();
                 return true;
             }

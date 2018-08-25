@@ -41,15 +41,14 @@
             this.btnSettings = new System.Windows.Forms.Button();
             this.contextMenuStripSetting = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.monitorModeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.collectModeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.settingToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
             this.contextMenuStripMonitorMode = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.startMonitorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.stopMonitorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.autoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.settingToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.startMonitorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip.SuspendLayout();
             this.contextMenuStripSetting.SuspendLayout();
             this.contextMenuStripMonitorMode.SuspendLayout();
@@ -120,7 +119,6 @@
             // 
             this.contextMenuStripSetting.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.monitorModeToolStripMenuItem,
-            this.collectModeToolStripMenuItem,
             this.settingToolStripMenuItem});
             this.contextMenuStripSetting.Name = "contextMenuStripSetting";
             resources.ApplyResources(this.contextMenuStripSetting, "contextMenuStripSetting");
@@ -130,12 +128,6 @@
             this.monitorModeToolStripMenuItem.Name = "monitorModeToolStripMenuItem";
             resources.ApplyResources(this.monitorModeToolStripMenuItem, "monitorModeToolStripMenuItem");
             this.monitorModeToolStripMenuItem.Click += new System.EventHandler(this.monitorModeToolStripMenuItem_Click);
-            // 
-            // collectModeToolStripMenuItem
-            // 
-            this.collectModeToolStripMenuItem.Name = "collectModeToolStripMenuItem";
-            resources.ApplyResources(this.collectModeToolStripMenuItem, "collectModeToolStripMenuItem");
-            this.collectModeToolStripMenuItem.Click += new System.EventHandler(this.collectModeToolStripMenuItem_Click);
             // 
             // settingToolStripMenuItem
             // 
@@ -162,6 +154,12 @@
             this.contextMenuStripMonitorMode.Name = "contextMenuStripMonitorMode";
             resources.ApplyResources(this.contextMenuStripMonitorMode, "contextMenuStripMonitorMode");
             // 
+            // startMonitorToolStripMenuItem
+            // 
+            this.startMonitorToolStripMenuItem.Name = "startMonitorToolStripMenuItem";
+            resources.ApplyResources(this.startMonitorToolStripMenuItem, "startMonitorToolStripMenuItem");
+            this.startMonitorToolStripMenuItem.Click += new System.EventHandler(this.startMonitorToolStripMenuItem_Click);
+            // 
             // stopMonitorToolStripMenuItem
             // 
             this.stopMonitorToolStripMenuItem.Name = "stopMonitorToolStripMenuItem";
@@ -186,12 +184,6 @@
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             resources.ApplyResources(this.exitToolStripMenuItem, "exitToolStripMenuItem");
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
-            // 
-            // startMonitorToolStripMenuItem
-            // 
-            this.startMonitorToolStripMenuItem.Name = "startMonitorToolStripMenuItem";
-            resources.ApplyResources(this.startMonitorToolStripMenuItem, "startMonitorToolStripMenuItem");
-            this.startMonitorToolStripMenuItem.Click += new System.EventHandler(this.startMonitorToolStripMenuItem_Click);
             // 
             // FormMain
             // 
@@ -233,7 +225,6 @@
         private System.Windows.Forms.Button btnSettings;
         private System.Windows.Forms.ContextMenuStrip contextMenuStripSetting;
         private System.Windows.Forms.ToolStripMenuItem monitorModeToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem collectModeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem settingToolStripMenuItem;
         private System.Windows.Forms.NotifyIcon notifyIcon;
         private System.Windows.Forms.ContextMenuStrip contextMenuStripMonitorMode;

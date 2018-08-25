@@ -129,17 +129,5 @@ namespace PasteEx.Properties {
                 this["autoImageToFileEnabled"] = value;
             }
         }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool collectorEnabled {
-            get {
-                return ((bool)(this["collectorEnabled"]));
-            }
-            set {
-                this["collectorEnabled"] = value;
-            }
-        }
     }
 }

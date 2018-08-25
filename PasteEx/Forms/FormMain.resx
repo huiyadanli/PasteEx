@@ -225,6 +225,12 @@
   <metadata name="statusStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <data name="tsslCurrentLocation.Size" type="System.Drawing.Size, System.Drawing">
+    <value>104, 17</value>
+  </data>
+  <data name="tsslCurrentLocation.Text" xml:space="preserve">
+    <value>Current Location</value>
+  </data>
   <data name="statusStrip.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 85</value>
   </data>
@@ -248,12 +254,6 @@
   </data>
   <data name="&gt;&gt;statusStrip.ZOrder" xml:space="preserve">
     <value>5</value>
-  </data>
-  <data name="tsslCurrentLocation.Size" type="System.Drawing.Size, System.Drawing">
-    <value>104, 17</value>
-  </data>
-  <data name="tsslCurrentLocation.Text" xml:space="preserve">
-    <value>Current Location</value>
   </data>
   <data name="btnSave.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -315,8 +315,20 @@
   <metadata name="contextMenuStripSetting.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>131, 17</value>
   </metadata>
+  <data name="monitorModeToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>162, 22</value>
+  </data>
+  <data name="monitorModeToolStripMenuItem.Text" xml:space="preserve">
+    <value>Monitor Mode</value>
+  </data>
+  <data name="settingToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>162, 22</value>
+  </data>
+  <data name="settingToolStripMenuItem.Text" xml:space="preserve">
+    <value>Setting</value>
+  </data>
   <data name="contextMenuStripSetting.Size" type="System.Drawing.Size, System.Drawing">
-    <value>173, 70</value>
+    <value>163, 48</value>
   </data>
   <data name="&gt;&gt;contextMenuStripSetting.Name" xml:space="preserve">
     <value>contextMenuStripSetting</value>
@@ -347,24 +359,6 @@
   </data>
   <data name="&gt;&gt;btnSettings.ZOrder" xml:space="preserve">
     <value>2</value>
-  </data>
-  <data name="monitorModeToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>172, 22</value>
-  </data>
-  <data name="monitorModeToolStripMenuItem.Text" xml:space="preserve">
-    <value>Monitor Mode</value>
-  </data>
-  <data name="collectModeToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>172, 22</value>
-  </data>
-  <data name="collectModeToolStripMenuItem.Text" xml:space="preserve">
-    <value>Collection Mode</value>
-  </data>
-  <data name="settingToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>172, 22</value>
-  </data>
-  <data name="settingToolStripMenuItem.Text" xml:space="preserve">
-    <value>Setting</value>
   </data>
   <metadata name="notifyIcon.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>331, 17</value>
@@ -406,7 +400,7 @@
     <value>Exit</value>
   </data>
   <data name="contextMenuStripMonitorMode.Size" type="System.Drawing.Size, System.Drawing">
-    <value>184, 136</value>
+    <value>184, 114</value>
   </data>
   <data name="&gt;&gt;contextMenuStripMonitorMode.Name" xml:space="preserve">
     <value>contextMenuStripMonitorMode</value>
@@ -444,12 +438,6 @@
   <data name="&gt;&gt;monitorModeToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;collectModeToolStripMenuItem.Name" xml:space="preserve">
-    <value>collectModeToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;collectModeToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;settingToolStripMenuItem.Name" xml:space="preserve">
     <value>settingToolStripMenuItem</value>
   </data>
@@ -461,6 +449,12 @@
   </data>
   <data name="&gt;&gt;notifyIcon.Type" xml:space="preserve">
     <value>System.Windows.Forms.NotifyIcon, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;startMonitorToolStripMenuItem.Name" xml:space="preserve">
+    <value>startMonitorToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;startMonitorToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;stopMonitorToolStripMenuItem.Name" xml:space="preserve">
     <value>stopMonitorToolStripMenuItem</value>
@@ -484,12 +478,6 @@
     <value>exitToolStripMenuItem</value>
   </data>
   <data name="&gt;&gt;exitToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;startMonitorToolStripMenuItem.Name" xml:space="preserve">
-    <value>startMonitorToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;startMonitorToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">

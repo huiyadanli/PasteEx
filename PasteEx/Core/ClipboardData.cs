@@ -131,21 +131,7 @@ namespace PasteEx.Core
             {
                 analyzer.Reload();
             }
-        }
-
-        public static string GetDataPresentHash(DataObject dataObject)
-        {
-            Hashtable hashtable = new Hashtable();
-            string[] formats = dataObject.GetFormats();
-            foreach (string format in formats)
-            {
-                if (dataObject.GetDataPresent(format, false))
-                {
-                    hashtable.Add(format, dataObject.GetData(format));
-                }
-            }
-            byte[] b = ObjectHelper.SerializeObject(hashtable);
-            return ObjectHelper.ComputeMD5(b);
+            GC.Collect();
         }
 
         public static DataObject CloneDataObject(IDataObject iDataObject)
