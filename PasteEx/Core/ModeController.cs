@@ -25,7 +25,7 @@ namespace PasteEx.Core
             hotkeyHook.KeyPressed += new EventHandler<KeyPressedEventArgs>(QuickPasteEx);
             try
             {
-                hotkeyHook.RegisterHotKey(ModifierKeys.Control | ModifierKeys.Alt, Keys.X);
+                hotkeyHook.RegisterHotKey(ModifierKeys.Shift, Keys.X);
             }
             catch (Exception ex)
             {

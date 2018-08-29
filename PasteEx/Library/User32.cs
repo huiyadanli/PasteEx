@@ -11,6 +11,8 @@ namespace PasteEx.Library
         [DllImport("user32.dll", SetLastError = true)]
         public static extern bool UnregisterHotKey(IntPtr hWnd, int id);
 
+        [DllImport("user32.dll")]
+        internal static extern bool HideCaret(IntPtr controlHandle);
 
         [DllImport("User32.dll", CharSet = CharSet.Auto)]
         public static extern IntPtr SetClipboardViewer(IntPtr hWndNewViewer);
@@ -35,6 +37,6 @@ namespace PasteEx.Library
         public extern static IntPtr FindWindow(string lpClassName, string lpWindowName);
 
         [DllImport("user32.dll", CharSet = CharSet.Auto)]
-        public extern  static int GetClassName(int hWnd, StringBuilder lpClassName, int nMaxCount);
+        public extern static int GetClassName(int hWnd, StringBuilder lpClassName, int nMaxCount);
     }
 }

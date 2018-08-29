@@ -67,6 +67,10 @@
     <Compile Include="Core\ClipboardData.cs" />
     <Compile Include="Core\ClipboardMonitor.cs" />
     <Compile Include="Core\ModeController.cs" />
+    <Compile Include="Forms\Hotkey\Hotkey.cs" />
+    <Compile Include="Forms\Hotkey\HotkeyTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Library\Kernel32.cs" />
     <Compile Include="Core\Processor\BaseProcessor.cs" />
     <Compile Include="Core\Processor\FileProcessor.cs" />
