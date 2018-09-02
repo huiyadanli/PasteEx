@@ -1,8 +1,6 @@
 ﻿using PasteEx.Forms;
-using PasteEx.Util;
+using PasteEx.Forms.Hotkey;
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -13,26 +11,43 @@ namespace PasteEx.Core
 {
     public class ModeController
     {
-        #region MonitorMode
+        #region Hotkey
 
-        private static HotkeyHook hotkeyHook = new HotkeyHook();
+        private static Hotkey hotkey;
+
+        private static HotkeyHook hotkeyHook;
+
+        public static void RegisterHotKey(string hotkeyStr)
+        {
+            hotkey = new Hotkey(hotkeyStr);
+
+            if(hotkeyHook != null)
+            {
+                hotkeyHook.Dispose();
+            }
+            hotkeyHook = new HotkeyHook();
+            // register the event that is fired after the key press.
+            hotkeyHook.KeyPressed += new EventHandler<KeyPressedEventArgs>(QuickPasteEx);
+            hotkeyHook.RegisterHotKey(hotkey.ModifierKey, hotkey.Key);
+        }
+
+        public static void UnregisterHotKey()
+        {
+            if (hotkeyHook != null)
+            {
+                hotkeyHook.UnregisterHotKey();
+                hotkeyHook.Dispose();
+            }
+        }
+
+        #endregion
+
+        #region MonitorMode
 
         private static ClipboardData monitorModeData;
 
         public static void StartMonitorMode()
         {
-            // register the event that is fired after the key press.
-            hotkeyHook.KeyPressed += new EventHandler<KeyPressedEventArgs>(QuickPasteEx);
-            try
-            {
-                hotkeyHook.RegisterHotKey(ModifierKeys.Shift, Keys.X);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-
-
             monitorModeData = new ClipboardData();
 
             // start monitor
@@ -42,8 +57,6 @@ namespace PasteEx.Core
 
         public static void StopMonitorMode()
         {
-            hotkeyHook.UnregisterHotKey();
-
             ClipboardMonitor.OnClipboardChange -= ClipboardMonitor_OnClipboardChange;
             ClipboardMonitor.Stop();
         }
@@ -181,13 +194,16 @@ namespace PasteEx.Core
             allDone.WaitOne();
         }
 
-        public static void QuickPasteEx(object sender, EventArgs e)
+        public static void QuickPasteEx(object sender, KeyPressedEventArgs e)
         {
-            string activeLocation = GetActiveExplorerLocation();
-
-            if (!String.IsNullOrEmpty(activeLocation))
+            if (hotkey.ModifierKey == e.Modifier && hotkey.Key == e.Key)
             {
-                QuickPasteEx(activeLocation);
+                string activeLocation = GetActiveExplorerLocation();
+
+                if (!String.IsNullOrEmpty(activeLocation))
+                {
+                    QuickPasteEx(activeLocation);
+                }
             }
         }
 

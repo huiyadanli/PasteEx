@@ -108,7 +108,7 @@
     <Compile Include="Util\EasyJson.cs" />
     <Compile Include="Util\I18n.cs" />
     <Compile Include="Util\ImageHelper.cs" />
-    <Compile Include="Util\HotkeyHook.cs" />
+    <Compile Include="Forms\Hotkey\HotkeyHook.cs" />
     <Compile Include="Util\LCHelper.cs" />
     <Compile Include="Util\Logger.cs" />
     <Compile Include="MySettingsProvider.cs" />

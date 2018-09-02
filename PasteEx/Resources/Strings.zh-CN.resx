@@ -210,4 +210,13 @@
   <data name="TxtWrongVersion" xml:space="preserve">
     <value>错误的版本号: </value>
   </data>
+  <data name="TipHotkeyBeInUse" xml:space="preserve">
+    <value>热键已经被占用！</value>
+  </data>
+  <data name="TipHotkeyRegisterFailed" xml:space="preserve">
+    <value>全局热键注册失败！</value>
+  </data>
+  <data name="TipHotkeyInvalid" xml:space="preserve">
+    <value>无效的热键。</value>
+  </data>
 </root>

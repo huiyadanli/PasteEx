@@ -141,6 +141,15 @@
   <data name="TipGetImageExtFailed" xml:space="preserve">
     <value>Failed to automatically extract picture extensions!</value>
   </data>
+  <data name="TipHotkeyBeInUse" xml:space="preserve">
+    <value>Hot keys already be in use.</value>
+  </data>
+  <data name="TipHotkeyInvalid" xml:space="preserve">
+    <value>Invalid hot keys.</value>
+  </data>
+  <data name="TipHotkeyRegisterFailed" xml:space="preserve">
+    <value>Couldn't register the hot key.</value>
+  </data>
   <data name="TipPathNotNull" xml:space="preserve">
     <value>Folder path cannot be empty.</value>
   </data>

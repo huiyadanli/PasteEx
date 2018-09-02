@@ -274,10 +274,18 @@ namespace PasteEx.Forms
             stopMonitorToolStripMenuItem.Visible = true;
 
             // hide main window and display system tray icon
-            dialogue.WindowState = FormWindowState.Minimized;
-            dialogue.ShowInTaskbar = false;
             dialogue.Hide();
             dialogue.notifyIcon.Visible = true;
+
+            try
+            {
+                ModeController.RegisterHotKey(Properties.Settings.Default.pasteHotkey);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(this, ex.Message,
+                        Resources.Strings.TitleError, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
 
             ModeController.StartMonitorMode();
         }
@@ -325,6 +333,7 @@ namespace PasteEx.Forms
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            ModeController.UnregisterHotKey();
             ModeController.StopMonitorMode();
             this.Close();
         }

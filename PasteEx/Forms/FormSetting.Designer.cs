@@ -44,31 +44,32 @@
             this.chkNeedShiftKey = new System.Windows.Forms.CheckBox();
             this.btnUnRegister = new System.Windows.Forms.Button();
             this.btnRegister = new System.Windows.Forms.Button();
-            this.tabPageMode = new System.Windows.Forms.TabPage();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.tabPageCustom = new System.Windows.Forms.TabPage();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.lblTipError = new System.Windows.Forms.Label();
             this.lblHelp = new System.Windows.Forms.Label();
             this.txtAutoExtRule = new System.Windows.Forms.TextBox();
             this.chkAutoExtSwitch = new System.Windows.Forms.CheckBox();
+            this.tabPageMode = new System.Windows.Forms.TabPage();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.lblTipHotkey = new System.Windows.Forms.Label();
+            this.lblPasteExHotkey = new System.Windows.Forms.Label();
+            this.txtHotkey = new PasteEx.Forms.Hotkey.HotkeyTextBox();
             this.tabPageAbout = new System.Windows.Forms.TabPage();
             this.labelUpdateinfo = new System.Windows.Forms.LinkLabel();
             this.picLoading = new System.Windows.Forms.PictureBox();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.lblPasteExHotkey = new System.Windows.Forms.Label();
-            this.hotkeyTextBox1 = new PasteEx.Forms.Hotkey.HotkeyTextBox();
             this.tabControl1.SuspendLayout();
             this.tabPageNomal.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.tabPageMode.SuspendLayout();
-            this.groupBox5.SuspendLayout();
             this.tabPageCustom.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.tabPageMode.SuspendLayout();
+            this.groupBox5.SuspendLayout();
             this.tabPageAbout.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLoading)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -187,21 +188,6 @@
             this.btnRegister.UseVisualStyleBackColor = true;
             this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
-            // tabPageMode
-            // 
-            this.tabPageMode.Controls.Add(this.groupBox5);
-            resources.ApplyResources(this.tabPageMode, "tabPageMode");
-            this.tabPageMode.Name = "tabPageMode";
-            this.tabPageMode.UseVisualStyleBackColor = true;
-            // 
-            // groupBox5
-            // 
-            this.groupBox5.Controls.Add(this.lblPasteExHotkey);
-            this.groupBox5.Controls.Add(this.hotkeyTextBox1);
-            resources.ApplyResources(this.groupBox5, "groupBox5");
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.TabStop = false;
-            // 
             // tabPageCustom
             // 
             this.tabPageCustom.Controls.Add(this.groupBox2);
@@ -246,6 +232,37 @@
             this.chkAutoExtSwitch.Name = "chkAutoExtSwitch";
             this.chkAutoExtSwitch.UseVisualStyleBackColor = true;
             this.chkAutoExtSwitch.CheckedChanged += new System.EventHandler(this.chkAutoExtSwitch_CheckedChanged);
+            // 
+            // tabPageMode
+            // 
+            this.tabPageMode.Controls.Add(this.groupBox5);
+            resources.ApplyResources(this.tabPageMode, "tabPageMode");
+            this.tabPageMode.Name = "tabPageMode";
+            this.tabPageMode.UseVisualStyleBackColor = true;
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.lblTipHotkey);
+            this.groupBox5.Controls.Add(this.lblPasteExHotkey);
+            this.groupBox5.Controls.Add(this.txtHotkey);
+            resources.ApplyResources(this.groupBox5, "groupBox5");
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.TabStop = false;
+            // 
+            // lblTipHotkey
+            // 
+            resources.ApplyResources(this.lblTipHotkey, "lblTipHotkey");
+            this.lblTipHotkey.Name = "lblTipHotkey";
+            // 
+            // lblPasteExHotkey
+            // 
+            resources.ApplyResources(this.lblPasteExHotkey, "lblPasteExHotkey");
+            this.lblPasteExHotkey.Name = "lblPasteExHotkey";
+            // 
+            // txtHotkey
+            // 
+            resources.ApplyResources(this.txtHotkey, "txtHotkey");
+            this.txtHotkey.Name = "txtHotkey";
             // 
             // tabPageAbout
             // 
@@ -292,16 +309,6 @@
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.TabStop = false;
             // 
-            // lblPasteExHotkey
-            // 
-            resources.ApplyResources(this.lblPasteExHotkey, "lblPasteExHotkey");
-            this.lblPasteExHotkey.Name = "lblPasteExHotkey";
-            // 
-            // hotkeyTextBox1
-            // 
-            resources.ApplyResources(this.hotkeyTextBox1, "hotkeyTextBox1");
-            this.hotkeyTextBox1.Name = "hotkeyTextBox1";
-            // 
             // FormSetting
             // 
             resources.ApplyResources(this, "$this");
@@ -309,6 +316,7 @@
             this.Controls.Add(this.tabControl1);
             this.Icon = global::PasteEx.Properties.Resources.ico;
             this.Name = "FormSetting";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormSetting_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormSetting_FormClosed);
             this.Load += new System.EventHandler(this.FormSetting_Load);
             this.tabControl1.ResumeLayout(false);
@@ -319,12 +327,12 @@
             this.groupBox3.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.tabPageMode.ResumeLayout(false);
-            this.groupBox5.ResumeLayout(false);
-            this.groupBox5.PerformLayout();
             this.tabPageCustom.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.tabPageMode.ResumeLayout(false);
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
             this.tabPageAbout.ResumeLayout(false);
             this.tabPageAbout.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLoading)).EndInit();
@@ -362,7 +370,8 @@
         private System.Windows.Forms.Label labelLanguage;
         private System.Windows.Forms.TabPage tabPageMode;
         private System.Windows.Forms.GroupBox groupBox5;
-        private Hotkey.HotkeyTextBox hotkeyTextBox1;
+        private Hotkey.HotkeyTextBox txtHotkey;
         private System.Windows.Forms.Label lblPasteExHotkey;
+        private System.Windows.Forms.Label lblTipHotkey;
     }
 }

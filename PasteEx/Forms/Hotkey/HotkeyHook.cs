@@ -1,13 +1,9 @@
 ﻿using PasteEx.Library;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PasteEx.Util
+namespace PasteEx.Forms.Hotkey
 {
     /// <summary>
     /// Code from:
@@ -88,12 +84,15 @@ namespace PasteEx.Util
             if (!User32.RegisterHotKey(_window.Handle, _currentId, (uint)modifier, (uint)key))
             {
                 if (Marshal.GetLastWin32Error() == 1409)
-                    throw new InvalidOperationException("Hot keys already be in use.");
+                    throw new InvalidOperationException(Resources.Strings.TipHotkeyBeInUse);
                 else
-                    throw new InvalidOperationException("Couldn't register the hot key.");
+                    throw new InvalidOperationException(Resources.Strings.TipHotkeyRegisterFailed);
             }
         }
 
+        /// <summary>
+        /// Unregister all hot key.
+        /// </summary>
         public void UnregisterHotKey()
         {
             // unregister all the registered hot keys.

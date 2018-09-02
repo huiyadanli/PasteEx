@@ -1,5 +1,4 @@
-﻿using PasteEx.Forms.Hotkey;
-using PasteEx.Util;
+﻿using PasteEx.Util;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -10,6 +9,8 @@ namespace PasteEx.Forms
 {
     public partial class FormSetting : Form
     {
+        private bool pasteHotkeyReregisterTick = false;
+
         private static FormSetting dialogue = null;
 
         public FormSetting()
@@ -34,17 +35,25 @@ namespace PasteEx.Forms
             txtAutoExtRule.Text = Properties.Settings.Default.autoExtRule;
             chkAutoExtSwitch.Checked = Properties.Settings.Default.autoExtSwitch;
             txtAutoExtRule.Enabled = chkAutoExtSwitch.Checked;
+
+            txtHotkey.Text = Properties.Settings.Default.pasteHotkey;
         }
         private void Set()
         {
             Properties.Settings.Default.autoExtRule = txtAutoExtRule.Text;
             Properties.Settings.Default.autoExtSwitch = chkAutoExtSwitch.Checked;
+
             Properties.Settings.Default.language = cboLanguage.SelectedIndex.ToString();
+
+            Properties.Settings.Default.pasteHotkey = txtHotkey.Text;
         }
 
         private void FormSetting_Load(object sender, EventArgs e)
         {
             Get();
+
+            // Init lblTipHotkey's text
+            lblTipHotkey.Text = "";
 
             // About Tab Page
             linkLabel1.Text = String.Format(Resources.Strings.TxtAbout, System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString());
@@ -130,6 +139,19 @@ namespace PasteEx.Forms
             tipHelp.SetToolTip(lblHelp, tip);
         }
 
+
+        private void FormSetting_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if(pasteHotkeyReregisterTick || txtHotkey.Text != Properties.Settings.Default.pasteHotkey)
+            {
+                if (!TxtPasteHotkeyValidate())
+                {
+                    tabControl1.SelectedTab = tabPageMode;
+                    e.Cancel = true;
+                }
+            }
+        }
+
         private void FormSetting_FormClosed(object sender, FormClosedEventArgs e)
         {
             dialogue = null;
@@ -181,7 +203,15 @@ namespace PasteEx.Forms
 
         private async void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (tabControl1.SelectedIndex == 2)
+            if(tabControl1.SelectedTab != tabPageMode && txtHotkey.Text != Properties.Settings.Default.pasteHotkey)
+            {
+                if(!TxtPasteHotkeyValidate())
+                {
+                    tabControl1.SelectedTab = tabPageMode;
+                }
+            }
+
+            if (tabControl1.SelectedTab == tabPageAbout)
             {
                 Task<Dictionary<String, String>> t = new Task<Dictionary<String, String>>(Client.GetUpdateInfo);
                 t.Start();
@@ -251,6 +281,22 @@ namespace PasteEx.Forms
             }
         }
 
+        private bool TxtPasteHotkeyValidate()
+        {
+            pasteHotkeyReregisterTick = true;
+            try
+            {
+                Core.ModeController.RegisterHotKey(txtHotkey.Text);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                txtHotkey.Text = Properties.Settings.Default.pasteHotkey;
+                MessageBox.Show(this, ex.Message,
+                        Resources.Strings.Title, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
+            }
+        }
 
     }
 }
