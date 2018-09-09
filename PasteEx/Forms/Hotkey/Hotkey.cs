@@ -1,6 +1,5 @@
 ﻿using PasteEx.Util;
 using System;
-using System.Collections;
 using System.Windows.Forms;
 
 namespace PasteEx.Forms.Hotkey
@@ -70,7 +69,7 @@ namespace PasteEx.Forms.Hotkey
                         Key = (Keys)Enum.Parse(typeof(Keys), keyStr);
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 Logger.Error(Resources.Strings.TipHotkeyInvalid + " - " + hotkeyStr + Environment.NewLine + ex.Message);
                 throw new ArgumentException(Resources.Strings.TipHotkeyInvalid);
@@ -79,12 +78,17 @@ namespace PasteEx.Forms.Hotkey
 
         public override string ToString()
         {
-            return string.Format("{0}{1}{2}{3}{4}",
-                Windows ? "Win + " : string.Empty,
-                Control ? "Ctrl + " : string.Empty,
-                Shift ? "Shift + " : string.Empty,
-                Alt ? "Alt + " : string.Empty,
-                Key);
+            string str = String.Empty;
+            if (Key != Keys.None)
+            {
+                str = string.Format("{0}{1}{2}{3}{4}",
+                    Windows ? "Win + " : String.Empty,
+                    Control ? "Ctrl + " : String.Empty,
+                    Shift ? "Shift + " : String.Empty,
+                    Alt ? "Alt + " : String.Empty,
+                    Key);
+            }
+            return str;
         }
 
         public void Reset()

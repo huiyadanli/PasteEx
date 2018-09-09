@@ -219,4 +219,13 @@
   <data name="TipHotkeyInvalid" xml:space="preserve">
     <value>无效的热键。</value>
   </data>
+  <data name="TipMonitorTempPathNotExist" xml:space="preserve">
+    <value>指定临时文件存放路径不存在</value>
+  </data>
+  <data name="TipDestinationFolderMustBeEmpty" xml:space="preserve">
+    <value>目标文件夹必须为空</value>
+  </data>
+  <data name="TipInvalidFileNameChars" xml:space="preserve">
+    <value>文件名不能包含这些字符 \/:*?"&lt;&gt;|</value>
+  </data>
 </root>

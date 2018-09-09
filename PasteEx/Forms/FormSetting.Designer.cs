@@ -33,6 +33,12 @@
             this.tipHelp = new System.Windows.Forms.ToolTip(this.components);
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPageNomal = new System.Windows.Forms.TabPage();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.lblFileNameGarmmar = new System.Windows.Forms.LinkLabel();
+            this.lblPreviewResult = new System.Windows.Forms.Label();
+            this.txtFileNamePattern = new System.Windows.Forms.TextBox();
+            this.lblFileNamePreview = new System.Windows.Forms.Label();
+            this.lblFileNamePattern = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.cboLanguage = new System.Windows.Forms.ComboBox();
             this.labelLanguage = new System.Windows.Forms.Label();
@@ -52,17 +58,21 @@
             this.chkAutoExtSwitch = new System.Windows.Forms.CheckBox();
             this.tabPageMode = new System.Windows.Forms.TabPage();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.lblTipHotkey = new System.Windows.Forms.Label();
-            this.lblPasteExHotkey = new System.Windows.Forms.Label();
-            this.txtHotkey = new PasteEx.Forms.Hotkey.HotkeyTextBox();
+            this.lblQuickPasteExHotkeyValid = new System.Windows.Forms.Label();
+            this.btnOpenTempFolderDialog = new System.Windows.Forms.Button();
+            this.txtTempFolderPath = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblQuickPasteExHotkey = new System.Windows.Forms.Label();
             this.tabPageAbout = new System.Windows.Forms.TabPage();
             this.labelUpdateinfo = new System.Windows.Forms.LinkLabel();
             this.picLoading = new System.Windows.Forms.PictureBox();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.txtQuickPasteExHotkey = new PasteEx.Forms.Hotkey.HotkeyTextBox();
             this.tabControl1.SuspendLayout();
             this.tabPageNomal.SuspendLayout();
+            this.groupBox6.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -98,12 +108,51 @@
             // 
             // tabPageNomal
             // 
+            this.tabPageNomal.Controls.Add(this.groupBox6);
             this.tabPageNomal.Controls.Add(this.groupBox4);
             this.tabPageNomal.Controls.Add(this.groupBox3);
             this.tabPageNomal.Controls.Add(this.groupBox1);
             resources.ApplyResources(this.tabPageNomal, "tabPageNomal");
             this.tabPageNomal.Name = "tabPageNomal";
             this.tabPageNomal.UseVisualStyleBackColor = true;
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.lblFileNameGarmmar);
+            this.groupBox6.Controls.Add(this.lblPreviewResult);
+            this.groupBox6.Controls.Add(this.txtFileNamePattern);
+            this.groupBox6.Controls.Add(this.lblFileNamePreview);
+            this.groupBox6.Controls.Add(this.lblFileNamePattern);
+            resources.ApplyResources(this.groupBox6, "groupBox6");
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.TabStop = false;
+            // 
+            // lblFileNameGarmmar
+            // 
+            resources.ApplyResources(this.lblFileNameGarmmar, "lblFileNameGarmmar");
+            this.lblFileNameGarmmar.Name = "lblFileNameGarmmar";
+            this.lblFileNameGarmmar.TabStop = true;
+            // 
+            // lblPreviewResult
+            // 
+            resources.ApplyResources(this.lblPreviewResult, "lblPreviewResult");
+            this.lblPreviewResult.Name = "lblPreviewResult";
+            // 
+            // txtFileNamePattern
+            // 
+            resources.ApplyResources(this.txtFileNamePattern, "txtFileNamePattern");
+            this.txtFileNamePattern.Name = "txtFileNamePattern";
+            this.txtFileNamePattern.TextChanged += new System.EventHandler(this.txtFileNamePattern_TextChanged);
+            // 
+            // lblFileNamePreview
+            // 
+            resources.ApplyResources(this.lblFileNamePreview, "lblFileNamePreview");
+            this.lblFileNamePreview.Name = "lblFileNamePreview";
+            // 
+            // lblFileNamePattern
+            // 
+            resources.ApplyResources(this.lblFileNamePattern, "lblFileNamePattern");
+            this.lblFileNamePattern.Name = "lblFileNamePattern";
             // 
             // groupBox4
             // 
@@ -242,27 +291,43 @@
             // 
             // groupBox5
             // 
-            this.groupBox5.Controls.Add(this.lblTipHotkey);
-            this.groupBox5.Controls.Add(this.lblPasteExHotkey);
-            this.groupBox5.Controls.Add(this.txtHotkey);
+            this.groupBox5.Controls.Add(this.lblQuickPasteExHotkeyValid);
+            this.groupBox5.Controls.Add(this.btnOpenTempFolderDialog);
+            this.groupBox5.Controls.Add(this.txtTempFolderPath);
+            this.groupBox5.Controls.Add(this.label1);
+            this.groupBox5.Controls.Add(this.lblQuickPasteExHotkey);
+            this.groupBox5.Controls.Add(this.txtQuickPasteExHotkey);
             resources.ApplyResources(this.groupBox5, "groupBox5");
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.TabStop = false;
             // 
-            // lblTipHotkey
+            // lblQuickPasteExHotkeyValid
             // 
-            resources.ApplyResources(this.lblTipHotkey, "lblTipHotkey");
-            this.lblTipHotkey.Name = "lblTipHotkey";
+            resources.ApplyResources(this.lblQuickPasteExHotkeyValid, "lblQuickPasteExHotkeyValid");
+            this.lblQuickPasteExHotkeyValid.ForeColor = System.Drawing.Color.Green;
+            this.lblQuickPasteExHotkeyValid.Name = "lblQuickPasteExHotkeyValid";
             // 
-            // lblPasteExHotkey
+            // btnOpenTempFolderDialog
             // 
-            resources.ApplyResources(this.lblPasteExHotkey, "lblPasteExHotkey");
-            this.lblPasteExHotkey.Name = "lblPasteExHotkey";
+            resources.ApplyResources(this.btnOpenTempFolderDialog, "btnOpenTempFolderDialog");
+            this.btnOpenTempFolderDialog.Name = "btnOpenTempFolderDialog";
+            this.btnOpenTempFolderDialog.UseVisualStyleBackColor = true;
+            this.btnOpenTempFolderDialog.Click += new System.EventHandler(this.btnOpenTempFolderDialog_Click);
             // 
-            // txtHotkey
+            // txtTempFolderPath
             // 
-            resources.ApplyResources(this.txtHotkey, "txtHotkey");
-            this.txtHotkey.Name = "txtHotkey";
+            resources.ApplyResources(this.txtTempFolderPath, "txtTempFolderPath");
+            this.txtTempFolderPath.Name = "txtTempFolderPath";
+            // 
+            // label1
+            // 
+            resources.ApplyResources(this.label1, "label1");
+            this.label1.Name = "label1";
+            // 
+            // lblQuickPasteExHotkey
+            // 
+            resources.ApplyResources(this.lblQuickPasteExHotkey, "lblQuickPasteExHotkey");
+            this.lblQuickPasteExHotkey.Name = "lblQuickPasteExHotkey";
             // 
             // tabPageAbout
             // 
@@ -309,6 +374,12 @@
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.TabStop = false;
             // 
+            // txtQuickPasteExHotkey
+            // 
+            resources.ApplyResources(this.txtQuickPasteExHotkey, "txtQuickPasteExHotkey");
+            this.txtQuickPasteExHotkey.Name = "txtQuickPasteExHotkey";
+            this.txtQuickPasteExHotkey.TextChanged += new System.EventHandler(this.txtQuickPasteExHotkey_TextChanged);
+            // 
             // FormSetting
             // 
             resources.ApplyResources(this, "$this");
@@ -316,11 +387,14 @@
             this.Controls.Add(this.tabControl1);
             this.Icon = global::PasteEx.Properties.Resources.ico;
             this.Name = "FormSetting";
+            this.TopMost = true;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormSetting_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormSetting_FormClosed);
             this.Load += new System.EventHandler(this.FormSetting_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPageNomal.ResumeLayout(false);
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.groupBox3.ResumeLayout(false);
@@ -370,8 +444,17 @@
         private System.Windows.Forms.Label labelLanguage;
         private System.Windows.Forms.TabPage tabPageMode;
         private System.Windows.Forms.GroupBox groupBox5;
-        private Hotkey.HotkeyTextBox txtHotkey;
-        private System.Windows.Forms.Label lblPasteExHotkey;
-        private System.Windows.Forms.Label lblTipHotkey;
+        private Hotkey.HotkeyTextBox txtQuickPasteExHotkey;
+        private System.Windows.Forms.Label lblQuickPasteExHotkey;
+        private System.Windows.Forms.Button btnOpenTempFolderDialog;
+        private System.Windows.Forms.TextBox txtTempFolderPath;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.TextBox txtFileNamePattern;
+        private System.Windows.Forms.Label lblFileNamePreview;
+        private System.Windows.Forms.Label lblFileNamePattern;
+        private System.Windows.Forms.Label lblPreviewResult;
+        private System.Windows.Forms.LinkLabel lblFileNameGarmmar;
+        private System.Windows.Forms.Label lblQuickPasteExHotkeyValid;
     }
 }

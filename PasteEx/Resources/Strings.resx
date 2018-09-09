@@ -129,6 +129,9 @@
   <data name="TipAnalyzeFailedWithoutPrompt" xml:space="preserve">
     <value>The clipboard content is empty or not supported</value>
   </data>
+  <data name="TipDestinationFolderMustBeEmpty" xml:space="preserve">
+    <value>Destination folder must be empty.</value>
+  </data>
   <data name="TipDownloadFailed" xml:space="preserve">
     <value>Failed to download</value>
   </data>
@@ -149,6 +152,12 @@
   </data>
   <data name="TipHotkeyRegisterFailed" xml:space="preserve">
     <value>Couldn't register the hot key.</value>
+  </data>
+  <data name="TipInvalidFileNameChars" xml:space="preserve">
+    <value>Invalid characters in a file name</value>
+  </data>
+  <data name="TipMonitorTempPathNotExist" xml:space="preserve">
+    <value>The specified path does not exist.</value>
   </data>
   <data name="TipPathNotNull" xml:space="preserve">
     <value>Folder path cannot be empty.</value>

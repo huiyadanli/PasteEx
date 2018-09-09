@@ -9,7 +9,6 @@ namespace PasteEx.Forms
 {
     public partial class FormSetting : Form
     {
-        private bool pasteHotkeyReregisterTick = false;
 
         private static FormSetting dialogue = null;
 
@@ -36,7 +35,11 @@ namespace PasteEx.Forms
             chkAutoExtSwitch.Checked = Properties.Settings.Default.autoExtSwitch;
             txtAutoExtRule.Enabled = chkAutoExtSwitch.Checked;
 
-            txtHotkey.Text = Properties.Settings.Default.pasteHotkey;
+            txtQuickPasteExHotkey.Text = Properties.Settings.Default.pasteHotkey;
+
+            txtTempFolderPath.Text = Properties.Settings.Default.monitorTempFolderPath;
+
+            txtFileNamePattern.Text = Properties.Settings.Default.fileNamePattern;
         }
         private void Set()
         {
@@ -45,15 +48,19 @@ namespace PasteEx.Forms
 
             Properties.Settings.Default.language = cboLanguage.SelectedIndex.ToString();
 
-            Properties.Settings.Default.pasteHotkey = txtHotkey.Text;
+            Properties.Settings.Default.pasteHotkey = txtQuickPasteExHotkey.Text;
+
+            Properties.Settings.Default.monitorTempFolderPath = txtTempFolderPath.Text;
+
+            Properties.Settings.Default.fileNamePattern = txtFileNamePattern.Text;
         }
 
         private void FormSetting_Load(object sender, EventArgs e)
         {
             Get();
 
-            // Init lblTipHotkey's text
-            lblTipHotkey.Text = "";
+            // Validate Hotkey
+            ChangeLableValidState(lblQuickPasteExHotkeyValid, TxtPasteHotkeyValidate(txtQuickPasteExHotkey.Text));
 
             // About Tab Page
             linkLabel1.Text = String.Format(Resources.Strings.TxtAbout, System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString());
@@ -139,16 +146,15 @@ namespace PasteEx.Forms
             tipHelp.SetToolTip(lblHelp, tip);
         }
 
-
         private void FormSetting_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if(pasteHotkeyReregisterTick || txtHotkey.Text != Properties.Settings.Default.pasteHotkey)
+            if (!string.IsNullOrEmpty(txtTempFolderPath.Text) && !PathGenerator.IsEmptyFolder(txtTempFolderPath.Text))
             {
-                if (!TxtPasteHotkeyValidate())
-                {
-                    tabControl1.SelectedTab = tabPageMode;
-                    e.Cancel = true;
-                }
+                tabControl1.SelectedTab = tabPageMode;
+                MessageBox.Show(this, Resources.Strings.TipMonitorTempPathNotExist,
+                        Resources.Strings.Title, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtTempFolderPath.Text = PathGenerator.defaultMonitorTempFolder;
+                e.Cancel = true;
             }
         }
 
@@ -201,16 +207,13 @@ namespace PasteEx.Forms
             return res;
         }
 
+        public void ChangeSelectedTabToModeTab()
+        {
+            tabControl1.SelectedTab = tabPageMode;
+        }
+
         private async void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(tabControl1.SelectedTab != tabPageMode && txtHotkey.Text != Properties.Settings.Default.pasteHotkey)
-            {
-                if(!TxtPasteHotkeyValidate())
-                {
-                    tabControl1.SelectedTab = tabPageMode;
-                }
-            }
-
             if (tabControl1.SelectedTab == tabPageAbout)
             {
                 Task<Dictionary<String, String>> t = new Task<Dictionary<String, String>>(Client.GetUpdateInfo);
@@ -277,26 +280,92 @@ namespace PasteEx.Forms
                 I18n.SetWinFormLanguage(I18n.FindLanguageByLocalName(language).CultureInfoName);
 
                 // About Tab Page Reload
-                linkLabel1.Text = String.Format(Resources.Strings.TxtAbout, System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString());
+                linkLabel1.Text = string.Format(Resources.Strings.TxtAbout, System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString());
             }
         }
 
-        private bool TxtPasteHotkeyValidate()
+        private bool TxtPasteHotkeyValidate(string hotkeyStr)
         {
-            pasteHotkeyReregisterTick = true;
+            if (string.IsNullOrEmpty(hotkeyStr))
+            {
+                return false;
+            }
+
             try
             {
-                Core.ModeController.RegisterHotKey(txtHotkey.Text);
+                Core.ModeController.RegisterHotKey(hotkeyStr);
                 return true;
             }
-            catch (Exception ex)
+            catch
             {
-                txtHotkey.Text = Properties.Settings.Default.pasteHotkey;
-                MessageBox.Show(this, ex.Message,
-                        Resources.Strings.Title, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
         }
 
+        private void txtQuickPasteExHotkey_TextChanged(object sender, EventArgs e)
+        {
+            ChangeLableValidState(lblQuickPasteExHotkeyValid, TxtPasteHotkeyValidate(txtQuickPasteExHotkey.Text));
+        }
+
+        private void ChangeLableValidState(Label lbl, bool state)
+        {
+            if (state)
+            {
+                lbl.Text = "√";
+                lbl.ForeColor = System.Drawing.Color.Green;
+            }
+            else
+            {
+                lbl.Text = "×";
+                lbl.ForeColor = System.Drawing.Color.Red;
+            }
+        }
+
+        private void btnOpenTempFolderDialog_Click(object sender, EventArgs e)
+        {
+            FolderBrowserDialog folderBrowserDialog = new FolderBrowserDialog();
+            if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
+            {
+                if (string.IsNullOrEmpty(folderBrowserDialog.SelectedPath))
+                {
+                    MessageBox.Show(this, Resources.Strings.TipPathNotNull,
+                        Resources.Strings.Title, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                else
+                {
+                    if (PathGenerator.IsEmptyFolder(folderBrowserDialog.SelectedPath))
+                    {
+                        txtTempFolderPath.Text = folderBrowserDialog.SelectedPath;
+                    }
+                    else
+                    {
+                        MessageBox.Show(this, Resources.Strings.TipDestinationFolderMustBeEmpty,
+                        Resources.Strings.Title, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+
+            }
+        }
+
+        private void txtFileNamePattern_TextChanged(object sender, EventArgs e)
+        {
+            if (txtFileNamePattern.Text.IndexOfAny(Path.GetInvalidFileNameChars()) >= 0)
+            {
+                lblPreviewResult.Text = Resources.Strings.TipInvalidFileNameChars;
+            }
+            else
+            {
+                try
+                {
+                    lblPreviewResult.Text = PathGenerator.GenerateDefaultFileName(txtFileNamePattern.Text);
+                }
+                catch (Exception ex)
+                {
+                    lblPreviewResult.Text = ex.Message;
+                }
+            }
+                
+        }
     }
 }

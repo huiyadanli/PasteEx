@@ -71,6 +71,7 @@
     <Compile Include="Forms\Hotkey\HotkeyTextBox.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Forms\PathGenerator.cs" />
     <Compile Include="Library\Kernel32.cs" />
     <Compile Include="Core\Processor\BaseProcessor.cs" />
     <Compile Include="Core\Processor\FileProcessor.cs" />

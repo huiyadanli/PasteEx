@@ -19,6 +19,12 @@ namespace PasteEx.Core
 
         public static void RegisterHotKey(string hotkeyStr)
         {
+            if(String.IsNullOrEmpty(hotkeyStr))
+            {
+                UnregisterHotKey();
+                return;
+            }
+
             hotkey = new Hotkey(hotkeyStr);
 
             if(hotkeyHook != null)
@@ -82,8 +88,7 @@ namespace PasteEx.Core
                 if (Properties.Settings.Default.autoImageToFileEnabled)
                 {
                     // Append FileDrop type data into clipboard
-                    String folder = Path.Combine(Path.GetDirectoryName(Application.ExecutablePath), "User", "Temp") + "\\";
-                    string filePath = Path.Combine(folder, FormMain.GenerateFileName(folder, exts[0]) + "." + exts[0]);
+                    string filePath = PathGenerator.GenerateMonitorAppendFilePath(exts[0]);
 
                     AppendFileToClipboard(filePath);
 
@@ -126,7 +131,7 @@ namespace PasteEx.Core
             quickPasteData.SaveCompleted += () => allDone.Set();
 
             string[] extensions = quickPasteData.Analyze();
-            if (!String.IsNullOrEmpty(fileName))
+            if (!string.IsNullOrEmpty(fileName))
             {
                 string ext = Path.GetExtension(fileName);
                 extensions = new string[1] { ext };
@@ -149,7 +154,7 @@ namespace PasteEx.Core
                 string path = null;
                 if (String.IsNullOrEmpty(fileName))
                 {
-                    path = currentLocation + FormMain.GenerateFileName(currentLocation, extensions[0]) + "." + extensions[0];
+                    path = currentLocation + PathGenerator.GenerateFileName(currentLocation, extensions[0]) + "." + extensions[0];
                 }
                 else
                 {

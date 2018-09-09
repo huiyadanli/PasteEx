@@ -97,6 +97,15 @@ namespace PasteEx.Resources {
         }
         
         /// <summary>
+        ///   查找类似 Destination folder must be empty. 的本地化字符串。
+        /// </summary>
+        internal static string TipDestinationFolderMustBeEmpty {
+            get {
+                return ResourceManager.GetString("TipDestinationFolderMustBeEmpty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Failed to download 的本地化字符串。
         /// </summary>
         internal static string TipDownloadFailed {
@@ -156,6 +165,24 @@ namespace PasteEx.Resources {
         internal static string TipHotkeyRegisterFailed {
             get {
                 return ResourceManager.GetString("TipHotkeyRegisterFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Invalid characters in a file name 的本地化字符串。
+        /// </summary>
+        internal static string TipInvalidFileNameChars {
+            get {
+                return ResourceManager.GetString("TipInvalidFileNameChars", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 The specified path does not exist. 的本地化字符串。
+        /// </summary>
+        internal static string TipMonitorTempPathNotExist {
+            get {
+                return ResourceManager.GetString("TipMonitorTempPathNotExist", resourceCulture);
             }
         }
         
