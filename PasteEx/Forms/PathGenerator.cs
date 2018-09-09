@@ -52,7 +52,25 @@ namespace PasteEx.Forms
         /// <returns></returns>
         public static string GenerateFileName(string folder, string extension)
         {
-            string defaultFileName = "Clipboard_" + DateTime.Now.ToString("yyyyMMdd");
+            // Use file name pattern
+            string defaultFileName = null;
+            if (Properties.Settings.Default.fileNamePattern.IndexOfAny(Path.GetInvalidFileNameChars()) < 0)
+            {
+                try
+                {
+                    defaultFileName = GenerateDefaultFileName(Properties.Settings.Default.fileNamePattern);
+                }
+                catch
+                {
+                    defaultFileName = null;
+                }
+            }
+            if(string.IsNullOrEmpty(defaultFileName))
+            {
+                defaultFileName = GenerateDefaultFileName(defaultFileNamePattern);
+            }
+
+            // Generate file name
             string path = folder + defaultFileName + "." + extension;
 
             string result;

@@ -63,10 +63,10 @@ namespace PasteEx.Forms
             ChangeLableValidState(lblQuickPasteExHotkeyValid, TxtPasteHotkeyValidate(txtQuickPasteExHotkey.Text));
 
             // About Tab Page
-            linkLabel1.Text = String.Format(Resources.Strings.TxtAbout, System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString());
+            linkLabel1.Text = string.Format(Resources.Strings.TxtAbout, System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString());
 
             string i = Properties.Settings.Default.language;
-            if (String.IsNullOrWhiteSpace(i))
+            if (string.IsNullOrWhiteSpace(i))
             {
                 i = I18n.FindLanguageByCurrentThreadInfo().Index.ToString();
             }
@@ -148,14 +148,14 @@ namespace PasteEx.Forms
 
         private void FormSetting_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (!string.IsNullOrEmpty(txtTempFolderPath.Text) && !PathGenerator.IsEmptyFolder(txtTempFolderPath.Text))
-            {
-                tabControl1.SelectedTab = tabPageMode;
-                MessageBox.Show(this, Resources.Strings.TipMonitorTempPathNotExist,
-                        Resources.Strings.Title, MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtTempFolderPath.Text = PathGenerator.defaultMonitorTempFolder;
-                e.Cancel = true;
-            }
+            //if (!string.IsNullOrEmpty(txtTempFolderPath.Text) && !PathGenerator.IsEmptyFolder(txtTempFolderPath.Text))
+            //{
+            //    tabControl1.SelectedTab = tabPageMode;
+            //    MessageBox.Show(this, Resources.Strings.TipMonitorTempPathNotExist,
+            //            Resources.Strings.Title, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //    txtTempFolderPath.Text = PathGenerator.defaultMonitorTempFolder;
+            //    e.Cancel = true;
+            //}
         }
 
         private void FormSetting_FormClosed(object sender, FormClosedEventArgs e)
