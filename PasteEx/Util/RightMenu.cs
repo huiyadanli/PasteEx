@@ -30,7 +30,7 @@ namespace PasteEx.Util
         public static bool Init()
         {
             string command = (string)Registry.GetValue(@"HKEY_CLASSES_ROOT\Directory\Background\shell\PasteEx\command", "", "");
-            if (String.IsNullOrEmpty(command))
+            if (string.IsNullOrEmpty(command))
             {
                 if (!Properties.Settings.Default.firstTipFlag)
                 {

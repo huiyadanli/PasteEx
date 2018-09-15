@@ -26,7 +26,7 @@ namespace PasteEx.Util
             request.Headers.Add("X-LC-Id", appId);
             request.Headers.Add("X-LC-Key", appKey);
 
-            if (!String.IsNullOrEmpty(data))
+            if (!string.IsNullOrEmpty(data))
             {
                 StreamWriter writer = new StreamWriter(request.GetRequestStream());
                 writer.Write(data);

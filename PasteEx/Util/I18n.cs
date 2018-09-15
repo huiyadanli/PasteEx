@@ -87,7 +87,7 @@ namespace PasteEx.Util
             int index = -1;
             try
             {
-                if (!String.IsNullOrWhiteSpace(Properties.Settings.Default.language))
+                if (!string.IsNullOrWhiteSpace(Properties.Settings.Default.language))
                 {
                     index = Convert.ToInt32(Properties.Settings.Default.language);
                     Language language = FindLanguageByIndex(index);

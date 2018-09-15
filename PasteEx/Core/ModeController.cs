@@ -19,7 +19,7 @@ namespace PasteEx.Core
 
         public static void RegisterHotKey(string hotkeyStr)
         {
-            if(String.IsNullOrEmpty(hotkeyStr))
+            if(string.IsNullOrEmpty(hotkeyStr))
             {
                 UnregisterHotKey();
                 return;
@@ -158,7 +158,7 @@ namespace PasteEx.Core
                 string currentLocation = location.EndsWith("\\") ? location : location + "\\";
 
                 string path = null;
-                if (String.IsNullOrEmpty(fileName))
+                if (string.IsNullOrEmpty(fileName))
                 {
                     path = currentLocation + PathGenerator.GenerateFileName(currentLocation, extensions[0]) + "." + extensions[0];
                 }
@@ -179,7 +179,7 @@ namespace PasteEx.Core
                 {
                     if (File.Exists(path))
                     {
-                        DialogResult result = MessageBox.Show(String.Format(Resources.Strings.TipTargetFileExisted, path),
+                        DialogResult result = MessageBox.Show(string.Format(Resources.Strings.TipTargetFileExisted, path),
                             Resources.Strings.Title, MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
                         if (result == DialogResult.Yes)
                         {
@@ -211,7 +211,7 @@ namespace PasteEx.Core
             {
                 string activeLocation = GetActiveExplorerLocation();
 
-                if (!String.IsNullOrEmpty(activeLocation))
+                if (!string.IsNullOrEmpty(activeLocation))
                 {
                     QuickPasteEx(activeLocation);
                 }

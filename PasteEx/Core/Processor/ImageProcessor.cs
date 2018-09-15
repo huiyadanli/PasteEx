@@ -53,7 +53,7 @@ namespace PasteEx.Core
                         Resources.Strings.Title, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     defaultExt = null;
                 }
-                if (!String.IsNullOrEmpty(defaultExt))
+                if (!string.IsNullOrEmpty(defaultExt))
                 {
                     // Modify sequence oder
                     extensions.Remove(defaultExt);
@@ -245,7 +245,7 @@ namespace PasteEx.Core
                     if (formMain != null)
                     {
                         formMain.ChangeTsslCurrentLocation(
-                            String.Format(Resources.Strings.TipPictureDownloading, e.ProgressPercentage));
+                            string.Format(Resources.Strings.TipPictureDownloading, e.ProgressPercentage));
                     }
                 };
             }

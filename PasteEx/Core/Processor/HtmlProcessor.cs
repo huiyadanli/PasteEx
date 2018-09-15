@@ -28,7 +28,7 @@ namespace PasteEx.Core
 
         public override object GetObject(string extension)
         {
-            if (String.Equals(extension, "htmlformat", StringComparison.CurrentCultureIgnoreCase))
+            if (string.Equals(extension, "htmlformat", StringComparison.CurrentCultureIgnoreCase))
             {
                 ResultObject = Data.Storage.GetData(DataFormats.Html);
             }
@@ -37,7 +37,7 @@ namespace PasteEx.Core
 
         public override bool SaveAs(string path, string extension)
         {
-            if (String.Equals(extension, "htmlformat", StringComparison.CurrentCultureIgnoreCase))
+            if (string.Equals(extension, "htmlformat", StringComparison.CurrentCultureIgnoreCase))
             {
                 if(ResultObject == null)
                 {

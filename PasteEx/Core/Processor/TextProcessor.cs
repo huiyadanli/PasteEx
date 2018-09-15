@@ -42,7 +42,7 @@ namespace PasteEx.Core
                         defaultExt = null;
                     }
 
-                    if (!String.IsNullOrEmpty(defaultExt))
+                    if (!string.IsNullOrEmpty(defaultExt))
                     {
                         extensions.Add(defaultExt);
                     }
@@ -99,7 +99,7 @@ namespace PasteEx.Core
                 for (int i = 0; i < 50; i++)
                 {
                     string line = sr.ReadLine();
-                    if (!String.IsNullOrEmpty(line))
+                    if (!string.IsNullOrEmpty(line))
                     {
                         for (int j = 0; j < rules.Count; j++)
                         {

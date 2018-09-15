@@ -96,7 +96,7 @@ namespace PasteEx.Forms
 
             if (File.Exists(path))
             {
-                DialogResult result = MessageBox.Show(String.Format(Resources.Strings.TipTargetFileExisted, path),
+                DialogResult result = MessageBox.Show(string.Format(Resources.Strings.TipTargetFileExisted, path),
                     Resources.Strings.Title, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (result == DialogResult.Yes)
                 {

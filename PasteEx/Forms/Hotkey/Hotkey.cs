@@ -78,14 +78,14 @@ namespace PasteEx.Forms.Hotkey
 
         public override string ToString()
         {
-            string str = String.Empty;
+            string str = string.Empty;
             if (Key != Keys.None)
             {
                 str = string.Format("{0}{1}{2}{3}{4}",
-                    Windows ? "Win + " : String.Empty,
-                    Control ? "Ctrl + " : String.Empty,
-                    Shift ? "Shift + " : String.Empty,
-                    Alt ? "Alt + " : String.Empty,
+                    Windows ? "Win + " : string.Empty,
+                    Control ? "Ctrl + " : string.Empty,
+                    Shift ? "Shift + " : string.Empty,
+                    Alt ? "Alt + " : string.Empty,
                     Key);
             }
             return str;
