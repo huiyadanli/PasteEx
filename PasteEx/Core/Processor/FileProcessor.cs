@@ -27,7 +27,7 @@ namespace PasteEx.Core
                 {
                     if (filePaths.Length == 1)
                     {
-                        if (!String.IsNullOrEmpty(filePaths[0]) && File.Exists(filePaths[0]))
+                        if (!string.IsNullOrEmpty(filePaths[0]) && File.Exists(filePaths[0]))
                         {
                             extensions.Clear();
                             extensions.Add(Path.GetExtension(filePaths[0]).Remove(0, 1));
@@ -44,7 +44,7 @@ namespace PasteEx.Core
             if (Data.Storage.GetDataPresent(DataFormats.FileDrop, false))
             {
                 string[] filePaths = Data.Storage.GetData(DataFormats.FileDrop) as string[];
-                if (filePaths.Length > 0 && !String.IsNullOrEmpty(filePaths[0]))
+                if (filePaths.Length > 0 && !string.IsNullOrEmpty(filePaths[0]) && File.Exists(filePaths[0]))
                 {
                     ResultObject = new FileInfo(filePaths[0]);
                 }
@@ -64,7 +64,7 @@ namespace PasteEx.Core
                 }
 
                 string[] filePaths = Data.Storage.GetData(DataFormats.FileDrop) as string[];
-                if (filePaths.Length > 0 && !String.IsNullOrEmpty(filePaths[0]))
+                if (filePaths.Length > 0 && !string.IsNullOrEmpty(filePaths[0]) && File.Exists(filePaths[0]))
                 {
                     File.Copy(filePaths[0], path);
                 }
