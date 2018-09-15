@@ -239,6 +239,7 @@ namespace PasteEx.Forms
             ClipboardMonitor.Start();
             startMonitorToolStripMenuItem.Visible = false;
             stopMonitorToolStripMenuItem.Visible = true;
+            notifyIcon.Icon = Properties.Resources.ico;
         }
 
         private void stopMonitorToolStripMenuItem_Click(object sender, EventArgs e)
@@ -246,6 +247,7 @@ namespace PasteEx.Forms
             ClipboardMonitor.Stop();
             startMonitorToolStripMenuItem.Visible = true;
             stopMonitorToolStripMenuItem.Visible = false;
+            notifyIcon.Icon = Properties.Resources.stop;
         }
 
         #endregion

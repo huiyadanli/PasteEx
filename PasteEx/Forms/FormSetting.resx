@@ -173,11 +173,12 @@ If you have questions or suggestions, please feel free to email me at huiyadanli
   <data name="txtFileNamePattern.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>391, 315</value>
-  </data>
   <data name="&gt;&gt;groupBox7.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="linkLabel1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
   </data>
   <data name="btnUnRegister.ToolTip" xml:space="preserve">
     <value />
@@ -197,7 +198,6 @@ If you have questions or suggestions, please feel free to email me at huiyadanli
   <data name="&gt;&gt;picLoading.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="lblPreviewResult.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
@@ -206,9 +206,6 @@ If you have questions or suggestions, please feel free to email me at huiyadanli
   </data>
   <data name="lblQuickPasteExHotkey.Text" xml:space="preserve">
     <value>Paste As File:</value>
-  </data>
-  <data name="picLoading.ToolTip" xml:space="preserve">
-    <value />
   </data>
   <data name="&gt;&gt;lblAutoSaveFolderPath.Parent" xml:space="preserve">
     <value>groupBox7</value>
@@ -231,6 +228,9 @@ If you have questions or suggestions, please feel free to email me at huiyadanli
   <data name="tabPageCustom.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
+  <data name="cboLanguage.Items2" xml:space="preserve">
+    <value>繁體中文</value>
+  </data>
   <data name="lblFileNamePattern.Size" type="System.Drawing.Size, System.Drawing">
     <value>53, 12</value>
   </data>
@@ -240,10 +240,13 @@ If you have questions or suggestions, please feel free to email me at huiyadanli
   <data name="chkFastNeedShiftKey.Location" type="System.Drawing.Point, System.Drawing">
     <value>23, 24</value>
   </data>
-  <data name="chkAutoExtSwitch.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <data name="groupBox3.ToolTip" xml:space="preserve">
+    <value />
+  </data>
+  <data name="&gt;&gt;chkAutoExtSwitch.Parent" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="lblHelp.ToolTip" xml:space="preserve">
     <value />
   </data>
   <data name="&gt;&gt;groupBox5.Name" xml:space="preserve">
@@ -348,11 +351,14 @@ If you have questions or suggestions, please feel free to email me at huiyadanli
   <data name="&gt;&gt;tabPageNomal.Name" xml:space="preserve">
     <value>tabPageNomal</value>
   </data>
+  <data name="linkLabel1.LinkArea" type="System.Windows.Forms.LinkArea, System.Windows.Forms">
+    <value>23, 0</value>
+  </data>
   <data name="tabControl1.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>Context Menu</value>
+  <data name="lblFileNameGarmmar.Size" type="System.Drawing.Size, System.Drawing">
+    <value>53, 12</value>
   </data>
   <data name="&gt;&gt;tabPageAbout.Parent" xml:space="preserve">
     <value>tabControl1</value>
@@ -381,11 +387,8 @@ If you have questions or suggestions, please feel free to email me at huiyadanli
   <data name="&gt;&gt;groupBox3.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="&gt;&gt;lblHelp.Name" xml:space="preserve">
-    <value>lblHelp</value>
-  </data>
-  <data name="&gt;&gt;lblAutoSaveFolderPath.ZOrder" xml:space="preserve">
-    <value>4</value>
+  <data name="&gt;&gt;chkAutoExtSwitch.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="tabPageMode.ToolTip" xml:space="preserve">
     <value />
@@ -395,6 +398,9 @@ If you have questions or suggestions, please feel free to email me at huiyadanli
   </data>
   <data name="&gt;&gt;lblQuickPasteExHotkey.Parent" xml:space="preserve">
     <value>groupBox5</value>
+  </data>
+  <data name="pictureBox1.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>Zoom</value>
   </data>
   <data name="&gt;&gt;lblQuickPasteExHotkey.Name" xml:space="preserve">
     <value>lblQuickPasteExHotkey</value>
@@ -420,6 +426,9 @@ If you have questions or suggestions, please feel free to email me at huiyadanli
   <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 23</value>
   </data>
+  <data name="chkNeedShiftKey.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 24</value>
+  </data>
   <data name="tabPageAbout.Text" xml:space="preserve">
     <value>About</value>
   </data>
@@ -434,6 +443,9 @@ If you have questions or suggestions, please feel free to email me at huiyadanli
   </data>
   <data name="btnFastUnRegister.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
+  </data>
+  <data name="chkFastNeedShiftKey.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
   </data>
   <data name="lblAutoSaveFolderPath.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -456,11 +468,14 @@ If you have questions or suggestions, please feel free to email me at huiyadanli
   <data name="&gt;&gt;lblTipError.Name" xml:space="preserve">
     <value>lblTipError</value>
   </data>
-  <data name="&gt;&gt;lblHelp.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;groupBox5.Parent" xml:space="preserve">
+    <value>tabPageMode</value>
   </data>
   <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
+  </data>
+  <data name="tabControl1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
   </data>
   <data name="lblFileNamePreview.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -522,17 +537,11 @@ If you have questions or suggestions, please feel free to email me at huiyadanli
   <data name="btnFastUnRegister.Text" xml:space="preserve">
     <value>Remove</value>
   </data>
-  <data name="pictureBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>96, 69</value>
-  </data>
   <data name="lblFileNamePreview.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="groupBox7.Size" type="System.Drawing.Size, System.Drawing">
     <value>369, 83</value>
-  </data>
-  <data name="btnRegister.Size" type="System.Drawing.Size, System.Drawing">
-    <value>86, 23</value>
   </data>
   <data name="&gt;&gt;btnOpenAutoSavePath.Parent" xml:space="preserve">
     <value>groupBox7</value>
@@ -573,26 +582,23 @@ If you have questions or suggestions, please feel free to email me at huiyadanli
   <data name="&gt;&gt;txtAutoSaveFolderPath.Parent" xml:space="preserve">
     <value>groupBox7</value>
   </data>
+  <data name="&gt;&gt;btnFastUnRegister.Parent" xml:space="preserve">
+    <value>groupBox3</value>
+  </data>
   <data name="&gt;&gt;lblHelp.Parent" xml:space="preserve">
     <value>groupBox2</value>
   </data>
-  <data name="chkFastNeedShiftKey.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
+  <data name="&gt;&gt;groupBox4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="lblTipError.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
-  </data>
-  <data name="lblQuickPasteExHotkeyValid.Text" xml:space="preserve">
-    <value>√</value>
   </data>
   <data name="tabPageMode.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
   <data name="labelUpdateinfo.Location" type="System.Drawing.Point, System.Drawing">
     <value>17, 241</value>
-  </data>
-  <data name="&gt;&gt;chkAutoExtSwitch.Type" xml:space="preserve">
-    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="btnFastRegister.Text" xml:space="preserve">
     <value>Add</value>
@@ -608,6 +614,9 @@ If you have questions or suggestions, please feel free to email me at huiyadanli
   </data>
   <data name="&gt;&gt;lblQuickPasteExHotkeyValid.ZOrder" xml:space="preserve">
     <value>0</value>
+  </data>
+  <data name="cboLanguage.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="&gt;&gt;labelLanguage.ZOrder" xml:space="preserve">
     <value>1</value>
@@ -663,35 +672,35 @@ If you have questions or suggestions, please feel free to email me at huiyadanli
   <data name="txtQuickPasteExHotkey.ToolTip" xml:space="preserve">
     <value />
   </data>
-  <data name="&gt;&gt;lblPreviewResult.Name" xml:space="preserve">
-    <value>lblPreviewResult</value>
-  </data>
   <data name="btnFastUnRegister.Location" type="System.Drawing.Point, System.Drawing">
     <value>266, 20</value>
   </data>
   <data name="picLoading.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
   </data>
-  <data name="&gt;&gt;groupBox4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="groupBox4.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="&gt;&gt;groupBox1.Parent" xml:space="preserve">
     <value>tabPageNomal</value>
   </data>
-  <data name="&gt;&gt;groupBox5.Parent" xml:space="preserve">
-    <value>tabPageMode</value>
+  <data name="txtAutoExtRule.Multiline" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="&gt;&gt;lblFileNameGarmmar.Name" xml:space="preserve">
     <value>lblFileNameGarmmar</value>
   </data>
-  <data name="cboLanguage.Items2" xml:space="preserve">
-    <value>繁體中文</value>
+  <data name="txtQuickPasteExHotkey.Location" type="System.Drawing.Point, System.Drawing">
+    <value>118, 19</value>
   </data>
   <data name="groupBox2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
   <data name="&gt;&gt;groupBox3.Type" xml:space="preserve">
     <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="chkAutoSave.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="btnOpenAutoSavePath.ToolTip" xml:space="preserve">
     <value />
@@ -708,8 +717,8 @@ If you have questions or suggestions, please feel free to email me at huiyadanli
   <data name="&gt;&gt;chkFastNeedShiftKey.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="btnFastRegister.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="&gt;&gt;groupBox7.Parent" xml:space="preserve">
+    <value>tabPageMode</value>
   </data>
   <data name="btnChangeAutoSavePathDialog.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -744,11 +753,14 @@ If you have questions or suggestions, please feel free to email me at huiyadanli
   <data name="lblFileNamePattern.Location" type="System.Drawing.Point, System.Drawing">
     <value>19, 26</value>
   </data>
+  <data name="&gt;&gt;tabPageCustom.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <data name="chkAutoExtSwitch.Text" xml:space="preserve">
     <value>Enable</value>
   </data>
-  <data name="lblFileNameGarmmar.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="&gt;&gt;lblPreviewResult.Parent" xml:space="preserve">
+    <value>groupBox6</value>
   </data>
   <data name="&gt;&gt;btnRegister.Name" xml:space="preserve">
     <value>btnRegister</value>
@@ -767,9 +779,6 @@ If you have questions or suggestions, please feel free to email me at huiyadanli
   </data>
   <data name="lblTipError.Visible" type="System.Boolean, mscorlib">
     <value>False</value>
-  </data>
-  <data name="&gt;&gt;lblFileNameGarmmar.Parent" xml:space="preserve">
-    <value>groupBox6</value>
   </data>
   <data name="lblTipError.Text" xml:space="preserve">
     <value>The rules is incorrect</value>
@@ -813,9 +822,6 @@ If you have questions or suggestions, please feel free to email me at huiyadanli
   <data name="&gt;&gt;groupBox4.Parent" xml:space="preserve">
     <value>tabPageNomal</value>
   </data>
-  <data name="labelLanguage.Text" xml:space="preserve">
-    <value>Language:</value>
-  </data>
   <data name="lblQuickPasteExHotkey.Location" type="System.Drawing.Point, System.Drawing">
     <value>23, 24</value>
   </data>
@@ -831,8 +837,8 @@ If you have questions or suggestions, please feel free to email me at huiyadanli
   <data name="&gt;&gt;groupBox4.Name" xml:space="preserve">
     <value>groupBox4</value>
   </data>
-  <data name="&gt;&gt;pictureBox1.ZOrder" xml:space="preserve">
-    <value>4</value>
+  <data name="lblAutoSaveFolderPath.Text" xml:space="preserve">
+    <value>Folder:</value>
   </data>
   <data name="lblFileNamePreview.Text" xml:space="preserve">
     <value>Preview:</value>
@@ -845,9 +851,6 @@ If you have questions or suggestions, please feel free to email me at huiyadanli
   </data>
   <data name="lblQuickPasteExHotkeyValid.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
-  </data>
-  <data name="&gt;&gt;chkAutoExtSwitch.ZOrder" xml:space="preserve">
-    <value>3</value>
   </data>
   <data name="&gt;&gt;btnRegister.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -885,17 +888,23 @@ If you have questions or suggestions, please feel free to email me at huiyadanli
   <data name="&gt;&gt;groupBox6.Name" xml:space="preserve">
     <value>groupBox6</value>
   </data>
-  <data name="txtQuickPasteExHotkey.Location" type="System.Drawing.Point, System.Drawing">
-    <value>118, 19</value>
+  <data name="picLoading.ToolTip" xml:space="preserve">
+    <value />
   </data>
   <data name="&gt;&gt;groupBox3.Parent" xml:space="preserve">
     <value>tabPageNomal</value>
+  </data>
+  <data name="&gt;&gt;btnOpenAutoSavePath.Name" xml:space="preserve">
+    <value>btnOpenAutoSavePath</value>
   </data>
   <data name="&gt;&gt;tabControl1.Type" xml:space="preserve">
     <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="btnChangeAutoSavePathDialog.Location" type="System.Drawing.Point, System.Drawing">
     <value>264, 48</value>
+  </data>
+  <data name="btnOpenAutoSavePath.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="lblQuickPasteExHotkeyValid.Size" type="System.Drawing.Size, System.Drawing">
     <value>18, 12</value>
@@ -912,8 +921,8 @@ If you have questions or suggestions, please feel free to email me at huiyadanli
   <data name="&gt;&gt;txtQuickPasteExHotkey.Type" xml:space="preserve">
     <value>PasteEx.Forms.Hotkey.HotkeyTextBox, PasteEx, Version=1.0.3.5, Culture=neutral, PublicKeyToken=null</value>
   </data>
-  <data name="btnOpenAutoSavePath.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="&gt;&gt;lblAutoSaveFolderPath.ZOrder" xml:space="preserve">
+    <value>4</value>
   </data>
   <data name="&gt;&gt;label2.Parent" xml:space="preserve">
     <value>tabPageAbout</value>
@@ -923,9 +932,6 @@ If you have questions or suggestions, please feel free to email me at huiyadanli
   </data>
   <data name="&gt;&gt;tabControl1.Name" xml:space="preserve">
     <value>tabControl1</value>
-  </data>
-  <data name="&gt;&gt;groupBox7.Parent" xml:space="preserve">
-    <value>tabPageMode</value>
   </data>
   <data name="&gt;&gt;tabPageAbout.ZOrder" xml:space="preserve">
     <value>3</value>
@@ -944,6 +950,9 @@ If you have questions or suggestions, please feel free to email me at huiyadanli
   </data>
   <data name="&gt;&gt;lblHelp.ZOrder" xml:space="preserve">
     <value>1</value>
+  </data>
+  <data name="&gt;&gt;picLoading.Name" xml:space="preserve">
+    <value>picLoading</value>
   </data>
   <data name="&gt;&gt;txtAutoSaveFolderPath.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -969,9 +978,6 @@ If you have questions or suggestions, please feel free to email me at huiyadanli
   <data name="&gt;&gt;tabPageMode.Name" xml:space="preserve">
     <value>tabPageMode</value>
   </data>
-  <data name="lblFileNameGarmmar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>53, 12</value>
-  </data>
   <data name="&gt;&gt;lblTipError.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -984,14 +990,11 @@ If you have questions or suggestions, please feel free to email me at huiyadanli
   <data name="chkNeedShiftKey.Text" xml:space="preserve">
     <value>Shift Right Click</value>
   </data>
-  <data name="lblAutoSaveFolderPath.Text" xml:space="preserve">
-    <value>Folder:</value>
-  </data>
   <data name="&gt;&gt;btnOpenAutoSavePath.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="lblFileNamePreview.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Context Menu</value>
   </data>
   <data name="&gt;&gt;tabControl1.Parent" xml:space="preserve">
     <value>$this</value>
@@ -1002,17 +1005,14 @@ If you have questions or suggestions, please feel free to email me at huiyadanli
   <data name="lblTipError.RightToLeft" type="System.Windows.Forms.RightToLeft, System.Windows.Forms">
     <value>No</value>
   </data>
-  <data name="lblFileNamePattern.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="lblFileNamePattern.ToolTip" xml:space="preserve">
+    <value />
   </data>
-  <data name="lblHelp.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+  <data name="lblFileNamePreview.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
   </data>
   <data name="btnFastRegister.Size" type="System.Drawing.Size, System.Drawing">
     <value>86, 23</value>
-  </data>
-  <data name="btnUnRegister.Location" type="System.Drawing.Point, System.Drawing">
-    <value>266, 20</value>
   </data>
   <data name="picLoading.Location" type="System.Drawing.Point, System.Drawing">
     <value>169, 241</value>
@@ -1053,8 +1053,8 @@ If you have questions or suggestions, please feel free to email me at huiyadanli
   <data name="tabControl1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="lblFileNamePattern.ToolTip" xml:space="preserve">
-    <value />
+  <data name="chkAutoExtSwitch.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="&gt;&gt;txtQuickPasteExHotkey.ZOrder" xml:space="preserve">
     <value>2</value>
@@ -1194,8 +1194,8 @@ If you have questions or suggestions, please feel free to email me at huiyadanli
   <data name="labelLanguage.Size" type="System.Drawing.Size, System.Drawing">
     <value>59, 12</value>
   </data>
-  <data name="linkLabel1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
+  <data name="lblFileNameGarmmar.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="&gt;&gt;btnFastRegister.ZOrder" xml:space="preserve">
     <value>2</value>
@@ -1206,8 +1206,8 @@ If you have questions or suggestions, please feel free to email me at huiyadanli
   <data name="txtAutoExtRule.Location" type="System.Drawing.Point, System.Drawing">
     <value>22, 42</value>
   </data>
-  <data name="tabControl1.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
+  <data name="btnFastRegister.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="&gt;&gt;labelUpdateinfo.Type" xml:space="preserve">
     <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -1215,8 +1215,8 @@ If you have questions or suggestions, please feel free to email me at huiyadanli
   <data name="txtAutoExtRule.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
-  <data name="pictureBox1.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
-    <value>Zoom</value>
+  <data name="&gt;&gt;lblHelp.Name" xml:space="preserve">
+    <value>lblHelp</value>
   </data>
   <data name="tabPageMode.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>
@@ -1239,14 +1239,14 @@ If you have questions or suggestions, please feel free to email me at huiyadanli
   <data name="lblQuickPasteExHotkey.Size" type="System.Drawing.Size, System.Drawing">
     <value>89, 12</value>
   </data>
-  <data name="cboLanguage.ToolTip" xml:space="preserve">
-    <value />
+  <data name="&gt;&gt;lblPreviewResult.Name" xml:space="preserve">
+    <value>lblPreviewResult</value>
   </data>
-  <data name="&gt;&gt;lblPreviewResult.Parent" xml:space="preserve">
-    <value>groupBox6</value>
+  <data name="lblHelp.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
   </data>
-  <data name="groupBox4.ToolTip" xml:space="preserve">
-    <value />
+  <data name="btnUnRegister.Location" type="System.Drawing.Point, System.Drawing">
+    <value>266, 20</value>
   </data>
   <data name="btnUnRegister.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
@@ -1257,8 +1257,8 @@ If you have questions or suggestions, please feel free to email me at huiyadanli
   <data name="groupBox6.Text" xml:space="preserve">
     <value>File Name</value>
   </data>
-  <data name="&gt;&gt;btnOpenAutoSavePath.Name" xml:space="preserve">
-    <value>btnOpenAutoSavePath</value>
+  <data name="labelLanguage.Text" xml:space="preserve">
+    <value>Language:</value>
   </data>
   <data name="&gt;&gt;linkLabel1.Parent" xml:space="preserve">
     <value>tabPageAbout</value>
@@ -1290,11 +1290,11 @@ If you have questions or suggestions, please feel free to email me at huiyadanli
   <data name="&gt;&gt;btnUnRegister.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="chkNeedShiftKey.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 24</value>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>391, 315</value>
   </data>
-  <data name="txtAutoExtRule.Multiline" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="pictureBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>96, 69</value>
   </data>
   <data name="lblTipError.Size" type="System.Drawing.Size, System.Drawing">
     <value>137, 12</value>
@@ -1302,17 +1302,14 @@ If you have questions or suggestions, please feel free to email me at huiyadanli
   <data name="lblHelp.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="&gt;&gt;btnFastUnRegister.Parent" xml:space="preserve">
-    <value>groupBox3</value>
+  <data name="btnRegister.Size" type="System.Drawing.Size, System.Drawing">
+    <value>86, 23</value>
   </data>
   <data name="tabPageNomal.Size" type="System.Drawing.Size, System.Drawing">
     <value>383, 289</value>
   </data>
   <data name="btnUnRegister.Size" type="System.Drawing.Size, System.Drawing">
     <value>86, 23</value>
-  </data>
-  <data name="chkAutoSave.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
   </data>
   <data name="btnChangeAutoSavePathDialog.ToolTip" xml:space="preserve">
     <value />
@@ -1347,14 +1344,17 @@ If you have questions or suggestions, please feel free to email me at huiyadanli
   <data name="&gt;&gt;lblQuickPasteExHotkeyValid.Parent" xml:space="preserve">
     <value>groupBox5</value>
   </data>
-  <data name="&gt;&gt;chkAutoExtSwitch.Parent" xml:space="preserve">
-    <value>groupBox2</value>
+  <data name="&gt;&gt;lblHelp.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="pictureBox1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="&gt;&gt;tabPageCustom.Name" xml:space="preserve">
     <value>tabPageCustom</value>
+  </data>
+  <data name="&gt;&gt;pictureBox1.ZOrder" xml:space="preserve">
+    <value>4</value>
   </data>
   <data name="btnFastRegister.ToolTip" xml:space="preserve">
     <value />
@@ -1371,8 +1371,8 @@ If you have questions or suggestions, please feel free to email me at huiyadanli
   <data name="&gt;&gt;labelLanguage.Parent" xml:space="preserve">
     <value>groupBox4</value>
   </data>
-  <data name="&gt;&gt;tabPageCustom.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="lblQuickPasteExHotkeyValid.Text" xml:space="preserve">
+    <value>√</value>
   </data>
   <data name="&gt;&gt;lblQuickPasteExHotkeyValid.Name" xml:space="preserve">
     <value>lblQuickPasteExHotkeyValid</value>
@@ -1401,8 +1401,8 @@ If you have questions or suggestions, please feel free to email me at huiyadanli
   <data name="btnRegister.Location" type="System.Drawing.Point, System.Drawing">
     <value>174, 20</value>
   </data>
-  <data name="linkLabel1.LinkArea" type="System.Windows.Forms.LinkArea, System.Windows.Forms">
-    <value>23, 0</value>
+  <data name="&gt;&gt;lblFileNameGarmmar.Parent" xml:space="preserve">
+    <value>groupBox6</value>
   </data>
   <data name="lblPreviewResult.ToolTip" xml:space="preserve">
     <value />
@@ -1419,8 +1419,8 @@ If you have questions or suggestions, please feel free to email me at huiyadanli
   <data name="txtFileNamePattern.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="lblHelp.ToolTip" xml:space="preserve">
-    <value />
+  <data name="&gt;&gt;chkAutoExtSwitch.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
   <data name="&gt;&gt;chkNeedShiftKey.Name" xml:space="preserve">
     <value>chkNeedShiftKey</value>
@@ -1428,8 +1428,8 @@ If you have questions or suggestions, please feel free to email me at huiyadanli
   <data name="labelUpdateinfo.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="&gt;&gt;picLoading.Name" xml:space="preserve">
-    <value>picLoading</value>
+  <data name="lblFileNamePattern.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="&gt;&gt;lblPreviewResult.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -1468,7 +1468,7 @@ If you have questions or suggestions, please feel free to email me at huiyadanli
     <value>True</value>
   </metadata>
   <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>zh-Hant</value>
+    <value>zh-CN</value>
   </metadata>
   <metadata name="tipHelp.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>

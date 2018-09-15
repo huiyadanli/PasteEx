@@ -93,6 +93,11 @@
     </Compile>
     <Compile Include="Client.cs" />
     <Compile Include="Library\User32.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Resources\Strings.Designer.cs">
       <DependentUpon>Strings.resx</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -115,11 +120,6 @@
     <Compile Include="MySettingsProvider.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <Compile Include="Resources\Strings.zh-CN.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -189,6 +189,7 @@
     <Content Include="Resources\Image\ico.png" />
     <Content Include="Resources\Image\loading.gif" />
     <Content Include="Resources\Image\setting.ico" />
+    <Content Include="Resources\Image\stop.ico" />
   </ItemGroup>
   <ItemGroup>
     <COMReference Include="SHDocVw">
