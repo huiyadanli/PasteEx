@@ -29,11 +29,14 @@
     <Setting Name="autoImageToFileEnabled" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
-    <Setting Name="monitorTempFolderPath" Type="System.String" Scope="User">
+    <Setting Name="monitorAutoSavePath" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
     <Setting Name="fileNamePattern" Type="System.String" Scope="User">
       <Value Profile="(Default)">Clip_$yyyyMMdd_HHmmss$</Value>
+    </Setting>
+    <Setting Name="monitorAutoSaveEnabled" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
     </Setting>
   </Settings>
 </SettingsFile>

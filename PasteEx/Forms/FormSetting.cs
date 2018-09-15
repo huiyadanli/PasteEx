@@ -37,9 +37,10 @@ namespace PasteEx.Forms
 
             txtQuickPasteExHotkey.Text = Properties.Settings.Default.pasteHotkey;
 
-            txtTempFolderPath.Text = Properties.Settings.Default.monitorTempFolderPath;
-
             txtFileNamePattern.Text = Properties.Settings.Default.fileNamePattern;
+
+            chkAutoSave.Checked = Properties.Settings.Default.monitorAutoSaveEnabled;
+            txtAutoSaveFolderPath.Text = Properties.Settings.Default.monitorAutoSavePath;
         }
         private void Set()
         {
@@ -50,14 +51,22 @@ namespace PasteEx.Forms
 
             Properties.Settings.Default.pasteHotkey = txtQuickPasteExHotkey.Text;
 
-            Properties.Settings.Default.monitorTempFolderPath = txtTempFolderPath.Text;
-
             Properties.Settings.Default.fileNamePattern = txtFileNamePattern.Text;
+
+            Properties.Settings.Default.monitorAutoSaveEnabled = chkAutoSave.Checked;
+            Properties.Settings.Default.monitorAutoSavePath = txtAutoSaveFolderPath.Text;
+            if (string.IsNullOrEmpty(txtAutoSaveFolderPath.Text) || !Directory.Exists(txtAutoSaveFolderPath.Text))
+            {
+                Properties.Settings.Default.monitorAutoSaveEnabled = false;
+            }
         }
 
         private void FormSetting_Load(object sender, EventArgs e)
         {
             Get();
+
+            // Auto Save Path
+            chkAutoSave_CheckedChanged(sender, e);
 
             // Validate Hotkey
             ChangeLableValidState(lblQuickPasteExHotkeyValid, TxtPasteHotkeyValidate(txtQuickPasteExHotkey.Text));
@@ -321,7 +330,7 @@ namespace PasteEx.Forms
             }
         }
 
-        private void btnOpenTempFolderDialog_Click(object sender, EventArgs e)
+        private void btnChangeAutoSavePathDialog_Click(object sender, EventArgs e)
         {
             FolderBrowserDialog folderBrowserDialog = new FolderBrowserDialog();
             if (folderBrowserDialog.ShowDialog() == DialogResult.OK)
@@ -334,15 +343,7 @@ namespace PasteEx.Forms
                 }
                 else
                 {
-                    if (PathGenerator.IsEmptyFolder(folderBrowserDialog.SelectedPath))
-                    {
-                        txtTempFolderPath.Text = folderBrowserDialog.SelectedPath;
-                    }
-                    else
-                    {
-                        MessageBox.Show(this, Resources.Strings.TipDestinationFolderMustBeEmpty,
-                        Resources.Strings.Title, MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
+                    txtAutoSaveFolderPath.Text = folderBrowserDialog.SelectedPath;
                 }
 
             }
@@ -365,7 +366,35 @@ namespace PasteEx.Forms
                     lblPreviewResult.Text = ex.Message;
                 }
             }
-                
+
+        }
+
+        private void chkAutoSave_CheckedChanged(object sender, EventArgs e)
+        {
+            txtAutoSaveFolderPath.Enabled = chkAutoSave.Checked;
+            btnChangeAutoSavePathDialog.Enabled = chkAutoSave.Checked;
+            btnOpenAutoSavePath.Enabled = chkAutoSave.Checked;
+        }
+
+        private void btnOpenAutoSavePath_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(txtAutoSaveFolderPath.Text))
+            {
+                if (Directory.Exists(txtAutoSaveFolderPath.Text))
+                {
+                    System.Diagnostics.Process.Start("Explorer.exe", txtAutoSaveFolderPath.Text);
+                }
+                else
+                {
+                    MessageBox.Show(this, Resources.Strings.TipSpecifiedPathNotExist,
+                        Resources.Strings.Title, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            else
+            {
+                MessageBox.Show(this, Resources.Strings.TipPathNotNull,
+                    Resources.Strings.Title, MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
     }
 }

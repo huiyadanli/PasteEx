@@ -156,9 +156,6 @@
   <data name="TipInvalidFileNameChars" xml:space="preserve">
     <value>Invalid characters in a file name</value>
   </data>
-  <data name="TipMonitorTempPathNotExist" xml:space="preserve">
-    <value>The specified path does not exist.</value>
-  </data>
   <data name="TipPathNotNull" xml:space="preserve">
     <value>Folder path cannot be empty.</value>
   </data>
@@ -176,6 +173,9 @@
   </data>
   <data name="TipSaveFailed" xml:space="preserve">
     <value>Save failed, please select the correct extension.</value>
+  </data>
+  <data name="TipSpecifiedPathNotExist" xml:space="preserve">
+    <value>The specified path does not exist.</value>
   </data>
   <data name="TipTargetFileExisted" xml:space="preserve">
     <value>The target file {0} already exists. Do you want to overwrite it?</value>

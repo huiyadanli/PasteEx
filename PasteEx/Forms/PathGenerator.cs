@@ -65,7 +65,7 @@ namespace PasteEx.Forms
                     defaultFileName = null;
                 }
             }
-            if(string.IsNullOrEmpty(defaultFileName))
+            if (string.IsNullOrEmpty(defaultFileName))
             {
                 defaultFileName = GenerateDefaultFileName(defaultFileNamePattern);
             }
@@ -89,7 +89,7 @@ namespace PasteEx.Forms
                     break;
                 }
 
-                if (i > 300)
+                if (i > 233)
                 {
                     result = "Default";
                     break;
@@ -192,23 +192,43 @@ namespace PasteEx.Forms
 
         public static string defaultMonitorTempFolder = Path.Combine(Path.GetDirectoryName(Application.ExecutablePath), "User", "Temp") + "\\";
 
-        public static string GenerateMonitorTempFolder()
+        public static void InitMonitorTempFolder()
         {
-            string folder = "";
-            if (string.IsNullOrEmpty(Properties.Settings.Default.monitorTempFolderPath))
+            if (!Directory.Exists(defaultMonitorTempFolder))
             {
-                folder = defaultMonitorTempFolder;
+                Directory.CreateDirectory(defaultMonitorTempFolder);
             }
-            else
+        }
+
+        /// <summary>
+        /// Delete files in temp folder.
+        /// </summary>
+        public static void ClearMonitorTempFolder()
+        {
+            if (Directory.Exists(defaultMonitorTempFolder))
             {
-                folder = Properties.Settings.Default.monitorTempFolderPath;
+                foreach (string d in Directory.GetFileSystemEntries(defaultMonitorTempFolder))
+                {
+                    if (File.Exists(d))
+                    {
+                        File.Delete(d);
+                    }
+                }
             }
-            return folder;
         }
 
         public static string GenerateMonitorAppendFilePath(string ext)
         {
-            string folder = GenerateMonitorTempFolder();
+            string folder = defaultMonitorTempFolder;
+            if (Properties.Settings.Default.monitorAutoSaveEnabled)
+            {
+                folder = Properties.Settings.Default.monitorAutoSavePath;
+            }
+            if(!Directory.Exists(folder))
+            {
+                Directory.CreateDirectory(folder);
+            }
+
             return Path.Combine(folder, GenerateFileName(folder, ext) + "." + ext);
         }
 

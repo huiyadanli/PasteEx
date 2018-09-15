@@ -219,8 +219,8 @@
   <data name="TipHotkeyInvalid" xml:space="preserve">
     <value>无效的热键。</value>
   </data>
-  <data name="TipMonitorTempPathNotExist" xml:space="preserve">
-    <value>指定临时文件存放路径不存在</value>
+  <data name="TipSpecifiedPathNotExist" xml:space="preserve">
+    <value>指定路径不存在</value>
   </data>
   <data name="TipDestinationFolderMustBeEmpty" xml:space="preserve">
     <value>目标文件夹必须为空</value>

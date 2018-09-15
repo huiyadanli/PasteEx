@@ -178,15 +178,6 @@ namespace PasteEx.Resources {
         }
         
         /// <summary>
-        ///   查找类似 The specified path does not exist. 的本地化字符串。
-        /// </summary>
-        internal static string TipMonitorTempPathNotExist {
-            get {
-                return ResourceManager.GetString("TipMonitorTempPathNotExist", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   查找类似 Folder path cannot be empty. 的本地化字符串。
         /// </summary>
         internal static string TipPathNotNull {
@@ -237,6 +228,15 @@ namespace PasteEx.Resources {
         internal static string TipSaveFailed {
             get {
                 return ResourceManager.GetString("TipSaveFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 The specified path does not exist. 的本地化字符串。
+        /// </summary>
+        internal static string TipSpecifiedPathNotExist {
+            get {
+                return ResourceManager.GetString("TipSpecifiedPathNotExist", resourceCulture);
             }
         }
         

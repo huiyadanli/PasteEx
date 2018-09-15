@@ -210,4 +210,22 @@
   <data name="TxtWrongVersion" xml:space="preserve">
     <value>錯誤的版本號: </value>
   </data>
+  <data name="TipHotkeyBeInUse" xml:space="preserve">
+    <value>熱鍵已經被占用！</value>
+  </data>
+  <data name="TipHotkeyRegisterFailed" xml:space="preserve">
+    <value>全局熱鍵註冊失敗！</value>
+  </data>
+  <data name="TipHotkeyInvalid" xml:space="preserve">
+    <value>無效的熱鍵。</value>
+  </data>
+  <data name="TipSpecifiedPathNotExist" xml:space="preserve">
+    <value>指定路徑不存在</value>
+  </data>
+  <data name="TipDestinationFolderMustBeEmpty" xml:space="preserve">
+    <value>目標文件夾必須為空</value>
+  </data>
+  <data name="TipInvalidFileNameChars" xml:space="preserve">
+    <value>文件名不能包含這些字符 \/:*?"&lt;&gt;|</value>
+  </data>
 </root>

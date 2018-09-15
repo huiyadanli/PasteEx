@@ -57,11 +57,14 @@
             this.txtAutoExtRule = new System.Windows.Forms.TextBox();
             this.chkAutoExtSwitch = new System.Windows.Forms.CheckBox();
             this.tabPageMode = new System.Windows.Forms.TabPage();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.btnOpenAutoSavePath = new System.Windows.Forms.Button();
+            this.chkAutoSave = new System.Windows.Forms.CheckBox();
+            this.txtAutoSaveFolderPath = new System.Windows.Forms.TextBox();
+            this.btnChangeAutoSavePathDialog = new System.Windows.Forms.Button();
+            this.lblAutoSaveFolderPath = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.lblQuickPasteExHotkeyValid = new System.Windows.Forms.Label();
-            this.btnOpenTempFolderDialog = new System.Windows.Forms.Button();
-            this.txtTempFolderPath = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.lblQuickPasteExHotkey = new System.Windows.Forms.Label();
             this.txtQuickPasteExHotkey = new PasteEx.Forms.Hotkey.HotkeyTextBox();
             this.tabPageAbout = new System.Windows.Forms.TabPage();
@@ -79,6 +82,7 @@
             this.tabPageCustom.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tabPageMode.SuspendLayout();
+            this.groupBox7.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.tabPageAbout.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLoading)).BeginInit();
@@ -310,18 +314,65 @@
             // tabPageMode
             // 
             resources.ApplyResources(this.tabPageMode, "tabPageMode");
+            this.tabPageMode.Controls.Add(this.groupBox7);
             this.tabPageMode.Controls.Add(this.groupBox5);
             this.tabPageMode.Name = "tabPageMode";
             this.tipHelp.SetToolTip(this.tabPageMode, resources.GetString("tabPageMode.ToolTip"));
             this.tabPageMode.UseVisualStyleBackColor = true;
             // 
+            // groupBox7
+            // 
+            resources.ApplyResources(this.groupBox7, "groupBox7");
+            this.groupBox7.Controls.Add(this.btnOpenAutoSavePath);
+            this.groupBox7.Controls.Add(this.chkAutoSave);
+            this.groupBox7.Controls.Add(this.txtAutoSaveFolderPath);
+            this.groupBox7.Controls.Add(this.btnChangeAutoSavePathDialog);
+            this.groupBox7.Controls.Add(this.lblAutoSaveFolderPath);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.TabStop = false;
+            this.tipHelp.SetToolTip(this.groupBox7, resources.GetString("groupBox7.ToolTip"));
+            // 
+            // btnOpenAutoSavePath
+            // 
+            resources.ApplyResources(this.btnOpenAutoSavePath, "btnOpenAutoSavePath");
+            this.btnOpenAutoSavePath.Name = "btnOpenAutoSavePath";
+            this.tipHelp.SetToolTip(this.btnOpenAutoSavePath, resources.GetString("btnOpenAutoSavePath.ToolTip"));
+            this.btnOpenAutoSavePath.UseVisualStyleBackColor = true;
+            this.btnOpenAutoSavePath.Click += new System.EventHandler(this.btnOpenAutoSavePath_Click);
+            // 
+            // chkAutoSave
+            // 
+            resources.ApplyResources(this.chkAutoSave, "chkAutoSave");
+            this.chkAutoSave.BackColor = System.Drawing.Color.White;
+            this.chkAutoSave.Name = "chkAutoSave";
+            this.tipHelp.SetToolTip(this.chkAutoSave, resources.GetString("chkAutoSave.ToolTip"));
+            this.chkAutoSave.UseVisualStyleBackColor = false;
+            this.chkAutoSave.CheckedChanged += new System.EventHandler(this.chkAutoSave_CheckedChanged);
+            // 
+            // txtAutoSaveFolderPath
+            // 
+            resources.ApplyResources(this.txtAutoSaveFolderPath, "txtAutoSaveFolderPath");
+            this.txtAutoSaveFolderPath.Name = "txtAutoSaveFolderPath";
+            this.tipHelp.SetToolTip(this.txtAutoSaveFolderPath, resources.GetString("txtAutoSaveFolderPath.ToolTip"));
+            // 
+            // btnChangeAutoSavePathDialog
+            // 
+            resources.ApplyResources(this.btnChangeAutoSavePathDialog, "btnChangeAutoSavePathDialog");
+            this.btnChangeAutoSavePathDialog.Name = "btnChangeAutoSavePathDialog";
+            this.tipHelp.SetToolTip(this.btnChangeAutoSavePathDialog, resources.GetString("btnChangeAutoSavePathDialog.ToolTip"));
+            this.btnChangeAutoSavePathDialog.UseVisualStyleBackColor = true;
+            this.btnChangeAutoSavePathDialog.Click += new System.EventHandler(this.btnChangeAutoSavePathDialog_Click);
+            // 
+            // lblAutoSaveFolderPath
+            // 
+            resources.ApplyResources(this.lblAutoSaveFolderPath, "lblAutoSaveFolderPath");
+            this.lblAutoSaveFolderPath.Name = "lblAutoSaveFolderPath";
+            this.tipHelp.SetToolTip(this.lblAutoSaveFolderPath, resources.GetString("lblAutoSaveFolderPath.ToolTip"));
+            // 
             // groupBox5
             // 
             resources.ApplyResources(this.groupBox5, "groupBox5");
             this.groupBox5.Controls.Add(this.lblQuickPasteExHotkeyValid);
-            this.groupBox5.Controls.Add(this.btnOpenTempFolderDialog);
-            this.groupBox5.Controls.Add(this.txtTempFolderPath);
-            this.groupBox5.Controls.Add(this.label1);
             this.groupBox5.Controls.Add(this.lblQuickPasteExHotkey);
             this.groupBox5.Controls.Add(this.txtQuickPasteExHotkey);
             this.groupBox5.Name = "groupBox5";
@@ -334,26 +385,6 @@
             this.lblQuickPasteExHotkeyValid.ForeColor = System.Drawing.Color.Green;
             this.lblQuickPasteExHotkeyValid.Name = "lblQuickPasteExHotkeyValid";
             this.tipHelp.SetToolTip(this.lblQuickPasteExHotkeyValid, resources.GetString("lblQuickPasteExHotkeyValid.ToolTip"));
-            // 
-            // btnOpenTempFolderDialog
-            // 
-            resources.ApplyResources(this.btnOpenTempFolderDialog, "btnOpenTempFolderDialog");
-            this.btnOpenTempFolderDialog.Name = "btnOpenTempFolderDialog";
-            this.tipHelp.SetToolTip(this.btnOpenTempFolderDialog, resources.GetString("btnOpenTempFolderDialog.ToolTip"));
-            this.btnOpenTempFolderDialog.UseVisualStyleBackColor = true;
-            this.btnOpenTempFolderDialog.Click += new System.EventHandler(this.btnOpenTempFolderDialog_Click);
-            // 
-            // txtTempFolderPath
-            // 
-            resources.ApplyResources(this.txtTempFolderPath, "txtTempFolderPath");
-            this.txtTempFolderPath.Name = "txtTempFolderPath";
-            this.tipHelp.SetToolTip(this.txtTempFolderPath, resources.GetString("txtTempFolderPath.ToolTip"));
-            // 
-            // label1
-            // 
-            resources.ApplyResources(this.label1, "label1");
-            this.label1.Name = "label1";
-            this.tipHelp.SetToolTip(this.label1, resources.GetString("label1.ToolTip"));
             // 
             // lblQuickPasteExHotkey
             // 
@@ -445,6 +476,8 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.tabPageMode.ResumeLayout(false);
+            this.groupBox7.ResumeLayout(false);
+            this.groupBox7.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             this.tabPageAbout.ResumeLayout(false);
@@ -486,9 +519,9 @@
         private System.Windows.Forms.GroupBox groupBox5;
         private Hotkey.HotkeyTextBox txtQuickPasteExHotkey;
         private System.Windows.Forms.Label lblQuickPasteExHotkey;
-        private System.Windows.Forms.Button btnOpenTempFolderDialog;
-        private System.Windows.Forms.TextBox txtTempFolderPath;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnChangeAutoSavePathDialog;
+        private System.Windows.Forms.TextBox txtAutoSaveFolderPath;
+        private System.Windows.Forms.Label lblAutoSaveFolderPath;
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.TextBox txtFileNamePattern;
         private System.Windows.Forms.Label lblFileNamePreview;
@@ -496,5 +529,8 @@
         private System.Windows.Forms.Label lblPreviewResult;
         private System.Windows.Forms.LinkLabel lblFileNameGarmmar;
         private System.Windows.Forms.Label lblQuickPasteExHotkeyValid;
+        private System.Windows.Forms.GroupBox groupBox7;
+        private System.Windows.Forms.Button btnOpenAutoSavePath;
+        private System.Windows.Forms.CheckBox chkAutoSave;
     }
 }

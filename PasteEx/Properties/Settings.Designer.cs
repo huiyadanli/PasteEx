@@ -133,12 +133,12 @@ namespace PasteEx.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string monitorTempFolderPath {
+        public string monitorAutoSavePath {
             get {
-                return ((string)(this["monitorTempFolderPath"]));
+                return ((string)(this["monitorAutoSavePath"]));
             }
             set {
-                this["monitorTempFolderPath"] = value;
+                this["monitorAutoSavePath"] = value;
             }
         }
         
@@ -151,6 +151,18 @@ namespace PasteEx.Properties {
             }
             set {
                 this["fileNamePattern"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool monitorAutoSaveEnabled {
+            get {
+                return ((bool)(this["monitorAutoSaveEnabled"]));
+            }
+            set {
+                this["monitorAutoSaveEnabled"] = value;
             }
         }
     }

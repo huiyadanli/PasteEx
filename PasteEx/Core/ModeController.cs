@@ -54,6 +54,10 @@ namespace PasteEx.Core
 
         public static void StartMonitorMode()
         {
+            // Create temp folder if it does not exist, and clear it
+            PathGenerator.InitMonitorTempFolder();
+            PathGenerator.ClearMonitorTempFolder();
+
             monitorModeData = new ClipboardData();
 
             // start monitor
@@ -65,6 +69,8 @@ namespace PasteEx.Core
         {
             ClipboardMonitor.OnClipboardChange -= ClipboardMonitor_OnClipboardChange;
             ClipboardMonitor.Stop();
+
+            PathGenerator.ClearMonitorTempFolder();
         }
 
         private static void ClipboardMonitor_OnClipboardChange()
