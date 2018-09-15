@@ -115,15 +115,24 @@ namespace PasteEx.Util
             {
                 ApplyResourceToControl(FormSetting.GetInstance(), new ComponentResourceManager(typeof(FormSetting)), newCI);
             }
+            ComponentResourceManager cmpFormMain = new ComponentResourceManager(typeof(FormMain));
             if (FormMain.GetInstance() != null)
             {
-                ApplyResourceToControl(FormMain.GetInstance(), new ComponentResourceManager(typeof(FormMain)), newCI);
+                ApplyResourceToControl(FormMain.GetInstance(), cmpFormMain, newCI);
             }
         }
 
         private static void ApplyResourceToControl(Control control, ComponentResourceManager cmp, CultureInfo cultureInfo)
         {
             cmp.ApplyResources(control, control.Name, cultureInfo);
+
+            if(control.ContextMenuStrip != null)
+            {
+                foreach(ToolStripMenuItem item in control.ContextMenuStrip.Items)
+                {
+                    cmp.ApplyResources(item, item.Name, cultureInfo);
+                }
+            }
 
             foreach (Control child in control.Controls)
             {
