@@ -61,18 +61,6 @@ namespace PasteEx.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool callUpgrade {
-            get {
-                return ((bool)(this["callUpgrade"]));
-            }
-            set {
-                this["callUpgrade"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
         public string guid {
             get {
@@ -108,7 +96,7 @@ namespace PasteEx.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Ctrl + Alt + X")]
         public string pasteHotkey {
             get {
                 return ((string)(this["pasteHotkey"]));

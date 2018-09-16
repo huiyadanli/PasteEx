@@ -61,8 +61,8 @@
             // 
             // cboExtension
             // 
-            resources.ApplyResources(this.cboExtension, "cboExtension");
             this.cboExtension.FormattingEnabled = true;
+            resources.ApplyResources(this.cboExtension, "cboExtension");
             this.cboExtension.Name = "cboExtension";
             this.cboExtension.SelectedIndexChanged += new System.EventHandler(this.cboExtension_SelectedIndexChanged);
             // 
@@ -78,18 +78,18 @@
             // 
             // statusStrip
             // 
-            resources.ApplyResources(this.statusStrip, "statusStrip");
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsslCurrentLocation});
+            resources.ApplyResources(this.statusStrip, "statusStrip");
             this.statusStrip.Name = "statusStrip";
             this.statusStrip.ShowItemToolTips = true;
             this.statusStrip.SizingGrip = false;
             // 
             // tsslCurrentLocation
             // 
-            resources.ApplyResources(this.tsslCurrentLocation, "tsslCurrentLocation");
             this.tsslCurrentLocation.AutoToolTip = true;
             this.tsslCurrentLocation.Name = "tsslCurrentLocation";
+            resources.ApplyResources(this.tsslCurrentLocation, "tsslCurrentLocation");
             // 
             // btnSave
             // 
@@ -107,8 +107,8 @@
             // 
             // btnSettings
             // 
-            resources.ApplyResources(this.btnSettings, "btnSettings");
             this.btnSettings.BackgroundImage = global::PasteEx.Properties.Resources.setting;
+            resources.ApplyResources(this.btnSettings, "btnSettings");
             this.btnSettings.ContextMenuStrip = this.contextMenuStripSetting;
             this.btnSettings.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnSettings.Name = "btnSettings";
@@ -117,35 +117,34 @@
             // 
             // contextMenuStripSetting
             // 
-            resources.ApplyResources(this.contextMenuStripSetting, "contextMenuStripSetting");
             this.contextMenuStripSetting.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.monitorModeToolStripMenuItem,
             this.settingToolStripMenuItem});
             this.contextMenuStripSetting.Name = "contextMenuStripSetting";
+            resources.ApplyResources(this.contextMenuStripSetting, "contextMenuStripSetting");
             // 
             // monitorModeToolStripMenuItem
             // 
-            resources.ApplyResources(this.monitorModeToolStripMenuItem, "monitorModeToolStripMenuItem");
             this.monitorModeToolStripMenuItem.Name = "monitorModeToolStripMenuItem";
+            resources.ApplyResources(this.monitorModeToolStripMenuItem, "monitorModeToolStripMenuItem");
             this.monitorModeToolStripMenuItem.Click += new System.EventHandler(this.monitorModeToolStripMenuItem_Click);
             // 
             // settingToolStripMenuItem
             // 
-            resources.ApplyResources(this.settingToolStripMenuItem, "settingToolStripMenuItem");
             this.settingToolStripMenuItem.Image = global::PasteEx.Properties.Resources.setting;
             this.settingToolStripMenuItem.Name = "settingToolStripMenuItem";
+            resources.ApplyResources(this.settingToolStripMenuItem, "settingToolStripMenuItem");
             this.settingToolStripMenuItem.Click += new System.EventHandler(this.settingToolStripMenuItem_Click);
             // 
             // notifyIcon
             // 
-            resources.ApplyResources(this.notifyIcon, "notifyIcon");
             this.notifyIcon.ContextMenuStrip = this.contextMenuStripMonitorMode;
             this.notifyIcon.Icon = global::PasteEx.Properties.Resources.ico;
+            resources.ApplyResources(this.notifyIcon, "notifyIcon");
             this.notifyIcon.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon_MouseDoubleClick);
             // 
             // contextMenuStripMonitorMode
             // 
-            resources.ApplyResources(this.contextMenuStripMonitorMode, "contextMenuStripMonitorMode");
             this.contextMenuStripMonitorMode.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.startMonitorToolStripMenuItem,
             this.stopMonitorToolStripMenuItem,
@@ -153,36 +152,37 @@
             this.settingToolStripMenuItem1,
             this.exitToolStripMenuItem});
             this.contextMenuStripMonitorMode.Name = "contextMenuStripMonitorMode";
+            resources.ApplyResources(this.contextMenuStripMonitorMode, "contextMenuStripMonitorMode");
             // 
             // startMonitorToolStripMenuItem
             // 
-            resources.ApplyResources(this.startMonitorToolStripMenuItem, "startMonitorToolStripMenuItem");
             this.startMonitorToolStripMenuItem.Name = "startMonitorToolStripMenuItem";
+            resources.ApplyResources(this.startMonitorToolStripMenuItem, "startMonitorToolStripMenuItem");
             this.startMonitorToolStripMenuItem.Click += new System.EventHandler(this.startMonitorToolStripMenuItem_Click);
             // 
             // stopMonitorToolStripMenuItem
             // 
-            resources.ApplyResources(this.stopMonitorToolStripMenuItem, "stopMonitorToolStripMenuItem");
             this.stopMonitorToolStripMenuItem.Name = "stopMonitorToolStripMenuItem";
+            resources.ApplyResources(this.stopMonitorToolStripMenuItem, "stopMonitorToolStripMenuItem");
             this.stopMonitorToolStripMenuItem.Click += new System.EventHandler(this.stopMonitorToolStripMenuItem_Click);
             // 
             // autoToolStripMenuItem
             // 
-            resources.ApplyResources(this.autoToolStripMenuItem, "autoToolStripMenuItem");
             this.autoToolStripMenuItem.Name = "autoToolStripMenuItem";
+            resources.ApplyResources(this.autoToolStripMenuItem, "autoToolStripMenuItem");
             this.autoToolStripMenuItem.Click += new System.EventHandler(this.autoToolStripMenuItem_Click);
             // 
             // settingToolStripMenuItem1
             // 
-            resources.ApplyResources(this.settingToolStripMenuItem1, "settingToolStripMenuItem1");
             this.settingToolStripMenuItem1.Image = global::PasteEx.Properties.Resources.setting;
             this.settingToolStripMenuItem1.Name = "settingToolStripMenuItem1";
+            resources.ApplyResources(this.settingToolStripMenuItem1, "settingToolStripMenuItem1");
             this.settingToolStripMenuItem1.Click += new System.EventHandler(this.settingToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
-            resources.ApplyResources(this.exitToolStripMenuItem, "exitToolStripMenuItem");
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            resources.ApplyResources(this.exitToolStripMenuItem, "exitToolStripMenuItem");
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // FormMain

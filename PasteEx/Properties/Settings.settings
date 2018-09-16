@@ -11,9 +11,6 @@
     <Setting Name="autoExtSwitch" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
-    <Setting Name="callUpgrade" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">True</Value>
-    </Setting>
     <Setting Name="guid" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
@@ -24,7 +21,7 @@
       <Value Profile="(Default)" />
     </Setting>
     <Setting Name="pasteHotkey" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">Ctrl + Alt + X</Value>
     </Setting>
     <Setting Name="autoImageToFileEnabled" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
