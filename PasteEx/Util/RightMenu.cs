@@ -1,12 +1,6 @@
 ﻿using Microsoft.Win32;
-using PasteEx.Util;
 using System;
-using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
-using System.Security.Principal;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 /// <summary>
@@ -64,7 +58,7 @@ namespace PasteEx.Util
             ShiftSetting shift = ShiftSetting.False,
             FastSetting fast = FastSetting.False)
         {
-            if (IsUserAdministrator())
+            if (ApplicationHelper.IsUserAdministrator())
             {
                 try { UnRegister(fast); } catch { }
 
@@ -88,13 +82,13 @@ namespace PasteEx.Util
                 if (fast == FastSetting.True)
                     cmd += " /fast";
 
-                StartSelf(cmd);
+                ApplicationHelper.StartSelf(cmd, true);
             }
         }
 
         public static void Delete(FastSetting fast = FastSetting.False)
         {
-            if (IsUserAdministrator())
+            if (ApplicationHelper.IsUserAdministrator())
             {
                 try
                 {
@@ -114,7 +108,7 @@ namespace PasteEx.Util
                 if (fast == FastSetting.True)
                     cmd += " /fast";
 
-                StartSelf(cmd);
+                ApplicationHelper.StartSelf(cmd, true);
             }
         }
 
@@ -197,36 +191,5 @@ namespace PasteEx.Util
             return FastSetting.True == fast ? "PasteExFast" : "PasteEx";
         }
 
-
-        public static bool IsUserAdministrator()
-        {
-            bool isAdmin;
-            try
-            {
-                WindowsIdentity user = WindowsIdentity.GetCurrent();
-                WindowsPrincipal principal = new WindowsPrincipal(user);
-                isAdmin = principal.IsInRole(WindowsBuiltInRole.Administrator);
-            }
-            catch
-            {
-                isAdmin = false;
-            }
-            return isAdmin;
-        }
-
-        public static void StartSelf(string args)
-        {
-            // restart and run as admin
-            ProcessStartInfo startInfo = new ProcessStartInfo()
-            {
-                Arguments = args,
-                CreateNoWindow = true,
-                UseShellExecute = true,
-                WorkingDirectory = Environment.CurrentDirectory,
-                FileName = Application.ExecutablePath,
-                Verb = "runas" // run as admin
-            };
-            Process.Start(startInfo);
-        }
     }
 }

@@ -228,4 +228,13 @@
   <data name="TipInvalidFileNameChars" xml:space="preserve">
     <value>文件名不能包含这些字符 \/:*?"&lt;&gt;|</value>
   </data>
+  <data name="TipMonitorProcessExisted" xml:space="preserve">
+    <value>当前已经有一个监听模式的PasteEx正在运行，不能同时开启两个监听模式！</value>
+  </data>
+  <data name="TipMonitorImHere" xml:space="preserve">
+    <value>监听模式已经启动并常驻在右下角托盘图标中。</value>
+  </data>
+  <data name="TitleAppName" xml:space="preserve">
+    <value>PasteEx</value>
+  </data>
 </root>

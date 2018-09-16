@@ -54,6 +54,7 @@ namespace PasteEx
                     }
                     else if (commands[0] == "/q")
                     {
+                        // quick paste mode
                         if (args.Length == 2)
                         {
                             ModeController.QuickPasteEx(commands[1]);
@@ -64,6 +65,12 @@ namespace PasteEx
                             ModeController.QuickPasteEx(commands[1], commands[2]);
                             return;
                         }
+                    }
+                    else if (commands[0] == "monitor")
+                    {
+                        // monitor mode
+                        Application.Run(new FormMain(null));
+                        return;
                     }
 
                     // why the disk root directory has '"' ??

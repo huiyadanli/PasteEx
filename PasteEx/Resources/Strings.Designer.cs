@@ -178,6 +178,24 @@ namespace PasteEx.Resources {
         }
         
         /// <summary>
+        ///   查找类似 Monitor started in tray icon. 的本地化字符串。
+        /// </summary>
+        internal static string TipMonitorImHere {
+            get {
+                return ResourceManager.GetString("TipMonitorImHere", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 The monitor process already exists.Two monitors can not exist at the same time！ 的本地化字符串。
+        /// </summary>
+        internal static string TipMonitorProcessExisted {
+            get {
+                return ResourceManager.GetString("TipMonitorProcessExisted", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Folder path cannot be empty. 的本地化字符串。
         /// </summary>
         internal static string TipPathNotNull {
@@ -282,6 +300,15 @@ namespace PasteEx.Resources {
         internal static string Title {
             get {
                 return ResourceManager.GetString("Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 PasteEx 的本地化字符串。
+        /// </summary>
+        internal static string TitleAppName {
+            get {
+                return ResourceManager.GetString("TitleAppName", resourceCulture);
             }
         }
         
