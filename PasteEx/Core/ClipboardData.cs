@@ -15,6 +15,8 @@ namespace PasteEx.Core
 {
     public class ClipboardData
     {
+        public IDataObject FromClipboard { get; set; }
+
         public DataObject Storage { get; set; }
 
         private List<BaseProcessor> analyzers;
@@ -29,7 +31,8 @@ namespace PasteEx.Core
 
         public ClipboardData()
         {
-            Storage = CloneDataObject(Clipboard.GetDataObject());
+            FromClipboard = Clipboard.GetDataObject();
+            Storage = new DataObject();
             InitProcessor();
         }
 
@@ -126,7 +129,8 @@ namespace PasteEx.Core
 
         public void Reload()
         {
-            Storage = CloneDataObject(Clipboard.GetDataObject());
+            FromClipboard = Clipboard.GetDataObject();
+            Storage = new DataObject();
             foreach (BaseProcessor analyzer in analyzers)
             {
                 analyzer.Reload();
@@ -134,6 +138,12 @@ namespace PasteEx.Core
             GC.Collect();
         }
 
+        /// <summary>
+        /// Have BUG when paste the content from word as file.
+        /// So do not use it!
+        /// </summary>
+        /// <param name="iDataObject"></param>
+        /// <returns></returns>
         public static DataObject CloneDataObject(IDataObject iDataObject)
         {
             DataObject o = new DataObject();

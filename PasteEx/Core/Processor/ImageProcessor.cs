@@ -34,11 +34,24 @@ namespace PasteEx.Core
 
         public override string[] Analyze()
         {
-            if (Data.Storage.GetDataPresent(DataFormats.Bitmap, false))
+            if (Data.FromClipboard.GetDataPresent(DataFormats.Bitmap, false))
             {
                 List<string> extensions = new List<string>();
-                extensions.AddRange(imageExt);
+                Data.Storage.SetData(DataFormats.Bitmap, Data.FromClipboard.GetData(DataFormats.Bitmap));
 
+                if (Data.FromClipboard.GetDataPresent("DeviceIndependentBitmap", false))
+                {
+                    Data.Storage.SetData("DeviceIndependentBitmap", Data.FromClipboard.GetData("DeviceIndependentBitmap")); // CF_DIB
+                }
+                if (Data.FromClipboard.GetDataPresent("Format17", false))
+                {
+                    Data.Storage.SetData("Format17", Data.FromClipboard.GetData("Format17")); // CF_DIBV5
+                }
+                if (Data.FromClipboard.GetDataPresent("PNG", false))
+                {
+                    Data.Storage.SetData("PNG", Data.FromClipboard.GetData("PNG")); // PNG
+                }
+                extensions.AddRange(imageExt);
 
                 // Get image format
                 string defaultExt = null;

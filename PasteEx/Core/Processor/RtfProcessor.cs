@@ -1,6 +1,4 @@
 ﻿using System;
-using System.IO;
-using System.Text;
 using System.Windows.Forms;
 
 namespace PasteEx.Core
@@ -19,8 +17,9 @@ namespace PasteEx.Core
 
         public override string[] Analyze()
         {
-            if (Data.Storage.GetDataPresent(DataFormats.Rtf, false))
+            if (Data.FromClipboard.GetDataPresent(DataFormats.Rtf, false))
             {
+                Data.Storage.SetData(DataFormats.Rtf, Data.FromClipboard.GetData(DataFormats.Rtf));
                 return new string[] { "rtf" };
             }
             return null;
@@ -39,7 +38,7 @@ namespace PasteEx.Core
         {
             if (string.Equals(extension, "rtf", StringComparison.CurrentCultureIgnoreCase))
             {
-                if(ResultObject == null)
+                if (ResultObject == null)
                 {
                     ResultObject = Data.Storage.GetData(DataFormats.Rtf);
                 }

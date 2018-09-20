@@ -22,9 +22,14 @@ namespace PasteEx.Core
 
         public override string[] Analyze()
         {
-            if (Data.Storage.GetDataPresent(DataFormats.UnicodeText))
+            if (Data.FromClipboard.GetDataPresent(DataFormats.UnicodeText))
             {
                 List<string> extensions = new List<string>();
+                Data.Storage.SetData(DataFormats.UnicodeText, Data.FromClipboard.GetData(DataFormats.UnicodeText));
+                if (Data.FromClipboard.GetDataPresent(DataFormats.Text, false))
+                {
+                    Data.Storage.SetData(DataFormats.Text, Data.FromClipboard.GetData(DataFormats.Text));
+                }
                 extensions.Add("txt");
                 if (Properties.Settings.Default.autoExtSwitch)
                 {

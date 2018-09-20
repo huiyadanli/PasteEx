@@ -19,8 +19,9 @@ namespace PasteEx.Core
 
         public override string[] Analyze()
         {
-            if (Data.Storage.GetDataPresent(DataFormats.Html, false))
+            if (Data.FromClipboard.GetDataPresent(DataFormats.Html, false))
             {
+                Data.Storage.SetData(DataFormats.Html, Data.FromClipboard.GetData(DataFormats.Html));
                 return new string[] { "HTMLFormat" };
             }
             return null;
