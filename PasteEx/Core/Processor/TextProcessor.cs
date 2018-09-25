@@ -6,7 +6,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
-namespace PasteEx.Core
+namespace PasteEx.Core.Processor
 {
     public class TextProcessor : BaseProcessor
     {

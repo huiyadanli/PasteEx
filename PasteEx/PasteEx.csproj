@@ -67,6 +67,7 @@
     <Compile Include="Core\ClipboardData.cs" />
     <Compile Include="Core\ClipboardMonitor.cs" />
     <Compile Include="Core\ModeController.cs" />
+    <Compile Include="Core\Processor\Assist\HtmlFormatHelper.cs" />
     <Compile Include="Forms\Hotkey\Hotkey.cs" />
     <Compile Include="Forms\Hotkey\HotkeyTextBox.cs">
       <SubType>Component</SubType>
@@ -114,7 +115,7 @@
     <Compile Include="Util\Device.cs" />
     <Compile Include="Util\EasyJson.cs" />
     <Compile Include="Util\I18n.cs" />
-    <Compile Include="Util\ImageHelper.cs" />
+    <Compile Include="Core\Processor\Assist\ImageHelper.cs" />
     <Compile Include="Forms\Hotkey\HotkeyHook.cs" />
     <Compile Include="Util\LCHelper.cs" />
     <Compile Include="Util\Logger.cs" />

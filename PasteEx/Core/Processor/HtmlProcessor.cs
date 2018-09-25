@@ -3,7 +3,7 @@ using System.IO;
 using System.Text;
 using System.Windows.Forms;
 
-namespace PasteEx.Core
+namespace PasteEx.Core.Processor
 {
     public class HtmlProcessor : BaseProcessor
     {

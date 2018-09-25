@@ -1,4 +1,5 @@
-﻿using PasteEx.Forms;
+﻿using PasteEx.Core.Processor;
+using PasteEx.Forms;
 using PasteEx.Forms.Hotkey;
 using System;
 using System.IO;

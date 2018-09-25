@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace PasteEx.Core
+namespace PasteEx.Core.Processor
 {
     public class RtfProcessor : BaseProcessor
     {

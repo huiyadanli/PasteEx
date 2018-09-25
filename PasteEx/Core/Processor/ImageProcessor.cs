@@ -1,4 +1,5 @@
-﻿using PasteEx.Forms;
+﻿using PasteEx.Core.Processor.Assist;
+using PasteEx.Forms;
 using PasteEx.Util;
 using System;
 using System.Collections.Generic;
@@ -10,7 +11,7 @@ using System.Net;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
-namespace PasteEx.Core
+namespace PasteEx.Core.Processor
 {
     public class ImageProcessor : BaseProcessor
     {

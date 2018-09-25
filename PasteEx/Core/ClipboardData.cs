@@ -1,15 +1,9 @@
-﻿using PasteEx.Util;
+﻿using PasteEx.Core.Processor;
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Collections.Specialized;
-using System.IO;
-using System.Runtime.Serialization.Formatters.Binary;
-using System.Text;
-using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static PasteEx.Core.BaseProcessor;
+using static PasteEx.Core.Processor.BaseProcessor;
 
 namespace PasteEx.Core
 {

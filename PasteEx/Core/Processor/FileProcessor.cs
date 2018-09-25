@@ -2,7 +2,7 @@
 using System.IO;
 using System.Windows.Forms;
 
-namespace PasteEx.Core
+namespace PasteEx.Core.Processor
 {
     public class FileProcessor : BaseProcessor
     {

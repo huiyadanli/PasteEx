@@ -1,7 +1,7 @@
 ﻿
 using System;
 
-namespace PasteEx.Core
+namespace PasteEx.Core.Processor
 {
     public abstract class BaseProcessor
     {
