@@ -149,12 +149,6 @@ namespace PasteEx.Forms
             return true;
         }
 
-        private void lblHelp_MouseHover(object sender, EventArgs e)
-        {
-            string tip = Resources.Strings.TxtRuleFormat;
-            tipHelp.SetToolTip(lblHelp, tip);
-        }
-
         private void FormSetting_FormClosing(object sender, FormClosingEventArgs e)
         {
             //if (!string.IsNullOrEmpty(txtTempFolderPath.Text) && !PathGenerator.IsEmptyFolder(txtTempFolderPath.Text))
@@ -395,6 +389,21 @@ namespace PasteEx.Forms
                 MessageBox.Show(this, Resources.Strings.TipPathNotNull,
                     Resources.Strings.Title, MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+        }
+
+        private void picHelpFileNamePattern_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://github.com/huiyadanli/PasteEx/wiki#%E8%87%AA%E5%AE%9A%E4%B9%89%E6%96%87%E4%BB%B6%E5%90%8D%E7%94%9F%E6%88%90%E8%AF%AD%E6%B3%95");
+        }
+
+        private void picHelpTextExtRules_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://github.com/huiyadanli/PasteEx/wiki#%E8%87%AA%E5%AE%9A%E4%B9%89%E6%96%87%E6%9C%AC%E6%89%A9%E5%B1%95%E5%90%8D%E8%A7%84%E5%88%99");
+        }
+
+        private void picHelpAutoSave_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://github.com/huiyadanli/PasteEx/wiki#%E7%9B%91%E5%90%AC%E6%A8%A1%E5%BC%8F");
         }
     }
 }

@@ -195,18 +195,6 @@
   <data name="TxtNewVersion" xml:space="preserve">
     <value>存在新版本: </value>
   </data>
-  <data name="TxtRuleFormat" xml:space="preserve">
-    <value>規則格式：副檔名=與此副檔名相對應文本的第壹行特征（支持正則）
-
-對於文本類型的文件，將會取第壹個非空行對特征進行匹配，
-匹配成功則在保存時默認使用對應的自定義副檔名。
-
-比如：
-    cs=^using .*;$
-    java=^package.*;$
-    html=(? i)&lt;!DOCTYPE html
-    cpp=^#include.*</value>
-  </data>
   <data name="TxtWrongVersion" xml:space="preserve">
     <value>錯誤的版本號: </value>
   </data>

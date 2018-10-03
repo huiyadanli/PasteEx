@@ -117,13 +117,25 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="tabPageNomal.Text" xml:space="preserve">
+    <value>常規</value>
+  </data>
+  <data name="tabPageCustom.Text" xml:space="preserve">
+    <value>自定義</value>
+  </data>
+  <data name="tabPageMode.Text" xml:space="preserve">
+    <value>監聽模式</value>
+  </data>
+  <data name="tabPageAbout.Text" xml:space="preserve">
+    <value>關於</value>
+  </data>
+  <data name="groupBox6.Text" xml:space="preserve">
+    <value>文件命名</value>
+  </data>
+  <data name="picHelpFileNamePattern.ToolTip" xml:space="preserve">
+    <value>點擊查看日期格式化語法</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="lblFileNameGarmmar.Size" type="System.Drawing.Size, System.Drawing">
-    <value>29, 12</value>
-  </data>
-  <data name="lblFileNameGarmmar.Text" xml:space="preserve">
-    <value>語法</value>
-  </data>
   <data name="lblFileNamePreview.Size" type="System.Drawing.Size, System.Drawing">
     <value>35, 12</value>
   </data>
@@ -136,8 +148,8 @@
   <data name="lblFileNamePattern.Text" xml:space="preserve">
     <value>規則:</value>
   </data>
-  <data name="groupBox6.Text" xml:space="preserve">
-    <value>文件命名</value>
+  <data name="groupBox4.Text" xml:space="preserve">
+    <value>界面</value>
   </data>
   <data name="cboLanguage.Location" type="System.Drawing.Point, System.Drawing">
     <value>62, 23</value>
@@ -148,8 +160,8 @@
   <data name="labelLanguage.Text" xml:space="preserve">
     <value>語言:</value>
   </data>
-  <data name="groupBox4.Text" xml:space="preserve">
-    <value>界面</value>
+  <data name="groupBox3.Text" xml:space="preserve">
+    <value>快速粘貼右鍵菜單</value>
   </data>
   <data name="chkFastNeedShiftKey.Size" type="System.Drawing.Size, System.Drawing">
     <value>138, 16</value>
@@ -163,8 +175,8 @@
   <data name="btnFastRegister.Text" xml:space="preserve">
     <value>添加</value>
   </data>
-  <data name="groupBox3.Text" xml:space="preserve">
-    <value>快速粘貼右鍵菜單</value>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>右鍵菜單</value>
   </data>
   <data name="chkNeedShiftKey.Size" type="System.Drawing.Size, System.Drawing">
     <value>138, 16</value>
@@ -178,11 +190,23 @@
   <data name="btnRegister.Text" xml:space="preserve">
     <value>添加</value>
   </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>右鍵菜單</value>
+  <data name="chkAutoExtSwitch.Size" type="System.Drawing.Size, System.Drawing">
+    <value>108, 16</value>
   </data>
-  <data name="tabPageNomal.Text" xml:space="preserve">
-    <value>常規</value>
+  <data name="chkAutoExtSwitch.Text" xml:space="preserve">
+    <value>文本副檔名規則</value>
+  </data>
+  <data name="picHelpTextExtRules.ToolTip" xml:space="preserve">
+    <value>規則格式：副檔名=與此副檔名相對應文本的第壹行特征（支持正則）
+
+對於文本類型的文件，將會取第壹個非空行對特征進行匹配，
+匹配成功則在保存時默認使用對應的自定義副檔名。
+
+比如：
+    cs=^using .*;$
+    java=^package.*;$
+    html=(? i)&lt;!DOCTYPE html
+    cpp=^#include.*</value>
   </data>
   <data name="lblTipError.Size" type="System.Drawing.Size, System.Drawing">
     <value>149, 12</value>
@@ -190,23 +214,8 @@
   <data name="lblTipError.Text" xml:space="preserve">
     <value>規則格式有誤，將不被啟用</value>
   </data>
-  <data name="lblHelp.Size" type="System.Drawing.Size, System.Drawing">
-    <value>65, 12</value>
-  </data>
-  <data name="lblHelp.Text" xml:space="preserve">
-    <value>如何使用？</value>
-  </data>
-  <data name="chkAutoExtSwitch.Size" type="System.Drawing.Size, System.Drawing">
-    <value>48, 16</value>
-  </data>
-  <data name="chkAutoExtSwitch.Text" xml:space="preserve">
-    <value>啟用</value>
-  </data>
-  <data name="groupBox2.Text" xml:space="preserve">
-    <value>文本副檔名規則</value>
-  </data>
-  <data name="tabPageCustom.Text" xml:space="preserve">
-    <value>自定義</value>
+  <data name="picHelpAutoSave.ToolTip" xml:space="preserve">
+    <value>自動把復制過的圖片保存到該文件夾</value>
   </data>
   <data name="btnOpenAutoSavePath.Text" xml:space="preserve">
     <value>打開</value>
@@ -223,17 +232,14 @@
   <data name="lblAutoSaveFolderPath.Text" xml:space="preserve">
     <value>文件夾:</value>
   </data>
+  <data name="groupBox5.Text" xml:space="preserve">
+    <value>快捷鍵</value>
+  </data>
   <data name="lblQuickPasteExHotkey.Size" type="System.Drawing.Size, System.Drawing">
     <value>59, 12</value>
   </data>
   <data name="lblQuickPasteExHotkey.Text" xml:space="preserve">
     <value>快速粘貼:</value>
-  </data>
-  <data name="groupBox5.Text" xml:space="preserve">
-    <value>快捷鍵</value>
-  </data>
-  <data name="tabPageMode.Text" xml:space="preserve">
-    <value>監聽模式</value>
   </data>
   <data name="labelUpdateinfo.Text" xml:space="preserve">
     <value>已經是最新版本</value>
@@ -247,8 +253,9 @@
 
 如果有問題或者建議，歡迎在 GitHub 上面給我提 Issues，或者發送郵件到 huiyadanli@126.com</value>
   </data>
-  <data name="tabPageAbout.Text" xml:space="preserve">
-    <value>關於</value>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>Inherit</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>設置</value>

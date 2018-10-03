@@ -364,24 +364,6 @@ namespace PasteEx.Resources {
         }
         
         /// <summary>
-        ///   查找类似 规则格式：扩展名=与此扩展名相对应文本的第一行特征（支持正则）
-        ///
-        ///对于文本类型的文件，将会取第一个非空行对特征进行匹配，
-        ///匹配成功则在保存时默认使用对应的自定义扩展名。
-        ///
-        ///比如：
-        ///    cs=^using .*;$
-        ///    java=^package.*;$
-        ///    html=(? i)&lt;!DOCTYPE html
-        ///    cpp=^#include.* 的本地化字符串。
-        /// </summary>
-        internal static string TxtRuleFormat {
-            get {
-                return ResourceManager.GetString("TxtRuleFormat", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   查找类似 Wrong version number:  的本地化字符串。
         /// </summary>
         internal static string TxtWrongVersion {

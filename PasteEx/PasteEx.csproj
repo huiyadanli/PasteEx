@@ -187,6 +187,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\Image\attention.png" />
     <Content Include="Resources\Image\ico.ico" />
     <Content Include="Resources\Image\ico.png" />
     <Content Include="Resources\Image\loading.gif" />
