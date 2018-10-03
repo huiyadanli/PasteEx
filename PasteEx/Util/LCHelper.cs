@@ -1,11 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Net;
 using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 
 namespace PasteEx.Util
 {
@@ -14,9 +11,9 @@ namespace PasteEx.Util
     /// </summary>
     public class LCHelper
     {
-        public static string appId = "xmFWUDah7wuQMt4mzCNVl504-gzGzoHsz";
+        public static readonly string appId = "xmFWUDah7wuQMt4mzCNVl504-gzGzoHsz";
 
-        public static string appKey = "hYNWYcC5StmxcOxIerKc7ko0";
+        public static readonly string appKey = "hYNWYcC5StmxcOxIerKc7ko0";
 
         public static string Send(string method, string url, string data = null)
         {

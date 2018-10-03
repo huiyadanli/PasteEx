@@ -5,7 +5,6 @@ using System.Management;
 using System.Net;
 using System.Security.Cryptography;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace PasteEx.Util
 {
@@ -18,6 +17,7 @@ namespace PasteEx.Util
         private static string diskID = null;
         private static string biosID = null;
         private static string videoID = null;
+        private static string osVersion = null;
 
         private static string fingerPrint = null;
 
@@ -105,6 +105,21 @@ namespace PasteEx.Util
                 return videoID;
             }
         }
+
+        public static string OSVersion
+        {
+            get
+            {
+                if (osVersion == null)
+                {
+                    var name = (from x in new ManagementObjectSearcher("SELECT Caption FROM Win32_OperatingSystem").Get().Cast<ManagementObject>()
+                                select x.GetPropertyValue("Caption")).FirstOrDefault();
+                    string osName = name != null ? name.ToString() : "Unknown";
+                    osVersion = osName + "|" + Environment.Version.ToString();
+                }
+                return osVersion;
+            }
+        }
         #endregion
 
         /// <summary>
@@ -132,17 +147,6 @@ namespace PasteEx.Util
         /// <returns>JSON format string</returns>
         public static string ToJSONString()
         {
-            //StringBuilder sb = new StringBuilder();
-            //sb.Append("{");
-            //sb.Append("\"").Append("GUID").Append("\":").Append("\"").Append(Value()).Append("\",");
-            //sb.Append("\"").Append("MachineName").Append("\":").Append("\"").Append(MachineName).Append("\",");
-            //sb.Append("\"").Append("CurrentIP").Append("\":").Append("\"").Append(CurrentIP).Append("\",");
-            //sb.Append("\"").Append("CpuID").Append("\":").Append("\"").Append(CpuID).Append("\",");
-            //sb.Append("\"").Append("MacID").Append("\":").Append("\"").Append(MacID).Append("\",");
-            //sb.Append("\"").Append("DiskID").Append("\":").Append("\"").Append(DiskID).Append("\",");
-            //sb.Append("\"").Append("BiosID").Append("\":").Append("\"").Append(BiosID).Append("\",");
-            //sb.Append("\"").Append("VideoID").Append("\":").Append("\"").Append(VideoID).Append("\"");
-            //sb.Append("}");
             Dictionary<String, String> dic = new Dictionary<String, String>
             {
                 { "GUID", Value() },
@@ -152,7 +156,8 @@ namespace PasteEx.Util
                 { "MacID", MacID },
                 { "DiskID", DiskID },
                 { "BiosID", BiosID },
-                { "VideoID", VideoID }
+                { "VideoID", VideoID },
+                { "OSVersion", OSVersion }
             };
             return EasyJson.ToJSONString(dic);
         }
