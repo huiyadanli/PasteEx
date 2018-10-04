@@ -247,6 +247,8 @@ namespace PasteEx.Core.Processor
 
         private async void GetImageFromUrl(string url, string path)
         {
+            ServicePointManager.ServerCertificateValidationCallback += (s, cert, chain, sslPolicyErrors) => true;
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12 | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls;
             WebClient client = new WebClient();
             //client.DownloadFileCompleted += (sender, e) =>
             //{

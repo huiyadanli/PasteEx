@@ -20,6 +20,8 @@ namespace PasteEx
 
         public string _path = Path.Combine(Path.GetDirectoryName(Application.ExecutablePath), "User", "PasteEx.settings");
 
+        private DateTime settingsLastWriteTime = DateTime.MinValue;
+
         private XmlDocument _xmlDocument;
 
         private string _filePath { get; set; }
@@ -140,6 +142,14 @@ namespace PasteEx
 
         private string GetValue(SettingsProperty property)
         {
+            // If settings file has beeen modified, reload it.
+            DateTime lastWriteTime = File.GetLastWriteTime(_path);
+            if (lastWriteTime != settingsLastWriteTime)
+            {
+                _xmlDocument = null;
+                settingsLastWriteTime = lastWriteTime;
+            }
+
             XmlNode targetNode = _globalSettingsNode;
             XmlNode settingNode = targetNode.SelectSingleNode(string.Format("setting[@name='{0}']", property.Name));
 

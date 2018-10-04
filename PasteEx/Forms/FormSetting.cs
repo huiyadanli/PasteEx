@@ -31,6 +31,8 @@ namespace PasteEx.Forms
             chkNeedShiftKey.Checked = RightMenu.NeedShiftKey();
             chkFastNeedShiftKey.Checked = RightMenu.NeedShiftKey(RightMenu.FastSetting.True);
 
+            Properties.Settings.Default.Reload();
+
             txtAutoExtRule.Text = Properties.Settings.Default.autoExtRule;
             chkAutoExtSwitch.Checked = Properties.Settings.Default.autoExtSwitch;
             txtAutoExtRule.Enabled = chkAutoExtSwitch.Checked;
