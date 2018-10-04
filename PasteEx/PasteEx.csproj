@@ -67,7 +67,7 @@
     <Compile Include="Core\ClipboardData.cs" />
     <Compile Include="Core\ClipboardMonitor.cs" />
     <Compile Include="Core\ModeController.cs" />
-    <Compile Include="Core\Processor\Assist\HtmlFormatHelper.cs" />
+    <Compile Include="Core\Processor\Assist\HTMLFormat.cs" />
     <Compile Include="Forms\Hotkey\Hotkey.cs" />
     <Compile Include="Forms\Hotkey\HotkeyTextBox.cs">
       <SubType>Component</SubType>
