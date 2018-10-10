@@ -90,7 +90,7 @@ namespace PasteEx.Core
             }
 
             // 2. Save image data to disk
-            if (ImageProcessor.imageExt.Contains(exts[0]))
+            if (ImageProcessor.imageExt.Contains(exts[0]) && monitorModeData.Storage.GetDataPresent(DataFormats.Bitmap))
             {
                 if (Properties.Settings.Default.autoImageToFileEnabled)
                 {
