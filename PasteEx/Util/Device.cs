@@ -114,8 +114,7 @@ namespace PasteEx.Util
                 {
                     var name = (from x in new ManagementObjectSearcher("SELECT Caption FROM Win32_OperatingSystem").Get().Cast<ManagementObject>()
                                 select x.GetPropertyValue("Caption")).FirstOrDefault();
-                    string osName = name != null ? name.ToString() : "Unknown";
-                    osVersion = osName + "|" + Environment.Version.ToString();
+                    osVersion = name != null ? name.ToString() : "Unknown";
                 }
                 return osVersion;
             }
