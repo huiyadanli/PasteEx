@@ -1,7 +1,9 @@
 ﻿using PasteEx.Core.Processor;
 using PasteEx.Forms;
 using PasteEx.Forms.Hotkey;
+using PasteEx.Util;
 using System;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -74,8 +76,17 @@ namespace PasteEx.Core
             PathGenerator.ClearMonitorTempFolder();
         }
 
-        private static void ClipboardMonitor_OnClipboardChange()
+        private static void ClipboardMonitor_OnClipboardChange(object sender)
         {
+            // 0. Clipboard owner white-black list
+            Process proc = Process.GetProcessById(Convert.ToInt32(sender));
+            Debug.WriteLine("ClipboardOwner: " + proc.ProcessName + " - " + proc.Id);
+
+            if (ApplicationHelper.GetCurrentProcessName() == proc.ProcessName)
+            {
+                return;
+            }
+
             if (!Properties.Settings.Default.autoImageToFileEnabled)
             {
                 return;
@@ -110,9 +121,9 @@ namespace PasteEx.Core
             DataObject newDataObject = ClipboardData.CloneDataObject(monitorModeData.Storage);
             newDataObject.SetData(DataFormats.FileDrop, true, new string[] { filePath });
 
-            ClipboardMonitor.Stop();
+            //ClipboardMonitor.Stop();
             Clipboard.SetDataObject(newDataObject, true);
-            ClipboardMonitor.Start();
+            //ClipboardMonitor.Start();
         }
 
         #endregion

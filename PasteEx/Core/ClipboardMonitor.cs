@@ -1,4 +1,5 @@
 ﻿using PasteEx.Library;
+using System;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -10,7 +11,7 @@ namespace PasteEx.Core
     /// </summary>
     public static class ClipboardMonitor
     {
-        public delegate void OnClipboardChangeEventHandler();
+        public delegate void OnClipboardChangeEventHandler(object sender);
         public static event OnClipboardChangeEventHandler OnClipboardChange;
 
         public static void Start()
@@ -25,9 +26,9 @@ namespace PasteEx.Core
             ClipboardWatcher.Stop();
         }
 
-        private static void OnClipboardChangeEvent()
+        private static void OnClipboardChangeEvent(object sender)
         {
-            OnClipboardChange?.Invoke();
+            OnClipboardChange?.Invoke(sender);
         }
 
         /// <summary>
@@ -40,7 +41,7 @@ namespace PasteEx.Core
             // static instance of this form
             private static ClipboardWatcher mInstance;
 
-            public delegate void OnClipboardChangeEventHandler();
+            public delegate void OnClipboardChangeEventHandler(object sender);
             public static event OnClipboardChangeEventHandler OnClipboardChange;
 
             // start listening
@@ -58,7 +59,7 @@ namespace PasteEx.Core
             // stop listening (dispose form)
             public static void Stop()
             {
-                if(mInstance == null)
+                if (mInstance == null)
                 {
                     return;
                 }
@@ -92,13 +93,17 @@ namespace PasteEx.Core
 
                 if (m.Msg == WM_CLIPBOARDUPDATE)
                 {
-                    ClipChanged();
+                    IntPtr hwnd = User32.GetClipboardOwner();
+                    User32.GetWindowThreadProcessId(hwnd, out uint processId);
+
+
+                    ClipChanged(processId);
                 }
             }
 
-            private void ClipChanged()
+            private void ClipChanged(object processId)
             {
-                OnClipboardChange?.Invoke();
+                OnClipboardChange?.Invoke(processId);
             }
         }
     }

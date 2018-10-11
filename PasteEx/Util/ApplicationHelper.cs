@@ -10,7 +10,19 @@ namespace PasteEx.Util
 {
     public class ApplicationHelper
     {
-        public static bool IsUserAdministrator()
+        private static string processName = null;
+
+        internal static string GetCurrentProcessName()
+        {
+            if(processName == null)
+            {
+                Process curProc = Process.GetCurrentProcess();
+                processName = curProc.ProcessName;
+            }
+            return processName;
+        }
+
+        internal static bool IsUserAdministrator()
         {
             bool isAdmin;
             try
@@ -26,7 +38,7 @@ namespace PasteEx.Util
             return isAdmin;
         }
 
-        public static void StartSelf(string args, bool runAsAdmin)
+        internal static void StartSelf(string args, bool runAsAdmin)
         {
             // restart and run as admin
             ProcessStartInfo startInfo = new ProcessStartInfo()
@@ -44,8 +56,9 @@ namespace PasteEx.Util
             Process.Start(startInfo);
         }
 
-        public static bool IsPasteExMonitorModeProcessesExist()
+        internal static bool IsPasteExMonitorModeProcessesExist()
         {
+            // Perhaps there is a better way to judge whether the PasteEx of the monitoring mode exists.
             var result = GetCommandLines(Path.GetFileName(Application.ExecutablePath));
             foreach(string command in result)
             {
