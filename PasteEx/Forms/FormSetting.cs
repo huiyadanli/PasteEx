@@ -1,4 +1,5 @@
-﻿using PasteEx.Util;
+﻿using PasteEx.Core;
+using PasteEx.Util;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -39,10 +40,29 @@ namespace PasteEx.Forms
 
             txtQuickPasteExHotkey.Text = Properties.Settings.Default.pasteHotkey;
 
+            // File Name Pattern
             txtFileNamePattern.Text = Properties.Settings.Default.fileNamePattern;
 
+            // Auto Save Path
             chkAutoSave.Checked = Properties.Settings.Default.monitorAutoSaveEnabled;
             txtAutoSaveFolderPath.Text = Properties.Settings.Default.monitorAutoSavePath;
+
+            // Default Startup Monitor Mode
+            chkDefaultStartupMonitorMode.Checked = Properties.Settings.Default.DefaultStartupMonitorModeEnabled;
+            
+            // Application Filter
+            txtApplicationFilterInclude.Text = Properties.Settings.Default.ApplicationFilterInclude;
+            txtApplicationFilterExclude.Text = Properties.Settings.Default.ApplicationFilterExclude;
+            if(Properties.Settings.Default.ApplicationFilterState == ApplicationFilterStateEnum.Include.ToString())
+            {
+                radInclude.Checked = true;
+                radExclude.Checked = false;
+            } 
+            else
+            {
+                radInclude.Checked = false;
+                radExclude.Checked = true;
+            }
         }
         private void Set()
         {
@@ -61,11 +81,27 @@ namespace PasteEx.Forms
             {
                 Properties.Settings.Default.monitorAutoSaveEnabled = false;
             }
+
+            Properties.Settings.Default.DefaultStartupMonitorModeEnabled = chkDefaultStartupMonitorMode.Checked;
+
+            Properties.Settings.Default.ApplicationFilterInclude = txtApplicationFilterInclude.Text;
+            Properties.Settings.Default.ApplicationFilterExclude = txtApplicationFilterExclude.Text;
+            if (radInclude.Checked == true)
+            {
+                Properties.Settings.Default.ApplicationFilterState = ApplicationFilterStateEnum.Include.ToString();
+            }
+            else
+            {
+                Properties.Settings.Default.ApplicationFilterState = ApplicationFilterStateEnum.Exclude.ToString();
+            }
         }
 
         private void FormSetting_Load(object sender, EventArgs e)
         {
             Get();
+
+            // Application Filter
+            radApplicationFilter_CheckedChanged(sender, e);
 
             // Auto Save Path
             chkAutoSave_CheckedChanged(sender, e);
@@ -406,6 +442,20 @@ namespace PasteEx.Forms
         private void picHelpAutoSave_Click(object sender, EventArgs e)
         {
             System.Diagnostics.Process.Start("https://github.com/huiyadanli/PasteEx/wiki#%E7%9B%91%E5%90%AC%E6%A8%A1%E5%BC%8F");
+        }
+
+        private void radApplicationFilter_CheckedChanged(object sender, EventArgs e)
+        {
+            if(radInclude.Checked)
+            {
+                txtApplicationFilterInclude.Enabled = true;
+                txtApplicationFilterExclude.Enabled = false;
+            }
+            else if (radExclude.Checked)
+            {
+                txtApplicationFilterInclude.Enabled = false;
+                txtApplicationFilterExclude.Enabled = true;
+            }
         }
     }
 }

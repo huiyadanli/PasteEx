@@ -35,5 +35,17 @@
     <Setting Name="monitorAutoSaveEnabled" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
     </Setting>
+    <Setting Name="DefaultStartupMonitorModeEnabled" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="ApplicationFilterState" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Exclude</Value>
+    </Setting>
+    <Setting Name="ApplicationFilterInclude" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="ApplicationFilterExclude" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
   </Settings>
 </SettingsFile>

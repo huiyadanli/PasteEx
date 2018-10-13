@@ -64,6 +64,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Core\ApplicationCopyFilter.cs" />
     <Compile Include="Core\ClipboardData.cs" />
     <Compile Include="Core\ClipboardMonitor.cs" />
     <Compile Include="Core\ModeController.cs" />

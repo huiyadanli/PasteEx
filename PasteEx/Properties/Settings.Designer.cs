@@ -153,5 +153,53 @@ namespace PasteEx.Properties {
                 this["monitorAutoSaveEnabled"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool DefaultStartupMonitorModeEnabled {
+            get {
+                return ((bool)(this["DefaultStartupMonitorModeEnabled"]));
+            }
+            set {
+                this["DefaultStartupMonitorModeEnabled"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Exclude")]
+        public string ApplicationFilterState {
+            get {
+                return ((string)(this["ApplicationFilterState"]));
+            }
+            set {
+                this["ApplicationFilterState"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string ApplicationFilterInclude {
+            get {
+                return ((string)(this["ApplicationFilterInclude"]));
+            }
+            set {
+                this["ApplicationFilterInclude"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string ApplicationFilterExclude {
+            get {
+                return ((string)(this["ApplicationFilterExclude"]));
+            }
+            set {
+                this["ApplicationFilterExclude"] = value;
+            }
+        }
     }
 }

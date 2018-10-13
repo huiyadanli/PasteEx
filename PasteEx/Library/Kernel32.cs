@@ -12,6 +12,9 @@ namespace PasteEx.Library
         public static extern int AllocConsole();
 
         [DllImport("kernel32.dll")]
+        public static extern bool FreeConsole();
+
+        [DllImport("kernel32.dll")]
         public static extern bool AttachConsole(int dwProcessId);
 
         [DllImport("kernel32.dll")]

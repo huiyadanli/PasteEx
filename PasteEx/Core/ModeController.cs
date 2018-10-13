@@ -55,6 +55,8 @@ namespace PasteEx.Core
 
         private static ClipboardData monitorModeData;
 
+        private static ApplicationCopyFilter applicationCopyFilter;
+
         public static void StartMonitorMode()
         {
             // Create temp folder if it does not exist, and clear it
@@ -62,6 +64,8 @@ namespace PasteEx.Core
             PathGenerator.ClearMonitorTempFolder();
 
             monitorModeData = new ClipboardData();
+
+            applicationCopyFilter = new ApplicationCopyFilter();
 
             // start monitor
             ClipboardMonitor.OnClipboardChange += ClipboardMonitor_OnClipboardChange;
@@ -80,10 +84,15 @@ namespace PasteEx.Core
         {
             // 0. Clipboard owner white-black list
             Process proc = Process.GetProcessById(Convert.ToInt32(sender));
-            Debug.WriteLine("ClipboardOwner: " + proc.ProcessName + " - " + proc.Id);
+            Console.WriteLine("Clipboard Owner: " + proc.ProcessName + " - Process Id:" + proc.Id);
 
             if (ApplicationHelper.GetCurrentProcessName() == proc.ProcessName)
             {
+                return;
+            }
+            if (!applicationCopyFilter.Bypass(proc.ProcessName))
+            {
+                Console.WriteLine("Intercept: " + proc.ProcessName);
                 return;
             }
 

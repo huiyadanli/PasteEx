@@ -18,6 +18,11 @@ namespace PasteEx.Util
             Kernel32.AttachConsole(ATTACH_PARENT_PROCESS);
         }
 
+        public static void NewConsoleOutput()
+        {
+            Kernel32.AllocConsole();
+        }
+
         /// <summary>
         /// not used
         /// </summary>

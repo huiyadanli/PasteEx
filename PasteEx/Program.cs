@@ -29,6 +29,7 @@ namespace PasteEx
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
                 CommandLine.RedirectConsoleOutput();
+                //CommandLine.NewConsole();
                 if (args.Length > 0)
                 {
                     
@@ -88,7 +89,15 @@ namespace PasteEx
                     {
                         return;
                     }
-                    Application.Run(new FormMain());
+                    if(Properties.Settings.Default.DefaultStartupMonitorModeEnabled)
+                    {
+                        Application.Run(new FormMain(null));
+                    }
+                    else
+                    {
+                        Application.Run(new FormMain());
+                    }
+                    
                 }
             }
             catch (Exception ex)

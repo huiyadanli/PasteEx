@@ -157,8 +157,14 @@
   <data name="groupBox4.Text" xml:space="preserve">
     <value>界面</value>
   </data>
+  <data name="chkDefaultStartupMonitorMode.Size" type="System.Drawing.Size, System.Drawing">
+    <value>120, 16</value>
+  </data>
+  <data name="chkDefaultStartupMonitorMode.Text" xml:space="preserve">
+    <value>默认开启监听模式</value>
+  </data>
   <data name="cboLanguage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>62, 23</value>
+    <value>62, 48</value>
   </data>
   <data name="labelLanguage.Size" type="System.Drawing.Size, System.Drawing">
     <value>35, 12</value>
@@ -220,6 +226,24 @@
   <data name="lblTipError.Text" xml:space="preserve">
     <value>规则格式有误，将不被启用</value>
   </data>
+  <data name="groupBox8.Text" xml:space="preserve">
+    <value>应用过滤</value>
+  </data>
+  <data name="picHelpAppFilter.ToolTip" xml:space="preserve">
+    <value>对应用监听的过滤 ( 分隔符 | )</value>
+  </data>
+  <data name="radExclude.Size" type="System.Drawing.Size, System.Drawing">
+    <value>47, 16</value>
+  </data>
+  <data name="radExclude.Text" xml:space="preserve">
+    <value>排除</value>
+  </data>
+  <data name="radInclude.Size" type="System.Drawing.Size, System.Drawing">
+    <value>47, 16</value>
+  </data>
+  <data name="radInclude.Text" xml:space="preserve">
+    <value>包括</value>
+  </data>
   <data name="picHelpAutoSave.ToolTip" xml:space="preserve">
     <value>自动把复制过的图片保存到该文件夹</value>
   </data>
@@ -258,10 +282,6 @@
 作者：huiyadanli
 
 如果有问题或者建议，欢迎在 GitHub 上面给我提 Issues，或者发送邮件到 huiyadanli@126.com</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>Inherit</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>设置</value>
