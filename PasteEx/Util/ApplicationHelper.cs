@@ -12,6 +12,8 @@ namespace PasteEx.Util
     {
         private static string processName = null;
 
+        private static int processId = 0;
+
         internal static string GetCurrentProcessName()
         {
             if(processName == null)
@@ -20,6 +22,22 @@ namespace PasteEx.Util
                 processName = curProc.ProcessName;
             }
             return processName;
+        }
+
+        internal static int GetCurrentProcessID()
+        {
+            if (processId == 0)
+            {
+                GetCurrentProcessInfo();
+            }
+            return processId;
+        }
+
+        private static void GetCurrentProcessInfo()
+        {
+            Process curProc = Process.GetCurrentProcess();
+            processName = curProc.ProcessName;
+            processId = curProc.Id;
         }
 
         internal static bool IsUserAdministrator()
@@ -56,7 +74,7 @@ namespace PasteEx.Util
             Process.Start(startInfo);
         }
 
-        internal static bool IsPasteExMonitorModeProcessesExist()
+        internal static bool IsPasteExMonitorModeProcessExist()
         {
             // Perhaps there is a better way to judge whether the PasteEx of the monitoring mode exists.
             var result = GetCommandLines(Path.GetFileName(Application.ExecutablePath));
@@ -74,7 +92,7 @@ namespace PasteEx.Util
         {
             List<string> results = new List<string>();
 
-            string wmiQuery = string.Format("select CommandLine from Win32_Process where Name='{0}'", processName);
+            string wmiQuery = string.Format("select CommandLine from Win32_Process where Name='{0}'and ProcessID!={1}", processName, GetCurrentProcessID());
 
             using (ManagementObjectSearcher searcher = new ManagementObjectSearcher(wmiQuery))
             {

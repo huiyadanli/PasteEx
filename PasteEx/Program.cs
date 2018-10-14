@@ -31,7 +31,7 @@ namespace PasteEx
                 CommandLine.RedirectConsoleOutput();
                 if (args.Length > 0)
                 {
-                    
+
                     List<string> commands = new List<string>(args);
                     if (commands[0] == "/reg")
                     {
@@ -68,6 +68,12 @@ namespace PasteEx
                     }
                     else if (commands[0] == "monitor")
                     {
+                        if (ApplicationHelper.IsPasteExMonitorModeProcessExist())
+                        {
+                            MessageBox.Show(Resources.Strings.TipMonitorProcessExisted,
+                                    Resources.Strings.TitleError, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            return;
+                        }
                         // monitor mode
                         Application.Run(new FormMain(null));
                         return;
@@ -88,15 +94,17 @@ namespace PasteEx
                     {
                         return;
                     }
-                    if(Properties.Settings.Default.DefaultStartupMonitorModeEnabled)
+                    if (Properties.Settings.Default.DefaultStartupMonitorModeEnabled)
                     {
-                        Application.Run(new FormMain(null));
+                        // Monitor Mode Entrance 2
+                        ApplicationHelper.StartSelf("monitor", false);
+                        return;
                     }
                     else
                     {
                         Application.Run(new FormMain());
                     }
-                    
+
                 }
             }
             catch (Exception ex)

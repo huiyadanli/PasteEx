@@ -173,14 +173,15 @@ namespace PasteEx.Forms
 
         public void monitorModeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (Util.ApplicationHelper.IsPasteExMonitorModeProcessesExist())
+            // Monitor Mode Entrance 1
+            if (ApplicationHelper.IsPasteExMonitorModeProcessExist())
             {
                 MessageBox.Show(this, Resources.Strings.TipMonitorProcessExisted,
                         Resources.Strings.TitleError, MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                Util.ApplicationHelper.StartSelf("monitor", false);
+                ApplicationHelper.StartSelf("monitor", false);
                 this.Close();
             }
         }
