@@ -29,7 +29,6 @@ namespace PasteEx
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
                 CommandLine.RedirectConsoleOutput();
-                //CommandLine.NewConsole();
                 if (args.Length > 0)
                 {
                     

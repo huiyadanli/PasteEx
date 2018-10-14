@@ -8,34 +8,54 @@ using System.Threading.Tasks;
 
 namespace PasteEx.Core
 {
-    public enum ApplicationFilterStateEnum
+    public enum AppFilterStateEnum
     {
         Include,
         Exclude
     };
 
-    public class ApplicationCopyFilter
+    /// <summary>
+    /// The Filter configuration can not be updated in real time 
+    /// when there are multiple instances of the PasteEx program.
+    /// </summary>
+    public class AppCopyFilter
     {
-        public ApplicationFilterStateEnum State { get; set; }
+        private static AppCopyFilter instance = null;
 
         private HashSet<string> hashSet = null;
 
-        private readonly string appNames = null;
+        private string appNames = null;
 
-        public ApplicationCopyFilter()
+        public AppFilterStateEnum State { get; set; }
+
+        private AppCopyFilter()
         {
-            if (Properties.Settings.Default.ApplicationFilterState == ApplicationFilterStateEnum.Include.ToString())
+            RefreshSettings();
+        }
+
+        public static AppCopyFilter GetInstance()
+        {
+            if (instance == null)
             {
-                State = ApplicationFilterStateEnum.Include;
+                instance = new AppCopyFilter();
+            }
+            return instance;
+        }
+
+        public bool RefreshSettings()
+        {
+            if (Properties.Settings.Default.ApplicationFilterState == AppFilterStateEnum.Include.ToString())
+            {
+                State = AppFilterStateEnum.Include;
                 appNames = Properties.Settings.Default.ApplicationFilterInclude;
             }
             else
             {
-                State = ApplicationFilterStateEnum.Exclude;
+                State = AppFilterStateEnum.Exclude;
                 appNames = Properties.Settings.Default.ApplicationFilterExclude;
             }
 
-            Load(appNames);
+            return Load(appNames);
         }
 
         public bool Load(string nameStr)
@@ -67,7 +87,7 @@ namespace PasteEx.Core
                 return true;
             }
 
-            if (State == ApplicationFilterStateEnum.Include)
+            if (State == AppFilterStateEnum.Include)
             {
                 if (hashSet.Contains(name))
                 {
@@ -78,7 +98,7 @@ namespace PasteEx.Core
                     return false;
                 }
             }
-            else if (State == ApplicationFilterStateEnum.Exclude)
+            else if (State == AppFilterStateEnum.Exclude)
             {
                 if (hashSet.Contains(name))
                 {

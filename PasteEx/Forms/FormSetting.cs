@@ -13,7 +13,7 @@ namespace PasteEx.Forms
 
         private static FormSetting dialogue = null;
 
-        public FormSetting()
+        private FormSetting()
         {
             InitializeComponent();
         }
@@ -51,9 +51,9 @@ namespace PasteEx.Forms
             chkDefaultStartupMonitorMode.Checked = Properties.Settings.Default.DefaultStartupMonitorModeEnabled;
             
             // Application Filter
-            txtApplicationFilterInclude.Text = Properties.Settings.Default.ApplicationFilterInclude;
-            txtApplicationFilterExclude.Text = Properties.Settings.Default.ApplicationFilterExclude;
-            if(Properties.Settings.Default.ApplicationFilterState == ApplicationFilterStateEnum.Include.ToString())
+            txtAppFilterInclude.Text = Properties.Settings.Default.ApplicationFilterInclude;
+            txtAppFilterExclude.Text = Properties.Settings.Default.ApplicationFilterExclude;
+            if(Properties.Settings.Default.ApplicationFilterState == AppFilterStateEnum.Include.ToString())
             {
                 radInclude.Checked = true;
                 radExclude.Checked = false;
@@ -84,15 +84,15 @@ namespace PasteEx.Forms
 
             Properties.Settings.Default.DefaultStartupMonitorModeEnabled = chkDefaultStartupMonitorMode.Checked;
 
-            Properties.Settings.Default.ApplicationFilterInclude = txtApplicationFilterInclude.Text;
-            Properties.Settings.Default.ApplicationFilterExclude = txtApplicationFilterExclude.Text;
+            Properties.Settings.Default.ApplicationFilterInclude = txtAppFilterInclude.Text;
+            Properties.Settings.Default.ApplicationFilterExclude = txtAppFilterExclude.Text;
             if (radInclude.Checked == true)
             {
-                Properties.Settings.Default.ApplicationFilterState = ApplicationFilterStateEnum.Include.ToString();
+                Properties.Settings.Default.ApplicationFilterState = AppFilterStateEnum.Include.ToString();
             }
             else
             {
-                Properties.Settings.Default.ApplicationFilterState = ApplicationFilterStateEnum.Exclude.ToString();
+                Properties.Settings.Default.ApplicationFilterState = AppFilterStateEnum.Exclude.ToString();
             }
         }
 
@@ -209,6 +209,9 @@ namespace PasteEx.Forms
             }
             Set();
             Properties.Settings.Default.Save();
+
+            // Refresh settings
+            AppCopyFilter.GetInstance().RefreshSettings();
         }
 
         private void txtAutoExtRuleValidate(object sender, EventArgs e)
@@ -448,13 +451,13 @@ namespace PasteEx.Forms
         {
             if(radInclude.Checked)
             {
-                txtApplicationFilterInclude.Enabled = true;
-                txtApplicationFilterExclude.Enabled = false;
+                txtAppFilterInclude.Enabled = true;
+                txtAppFilterExclude.Enabled = false;
             }
             else if (radExclude.Checked)
             {
-                txtApplicationFilterInclude.Enabled = false;
-                txtApplicationFilterExclude.Enabled = true;
+                txtAppFilterInclude.Enabled = false;
+                txtAppFilterExclude.Enabled = true;
             }
         }
     }

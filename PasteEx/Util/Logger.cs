@@ -25,21 +25,24 @@ namespace PasteEx.Util
 
         public static void Error(string message)
         {
+            CommandLine.Error(message);
             WriteEntry(message, "ERROR");
         }
 
         public static void Error(Exception ex)
         {
-            WriteEntry(ex.ToString(), "ERROR");
+            Error(ex.ToString());
         }
 
         public static void Warning(string message)
         {
+            CommandLine.Warning(message);
             WriteEntry(message, "WARNING");
         }
 
         public static void Info(string message)
         {
+            CommandLine.Info(message);
             WriteEntry(message, "INFO");
         }
 

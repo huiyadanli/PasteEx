@@ -55,7 +55,7 @@ namespace PasteEx.Core
 
         private static ClipboardData monitorModeData;
 
-        private static ApplicationCopyFilter applicationCopyFilter;
+        private static AppCopyFilter applicationCopyFilter;
 
         public static void StartMonitorMode()
         {
@@ -65,7 +65,7 @@ namespace PasteEx.Core
 
             monitorModeData = new ClipboardData();
 
-            applicationCopyFilter = new ApplicationCopyFilter();
+            applicationCopyFilter = AppCopyFilter.GetInstance();
 
             // start monitor
             ClipboardMonitor.OnClipboardChange += ClipboardMonitor_OnClipboardChange;
@@ -84,7 +84,7 @@ namespace PasteEx.Core
         {
             // 0. Clipboard owner white-black list
             Process proc = Process.GetProcessById(Convert.ToInt32(sender));
-            Console.WriteLine("Clipboard Owner: " + proc.ProcessName + " - Process Id:" + proc.Id);
+            CommandLine.Info("[Monitor] Clipboard Owner: " + proc.ProcessName + " - Process Id:" + proc.Id);
 
             if (ApplicationHelper.GetCurrentProcessName() == proc.ProcessName)
             {
@@ -92,7 +92,7 @@ namespace PasteEx.Core
             }
             if (!applicationCopyFilter.Bypass(proc.ProcessName))
             {
-                Console.WriteLine("Intercept: " + proc.ProcessName);
+                CommandLine.Warning("[Monitor] Intercept: " + proc.ProcessName);
                 return;
             }
 
@@ -116,6 +116,7 @@ namespace PasteEx.Core
                 {
                     // Append FileDrop type data into clipboard
                     string filePath = PathGenerator.GenerateMonitorAppendFilePath(exts[0]);
+                    CommandLine.Info("[Monitor] Paste pictures into files: " + filePath);
 
                     AppendFileToClipboard(filePath);
 

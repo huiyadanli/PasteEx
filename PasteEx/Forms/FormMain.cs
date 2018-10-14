@@ -1,4 +1,5 @@
 ﻿using PasteEx.Core;
+using PasteEx.Util;
 using System;
 using System.IO;
 using System.Windows.Forms;
@@ -48,7 +49,7 @@ namespace PasteEx.Forms
             dialogue = this;
             InitializeComponent();
 
-            if(location == null)
+            if (location == null)
             {
                 // Switch to monitor mode
                 Load -= FormMain_Load;
@@ -63,7 +64,8 @@ namespace PasteEx.Forms
         }
         private void FormMain_Monitor_Load(object sender, EventArgs e)
         {
-            this.BeginInvoke(new Action(() => {
+            this.BeginInvoke(new Action(() =>
+            {
                 this.Hide(); // hide main form
                 notifyIcon.ShowBalloonTip(1000, Resources.Strings.TitleAppName, Resources.Strings.TipMonitorImHere, ToolTipIcon.None);
             }));
@@ -105,6 +107,7 @@ namespace PasteEx.Forms
         {
             ModeController.UnregisterHotKey();
             ModeController.StopMonitorMode();
+            CommandLine.CloseConsole();
         }
         #endregion
 
@@ -170,7 +173,7 @@ namespace PasteEx.Forms
 
         public void monitorModeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if(Util.ApplicationHelper.IsPasteExMonitorModeProcessesExist())
+            if (Util.ApplicationHelper.IsPasteExMonitorModeProcessesExist())
             {
                 MessageBox.Show(this, Resources.Strings.TipMonitorProcessExisted,
                         Resources.Strings.TitleError, MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -214,7 +217,7 @@ namespace PasteEx.Forms
         private void settingToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FormSetting f = FormSetting.GetInstance();
-            if(f.Visible == true)
+            if (f.Visible == true)
             {
                 f.Show();
             }
@@ -261,8 +264,6 @@ namespace PasteEx.Forms
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ModeController.UnregisterHotKey();
-            ModeController.StopMonitorMode();
             this.Close();
         }
 
@@ -290,8 +291,26 @@ namespace PasteEx.Forms
             notifyIcon.Icon = Properties.Resources.stop;
         }
 
-        #endregion
+        private void openDebugWindowToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CommandLine.NewConsole();
+            // banner
+            CommandLine.WriteLine(
+@" ____                       __               ____              
+/\  _`\                    /\ \__           /\  _`\            
+\ \ \L\ \   __       ____  \ \ ,_\     __   \ \ \L\_\   __  _  
+ \ \ ,__/ /'__`\    /',__\  \ \ \/   /'__`\  \ \  _\L  /\ \/'\ 
+  \ \ \/ /\ \L\.\_ /\__, `\  \ \ \_ /\  __/   \ \ \L\ \\/>  </ 
+   \ \_\ \ \__/.\_\\/\____/   \ \__\\ \____\   \ \____/ /\_/\_\
+    \/_/  \/__/\/_/ \/___/     \/__/ \/____/    \/___/  \//\/_/
+                                                               
+                                                               ");
+            CommandLine.WriteLine(
+"               * PasteEx v." + System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString() + " Debug Window");
+            CommandLine.WriteLine("    * If you close this window, the application will also be closed." + Environment.NewLine);
+        }
 
+        #endregion
 
     }
 }
