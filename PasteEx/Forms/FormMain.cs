@@ -310,6 +310,18 @@ namespace PasteEx.Forms
             CommandLine.WriteLine("    * If you close this window, the application will also be closed." + Environment.NewLine);
         }
 
+        public void SwitchLanguage(System.ComponentModel.ComponentResourceManager cmp, System.Globalization.CultureInfo cultureInfo)
+        {
+            // Inheritance Object -> MarshalByRefObject -> Component -> NotifyIcon
+            if (notifyIcon.ContextMenuStrip != null)
+            {
+                foreach (ToolStripItem item in notifyIcon.ContextMenuStrip.Items)
+                {
+                    cmp.ApplyResources(item, item.Name, cultureInfo);
+                }
+            }
+        }
+
         #endregion
 
     }

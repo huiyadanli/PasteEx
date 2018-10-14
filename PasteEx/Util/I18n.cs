@@ -114,11 +114,13 @@ namespace PasteEx.Util
             if (FormSetting.GetInstance() != null)
             {
                 ApplyResourceToControl(FormSetting.GetInstance(), new ComponentResourceManager(typeof(FormSetting)), newCI);
+                FormSetting.GetInstance().InitSomething(null, null);
             }
             ComponentResourceManager cmpFormMain = new ComponentResourceManager(typeof(FormMain));
             if (FormMain.GetInstance() != null)
             {
                 ApplyResourceToControl(FormMain.GetInstance(), cmpFormMain, newCI);
+                FormMain.GetInstance().SwitchLanguage(cmpFormMain, newCI);
             }
         }
 
@@ -128,7 +130,7 @@ namespace PasteEx.Util
 
             if(control.ContextMenuStrip != null)
             {
-                foreach(ToolStripMenuItem item in control.ContextMenuStrip.Items)
+                foreach(ToolStripItem item in control.ContextMenuStrip.Items)
                 {
                     cmp.ApplyResources(item, item.Name, cultureInfo);
                 }

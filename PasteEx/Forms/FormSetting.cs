@@ -101,18 +101,7 @@ namespace PasteEx.Forms
         {
             Get();
 
-            // Application Filter
-            radApplicationFilter_CheckedChanged(sender, e);
-
-            // Auto Save Path
-            chkAutoSave_CheckedChanged(sender, e);
-
-            // Validate Hotkey
-            ChangeLableValidState(lblQuickPasteExHotkeyValid, TxtPasteHotkeyValidate(txtQuickPasteExHotkey.Text));
-            chkQuickPasteExHotkeyWinKey_CheckedChanged(sender, e);
-
-            // About Tab Page
-            linkLabel1.Text = string.Format(Resources.Strings.TxtAbout, System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString());
+            InitSomething(sender, e);
 
             string i = Properties.Settings.Default.language;
             if (string.IsNullOrWhiteSpace(i))
@@ -136,6 +125,24 @@ namespace PasteEx.Forms
                 linkLabel1.Links.Add(162, 4, @"https://github.com/huiyadanli/PasteEx/issues");
                 linkLabel1.Links.Add(121, 20, @"mailto:huiyadanli@gmail.com");
             }
+        }
+
+        public void InitSomething(object sender, EventArgs e)
+        {
+            Get();
+
+            // Application Filter
+            radApplicationFilter_CheckedChanged(sender, e);
+
+            // Auto Save Path
+            chkAutoSave_CheckedChanged(sender, e);
+
+            // Validate Hotkey
+            ChangeLableValidState(lblQuickPasteExHotkeyValid, TxtPasteHotkeyValidate(txtQuickPasteExHotkey.Text));
+            chkQuickPasteExHotkeyWinKey_CheckedChanged(sender, e);
+
+            // About Tab Page
+            linkLabel1.Text = string.Format(Resources.Strings.TxtAbout, System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString());
         }
 
         [Obsolete]
