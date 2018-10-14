@@ -73,7 +73,6 @@
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.lblQuickPasteExHotkeyValid = new System.Windows.Forms.Label();
             this.lblQuickPasteExHotkey = new System.Windows.Forms.Label();
-            this.txtQuickPasteExHotkey = new PasteEx.Forms.Hotkey.HotkeyTextBox();
             this.tabPageAbout = new System.Windows.Forms.TabPage();
             this.labelUpdateinfo = new System.Windows.Forms.LinkLabel();
             this.picLoading = new System.Windows.Forms.PictureBox();
@@ -81,6 +80,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tipHelp = new System.Windows.Forms.ToolTip(this.components);
+            this.chkQuickPasteExHotkeyWinKey = new System.Windows.Forms.CheckBox();
+            this.txtQuickPasteExHotkey = new PasteEx.Forms.Hotkey.HotkeyTextBox();
             this.tabControl1.SuspendLayout();
             this.tabPageNomal.SuspendLayout();
             this.groupBox6.SuspendLayout();
@@ -412,6 +413,7 @@
             // groupBox5
             // 
             resources.ApplyResources(this.groupBox5, "groupBox5");
+            this.groupBox5.Controls.Add(this.chkQuickPasteExHotkeyWinKey);
             this.groupBox5.Controls.Add(this.lblQuickPasteExHotkeyValid);
             this.groupBox5.Controls.Add(this.lblQuickPasteExHotkey);
             this.groupBox5.Controls.Add(this.txtQuickPasteExHotkey);
@@ -428,12 +430,6 @@
             // 
             resources.ApplyResources(this.lblQuickPasteExHotkey, "lblQuickPasteExHotkey");
             this.lblQuickPasteExHotkey.Name = "lblQuickPasteExHotkey";
-            // 
-            // txtQuickPasteExHotkey
-            // 
-            resources.ApplyResources(this.txtQuickPasteExHotkey, "txtQuickPasteExHotkey");
-            this.txtQuickPasteExHotkey.Name = "txtQuickPasteExHotkey";
-            this.txtQuickPasteExHotkey.TextChanged += new System.EventHandler(this.txtQuickPasteExHotkey_TextChanged);
             // 
             // tabPageAbout
             // 
@@ -486,6 +482,20 @@
             this.tipHelp.AutoPopDelay = 30000;
             this.tipHelp.InitialDelay = 100;
             this.tipHelp.ReshowDelay = 20;
+            // 
+            // chkQuickPasteExHotkeyWinKey
+            // 
+            resources.ApplyResources(this.chkQuickPasteExHotkeyWinKey, "chkQuickPasteExHotkeyWinKey");
+            this.chkQuickPasteExHotkeyWinKey.Name = "chkQuickPasteExHotkeyWinKey";
+            this.chkQuickPasteExHotkeyWinKey.UseVisualStyleBackColor = true;
+            this.chkQuickPasteExHotkeyWinKey.CheckedChanged += new System.EventHandler(this.chkQuickPasteExHotkeyWinKey_CheckedChanged);
+            // 
+            // txtQuickPasteExHotkey
+            // 
+            resources.ApplyResources(this.txtQuickPasteExHotkey, "txtQuickPasteExHotkey");
+            this.txtQuickPasteExHotkey.HasWinKey = false;
+            this.txtQuickPasteExHotkey.Name = "txtQuickPasteExHotkey";
+            this.txtQuickPasteExHotkey.TextChanged += new System.EventHandler(this.txtQuickPasteExHotkey_TextChanged);
             // 
             // FormSetting
             // 
@@ -582,5 +592,6 @@
         private System.Windows.Forms.RadioButton radInclude;
         private System.Windows.Forms.PictureBox picHelpAppFilter;
         private System.Windows.Forms.CheckBox chkDefaultStartupMonitorMode;
+        private System.Windows.Forms.CheckBox chkQuickPasteExHotkeyWinKey;
     }
 }

@@ -39,6 +39,7 @@ namespace PasteEx.Forms
             txtAutoExtRule.Enabled = chkAutoExtSwitch.Checked;
 
             txtQuickPasteExHotkey.Text = Properties.Settings.Default.pasteHotkey;
+            chkQuickPasteExHotkeyWinKey.Checked = Properties.Settings.Default.pasteHotkey.Contains("Win");
 
             // File Name Pattern
             txtFileNamePattern.Text = Properties.Settings.Default.fileNamePattern;
@@ -49,15 +50,15 @@ namespace PasteEx.Forms
 
             // Default Startup Monitor Mode
             chkDefaultStartupMonitorMode.Checked = Properties.Settings.Default.DefaultStartupMonitorModeEnabled;
-            
+
             // Application Filter
             txtAppFilterInclude.Text = Properties.Settings.Default.ApplicationFilterInclude;
             txtAppFilterExclude.Text = Properties.Settings.Default.ApplicationFilterExclude;
-            if(Properties.Settings.Default.ApplicationFilterState == AppFilterStateEnum.Include.ToString())
+            if (Properties.Settings.Default.ApplicationFilterState == AppFilterStateEnum.Include.ToString())
             {
                 radInclude.Checked = true;
                 radExclude.Checked = false;
-            } 
+            }
             else
             {
                 radInclude.Checked = false;
@@ -108,6 +109,7 @@ namespace PasteEx.Forms
 
             // Validate Hotkey
             ChangeLableValidState(lblQuickPasteExHotkeyValid, TxtPasteHotkeyValidate(txtQuickPasteExHotkey.Text));
+            chkQuickPasteExHotkeyWinKey_CheckedChanged(sender, e);
 
             // About Tab Page
             linkLabel1.Text = string.Format(Resources.Strings.TxtAbout, System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString());
@@ -337,11 +339,12 @@ namespace PasteEx.Forms
 
             try
             {
-                Core.ModeController.RegisterHotKey(hotkeyStr);
+                ModeController.RegisterHotKey(hotkeyStr);
                 return true;
             }
-            catch
+            catch (Exception ex)
             {
+                CommandLine.Warning("[Hotkey] register failed" + Environment.NewLine + ex.ToString());
                 return false;
             }
         }
@@ -349,6 +352,12 @@ namespace PasteEx.Forms
         private void txtQuickPasteExHotkey_TextChanged(object sender, EventArgs e)
         {
             ChangeLableValidState(lblQuickPasteExHotkeyValid, TxtPasteHotkeyValidate(txtQuickPasteExHotkey.Text));
+        }
+
+        private void chkQuickPasteExHotkeyWinKey_CheckedChanged(object sender, EventArgs e)
+        {
+            txtQuickPasteExHotkey.HasWinKey = chkQuickPasteExHotkeyWinKey.Checked;
+            txtQuickPasteExHotkey.RefreshText();
         }
 
         private void ChangeLableValidState(Label lbl, bool state)
@@ -449,7 +458,7 @@ namespace PasteEx.Forms
 
         private void radApplicationFilter_CheckedChanged(object sender, EventArgs e)
         {
-            if(radInclude.Checked)
+            if (radInclude.Checked)
             {
                 txtAppFilterInclude.Enabled = true;
                 txtAppFilterExclude.Enabled = false;

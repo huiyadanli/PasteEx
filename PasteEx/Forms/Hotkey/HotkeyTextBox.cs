@@ -16,15 +16,28 @@ namespace PasteEx.Forms.Hotkey
         public override bool Multiline { get { return false; } }
 
         // These variables store the current hotkey and modifier(s)
-        private Hotkey hotkey = new Hotkey();
+        private Hotkey Hotkey { get; }
+
+        public bool HasWinKey { get; set; }
 
         /// <summary>
         /// Creates a new HotkeyControl
         /// </summary>
         public HotkeyTextBox()
         {
+            Hotkey = new Hotkey();
+
             ContextMenu = new ContextMenu(); // Disable right-clicking
             GotFocus += delegate { User32.HideCaret(Handle); };
+        }
+
+        /// <summary>
+        /// When the hotkey is modified externally, the hotkey string needs to be refreshed.
+        /// </summary>
+        public void RefreshText()
+        {
+            Hotkey.Windows = HasWinKey;
+            Text = Hotkey.ToString();
         }
 
         /// <summary>
@@ -35,19 +48,20 @@ namespace PasteEx.Forms.Hotkey
             // Clear the current hotkey
             if (e.KeyCode == Keys.Back || e.KeyCode == Keys.Delete)
             {
-                hotkey.Reset();
+                Hotkey.Reset();
                 return;
             }
             else
             {
-                hotkey.Key = e.KeyCode;
+                Hotkey.Key = e.KeyCode;
 
-                hotkey.Alt = e.Alt;
-                hotkey.Control = e.Control;
-                hotkey.Shift = e.Shift;
+                Hotkey.Alt = e.Alt;
+                Hotkey.Control = e.Control;
+                Hotkey.Shift = e.Shift;
+                Hotkey.Windows = HasWinKey;
             }
 
-            Text = hotkey.ToString();
+            Text = Hotkey.ToString();
         }
 
         /// <summary>
@@ -55,7 +69,7 @@ namespace PasteEx.Forms.Hotkey
         /// </summary>
         protected override void OnKeyUp(KeyEventArgs e)
         {
-            if (hotkey.Key == Keys.None)
+            if (Hotkey.Key == Keys.None)
             {
                 Text = "";
             }
