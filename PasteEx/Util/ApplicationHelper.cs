@@ -18,8 +18,7 @@ namespace PasteEx.Util
         {
             if(processName == null)
             {
-                Process curProc = Process.GetCurrentProcess();
-                processName = curProc.ProcessName;
+                GetCurrentProcessInfo();
             }
             return processName;
         }
