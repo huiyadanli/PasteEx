@@ -136,9 +136,6 @@
   <data name="btnChooseLocation.Text" xml:space="preserve">
     <value>选择路径</value>
   </data>
-  <data name="contextMenuStripSetting.Size" type="System.Drawing.Size, System.Drawing">
-    <value>125, 48</value>
-  </data>
   <data name="monitorModeToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>124, 22</value>
   </data>
@@ -151,49 +148,64 @@
   <data name="settingToolStripMenuItem.Text" xml:space="preserve">
     <value>设置</value>
   </data>
+  <data name="contextMenuStripSetting.Size" type="System.Drawing.Size, System.Drawing">
+    <value>125, 48</value>
+  </data>
   <data name="startMonitorToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>160, 22</value>
   </data>
   <data name="startMonitorToolStripMenuItem.Text" xml:space="preserve">
     <value>启动监听</value>
   </data>
   <data name="stopMonitorToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>160, 22</value>
   </data>
   <data name="stopMonitorToolStripMenuItem.Text" xml:space="preserve">
     <value>停止监听</value>
   </data>
   <data name="autoToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>160, 22</value>
   </data>
   <data name="autoToolStripMenuItem.Text" xml:space="preserve">
     <value>自动图片转文件</value>
   </data>
-  <data name="advancedToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
-  </data>
-  <data name="advancedToolStripMenuItem.Text" xml:space="preserve">
-    <value>高级</value>
-  </data>
-  <data name="settingToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
-  </data>
-  <data name="settingToolStripMenuItem1.Text" xml:space="preserve">
-    <value>设置</value>
-  </data>
-  <data name="exitToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
-  </data>
-  <data name="exitToolStripMenuItem.Text" xml:space="preserve">
-    <value>退出</value>
-  </data>
-  <data name="contextMenuStripMonitorMode.Size" type="System.Drawing.Size, System.Drawing">
-    <value>161, 136</value>
+  <data name="toolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>157, 6</value>
   </data>
   <data name="openDebugWindowToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>180, 22</value>
   </data>
   <data name="openDebugWindowToolStripMenuItem.Text" xml:space="preserve">
     <value>打开 Debug 窗口</value>
+  </data>
+  <data name="openTempFolderToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="openTempFolderToolStripMenuItem.Text" xml:space="preserve">
+    <value>打开临时文件目录</value>
+  </data>
+  <data name="advancedToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>160, 22</value>
+  </data>
+  <data name="advancedToolStripMenuItem.Text" xml:space="preserve">
+    <value>高级</value>
+  </data>
+  <data name="settingToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>160, 22</value>
+  </data>
+  <data name="settingToolStripMenuItem1.Text" xml:space="preserve">
+    <value>设置</value>
+  </data>
+  <data name="toolStripMenuItem2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>157, 6</value>
+  </data>
+  <data name="exitToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>160, 22</value>
+  </data>
+  <data name="exitToolStripMenuItem.Text" xml:space="preserve">
+    <value>退出</value>
+  </data>
+  <data name="contextMenuStripMonitorMode.Size" type="System.Drawing.Size, System.Drawing">
+    <value>161, 148</value>
   </data>
 </root>

@@ -50,6 +50,7 @@
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.advancedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openDebugWindowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openTempFolderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.settingToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripSeparator();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -188,7 +189,8 @@
             // 
             resources.ApplyResources(this.advancedToolStripMenuItem, "advancedToolStripMenuItem");
             this.advancedToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.openDebugWindowToolStripMenuItem});
+            this.openDebugWindowToolStripMenuItem,
+            this.openTempFolderToolStripMenuItem});
             this.advancedToolStripMenuItem.Name = "advancedToolStripMenuItem";
             // 
             // openDebugWindowToolStripMenuItem
@@ -196,6 +198,12 @@
             resources.ApplyResources(this.openDebugWindowToolStripMenuItem, "openDebugWindowToolStripMenuItem");
             this.openDebugWindowToolStripMenuItem.Name = "openDebugWindowToolStripMenuItem";
             this.openDebugWindowToolStripMenuItem.Click += new System.EventHandler(this.openDebugWindowToolStripMenuItem_Click);
+            // 
+            // openTempFolderToolStripMenuItem
+            // 
+            resources.ApplyResources(this.openTempFolderToolStripMenuItem, "openTempFolderToolStripMenuItem");
+            this.openTempFolderToolStripMenuItem.Name = "openTempFolderToolStripMenuItem";
+            this.openTempFolderToolStripMenuItem.Click += new System.EventHandler(this.openTempFolderToolStripMenuItem_Click);
             // 
             // settingToolStripMenuItem1
             // 
@@ -268,6 +276,7 @@
         private System.Windows.Forms.ToolStripMenuItem openDebugWindowToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem openTempFolderToolStripMenuItem;
     }
 }
 

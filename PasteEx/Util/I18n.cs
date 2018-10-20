@@ -128,17 +128,30 @@ namespace PasteEx.Util
         {
             cmp.ApplyResources(control, control.Name, cultureInfo);
 
-            if(control.ContextMenuStrip != null)
+            if (control.ContextMenuStrip != null)
             {
-                foreach(ToolStripItem item in control.ContextMenuStrip.Items)
-                {
-                    cmp.ApplyResources(item, item.Name, cultureInfo);
-                }
+                ApplyResourceToToolStripItem(control.ContextMenuStrip.Items, cmp, cultureInfo);
             }
 
             foreach (Control child in control.Controls)
             {
                 ApplyResourceToControl(child, cmp, cultureInfo);
+            }
+        }
+
+        public static void ApplyResourceToToolStripItem(ToolStripItemCollection collection, ComponentResourceManager cmp, CultureInfo cultureInfo)
+        {
+            foreach (ToolStripItem item in collection)
+            {
+                cmp.ApplyResources(item, item.Name, cultureInfo);
+                if (item is ToolStripMenuItem)
+                {
+                    ToolStripItemCollection dropDownItems = (item as ToolStripMenuItem).DropDownItems;
+                    if (dropDownItems != null && dropDownItems.Count > 0)
+                    {
+                        ApplyResourceToToolStripItem(dropDownItems, cmp, cultureInfo);
+                    }
+                }
             }
         }
     }

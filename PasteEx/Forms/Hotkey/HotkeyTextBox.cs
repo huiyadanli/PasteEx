@@ -16,7 +16,7 @@ namespace PasteEx.Forms.Hotkey
         public override bool Multiline { get { return false; } }
 
         // These variables store the current hotkey and modifier(s)
-        private Hotkey Hotkey { get; }
+        private Hotkey hotkey;
 
         public bool HasWinKey { get; set; }
 
@@ -25,7 +25,7 @@ namespace PasteEx.Forms.Hotkey
         /// </summary>
         public HotkeyTextBox()
         {
-            Hotkey = new Hotkey();
+            hotkey = new Hotkey();
 
             ContextMenu = new ContextMenu(); // Disable right-clicking
             GotFocus += delegate { User32.HideCaret(Handle); };
@@ -34,10 +34,15 @@ namespace PasteEx.Forms.Hotkey
         /// <summary>
         /// When the hotkey is modified externally, the hotkey string needs to be refreshed.
         /// </summary>
-        public void RefreshText()
+        public void RefreshText(string hotkeyStr = null)
         {
-            Hotkey.Windows = HasWinKey;
-            Text = Hotkey.ToString();
+            if (!string.IsNullOrEmpty(hotkeyStr))
+            {
+                hotkey = new Hotkey(hotkeyStr);
+            }
+
+            hotkey.Windows = HasWinKey;
+            Text = hotkey.ToString();
         }
 
         /// <summary>
@@ -48,20 +53,20 @@ namespace PasteEx.Forms.Hotkey
             // Clear the current hotkey
             if (e.KeyCode == Keys.Back || e.KeyCode == Keys.Delete)
             {
-                Hotkey.Reset();
+                hotkey.Reset();
                 return;
             }
             else
             {
-                Hotkey.Key = e.KeyCode;
+                hotkey.Key = e.KeyCode;
 
-                Hotkey.Alt = e.Alt;
-                Hotkey.Control = e.Control;
-                Hotkey.Shift = e.Shift;
-                Hotkey.Windows = HasWinKey;
+                hotkey.Alt = e.Alt;
+                hotkey.Control = e.Control;
+                hotkey.Shift = e.Shift;
+                hotkey.Windows = HasWinKey;
             }
 
-            Text = Hotkey.ToString();
+            Text = hotkey.ToString();
         }
 
         /// <summary>
@@ -69,7 +74,7 @@ namespace PasteEx.Forms.Hotkey
         /// </summary>
         protected override void OnKeyUp(KeyEventArgs e)
         {
-            if (Hotkey.Key == Keys.None)
+            if (hotkey.Key == Keys.None)
             {
                 Text = "";
             }

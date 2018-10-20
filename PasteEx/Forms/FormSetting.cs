@@ -129,7 +129,6 @@ namespace PasteEx.Forms
 
         public void InitSomething(object sender, EventArgs e)
         {
-            Get();
 
             // Application Filter
             radApplicationFilter_CheckedChanged(sender, e);
@@ -138,8 +137,8 @@ namespace PasteEx.Forms
             chkAutoSave_CheckedChanged(sender, e);
 
             // Validate Hotkey
-            ChangeLableValidState(lblQuickPasteExHotkeyValid, TxtPasteHotkeyValidate(txtQuickPasteExHotkey.Text));
             chkQuickPasteExHotkeyWinKey_CheckedChanged(sender, e);
+            ChangeLableValidState(lblQuickPasteExHotkeyValid, TxtPasteHotkeyValidate(txtQuickPasteExHotkey.Text));
 
             // About Tab Page
             linkLabel1.Text = string.Format(Resources.Strings.TxtAbout, System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString());
@@ -364,7 +363,7 @@ namespace PasteEx.Forms
         private void chkQuickPasteExHotkeyWinKey_CheckedChanged(object sender, EventArgs e)
         {
             txtQuickPasteExHotkey.HasWinKey = chkQuickPasteExHotkeyWinKey.Checked;
-            txtQuickPasteExHotkey.RefreshText();
+            txtQuickPasteExHotkey.RefreshText(txtQuickPasteExHotkey.Text);
         }
 
         private void ChangeLableValidState(Label lbl, bool state)

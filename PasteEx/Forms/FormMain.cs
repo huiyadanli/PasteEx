@@ -316,14 +316,15 @@ namespace PasteEx.Forms
             // Inheritance Object -> MarshalByRefObject -> Component -> NotifyIcon
             if (notifyIcon.ContextMenuStrip != null)
             {
-                foreach (ToolStripItem item in notifyIcon.ContextMenuStrip.Items)
-                {
-                    cmp.ApplyResources(item, item.Name, cultureInfo);
-                }
+                I18n.ApplyResourceToToolStripItem(notifyIcon.ContextMenuStrip.Items, cmp, cultureInfo);
             }
         }
 
-        #endregion
+        private void openTempFolderToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("explorer.exe", PathGenerator.defaultMonitorTempFolder);
+        }
 
+        #endregion
     }
 }
