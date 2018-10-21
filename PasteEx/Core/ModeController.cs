@@ -110,17 +110,31 @@ namespace PasteEx.Core
             }
 
             // 2. Save image data to disk
-            if (ImageProcessor.imageExt.Contains(exts[0]) && monitorModeData.Storage.GetDataPresent(DataFormats.Bitmap))
+            if (ImageProcessor.imageExt.Contains(exts[0]))
             {
-                if (Properties.Settings.Default.autoImageToFileEnabled)
+                if (monitorModeData.Storage.GetDataPresent(DataFormats.Bitmap))
                 {
-                    // Append FileDrop type data into clipboard
-                    string filePath = PathGenerator.GenerateMonitorAppendFilePath(exts[0]);
-                    CommandLine.Info("[Monitor] Paste pictures into files: " + filePath);
+                    if (Properties.Settings.Default.autoImageToFileEnabled)
+                    {
+                        // Append FileDrop type data into clipboard
+                        string filePath = PathGenerator.GenerateMonitorAppendFilePath(exts[0]);
+                        CommandLine.Info("[Monitor] Paste pictures into files: " + filePath);
 
-                    AppendFileToClipboard(filePath);
+                        AppendFileToClipboard(filePath);
 
-                    monitorModeData.SaveAsync(filePath, exts[0]);
+                        monitorModeData.SaveAsync(filePath, exts[0]);
+                    }
+                }
+                else if (monitorModeData.Storage.GetDataPresent(DataFormats.FileDrop))
+                {
+                    if (Properties.Settings.Default.monitorAutoSaveEnabled)
+                    {
+                        // Append FileDrop type data into clipboard
+                        string filePath = PathGenerator.GenerateMonitorAppendFilePath(exts[0]);
+                        CommandLine.Info("[Monitor] Copy pictures file into: " + filePath);
+
+                        monitorModeData.SaveAsync(filePath, exts[0]);
+                    }
                 }
             }
 

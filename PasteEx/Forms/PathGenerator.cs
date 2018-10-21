@@ -52,6 +52,7 @@ namespace PasteEx.Forms
         /// <returns></returns>
         public static string GenerateFileName(string folder, string extension)
         {
+            folder = folder.EndsWith("\\") ? folder : folder + "\\";
             // Use file name pattern
             string defaultFileName = null;
             if (Properties.Settings.Default.fileNamePattern.IndexOfAny(Path.GetInvalidFileNameChars()) < 0)
@@ -224,7 +225,7 @@ namespace PasteEx.Forms
             {
                 folder = Properties.Settings.Default.monitorAutoSavePath;
             }
-            if(!Directory.Exists(folder))
+            if (!Directory.Exists(folder))
             {
                 Directory.CreateDirectory(folder);
             }
