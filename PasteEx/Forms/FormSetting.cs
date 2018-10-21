@@ -462,6 +462,11 @@ namespace PasteEx.Forms
             System.Diagnostics.Process.Start("https://github.com/huiyadanli/PasteEx/wiki#%E7%9B%91%E5%90%AC%E6%A8%A1%E5%BC%8F");
         }
 
+        private void picHelpAppFilter_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://github.com/huiyadanli/PasteEx/wiki/App-Filter");
+        }
+
         private void radApplicationFilter_CheckedChanged(object sender, EventArgs e)
         {
             if (radInclude.Checked)
@@ -475,5 +480,6 @@ namespace PasteEx.Forms
                 txtAppFilterExclude.Enabled = true;
             }
         }
+
     }
 }
