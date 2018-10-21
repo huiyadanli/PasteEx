@@ -10,7 +10,7 @@
 
 更多功能及用法参见[:blue_book:文档](https://github.com/huiyadanli/PasteEx/wiki)。
 
-[:zap:最新版本 v1.1.6.7 下载](https://github.com/huiyadanli/PasteEx/releases/download/1.1.6.7/PasteEx.v1.1.6.7.zip)
+[:zap:最新版本 v1.1.7.4 下载](https://github.com/huiyadanli/PasteEx/releases/download/1.1.7.4/PasteEx.v1.1.7.4.zip)
 
 ## 截图
 ![Screenshot](https://raw.githubusercontent.com/huiyadanli/PasteEx/master/Screenshot/Screenshot.png)

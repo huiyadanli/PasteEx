@@ -136,6 +136,9 @@
   <data name="btnChooseLocation.Text" xml:space="preserve">
     <value>選擇路徑</value>
   </data>
+  <data name="contextMenuStripSetting.Size" type="System.Drawing.Size, System.Drawing">
+    <value>125, 48</value>
+  </data>
   <data name="monitorModeToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>124, 22</value>
   </data>
@@ -147,9 +150,6 @@
   </data>
   <data name="settingToolStripMenuItem.Text" xml:space="preserve">
     <value>設置</value>
-  </data>
-  <data name="contextMenuStripSetting.Size" type="System.Drawing.Size, System.Drawing">
-    <value>125, 48</value>
   </data>
   <data name="startMonitorToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>180, 22</value>
@@ -171,18 +171,6 @@
   </data>
   <data name="toolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
     <value>177, 6</value>
-  </data>
-  <data name="openDebugWindowToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
-  </data>
-  <data name="openDebugWindowToolStripMenuItem.Text" xml:space="preserve">
-    <value>打開 Debug 窗口</value>
-  </data>
-  <data name="openTempFolderToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
-  </data>
-  <data name="openTempFolderToolStripMenuItem.Text" xml:space="preserve">
-    <value>打開臨時文件目錄</value>
   </data>
   <data name="advancedToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>180, 22</value>
@@ -206,6 +194,18 @@
     <value>退出</value>
   </data>
   <data name="contextMenuStripMonitorMode.Size" type="System.Drawing.Size, System.Drawing">
-    <value>181, 170</value>
+    <value>161, 148</value>
+  </data>
+  <data name="openDebugWindowToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="openDebugWindowToolStripMenuItem.Text" xml:space="preserve">
+    <value>打開 Debug 窗口</value>
+  </data>
+  <data name="openTempFolderToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="openTempFolderToolStripMenuItem.Text" xml:space="preserve">
+    <value>打開臨時文件目錄</value>
   </data>
 </root>

@@ -294,6 +294,7 @@ namespace PasteEx.Forms
 
         private void openDebugWindowToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            CommandLine.CloseConsole();
             CommandLine.NewConsole();
             // banner
             CommandLine.WriteLine(
