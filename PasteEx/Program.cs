@@ -1,4 +1,5 @@
 ﻿using PasteEx.Core;
+using PasteEx.Core.History;
 using PasteEx.Forms;
 using PasteEx.Util;
 using System;
@@ -29,6 +30,7 @@ namespace PasteEx
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
                 CommandLine.RedirectConsoleOutput();
+                PasteResultHistoryHelper.Init();
                 if (args.Length > 0)
                 {
 

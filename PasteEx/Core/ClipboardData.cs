@@ -1,6 +1,8 @@
-﻿using PasteEx.Core.Processor;
+﻿using PasteEx.Core.History;
+using PasteEx.Core.Processor;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static PasteEx.Core.Processor.BaseProcessor;
@@ -27,6 +29,7 @@ namespace PasteEx.Core
         {
             FromClipboard = Clipboard.GetDataObject();
             Storage = new DataObject();
+            PasteResultHistoryHelper.StartRecord(FromClipboard.GetFormats());
             InitProcessor();
         }
 
@@ -78,8 +81,12 @@ namespace PasteEx.Core
                     extensions.AddRange(es);
                 }
             }
+            //extensions.Distinct().ToList().Reverse();
             extensions.Reverse();
-            return extensions.ToArray();
+
+            string[] extArray = extensions.ToArray();
+            extArray = PasteResultHistoryHelper.GetUserHistoryExts(extArray);
+            return extArray;
         }
 
         public object GetObject(string extension)
@@ -104,6 +111,7 @@ namespace PasteEx.Core
         /// <param name="extension">file extension</param>
         public void Save(string path, string extension)
         {
+            PasteResultHistoryHelper.EndRecord(extension);
             foreach (BaseProcessor saver in savers)
             {
                 if (saver.SaveAs(path, extension))
@@ -125,6 +133,7 @@ namespace PasteEx.Core
         {
             FromClipboard = Clipboard.GetDataObject();
             Storage = new DataObject();
+            PasteResultHistoryHelper.StartRecord(FromClipboard.GetFormats());
             foreach (BaseProcessor analyzer in analyzers)
             {
                 analyzer.Reload();
@@ -133,7 +142,7 @@ namespace PasteEx.Core
         }
 
         /// <summary>
-        /// Have BUG when paste the content from word as file.
+        /// Have BUG when paste the content from Word as file.
         /// So do not use it!
         /// </summary>
         /// <param name="iDataObject"></param>

@@ -53,6 +53,7 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Management" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -67,6 +68,9 @@
     <Compile Include="Core\AppCopyFilter.cs" />
     <Compile Include="Core\ClipboardData.cs" />
     <Compile Include="Core\ClipboardMonitor.cs" />
+    <Compile Include="Core\History\PasteResult.cs" />
+    <Compile Include="Core\History\PasteResultHistory.cs" />
+    <Compile Include="Core\History\PasteResultHistoryHelper.cs" />
     <Compile Include="Core\ModeController.cs" />
     <Compile Include="Core\Processor\Assist\HTMLFormat.cs" />
     <Compile Include="Forms\Hotkey\Hotkey.cs" />
@@ -128,6 +132,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Strings.zh-CN.resx</DependentUpon>
     </Compile>
+    <Compile Include="Util\ObjectHelper.cs" />
     <Compile Include="Util\RightMenu.cs" />
     <Compile Include="Util\UpdateRepairer.cs" />
     <EmbeddedResource Include="Forms\FormMain.resx">
