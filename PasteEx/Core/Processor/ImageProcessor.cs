@@ -126,7 +126,11 @@ namespace PasteEx.Core.Processor
                         bitmap.Save(path, ImageFormat.Icon);
                         break;
                     case "jpg":
-                        bitmap.Save(path, ImageFormat.Jpeg);
+                        // High quality of JPG
+                        // https://stackoverflow.com/questions/1484759/quality-of-a-saved-jpg-in-c-sharp
+                        var encoder = ImageCodecInfo.GetImageEncoders().First(c => c.FormatID == ImageFormat.Jpeg.Guid);
+                        var encParams = new EncoderParameters() { Param = new[] { new EncoderParameter(Encoder.Quality, 90L) } };
+                        bitmap.Save(path, encoder, encParams);
                         break;
                     case "bmp":
                         bitmap.Save(path, ImageFormat.Bmp);
