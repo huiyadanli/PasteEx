@@ -36,5 +36,10 @@ namespace PasteEx.Core.History
         {
             History.Add(res.Key, res);
         }
+
+        public void Remove(PasteResult res)
+        {
+            History.Remove(res.Key);
+        }
     }
 }

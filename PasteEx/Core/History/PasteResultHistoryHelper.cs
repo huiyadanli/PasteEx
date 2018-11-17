@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace PasteEx.Core.History
@@ -63,7 +60,7 @@ namespace PasteEx.Core.History
                 return;
             }
 
-            string[] exts = currentPasteResult.AnalyzeResultExts;
+            string[] exts = isExist ? currentPasteResult.UserHistoryExts : currentPasteResult.AnalyzeResultExts;
 
             // No change
             if (exts.Length == 0 || exts[0] == ext)
@@ -79,6 +76,10 @@ namespace PasteEx.Core.History
             if (!isExist)
             {
                 pasteResultHistory.Add(currentPasteResult);
+            }
+            if(currentPasteResult.UserHistoryExts.SequenceEqual(currentPasteResult.AnalyzeResultExts))
+            {
+                pasteResultHistory.Remove(currentPasteResult);
             }
             currentPasteResult = null;
 
