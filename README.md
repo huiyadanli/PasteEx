@@ -1,6 +1,7 @@
 # PasteEx
 [![](https://img.shields.io/badge/platform-windows-lightgrey.svg?style=flat-square)](https://www.microsoft.com/download/details.aspx?id=30653)
 [![Github All Releases](https://img.shields.io/github/downloads/huiyadanli/PasteEx/total.svg?style=flat-square)](https://github.com/huiyadanli/PasteEx/releases)
+[![Build status](https://img.shields.io/appveyor/ci/huiyadanli/pasteex.svg?style=flat-square)](https://ci.appveyor.com/project/huiyadanli/pasteex)
 
 把剪贴板的内容粘贴为文件。
 
