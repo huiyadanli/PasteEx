@@ -24,7 +24,7 @@ namespace PasteEx.Core.History
             {
                 pasteResultHistory = PasteResultHistory.Parse(File.ReadAllText(extHistoryFilePath));
             }
-            else
+            if (pasteResultHistory == null)
             {
                 pasteResultHistory = new PasteResultHistory();
             }
@@ -66,7 +66,7 @@ namespace PasteEx.Core.History
             string[] exts = currentPasteResult.AnalyzeResultExts;
 
             // No change
-            if (exts.Length == 0 && exts[0] == ext)
+            if (exts.Length == 0 || exts[0] == ext)
             {
                 return;
             }

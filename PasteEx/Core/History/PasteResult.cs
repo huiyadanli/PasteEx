@@ -1,11 +1,8 @@
 ﻿using PasteEx.Library;
 using PasteEx.Util;
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Text;
+using System.Web.Script.Serialization;
 
 namespace PasteEx.Core.History
 {
@@ -14,17 +11,20 @@ namespace PasteEx.Core.History
     {
         public string CopySourceName { get; set; }
 
-        public string ClipboardFormatHash { get; set; }
+        public string[] ClipboardFormats { get; set; }
 
         public string[] AnalyzeResultExts { get; set; }
 
         public string[] UserHistoryExts { get; set; }
 
+        [ScriptIgnore]
         public string Key
         {
             get
             {
-                return string.Format("[{0}]-[{1}]-[{2}]", CopySourceName, ClipboardFormatHash, string.Join(",", AnalyzeResultExts));
+                string str = string.Format("[{0}]-[{1}]-[{2}]", CopySourceName, string.Join(",", ClipboardFormats), string.Join(",", AnalyzeResultExts));
+                byte[] b = ObjectHelper.SerializeObject(str);
+                return ObjectHelper.ComputeMD5(b);
             }
         }
 
@@ -41,15 +41,15 @@ namespace PasteEx.Core.History
             CopySourceName = proc.ProcessName;
 
             // Clipboard Format
-            byte[] b = ObjectHelper.SerializeObject(formats);
-            ClipboardFormatHash = ObjectHelper.ComputeMD5(b);
+            ClipboardFormats = formats;
+
         }
 
         public PasteResult Clone()
         {
             PasteResult newObj = new PasteResult();
             newObj.CopySourceName = this.CopySourceName;
-            newObj.ClipboardFormatHash = this.ClipboardFormatHash;
+            newObj.ClipboardFormats = this.ClipboardFormats;
             newObj.AnalyzeResultExts = this.AnalyzeResultExts;
             newObj.UserHistoryExts = this.UserHistoryExts;
             return newObj;
