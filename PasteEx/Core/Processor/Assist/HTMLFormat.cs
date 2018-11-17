@@ -68,7 +68,8 @@ namespace PasteEx.Core.Processor.Assist
                 }
 
                 // extract html
-                HTML = formatStr.Substring(StartHTML);
+                HTML = Encoding.UTF8.GetString(array, StartHTML, EndHTML - StartHTML);
+                //HTML = formatStr.Substring(StartHTML);
                 //Fragment = formatStr.Substring(StartFragment, EndFragment - StartFragment);
             }
             catch (Exception ex)
