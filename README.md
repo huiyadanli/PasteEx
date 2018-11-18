@@ -10,9 +10,9 @@ Paste the contents of the clipboard into files.
 
 * Custom text extension rules.
 * Automatically identify the image file extension, and support the transparent PNG and dynamic GIF image.
-* Faster and more convenient [Monitor Mode](https://github.com/huiyadanli/PasteEx/wiki#%E7%9B%91%E5%90%AC%E6%A8%A1%E5%BC%8F)
+* Faster and more convenient [Monitor Mode](https://github.com/huiyadanli/PasteEx/wiki#%E7%9B%91%E5%90%AC%E6%A8%A1%E5%BC%8F).
 
-More functions and usage see [:blue_book:document](https://github.com/huiyadanli/PasteEx/wiki)。
+More functions and usage see [:blue_book:document](https://github.com/huiyadanli/PasteEx/wiki).
 
 [:zap:Download v1.1.7.4 (latest version)](https://github.com/huiyadanli/PasteEx/releases/download/1.1.7.4/PasteEx.v1.1.7.4.zip)
 
@@ -23,8 +23,8 @@ More functions and usage see [:blue_book:document](https://github.com/huiyadanli
 
 Requirements:
 
-* Windows 7 or higher.
-* [.NET Framework 4.5](https://www.microsoft.com/zh-cn/download/details.aspx?id=30653) or higher。
+* Windows 7 or higher
+* [.NET Framework 4.5](https://www.microsoft.com/zh-cn/download/details.aspx?id=30653) or higher
 
 Download decompression and run `PasteEx.exe` . There will be UAC prompts when adding context menus.
 
