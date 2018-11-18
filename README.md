@@ -21,7 +21,7 @@ More functions and usage see [:blue_book:document](https://github.com/huiyadanli
 
 ## Usage
 
-Requirements：
+Requirements:
 
 * Windows 7 or higher.
 * [.NET Framework 4.5](https://www.microsoft.com/zh-cn/download/details.aspx?id=30653) or higher。
