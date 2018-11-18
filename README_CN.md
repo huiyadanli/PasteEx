@@ -1,33 +1,33 @@
-[English](https://github.com/huiyadanli/PasteEx/blob/master/README.md) | ÖĞÎÄ
+[English](https://github.com/huiyadanli/PasteEx/blob/master/README.md) | ä¸­æ–‡
 
 # PasteEx
 [![](https://img.shields.io/badge/platform-windows-lightgrey.svg?style=flat-square)](https://www.microsoft.com/download/details.aspx?id=30653)
 [![Github All Releases](https://img.shields.io/github/downloads/huiyadanli/PasteEx/total.svg?style=flat-square)](https://github.com/huiyadanli/PasteEx/releases)
 [![Build status](https://img.shields.io/appveyor/ci/huiyadanli/pasteex.svg?style=flat-square)](https://ci.appveyor.com/project/huiyadanli/pasteex)
 
-°Ñ¼ôÌù°åµÄÄÚÈİÕ³ÌùÎªÎÄ¼ş¡£
+æŠŠå‰ªè´´æ¿çš„å†…å®¹ç²˜è´´ä¸ºæ–‡ä»¶ã€‚
 
-* ×Ô¶¨ÒåÎÄ±¾À©Õ¹Ãû¹æÔò¡£
-* ×Ô¶¯Ê¶±ğÍ¼Æ¬µÄÀ©Õ¹Ãû£¬ÇÒÖ§³ÖÍ¸Ã÷ PNG Óë¶¯Ì¬ GIF µÄÕ³Ìù¡£
-* ¸ü¿ì½İ·½±ãµÄ[¼àÌıÄ£Ê½](https://github.com/huiyadanli/PasteEx/wiki#%E7%9B%91%E5%90%AC%E6%A8%A1%E5%BC%8F)
+* è‡ªå®šä¹‰æ–‡æœ¬æ‰©å±•åè§„åˆ™ã€‚
+* è‡ªåŠ¨è¯†åˆ«å›¾ç‰‡çš„æ‰©å±•åï¼Œä¸”æ”¯æŒé€æ˜ PNG ä¸åŠ¨æ€ GIF çš„ç²˜è´´ã€‚
+* æ›´å¿«æ·æ–¹ä¾¿çš„[ç›‘å¬æ¨¡å¼](https://github.com/huiyadanli/PasteEx/wiki#%E7%9B%91%E5%90%AC%E6%A8%A1%E5%BC%8F)
 
-¸ü¶à¹¦ÄÜ¼°ÓÃ·¨²Î¼û[:blue_book:ÎÄµµ](https://github.com/huiyadanli/PasteEx/wiki)¡£
+æ›´å¤šåŠŸèƒ½åŠç”¨æ³•å‚è§[:blue_book:æ–‡æ¡£](https://github.com/huiyadanli/PasteEx/wiki)ã€‚
 
-[:zap:×îĞÂ°æ±¾ v1.1.7.4 ÏÂÔØ](https://github.com/huiyadanli/PasteEx/releases/download/1.1.7.4/PasteEx.v1.1.7.4.zip)
+[:zap:æœ€æ–°ç‰ˆæœ¬ v1.1.7.4 ä¸‹è½½](https://github.com/huiyadanli/PasteEx/releases/download/1.1.7.4/PasteEx.v1.1.7.4.zip)
 
-## ½ØÍ¼
+## æˆªå›¾
 ![Screenshot](https://raw.githubusercontent.com/huiyadanli/PasteEx/master/Screenshot/Screenshot.png)
 
-## Ê¹ÓÃ·½·¨
+## ä½¿ç”¨æ–¹æ³•
 
-»·¾³ÒªÇó£º
+ç¯å¢ƒè¦æ±‚ï¼š
 
-* Windows 7 »ò¸ü¸ß°æ±¾¡£
-* [.NET Framework 4.5](https://www.microsoft.com/zh-cn/download/details.aspx?id=30653) »ò¸ü¸ß°æ±¾¡£
+* Windows 7 æˆ–æ›´é«˜ç‰ˆæœ¬ã€‚
+* [.NET Framework 4.5](https://www.microsoft.com/zh-cn/download/details.aspx?id=30653) æˆ–æ›´é«˜ç‰ˆæœ¬ã€‚
 
-ÏÂÔØ½âÑ¹²¢ÔËĞĞ `PasteEx.exe` £¬¸ù¾İÌáÊ¾**Ìí¼ÓÓÒ¼ü²Ëµ¥**¼´¿É£¨Ìí¼Ó²Ëµ¥Ê±»áÓĞ UAC ÌáÊ¾£¬·ÅĞĞ¼´¿É£©¡£
+ä¸‹è½½è§£å‹å¹¶è¿è¡Œ `PasteEx.exe` ï¼Œæ ¹æ®æç¤º**æ·»åŠ å³é”®èœå•**å³å¯ï¼ˆæ·»åŠ èœå•æ—¶ä¼šæœ‰ UAC æç¤ºï¼Œæ”¾è¡Œå³å¯ï¼‰ã€‚
 
-Ğ¶ÔØ·½Ê½£º´¿ÂÌÉ«±ãĞ¯Èí¼ş£¬Ö»ÒªÔÚÉèÖÃÒ³ÃæÒÆ³ıÓÒ¼ü²Ëµ¥£¬È»ºóÉ¾³ıÈí¼ş±¾Ìå¼´¿É¡£
+å¸è½½æ–¹å¼ï¼šçº¯ç»¿è‰²ä¾¿æºè½¯ä»¶ï¼Œåªè¦åœ¨è®¾ç½®é¡µé¢ç§»é™¤å³é”®èœå•ï¼Œç„¶ååˆ é™¤è½¯ä»¶æœ¬ä½“å³å¯ã€‚
 
 ## Thanks
 [PasteIntoFiles](https://github.com/EslaMx7/PasteIntoFiles)
