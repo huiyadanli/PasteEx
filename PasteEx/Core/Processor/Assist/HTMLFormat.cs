@@ -67,8 +67,16 @@ namespace PasteEx.Core.Processor.Assist
                     }
                 }
 
-                // extract html
-                HTML = Encoding.UTF8.GetString(array, StartHTML, EndHTML - StartHTML);
+                // Append utf8 meta to <!--StartFragment-->
+                const string utf8Meta = "<meta charset=\"utf-8\"/>";
+                byte[] metaArray = Encoding.UTF8.GetBytes(utf8Meta);
+                byte[] newArray = new byte[array.Length + metaArray.Length];
+                Array.Copy(array, 0, newArray, 0, StartFragment);
+                metaArray.CopyTo(newArray, StartFragment);
+                Array.Copy(array, StartFragment, newArray, StartFragment + metaArray.Length, array.Length - StartFragment);
+                // Extract html
+                HTML = Encoding.UTF8.GetString(newArray, StartHTML, EndHTML - StartHTML + utf8Meta.Length);
+                
                 //HTML = formatStr.Substring(StartHTML);
                 //Fragment = formatStr.Substring(StartFragment, EndFragment - StartFragment);
             }
