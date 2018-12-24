@@ -14,7 +14,7 @@ Paste the contents of the clipboard into files.
 
 More functions and usage see [:blue_book:document](https://github.com/huiyadanli/PasteEx/wiki).
 
-[:zap:Download v1.1.7.7 (latest version)](https://github.com/huiyadanli/PasteEx/releases/download/1.1.7.7/PasteEx.v1.1.7.7.zip)
+[:zap:Download v1.1.7.8 (latest version)](https://github.com/huiyadanli/PasteEx/releases/download/1.1.7.8/PasteEx.v1.1.7.8.zip)
 
 ## Screenshot
 ![Screenshot](https://raw.githubusercontent.com/huiyadanli/PasteEx/master/Screenshot/Screenshot.png)
