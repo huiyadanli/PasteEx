@@ -175,7 +175,7 @@ namespace PasteEx.Core
             string[] extensions = quickPasteData.Analyze();
             if (!string.IsNullOrEmpty(fileName))
             {
-                string ext = Path.GetExtension(fileName);
+                string ext = Path.GetExtension(fileName).Remove(0, 1);
                 extensions = new string[1] { ext };
                 if (Array.IndexOf(extensions, ext) == -1)
                 {

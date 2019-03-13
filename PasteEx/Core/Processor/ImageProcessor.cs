@@ -164,7 +164,7 @@ namespace PasteEx.Core.Processor
                 {
                     string url = matches[0].Groups["url"].Value;
                     imageUrl = url;
-                    // get extension, can use Path.GetExtension(url)
+                    // get extension, can use Path.GetExtension(url).Remove(0, 1)
                     int i = url.LastIndexOf(".");
                     if (i > 0)
                     {
