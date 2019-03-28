@@ -165,7 +165,7 @@ namespace PasteEx.Core
         #endregion
 
         #region FastPasteMode
-        public static void QuickPasteEx(string location, string fileName = null)
+        public static void QuickPasteEx(string location, string fileName = null, bool forceOverWrite = false)
         {
             ManualResetEvent allDone = new ManualResetEvent(false);
 
@@ -213,7 +213,7 @@ namespace PasteEx.Core
                 }
                 else
                 {
-                    if (File.Exists(path))
+                    if (File.Exists(path) && !forceOverWrite)
                     {
                         DialogResult result = MessageBox.Show(string.Format(Resources.Strings.TipTargetFileExisted, path),
                             Resources.Strings.Title, MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);

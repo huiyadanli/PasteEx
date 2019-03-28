@@ -54,17 +54,22 @@ namespace PasteEx
                         RightMenu.Delete(fast);
                         return;
                     }
-                    else if (commands[0] == "/q")
+                    else if (commands[0] == "/q" || commands[0] == "/qf")
                     {
+                        bool forceOverWrite = false;
+                        if (commands[0].Contains("f"))
+                        {
+                            forceOverWrite = true;
+                        }
                         // quick paste mode
                         if (args.Length == 2)
                         {
-                            ModeController.QuickPasteEx(commands[1]);
+                            ModeController.QuickPasteEx(commands[1], null, forceOverWrite);
                             return;
                         }
                         else if (args.Length == 3)
                         {
-                            ModeController.QuickPasteEx(commands[1], commands[2]);
+                            ModeController.QuickPasteEx(commands[1], commands[2], forceOverWrite);
                             return;
                         }
                     }
