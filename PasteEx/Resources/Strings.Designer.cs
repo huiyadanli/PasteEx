@@ -196,6 +196,15 @@ namespace PasteEx.Resources {
         }
         
         /// <summary>
+        ///   查找类似 Can&apos;t parse incoming parameters. Make sure that the second parameter begins with &apos;-&apos; 的本地化字符串。
+        /// </summary>
+        internal static string TipParseCommandError {
+            get {
+                return ResourceManager.GetString("TipParseCommandError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Folder path cannot be empty. 的本地化字符串。
         /// </summary>
         internal static string TipPathNotNull {

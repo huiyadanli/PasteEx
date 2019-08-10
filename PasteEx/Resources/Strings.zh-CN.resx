@@ -225,4 +225,7 @@
   <data name="TitleAppName" xml:space="preserve">
     <value>PasteEx</value>
   </data>
+  <data name="TipParseCommandError" xml:space="preserve">
+    <value>无法解析该命令参数，请确认参数前是否有 ‘-’</value>
+  </data>
 </root>

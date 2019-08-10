@@ -16,7 +16,7 @@ namespace PasteEx.Util
             True, False
         };
 
-        public enum FastSetting
+        public enum QuickSetting
         {
             True, False
         };
@@ -56,15 +56,15 @@ namespace PasteEx.Util
 
         public static void Add(
             ShiftSetting shift = ShiftSetting.False,
-            FastSetting fast = FastSetting.False)
+            QuickSetting quick = QuickSetting.False)
         {
             if (ApplicationHelper.IsUserAdministrator())
             {
-                try { UnRegister(fast); } catch { }
+                try { UnRegister(quick); } catch { }
 
                 try
                 {
-                    Register(shift, fast);
+                    Register(shift, quick);
                     MessageBox.Show(Resources.Strings.TipRegister, Resources.Strings.Title,
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -76,23 +76,18 @@ namespace PasteEx.Util
             }
             else
             {
-                string cmd = "/reg";
-                if (shift == ShiftSetting.True)
-                    cmd += " /shift";
-                if (fast == FastSetting.True)
-                    cmd += " /fast";
-
+                string cmd = CLIHelper.GenerateCmdReg(shift, quick);
                 ApplicationHelper.StartSelf(cmd, true);
             }
         }
 
-        public static void Delete(FastSetting fast = FastSetting.False)
+        public static void Delete(QuickSetting quick = QuickSetting.False)
         {
             if (ApplicationHelper.IsUserAdministrator())
             {
                 try
                 {
-                    UnRegister(fast);
+                    UnRegister(quick);
                     MessageBox.Show(Resources.Strings.TipUnRegister, Resources.Strings.Title,
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -104,15 +99,12 @@ namespace PasteEx.Util
             }
             else
             {
-                string cmd = "/unreg";
-                if (fast == FastSetting.True)
-                    cmd += " /fast";
-
+                string cmd = CLIHelper.GenerateCmdUnReg(quick);
                 ApplicationHelper.StartSelf(cmd, true);
             }
         }
 
-        public static bool NeedShiftKey(FastSetting fast = FastSetting.False)
+        public static bool NeedShiftKey(QuickSetting fast = QuickSetting.False)
         {
             try
             {
@@ -136,16 +128,16 @@ namespace PasteEx.Util
 
         private static void Register(
             ShiftSetting shift = ShiftSetting.False,
-            FastSetting fast = FastSetting.False)
+            QuickSetting quick = QuickSetting.False)
         {
             // Background
-            var key = Registry.ClassesRoot.OpenSubKey("Directory").OpenSubKey("Background").OpenSubKey("shell", true).CreateSubKey(GetLastSubKeyName(fast));
+            var key = Registry.ClassesRoot.OpenSubKey("Directory").OpenSubKey("Background").OpenSubKey("shell", true).CreateSubKey(GetLastSubKeyName(quick));
             var cmdKey = key.CreateSubKey("command");
             key.SetValue("Icon", Application.ExecutablePath);
             if (shift == ShiftSetting.True)
                 key.SetValue("Extended", "");
 
-            if (fast == FastSetting.False)
+            if (quick == QuickSetting.False)
             {
                 key.SetValue("", Resources.Strings.MenuPasteAsFile);
                 cmdKey.SetValue("", Application.ExecutablePath + " \"%V\"");
@@ -154,18 +146,18 @@ namespace PasteEx.Util
             else
             {
                 key.SetValue("", Resources.Strings.MenuQuickPasteAsFile);
-                cmdKey.SetValue("", Application.ExecutablePath + " /q \"%V\"");
+                cmdKey.SetValue("", Application.ExecutablePath + " -q \"%V\"");
             }
 
             // shell
-            key = Registry.ClassesRoot.OpenSubKey("Directory").OpenSubKey("shell", true).CreateSubKey(GetLastSubKeyName(fast));
+            key = Registry.ClassesRoot.OpenSubKey("Directory").OpenSubKey("shell", true).CreateSubKey(GetLastSubKeyName(quick));
             cmdKey = key.CreateSubKey("command");
             key.SetValue("Icon", Application.ExecutablePath);
             if (shift == ShiftSetting.True)
                 key.SetValue("Extended", "");
 
 
-            if (fast == FastSetting.False)
+            if (quick == QuickSetting.False)
             {
                 key.SetValue("", Resources.Strings.MenuPasteAsFile);
                 cmdKey.SetValue("", Application.ExecutablePath + " \"%1\"");
@@ -173,22 +165,22 @@ namespace PasteEx.Util
             else
             {
                 key.SetValue("", Resources.Strings.MenuQuickPasteAsFile);
-                cmdKey.SetValue("", Application.ExecutablePath + " /q \"%1\"");
+                cmdKey.SetValue("", Application.ExecutablePath + " -q \"%1\"");
             }
         }
 
-        private static void UnRegister(FastSetting fast = FastSetting.False)
+        private static void UnRegister(QuickSetting quick = QuickSetting.False)
         {
             var key = Registry.ClassesRoot.OpenSubKey("Directory").OpenSubKey("Background").OpenSubKey("shell", true);
-            key.DeleteSubKeyTree(GetLastSubKeyName(fast));
+            key.DeleteSubKeyTree(GetLastSubKeyName(quick));
 
             key = Registry.ClassesRoot.OpenSubKey("Directory").OpenSubKey("shell", true);
-            key.DeleteSubKeyTree(GetLastSubKeyName(fast));
+            key.DeleteSubKeyTree(GetLastSubKeyName(quick));
         }
 
-        private static string GetLastSubKeyName(FastSetting fast)
+        private static string GetLastSubKeyName(QuickSetting quick)
         {
-            return FastSetting.True == fast ? "PasteExFast" : "PasteEx";
+            return QuickSetting.True == quick ? "PasteExFast" : "PasteEx";
         }
 
     }

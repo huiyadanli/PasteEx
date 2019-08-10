@@ -31,88 +31,9 @@ namespace PasteEx
                 Application.SetCompatibleTextRenderingDefault(false);
                 CommandLine.RedirectConsoleOutput();
                 PasteResultHistoryHelper.Init();
-                if (args.Length > 0)
-                {
 
-                    List<string> commands = new List<string>(args);
-                    if (commands[0] == "/reg")
-                    {
-                        if (args.Length > 1)
-                        {
-                            commands.Remove("/reg");
-                            RightMenu.ShiftSetting shift = commands.Contains("/shift") ? RightMenu.ShiftSetting.True : RightMenu.ShiftSetting.False;
-                            RightMenu.FastSetting fast = commands.Contains("/fast") ? RightMenu.FastSetting.True : RightMenu.FastSetting.False;
-                            RightMenu.Add(shift, fast);
-                            return;
-                        }
-                        RightMenu.Add();
-                        return;
-                    }
-                    else if (commands[0] == "/unreg")
-                    {
-                        RightMenu.FastSetting fast = commands.Contains("/fast") ? RightMenu.FastSetting.True : RightMenu.FastSetting.False;
-                        RightMenu.Delete(fast);
-                        return;
-                    }
-                    else if (commands[0] == "/q" || commands[0] == "/qf")
-                    {
-                        bool forceOverWrite = false;
-                        if (commands[0].Contains("f"))
-                        {
-                            forceOverWrite = true;
-                        }
-                        // quick paste mode
-                        if (args.Length == 2)
-                        {
-                            ModeController.QuickPasteEx(commands[1], null, forceOverWrite);
-                            return;
-                        }
-                        else if (args.Length == 3)
-                        {
-                            ModeController.QuickPasteEx(commands[1], commands[2], forceOverWrite);
-                            return;
-                        }
-                    }
-                    else if (commands[0] == "monitor")
-                    {
-                        if (ApplicationHelper.IsPasteExMonitorModeProcessExist())
-                        {
-                            MessageBox.Show(Resources.Strings.TipMonitorProcessExisted,
-                                    Resources.Strings.TitleError, MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            return;
-                        }
-                        // monitor mode
-                        Application.Run(new FormMain(null));
-                        return;
-                    }
-
-                    // why the disk root directory has '"' ??
-                    if (commands[0].LastIndexOf('"') == commands[0].Length - 1)
-                    {
-                        commands[0] = commands[0].Substring(0, commands[0].Length - 1);
-                    }
-
-                    Application.Run(new FormMain(commands[0]));
-                }
-                else
-                {
-                    Client.Start();
-                    if (!RightMenu.Init())
-                    {
-                        return;
-                    }
-                    if (Properties.Settings.Default.DefaultStartupMonitorModeEnabled)
-                    {
-                        // Monitor Mode Entrance 2
-                        ApplicationHelper.StartSelf("monitor", false);
-                        return;
-                    }
-                    else
-                    {
-                        Application.Run(new FormMain());
-                    }
-
-                }
+                // Parse the args.
+                new CLIHelper(args).Execute();
             }
             catch (Exception ex)
             {

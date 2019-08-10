@@ -162,6 +162,9 @@
   <data name="TipMonitorProcessExisted" xml:space="preserve">
     <value>The monitor process already exists.Two monitors can not exist at the same time！</value>
   </data>
+  <data name="TipParseCommandError" xml:space="preserve">
+    <value>Can't parse incoming parameters. Make sure that the second parameter begins with '-'</value>
+  </data>
   <data name="TipPathNotNull" xml:space="preserve">
     <value>Folder path cannot be empty.</value>
   </data>

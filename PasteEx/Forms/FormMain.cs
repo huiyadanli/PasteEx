@@ -181,7 +181,7 @@ namespace PasteEx.Forms
             }
             else
             {
-                ApplicationHelper.StartSelf("monitor", false);
+                ApplicationHelper.StartSelf(CLIParams.MONITOR, false);
                 this.Close();
             }
         }

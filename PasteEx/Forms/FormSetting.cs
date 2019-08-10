@@ -30,7 +30,7 @@ namespace PasteEx.Forms
         private void Get()
         {
             chkNeedShiftKey.Checked = RightMenu.NeedShiftKey();
-            chkFastNeedShiftKey.Checked = RightMenu.NeedShiftKey(RightMenu.FastSetting.True);
+            chkFastNeedShiftKey.Checked = RightMenu.NeedShiftKey(RightMenu.QuickSetting.True);
 
             Properties.Settings.Default.Reload();
 
@@ -315,12 +315,12 @@ namespace PasteEx.Forms
         private void btnFastRegister_Click(object sender, EventArgs e)
         {
             RightMenu.ShiftSetting shift = chkFastNeedShiftKey.Checked ? RightMenu.ShiftSetting.True : RightMenu.ShiftSetting.False;
-            RightMenu.Add(shift, RightMenu.FastSetting.True);
+            RightMenu.Add(shift, RightMenu.QuickSetting.True);
         }
 
         private void btnFastUnRegister_Click(object sender, EventArgs e)
         {
-            RightMenu.Delete(RightMenu.FastSetting.True);
+            RightMenu.Delete(RightMenu.QuickSetting.True);
         }
 
         private void cboLanguage_SelectedIndexChanged(object sender, EventArgs e)
