@@ -15,6 +15,10 @@
 
 [:zap:最新版本 v1.1.7.8 下载](https://github.com/huiyadanli/PasteEx/releases/download/1.1.7.8/PasteEx.v1.1.7.8.zip)
 
+如果你使用 [Scoop](https://github.com/lukesampson/scoop) 的话，可以通过以下命令安装 PasteEx :
+
+`scoop install 'https://raw.githubusercontent.com/acdzh/zpt/master/bucket/pasteex.json'`
+
 ## 截图
 ![Screenshot](https://raw.githubusercontent.com/huiyadanli/PasteEx/master/Screenshot/Screenshot.png)
 
