@@ -13,7 +13,7 @@
 
 更多功能及用法参见[:blue_book:文档](https://github.com/huiyadanli/PasteEx/wiki)。
 
-[:zap:最新版本 v1.1.7.8 下载](https://github.com/huiyadanli/PasteEx/releases/download/1.1.7.8/PasteEx.v1.1.7.8.zip)
+[:zap:最新版本 v1.1.8.1 下载](https://github.com/huiyadanli/PasteEx/releases/download/1.1.8.1/PasteEx.v1.1.8.1.zip)
 
 如果你使用 [Scoop](https://github.com/lukesampson/scoop) 的话，可以通过以下命令安装 PasteEx :
 
