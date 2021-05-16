@@ -17,23 +17,23 @@ namespace PasteEx.Util
         public const string PASTE = "paste";
         public const string MONITOR = "monitor";
 
-        public static readonly string[] COMMAND_ARRAY = new string[] { REG, UNREG, PASTE, MONITOR };
+        public static readonly string[] ACTION_ARRAY = new string[] { REG, UNREG, PASTE, MONITOR };
 
         /** parameters **/
-        public const char NORMAL = 'n';
-        public const char QUICK = 'q';
-        public const char SHIFT = 's';
-        public const char FORCE = 'f';
+        public const string NORMAL = "-n";
+        public const string QUICK = "-q";
+        public const string SHIFT = "-s";
+        public const string FORCE = "-f";
 
-        public static readonly char[] PARAMETER_ARRAY = new char[] { NORMAL, QUICK, SHIFT, FORCE };
+        public static readonly string[] PARAMETER_ARRAY = new string[] { NORMAL, QUICK, SHIFT, FORCE };
     }
 
     public class CLIHelper
     {
 
-        private string command;
+        private string action;
 
-        private List<char> parameters;
+        private List<string> parameters = new List<string>();
 
         private string path;
 
@@ -41,90 +41,79 @@ namespace PasteEx.Util
         {
             if (args.Length > 0)
             {
-                bool isNotEmpty = ParseCommand(args[0]);
-                if (!isNotEmpty)
-                {
-                    // eg. PasteEx [-q] path
-                    if (ParseParameters(args[0]))
-                    {
-                        ParsePath(args[1]);
-                    }
-                    else
-                    {
-                        ParsePath(args[0]);
-                    }
-                }
-                else
-                {
-                    // Full command
-                    if (args.Length > 1)
-                    {
-                        if (!ParseParameters(args[1]))
-                        {
-                            throw new ArgumentException(Resources.Strings.TipParseCommandError);
-                        }
-                        if (args.Length > 2)
-                        {
-                            ParsePath(args[2]);
-                        }
-                    }
-                }
+                ParseCommand(args);
             }
         }
 
-        private bool ParseCommand(string str)
+        private void ParseCommand(string[] args)
         {
-            List<string> commands = new List<string>(CLIParams.COMMAND_ARRAY);
-            if (commands.Contains(str))
+            List<string> argList = new List<string>();
+
+            // paste can be omitted.
+            // eg. PasteEx [-q] path
+            if (args[0].Contains("-"))
             {
-                command = str;
-                return true;
+                argList.Add(CLIParams.PASTE);
+            }
+            argList.AddRange(args);
+
+            if (CLIParams.ACTION_ARRAY.Contains(argList[0]))
+            {
+                action = argList[0];
             }
             else
             {
-                // Maybe it's empty.
-                // eg. PasteEx [-q] location [filename]
-                return false;
+                Console.WriteLine("");
+                return;
             }
-        }
 
-        private bool ParseParameters(string str)
-        {
-            if (str.StartsWith("-"))
+            int i;
+            for (i = 1; i < argList.Count; i++)
             {
-                parameters = str.Substring(1).ToList();
-                return true;
+                if (argList[i].StartsWith("-"))
+                {
+                    parameters.Add(argList[i]);
+                }
+                else
+                {
+                    break;
+                }
             }
-            return false;
+
+            if (i <= argList.Count - 1 && action == CLIParams.PASTE)
+            {
+                path = DealWithPath(argList[i]);
+            }
         }
 
-        private void ParsePath(string str)
+        private string DealWithPath(string str)
         {
             // why the disk root directory has '"' ??
             if (str.LastIndexOf('"') == str.Length - 1)
             {
                 str = str.Substring(0, str.Length - 1);
             }
-            path = str;
+            return str;
         }
 
         public void Execute()
         {
-            if (command == CLIParams.REG)
+            if (action == CLIParams.REG)
             {
                 RightMenu.ShiftSetting shift = HasThisParam(CLIParams.SHIFT) ? RightMenu.ShiftSetting.True : RightMenu.ShiftSetting.False;
                 RightMenu.QuickSetting quick = HasThisParam(CLIParams.QUICK) ? RightMenu.QuickSetting.True : RightMenu.QuickSetting.False;
                 RightMenu.Add(shift, quick);
             }
-            else if (command == CLIParams.UNREG)
+            else if (action == CLIParams.UNREG)
             {
                 RightMenu.QuickSetting quick = HasThisParam(CLIParams.QUICK) ? RightMenu.QuickSetting.True : RightMenu.QuickSetting.False;
                 RightMenu.Delete(quick);
             }
-            else if (command == CLIParams.MONITOR)
+            else if (action == CLIParams.MONITOR)
             {
                 if (ApplicationHelper.IsPasteExMonitorModeProcessExist())
                 {
+                    CommandLine.Error(Resources.Strings.TipMonitorProcessExisted);
                     MessageBox.Show(Resources.Strings.TipMonitorProcessExisted,
                             Resources.Strings.TitleError, MessageBoxButtons.OK, MessageBoxIcon.Information);
                     return;
@@ -132,15 +121,23 @@ namespace PasteEx.Util
                 // Monitor mode
                 Application.Run(new FormMain(null));
             }
-            else
+            else if (action == CLIParams.PASTE)
             {
                 if (HasThisParam(CLIParams.QUICK))
                 {
                     // Quick paste mode
                     bool forceOverWrite = HasThisParam(CLIParams.FORCE);
+
                     if (File.Exists(path))
                     {
-                        ModeController.QuickPasteEx(Path.GetDirectoryName(path), Path.GetFileName(path), forceOverWrite);
+                        string directory = Path.GetDirectoryName(path);
+                        if (string.IsNullOrEmpty(directory))
+                        {
+                            Console.WriteLine(Resources.Strings.TipTargetPathNotExist);
+                            MessageBox.Show(Resources.Strings.TipTargetPathNotExist,
+                                    Resources.Strings.Title, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+                        ModeController.QuickPasteEx(directory, Path.GetFileName(path), forceOverWrite);
                     }
                     else if (Directory.Exists(path))
                     {
@@ -148,9 +145,14 @@ namespace PasteEx.Util
                     }
                     else
                     {
-                        Console.WriteLine(Resources.Strings.TipTargetPathNotExist);
-                        MessageBox.Show(Resources.Strings.TipTargetPathNotExist,
-                                Resources.Strings.Title, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        string directory = Path.GetDirectoryName(path);
+                        if(string.IsNullOrEmpty(directory))
+                        {
+                            Console.WriteLine(Resources.Strings.TipTargetPathNotExist);
+                            MessageBox.Show(Resources.Strings.TipTargetPathNotExist,
+                                    Resources.Strings.Title, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+                        ModeController.QuickPasteEx(directory, Path.GetFileName(path), forceOverWrite);
                     }
                 }
                 else
@@ -180,9 +182,13 @@ namespace PasteEx.Util
                     }
                 }
             }
+            else
+            {
+                Application.Run(new FormMain());
+            }
         }
 
-        private bool HasThisParam(char c)
+        private bool HasThisParam(string c)
         {
             if (parameters != null)
             {
@@ -199,7 +205,7 @@ namespace PasteEx.Util
             ShiftSetting shift = ShiftSetting.False,
             QuickSetting quick = QuickSetting.False)
         {
-            string cmd = CLIParams.REG + " -";
+            string cmd = CLIParams.REG + " ";
 
             if (quick == QuickSetting.True)
                 cmd += CLIParams.QUICK;
@@ -207,14 +213,14 @@ namespace PasteEx.Util
                 cmd += CLIParams.NORMAL;
 
             if (shift == ShiftSetting.True)
-                cmd += CLIParams.SHIFT;
+                cmd += " " + CLIParams.SHIFT;
 
             return cmd;
         }
 
         public static string GenerateCmdUnReg(QuickSetting quick = QuickSetting.False)
         {
-            string cmd = CLIParams.UNREG + " -";
+            string cmd = CLIParams.UNREG + " ";
             if (quick == QuickSetting.True)
                 cmd += CLIParams.QUICK;
             else
