@@ -228,4 +228,7 @@
   <data name="TipParseCommandError" xml:space="preserve">
     <value>無法解析該命令參數，請確認參數前是否有 ‘-’</value>
   </data>
+  <data name="TipParseCommandActionError" xml:space="preserve">
+    <value>無效的指令</value>
+  </data>
 </root>

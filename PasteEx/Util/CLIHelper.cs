@@ -50,8 +50,10 @@ namespace PasteEx.Util
             List<string> argList = new List<string>();
 
             // paste can be omitted.
-            // eg. PasteEx [-q] path
-            if (args[0].Contains("-"))
+            // eg. 
+            // PasteEx.exe "c:\"
+            // PasteEx.exe -q "c:\"
+            if (args[0].StartsWith("-") || Directory.Exists(args[0]))
             {
                 argList.Add(CLIParams.PASTE);
             }
@@ -63,7 +65,7 @@ namespace PasteEx.Util
             }
             else
             {
-                Console.WriteLine("");
+                Console.WriteLine(Resources.Strings.TipParseCommandActionError);
                 return;
             }
 
