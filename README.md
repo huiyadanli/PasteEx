@@ -14,7 +14,7 @@ Paste the contents of the clipboard into files.
 
 More functions and usage see [:blue_book:document](https://github.com/huiyadanli/PasteEx/wiki).
 
-[:zap:Download v1.1.8.1 (latest version)](https://github.com/huiyadanli/PasteEx/releases/download/1.1.8.1/PasteEx.v1.1.8.1.zip)
+[:zap:Download v1.1.8.2 (latest version)](https://github.com/huiyadanli/PasteEx/releases/download/1.1.8.2/PasteEx.v1.1.8.2.zip)
 
 If you use [Scoop](https://github.com/lukesampson/scoop), you can install PasteEx using the following command:
 
