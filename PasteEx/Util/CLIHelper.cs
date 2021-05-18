@@ -166,23 +166,28 @@ namespace PasteEx.Util
                     }
                     else
                     {
-                        // Client.Start();
-                        if (!RightMenu.Init())
-                        {
-                            return;
-                        }
-                        if (Properties.Settings.Default.DefaultStartupMonitorModeEnabled)
-                        {
-                            // Monitor Mode Entrance 2
-                            ApplicationHelper.StartSelf(CLIParams.MONITOR, false);
-                            return;
-                        }
-                        else
-                        {
-                            Application.Run(new FormMain());
-                        }
+                        NoParamStart();
                     }
                 }
+            }
+            else
+            {
+                NoParamStart();
+            }
+        }
+
+        private void NoParamStart()
+        {
+            // Client.Start();
+            if (!RightMenu.Init())
+            {
+                return;
+            }
+            if (Properties.Settings.Default.DefaultStartupMonitorModeEnabled)
+            {
+                // Monitor Mode Entrance 2
+                ApplicationHelper.StartSelf(CLIParams.MONITOR, false);
+                return;
             }
             else
             {
