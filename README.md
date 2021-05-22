@@ -1,4 +1,4 @@
-English | [中文](https://github.com/huiyadanli/PasteEx/blob/master/README_CN.md)
+English | [中文](README_CN.md)
 
 # PasteEx
 [![](https://img.shields.io/badge/platform-windows-lightgrey.svg?style=flat-square)](https://www.microsoft.com/download/details.aspx?id=30653)
