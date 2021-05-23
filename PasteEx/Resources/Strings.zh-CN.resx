@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -118,67 +118,67 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="TipAnalyzeFailed" xml:space="preserve">
-    <value>剪贴板内容为空或不被支持，仍旧进入软件主界面？</value>
+    <value>剪貼簿內容為空或不被支援，仍舊進入軟體主界面?</value>
   </data>
   <data name="TipFirstRegister" xml:space="preserve">
-    <value>检测到右键菜单未添加，是否添加“粘贴为文件”到系统右键菜单中？</value>
+    <value>偵測到右鍵選單尚未加入，是否加入“貼上為檔案”到系統右鍵選單中？</value>
   </data>
   <data name="TipPathNotNull" xml:space="preserve">
-    <value>文件夹路径不能为空</value>
+    <value>資料夾路徑不能為空</value>
   </data>
   <data name="TipRegister" xml:space="preserve">
-    <value>右键菜单添加成功！</value>
+    <value>右鍵選單加入成功！</value>
   </data>
   <data name="TipRunAsAdmin" xml:space="preserve">
-    <value>添加右键菜单时，请以管理员的身份运行本软件！</value>
+    <value>加入右鍵選單時，請以系統管理員身分執行本軟體！</value>
   </data>
   <data name="TipSaveFailed" xml:space="preserve">
-    <value>保存失败，可能是选择的扩展名不正确</value>
+    <value>儲存失敗，可能是選擇的副檔名不正確</value>
   </data>
   <data name="TipUnRegister" xml:space="preserve">
-    <value>右键菜单移除成功！</value>
+    <value>右鍵選單移除成功！</value>
   </data>
   <data name="TipWrongValueInMenu" xml:space="preserve">
-    <value>检测到右键菜单“粘贴为文件”中的路径与现在的软件启动路径不同，是否重新添加右键菜单？</value>
+    <value>偵測到右鍵選單“貼上為檔案”中的路徑與現在的軟體啟動路徑不同，是否重新加入右鍵選單？</value>
   </data>
   <data name="Title" xml:space="preserve">
-    <value>粘贴为文件</value>
+    <value>貼上為檔案</value>
   </data>
   <data name="TipGetCustomExtFailed" xml:space="preserve">
-    <value>自定义扩展名规则匹配出错，请检查规则是否正确！</value>
+    <value>自定義副檔名規則匹配出錯，請檢查規則是否正確！</value>
   </data>
   <data name="TipGetImageExtFailed" xml:space="preserve">
-    <value>自动提取图片扩展名失败！</value>
+    <value>自動提取圖片副檔名失敗！</value>
   </data>
   <data name="TxtCanOnlyUse" xml:space="preserve">
-    <value>当前你可以使用设置功能</value>
+    <value>目前您可以使用設定功能</value>
   </data>
   <data name="TipRulesError" xml:space="preserve">
-    <value>规则格式有误，将不被启用</value>
+    <value>規則格式有誤，將不被啟用</value>
   </data>
   <data name="TitleError" xml:space="preserve">
-    <value>系统错误</value>
+    <value>系統錯誤</value>
   </data>
   <data name="TipAnalyzeFailedWithoutPrompt" xml:space="preserve">
-    <value>剪贴板内容为空或不被支持</value>
+    <value>剪貼簿內容為空或不被支援</value>
   </data>
   <data name="TipTargetFileExisted" xml:space="preserve">
-    <value>目标文件 {0} 已经存在，是否覆盖？</value>
+    <value>目標檔案 {0} 已經存在，是否覆蓋？</value>
   </data>
   <data name="TipTargetPathNotExist" xml:space="preserve">
-    <value>粘贴目标路径不存在</value>
+    <value>貼上目標路徑不存在</value>
   </data>
   <data name="MenuPasteAsFile" xml:space="preserve">
-    <value>粘贴为文件</value>
+    <value>貼上為檔案</value>
   </data>
   <data name="MenuQuickPasteAsFile" xml:space="preserve">
-    <value>快速粘贴为文件</value>
+    <value>快速貼上為檔案</value>
   </data>
   <data name="TipPictureDownloading" xml:space="preserve">
-    <value>下载图片中...{0}%</value>
+    <value>下載圖片中...{0}%</value>
   </data>
   <data name="TipDownloadFailed" xml:space="preserve">
-    <value>下载失败</value>
+    <value>下載失敗</value>
   </data>
   <data name="TxtAbout" xml:space="preserve">
     <value>PasteEx
@@ -187,48 +187,48 @@
 
 作者：huiyadanli
 
-如果有问题或者建议，欢迎在 GitHub 上面给我提 Issues，或者发送邮件到 huiyadanli@126.com</value>
+如果有問題或者建議，歡迎在 GitHub 上面給我提 Issues，或者發送郵件到 huiyadanli@126.com</value>
   </data>
   <data name="TxtLatestVersin" xml:space="preserve">
-    <value>已经是最新版本</value>
+    <value>已經是最新版本</value>
   </data>
   <data name="TxtNewVersion" xml:space="preserve">
     <value>存在新版本: </value>
   </data>
   <data name="TxtWrongVersion" xml:space="preserve">
-    <value>错误的版本号: </value>
+    <value>錯誤的版本號: </value>
   </data>
   <data name="TipHotkeyBeInUse" xml:space="preserve">
-    <value>热键已经被占用！</value>
+    <value>快速鍵已經被占用！</value>
   </data>
   <data name="TipHotkeyRegisterFailed" xml:space="preserve">
-    <value>全局热键注册失败！</value>
+    <value>全域快速鍵註冊失敗！</value>
   </data>
   <data name="TipHotkeyInvalid" xml:space="preserve">
-    <value>无效的热键。</value>
+    <value>無效的快速鍵。</value>
   </data>
   <data name="TipSpecifiedPathNotExist" xml:space="preserve">
-    <value>指定路径不存在</value>
+    <value>指定路徑不存在</value>
   </data>
   <data name="TipDestinationFolderMustBeEmpty" xml:space="preserve">
-    <value>目标文件夹必须为空</value>
+    <value>目標資料夾必須為空</value>
   </data>
   <data name="TipInvalidFileNameChars" xml:space="preserve">
-    <value>文件名不能包含这些字符 \/:*?"&lt;&gt;|</value>
+    <value>檔案名稱不能包含這些字符 \/:*?"&lt;&gt;|</value>
   </data>
   <data name="TipMonitorProcessExisted" xml:space="preserve">
-    <value>当前已经有一个监听模式的PasteEx正在运行，不能同时开启两个监听模式！</value>
+    <value>目前已經有一個監聽模式的 PasteEx 正在執行，不能同時開啟兩個監聽模式！</value>
   </data>
   <data name="TipMonitorImHere" xml:space="preserve">
-    <value>监听模式已经启动并常驻在右下角托盘图标中。</value>
+    <value>監聽模式已經啟動並常駐在右下角系統圖示中。</value>
   </data>
   <data name="TitleAppName" xml:space="preserve">
     <value>PasteEx</value>
   </data>
   <data name="TipParseCommandError" xml:space="preserve">
-    <value>无法解析该命令参数，请确认参数前是否有 ‘-’</value>
+    <value>無法解析該命令參數，請確認參數前是否有 ‘-’</value>
   </data>
   <data name="TipParseCommandActionError" xml:space="preserve">
-    <value>无效的指令</value>
+    <value>無效的指令</value>
   </data>
 </root>
