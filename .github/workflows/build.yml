@@ -1,4 +1,4 @@
-name: BuildTest PasteEx
+name: .Net Build
 
 on:
   workflow_dispatch:
@@ -10,7 +10,6 @@ on:
   push:
         branches:
           - master
-          - feature/*
         paths-ignore:
           - '**/*.md'
           - .gitignore
@@ -22,8 +21,6 @@ on:
   pull_request:
           branches:
             - master
-            - feature/*
-            - release/*
           paths-ignore:
             - '**/*.md'
             - .gitignore
@@ -68,4 +65,4 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: PasteEx-${{ runner.os }}-${{matrix.BUILD_CONFIGURATION}}
-        path: .
+        path: .\PasteEx\bin

@@ -3,8 +3,11 @@
 # PasteEx
 [![](https://img.shields.io/badge/platform-windows-lightgrey.svg?style=flat-square)](https://www.microsoft.com/download/details.aspx?id=30653)
 [![Github All Releases](https://img.shields.io/github/downloads/huiyadanli/PasteEx/total.svg?style=flat-square)](https://github.com/huiyadanli/PasteEx/releases)
-[![Build status](https://img.shields.io/appveyor/ci/huiyadanli/pasteex.svg?style=flat-square)](https://ci.appveyor.com/project/huiyadanli/pasteex)
-[![BuildTest PasteEx](https://github.com/huiyadanli/PasteEx/actions/workflows/PasteEx_Test.yml/badge.svg)](https://github.com/huiyadanli/PasteEx/actions/workflows/PasteEx_Test.yml)
+[![Build Status](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2Fhuiyadanli%2FPasteEx%2Fbadge%3Fref%3Dmaster&style=flat-square&label=build)](https://actions-badge.atrox.dev/huiyadanli/PasteEx/goto?ref=master)
+
+<!-- [![Build status](https://img.shields.io/appveyor/ci/huiyadanli/pasteex.svg?style=flat-square)](https://ci.appveyor.com/project/huiyadanli/pasteex)
+[![BuildTest PasteEx](https://github.com/huiyadanli/PasteEx/actions/workflows/PasteEx_Test.yml/badge.svg)](https://github.com/huiyadanli/PasteEx/actions/workflows/PasteEx_Test.yml) -->
+
 
 把剪贴板的内容粘贴为文件。
 
