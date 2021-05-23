@@ -65,4 +65,7 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: PasteEx-${{ runner.os }}-${{matrix.BUILD_CONFIGURATION}}
-        path: .\PasteEx\bin
+        path: |
+          .\PasteEx\bin
+          !.\PasteEx\bin\**\PasteEx.exe.config
+          !.\PasteEx\bin\**\PasteEx.pdb
