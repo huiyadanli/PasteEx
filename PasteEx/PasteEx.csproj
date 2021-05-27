@@ -119,11 +119,11 @@
     <Compile Include="Util\CLIHelper.cs" />
     <Compile Include="Util\CommandLine.cs" />
     <Compile Include="Util\Device.cs" />
-    <Compile Include="Util\EasyJson.cs" />
+    <Compile Include="Util\GAHelper.cs" />
+    <Compile Include="Util\HttpUtil.cs" />
     <Compile Include="Util\I18n.cs" />
     <Compile Include="Core\Processor\Assist\ImageHelper.cs" />
     <Compile Include="Forms\Hotkey\HotkeyHook.cs" />
-    <Compile Include="Util\LCHelper.cs" />
     <Compile Include="Util\Logger.cs" />
     <Compile Include="MySettingsProvider.cs" />
     <Compile Include="Program.cs" />

@@ -140,27 +140,6 @@ namespace PasteEx.Util
             return fingerPrint;
         }
 
-        /// <summary>
-        /// Get the device infomation
-        /// </summary>
-        /// <returns>JSON format string</returns>
-        public static string ToJSONString()
-        {
-            Dictionary<String, String> dic = new Dictionary<String, String>
-            {
-                { "GUID", Value() },
-                { "MachineName", MachineName },
-                { "CurrentIP", CurrentIP },
-                { "CpuID", CpuID },
-                { "MacID", MacID },
-                { "DiskID", DiskID },
-                { "BiosID", BiosID },
-                { "VideoID", VideoID },
-                { "OSVersion", OSVersion }
-            };
-            return EasyJson.ToJSONString(dic);
-        }
-
 
         private static string GetHash(string s)
         {
