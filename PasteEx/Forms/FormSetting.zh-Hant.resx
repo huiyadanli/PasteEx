@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="picHelpFileNamePattern.ToolTip" xml:space="preserve">
-    <value>點擊查看日期格式化語法</value>
+    <value>點擊檢視日期格式化語法</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="lblFileNamePreview.Size" type="System.Drawing.Size, System.Drawing">
@@ -134,13 +134,13 @@
     <value>規則:</value>
   </data>
   <data name="groupBox6.Text" xml:space="preserve">
-    <value>文件命名</value>
+    <value>檔案命名</value>
   </data>
   <data name="chkDefaultStartupMonitorMode.Size" type="System.Drawing.Size, System.Drawing">
     <value>120, 16</value>
   </data>
   <data name="chkDefaultStartupMonitorMode.Text" xml:space="preserve">
-    <value>默認開啟監聽模式</value>
+    <value>預設開啟監聽模式</value>
   </data>
   <data name="cboLanguage.Location" type="System.Drawing.Point, System.Drawing">
     <value>62, 48</value>
@@ -158,48 +158,48 @@
     <value>138, 16</value>
   </data>
   <data name="chkFastNeedShiftKey.Text" xml:space="preserve">
-    <value>按住 Shift 顯示菜單</value>
+    <value>按住 Shift 鍵顯示選單</value>
   </data>
   <data name="btnFastUnRegister.Text" xml:space="preserve">
     <value>移除</value>
   </data>
   <data name="btnFastRegister.Text" xml:space="preserve">
-    <value>添加</value>
+    <value>加入</value>
   </data>
   <data name="groupBox3.Text" xml:space="preserve">
-    <value>快速粘貼右鍵菜單</value>
+    <value>快速貼上右鍵選單</value>
   </data>
   <data name="chkNeedShiftKey.Size" type="System.Drawing.Size, System.Drawing">
     <value>138, 16</value>
   </data>
   <data name="chkNeedShiftKey.Text" xml:space="preserve">
-    <value>按住 Shift 顯示菜單</value>
+    <value>按住 Shift 鍵顯示選單</value>
   </data>
   <data name="btnUnRegister.Text" xml:space="preserve">
     <value>移除</value>
   </data>
   <data name="btnRegister.Text" xml:space="preserve">
-    <value>添加</value>
+    <value>加入</value>
   </data>
   <data name="groupBox1.Text" xml:space="preserve">
-    <value>右鍵菜單</value>
+    <value>右鍵選單</value>
   </data>
   <data name="tabPageNomal.Text" xml:space="preserve">
-    <value>常規</value>
+    <value>一般</value>
   </data>
   <data name="chkAutoExtSwitch.Size" type="System.Drawing.Size, System.Drawing">
     <value>108, 16</value>
   </data>
   <data name="chkAutoExtSwitch.Text" xml:space="preserve">
-    <value>文本副檔名規則</value>
+    <value>文字副檔名規則</value>
   </data>
   <data name="picHelpTextExtRules.ToolTip" xml:space="preserve">
-    <value>規則格式：副檔名=與此副檔名相對應文本的第壹行特征（支持正則）
+    <value>規則格式：副檔名=與此副檔名相對應文字的第一行特徵(支援正則)
 
-對於文本類型的文件，將會取第壹個非空行對特征進行匹配，
-匹配成功則在保存時默認使用對應的自定義副檔名。
+對於文字類型的檔案，將會取第一個非空行對特征進行匹配，
+匹配成功則在儲存時預設使用對應的自定義副檔名。
 
-比如：
+例如：
     cs=^using .*;$
     java=^package.*;$
     html=(? i)&lt;!DOCTYPE html
@@ -233,10 +233,10 @@
     <value>應用程式過濾</value>
   </data>
   <data name="picHelpAutoSave.ToolTip" xml:space="preserve">
-    <value>自動把復制過的圖片保存到該文件夾</value>
+    <value>自動把複製過的圖片儲存到該資料夾</value>
   </data>
   <data name="btnOpenAutoSavePath.Text" xml:space="preserve">
-    <value>打開</value>
+    <value>開啟</value>
   </data>
   <data name="chkAutoSave.Size" type="System.Drawing.Size, System.Drawing">
     <value>72, 16</value>
@@ -248,13 +248,13 @@
     <value>更改</value>
   </data>
   <data name="lblAutoSaveFolderPath.Text" xml:space="preserve">
-    <value>文件夾:</value>
+    <value>資料夾:</value>
   </data>
   <data name="lblQuickPasteExHotkey.Size" type="System.Drawing.Size, System.Drawing">
     <value>59, 12</value>
   </data>
   <data name="lblQuickPasteExHotkey.Text" xml:space="preserve">
-    <value>快速粘貼:</value>
+    <value>快速貼上:</value>
   </data>
   <data name="groupBox5.Text" xml:space="preserve">
     <value>快捷鍵</value>
@@ -278,6 +278,6 @@
     <value>關於</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>設置</value>
+    <value>設定</value>
   </data>
 </root>
