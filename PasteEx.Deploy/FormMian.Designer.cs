@@ -37,7 +37,6 @@ namespace PasteEx.Deploy
             this.txtNewVersion = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.btnPackage = new System.Windows.Forms.Button();
-            this.btnBuild = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -79,9 +78,9 @@ namespace PasteEx.Deploy
             // 
             this.btnUpdateVersion.Location = new System.Drawing.Point(35, 160);
             this.btnUpdateVersion.Name = "btnUpdateVersion";
-            this.btnUpdateVersion.Size = new System.Drawing.Size(316, 35);
+            this.btnUpdateVersion.Size = new System.Drawing.Size(368, 35);
             this.btnUpdateVersion.TabIndex = 4;
-            this.btnUpdateVersion.Text = "1. Update";
+            this.btnUpdateVersion.Text = "1. Update Version";
             this.btnUpdateVersion.UseVisualStyleBackColor = true;
             this.btnUpdateVersion.Click += new System.EventHandler(this.btnUpdateVersion_Click);
             // 
@@ -89,7 +88,6 @@ namespace PasteEx.Deploy
             // 
             this.txtNewVersion.Location = new System.Drawing.Point(163, 92);
             this.txtNewVersion.Name = "txtNewVersion";
-            this.txtNewVersion.ReadOnly = true;
             this.txtNewVersion.Size = new System.Drawing.Size(149, 28);
             this.txtNewVersion.TabIndex = 5;
             // 
@@ -104,29 +102,19 @@ namespace PasteEx.Deploy
             // 
             // btnPackage
             // 
-            this.btnPackage.Location = new System.Drawing.Point(35, 250);
+            this.btnPackage.Location = new System.Drawing.Point(35, 201);
             this.btnPackage.Name = "btnPackage";
-            this.btnPackage.Size = new System.Drawing.Size(316, 43);
+            this.btnPackage.Size = new System.Drawing.Size(368, 43);
             this.btnPackage.TabIndex = 7;
-            this.btnPackage.Text = "3. Package current version";
+            this.btnPackage.Text = "2. Build and Package current version";
             this.btnPackage.UseVisualStyleBackColor = true;
             this.btnPackage.Click += new System.EventHandler(this.btnPackage_Click);
-            // 
-            // btnBuild
-            // 
-            this.btnBuild.Location = new System.Drawing.Point(35, 201);
-            this.btnBuild.Name = "btnBuild";
-            this.btnBuild.Size = new System.Drawing.Size(316, 43);
-            this.btnBuild.TabIndex = 8;
-            this.btnBuild.Text = "2. Build release";
-            this.btnBuild.UseVisualStyleBackColor = true;
             // 
             // FormMian
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(811, 334);
-            this.Controls.Add(this.btnBuild);
             this.Controls.Add(this.btnPackage);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtNewVersion);
@@ -153,7 +141,6 @@ namespace PasteEx.Deploy
         private System.Windows.Forms.TextBox txtNewVersion;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnPackage;
-        private System.Windows.Forms.Button btnBuild;
     }
 }
 
