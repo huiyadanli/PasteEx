@@ -84,6 +84,7 @@
             // statusStrip
             // 
             resources.ApplyResources(this.statusStrip, "statusStrip");
+            this.statusStrip.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsslCurrentLocation});
             this.statusStrip.Name = "statusStrip";
@@ -123,6 +124,7 @@
             // contextMenuStripSetting
             // 
             resources.ApplyResources(this.contextMenuStripSetting, "contextMenuStripSetting");
+            this.contextMenuStripSetting.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.contextMenuStripSetting.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.monitorModeToolStripMenuItem,
             this.settingToolStripMenuItem});
@@ -151,6 +153,7 @@
             // contextMenuStripMonitorMode
             // 
             resources.ApplyResources(this.contextMenuStripMonitorMode, "contextMenuStripMonitorMode");
+            this.contextMenuStripMonitorMode.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.contextMenuStripMonitorMode.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.startMonitorToolStripMenuItem,
             this.stopMonitorToolStripMenuItem,

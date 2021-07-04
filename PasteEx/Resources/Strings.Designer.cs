@@ -344,9 +344,9 @@ namespace PasteEx.Resources {
         ///
         ///Version：{0}
         ///
-        ///Author：huiyadanli
+        ///Open source ：https://github.com/huiyadanli/PasteEx
         ///
-        ///If you have questions or suggestions, please feel free to email me at huiyadanli@gmail.com, or create an Issue here. 的本地化字符串。
+        ///If you have questions or suggestions, please create an Issue here. 的本地化字符串。
         /// </summary>
         internal static string TxtAbout {
             get {

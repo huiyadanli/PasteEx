@@ -215,9 +215,9 @@
 
 Version：{0}
 
-Author：huiyadanli
+Open source ：https://github.com/huiyadanli/PasteEx
 
-If you have questions or suggestions, please feel free to email me at huiyadanli@gmail.com, or create an Issue here.</value>
+If you have questions or suggestions, please create an Issue here.</value>
   </data>
   <data name="TxtCanOnlyUse" xml:space="preserve">
     <value>Currently you can only use settings</value>

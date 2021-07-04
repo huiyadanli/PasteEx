@@ -114,16 +114,15 @@ namespace PasteEx.Forms
             // zh-CN || zh-Hant
             if (index == 1 || index == 2)
             {
-                linkLabel1.Links.Add(28, 10, @"https://huiyadanli.github.io/");
-                linkLabel1.Links.Add(56, 6, @"https://github.com/huiyadanli/PasteEx/issues");
-                linkLabel1.Links.Add(84, 18, @"mailto:huiyadanli@126.com");
+                linkLabel1.Links.Add(31, 38, @"https://github.com/huiyadanli/PasteEx/");
+                linkLabel1.Links.Add(99, 6, @"https://github.com/huiyadanli/PasteEx/issues");
+                linkLabel1.Links.Add(114, 18, @"mailto:huiyadanli@126.com");
             }
             // en-US
             else
             {
-                linkLabel1.Links.Add(37, 10, @"https://huiyadanli.github.io/");
-                linkLabel1.Links.Add(162, 4, @"https://github.com/huiyadanli/PasteEx/issues");
-                linkLabel1.Links.Add(121, 20, @"mailto:huiyadanli@gmail.com");
+                linkLabel1.Links.Add(43, 38, @"https://github.com/huiyadanli/PasteEx/");
+                linkLabel1.Links.Add(145, 4, @"https://github.com/huiyadanli/PasteEx/issues");
             }
         }
 

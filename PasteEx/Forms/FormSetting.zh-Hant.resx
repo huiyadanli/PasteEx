@@ -117,45 +117,57 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="tabPageNomal.Text" xml:space="preserve">
+    <value>一般</value>
+  </data>
+  <data name="tabPageCustom.Text" xml:space="preserve">
+    <value>自定義</value>
+  </data>
+  <data name="tabPageMode.Text" xml:space="preserve">
+    <value>監聽模式</value>
+  </data>
+  <data name="tabPageAbout.Text" xml:space="preserve">
+    <value>關於</value>
+  </data>
+  <data name="groupBox6.Text" xml:space="preserve">
+    <value>檔案命名</value>
+  </data>
   <data name="picHelpFileNamePattern.ToolTip" xml:space="preserve">
     <value>點擊檢視日期格式化語法</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="lblFileNamePreview.Size" type="System.Drawing.Size, System.Drawing">
-    <value>35, 12</value>
+    <value>53, 18</value>
   </data>
   <data name="lblFileNamePreview.Text" xml:space="preserve">
     <value>預覽:</value>
   </data>
   <data name="lblFileNamePattern.Size" type="System.Drawing.Size, System.Drawing">
-    <value>35, 12</value>
+    <value>53, 18</value>
   </data>
   <data name="lblFileNamePattern.Text" xml:space="preserve">
     <value>規則:</value>
   </data>
-  <data name="groupBox6.Text" xml:space="preserve">
-    <value>檔案命名</value>
+  <data name="groupBox4.Text" xml:space="preserve">
+    <value>界面</value>
   </data>
   <data name="chkDefaultStartupMonitorMode.Size" type="System.Drawing.Size, System.Drawing">
-    <value>120, 16</value>
+    <value>178, 22</value>
   </data>
   <data name="chkDefaultStartupMonitorMode.Text" xml:space="preserve">
     <value>預設開啟監聽模式</value>
   </data>
-  <data name="cboLanguage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>62, 48</value>
-  </data>
   <data name="labelLanguage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>35, 12</value>
+    <value>53, 18</value>
   </data>
   <data name="labelLanguage.Text" xml:space="preserve">
     <value>語言:</value>
   </data>
-  <data name="groupBox4.Text" xml:space="preserve">
-    <value>界面</value>
+  <data name="groupBox3.Text" xml:space="preserve">
+    <value>快速貼上右鍵選單</value>
   </data>
   <data name="chkFastNeedShiftKey.Size" type="System.Drawing.Size, System.Drawing">
-    <value>138, 16</value>
+    <value>223, 22</value>
   </data>
   <data name="chkFastNeedShiftKey.Text" xml:space="preserve">
     <value>按住 Shift 鍵顯示選單</value>
@@ -166,11 +178,11 @@
   <data name="btnFastRegister.Text" xml:space="preserve">
     <value>加入</value>
   </data>
-  <data name="groupBox3.Text" xml:space="preserve">
-    <value>快速貼上右鍵選單</value>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>右鍵選單</value>
   </data>
   <data name="chkNeedShiftKey.Size" type="System.Drawing.Size, System.Drawing">
-    <value>138, 16</value>
+    <value>223, 22</value>
   </data>
   <data name="chkNeedShiftKey.Text" xml:space="preserve">
     <value>按住 Shift 鍵顯示選單</value>
@@ -181,14 +193,8 @@
   <data name="btnRegister.Text" xml:space="preserve">
     <value>加入</value>
   </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>右鍵選單</value>
-  </data>
-  <data name="tabPageNomal.Text" xml:space="preserve">
-    <value>一般</value>
-  </data>
   <data name="chkAutoExtSwitch.Size" type="System.Drawing.Size, System.Drawing">
-    <value>108, 16</value>
+    <value>160, 22</value>
   </data>
   <data name="chkAutoExtSwitch.Text" xml:space="preserve">
     <value>文字副檔名規則</value>
@@ -206,31 +212,28 @@
     cpp=^#include.*</value>
   </data>
   <data name="lblTipError.Size" type="System.Drawing.Size, System.Drawing">
-    <value>149, 12</value>
+    <value>224, 18</value>
   </data>
   <data name="lblTipError.Text" xml:space="preserve">
     <value>規則格式有誤，將不被啟用</value>
   </data>
-  <data name="tabPageCustom.Text" xml:space="preserve">
-    <value>自定義</value>
+  <data name="groupBox8.Text" xml:space="preserve">
+    <value>應用程式過濾</value>
   </data>
   <data name="picHelpAppFilter.ToolTip" xml:space="preserve">
     <value>對應用監聽的過濾 ( 分隔符 | )</value>
   </data>
   <data name="radExclude.Size" type="System.Drawing.Size, System.Drawing">
-    <value>47, 16</value>
+    <value>69, 22</value>
   </data>
   <data name="radExclude.Text" xml:space="preserve">
     <value>排除</value>
   </data>
   <data name="radInclude.Size" type="System.Drawing.Size, System.Drawing">
-    <value>47, 16</value>
+    <value>69, 22</value>
   </data>
   <data name="radInclude.Text" xml:space="preserve">
     <value>包括</value>
-  </data>
-  <data name="groupBox8.Text" xml:space="preserve">
-    <value>應用程式過濾</value>
   </data>
   <data name="picHelpAutoSave.ToolTip" xml:space="preserve">
     <value>自動把複製過的圖片儲存到該資料夾</value>
@@ -239,7 +242,7 @@
     <value>開啟</value>
   </data>
   <data name="chkAutoSave.Size" type="System.Drawing.Size, System.Drawing">
-    <value>72, 16</value>
+    <value>106, 22</value>
   </data>
   <data name="chkAutoSave.Text" xml:space="preserve">
     <value>自動保存</value>
@@ -250,17 +253,14 @@
   <data name="lblAutoSaveFolderPath.Text" xml:space="preserve">
     <value>資料夾:</value>
   </data>
-  <data name="lblQuickPasteExHotkey.Size" type="System.Drawing.Size, System.Drawing">
-    <value>59, 12</value>
-  </data>
-  <data name="lblQuickPasteExHotkey.Text" xml:space="preserve">
-    <value>快速貼上:</value>
-  </data>
   <data name="groupBox5.Text" xml:space="preserve">
     <value>快捷鍵</value>
   </data>
-  <data name="tabPageMode.Text" xml:space="preserve">
-    <value>監聽模式</value>
+  <data name="lblQuickPasteExHotkey.Size" type="System.Drawing.Size, System.Drawing">
+    <value>89, 18</value>
+  </data>
+  <data name="lblQuickPasteExHotkey.Text" xml:space="preserve">
+    <value>快速貼上:</value>
   </data>
   <data name="labelUpdateinfo.Text" xml:space="preserve">
     <value>已經是最新版本</value>
@@ -270,12 +270,9 @@
 
 版本：{0}
 
-作者：huiyadanli
+开源地址： https://github.com/huiyadanli/PasteEx
 
 如果有問題或者建議，歡迎在 GitHub 上面給我提 Issues，或者發送郵件到 huiyadanli@126.com</value>
-  </data>
-  <data name="tabPageAbout.Text" xml:space="preserve">
-    <value>關於</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>設定</value>
