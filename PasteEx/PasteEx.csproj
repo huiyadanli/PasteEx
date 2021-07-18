@@ -124,6 +124,7 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="Settings.cs" />
+    <Compile Include="Util\AppInfo.cs" />
     <Compile Include="Util\ApplicationHelper.cs" />
     <Compile Include="Util\CLIHelper.cs" />
     <Compile Include="Util\CommandLine.cs" />

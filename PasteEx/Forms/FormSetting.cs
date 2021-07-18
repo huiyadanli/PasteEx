@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
+using System.Web.Script.Serialization;
 using System.Windows.Forms;
 
 namespace PasteEx.Forms
@@ -267,42 +268,49 @@ namespace PasteEx.Forms
         {
             if (tabControl1.SelectedTab == tabPageAbout)
             {
-                Task<Dictionary<String, String>> t = new Task<Dictionary<String, String>>(Client.GetUpdateInfo);
-                t.Start();
-                var dic = await t;
-                if (dic != null)
+                string json = await HttpUtil.GetSoftInfoJsonAsync();
+                if (!string.IsNullOrEmpty(json))
                 {
-                    string latestVersion = dic["version"];
-                    string currentVersion = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
-
-                    int latestVersionNum = VersionToNumber(latestVersion);
-                    int currentVersionNum = VersionToNumber(currentVersion);
-                    if (latestVersionNum > 1000000 && currentVersionNum > 1000000)
+                    try
                     {
-                        if (latestVersionNum > currentVersionNum)
+                        JavaScriptSerializer serializer = new JavaScriptSerializer();
+                        AppInfo appInfo = serializer.Deserialize<AppInfo>(json);
+                        string latestVersion = appInfo.Version;
+                        string currentVersion = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
+
+                        int latestVersionNum = VersionToNumber(latestVersion);
+                        int currentVersionNum = VersionToNumber(currentVersion);
+                        if (latestVersionNum > 1000000 && currentVersionNum > 1000000)
                         {
-                            // have new version
-                            labelUpdateinfo.Text = Resources.Strings.TxtNewVersion + latestVersion;
-                            labelUpdateinfo.ForeColor = System.Drawing.Color.Red;
-                            labelUpdateinfo.LinkColor = System.Drawing.Color.Red;
-                            labelUpdateinfo.Links.Clear();
-                            labelUpdateinfo.Links.Add(0, labelUpdateinfo.Text.Length, dic["page"].Replace(@"\/", @"/"));
-                            labelUpdateinfo.LinkBehavior = LinkBehavior.AlwaysUnderline;
-                            labelUpdateinfo.Visible = true;
+                            if (latestVersionNum > currentVersionNum)
+                            {
+                                // have new version
+                                labelUpdateinfo.Text = Resources.Strings.TxtNewVersion + latestVersion;
+                                labelUpdateinfo.ForeColor = System.Drawing.Color.Red;
+                                labelUpdateinfo.LinkColor = System.Drawing.Color.Red;
+                                labelUpdateinfo.Links.Clear();
+                                labelUpdateinfo.Links.Add(0, labelUpdateinfo.Text.Length, appInfo.PageUrl.Replace(@"\/", @"/"));
+                                labelUpdateinfo.LinkBehavior = LinkBehavior.AlwaysUnderline;
+                                labelUpdateinfo.Visible = true;
+                            }
+                            else
+                            {
+                                labelUpdateinfo.Text = Resources.Strings.TxtLatestVersin;
+                                labelUpdateinfo.ForeColor = System.Drawing.Color.Green;
+                                labelUpdateinfo.LinkColor = System.Drawing.Color.Green;
+                                labelUpdateinfo.Links.Clear();
+                                labelUpdateinfo.LinkBehavior = LinkBehavior.NeverUnderline;
+                                labelUpdateinfo.Visible = true;
+                            }
                         }
                         else
                         {
-                            labelUpdateinfo.Text = Resources.Strings.TxtLatestVersin;
-                            labelUpdateinfo.ForeColor = System.Drawing.Color.Green;
-                            labelUpdateinfo.LinkColor = System.Drawing.Color.Green;
-                            labelUpdateinfo.Links.Clear();
-                            labelUpdateinfo.LinkBehavior = LinkBehavior.NeverUnderline;
-                            labelUpdateinfo.Visible = true;
+                            Logger.Error(Resources.Strings.TxtWrongVersion + latestVersion + "|" + currentVersion);
                         }
                     }
-                    else
+                    catch (Exception ex)
                     {
-                        Logger.Error(Resources.Strings.TxtWrongVersion + latestVersion + "|" + currentVersion);
+                        Console.WriteLine(ex.Message);
                     }
                 }
 

@@ -130,6 +130,9 @@
   <data name="lblFileName.Text" xml:space="preserve">
     <value>文件名:</value>
   </data>
+  <data name="tsslCurrentLocation.Size" type="System.Drawing.Size, System.Drawing">
+    <value>429, 24</value>
+  </data>
   <data name="btnSave.Text" xml:space="preserve">
     <value>保存</value>
   </data>

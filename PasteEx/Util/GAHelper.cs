@@ -41,7 +41,7 @@ namespace PasteEx.Util
 
         private const string GAUrl = "https://www.google-analytics.com/collect";
 
-        private const string tid = ""; // GA Tracking ID / Property ID.
+        private const string tid = "G-9XLYH24STX"; // GA Tracking ID / Property ID.
 
         private static readonly string cid = Device.Value(); // Anonymous Client ID. // Guid.NewGuid().ToString()
 

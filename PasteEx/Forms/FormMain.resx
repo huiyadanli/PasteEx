@@ -117,454 +117,472 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="lblFileName.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="btnSettings.Size" type="System.Drawing.Size, System.Drawing">
-    <value>34, 34</value>
-  </data>
-  <data name="&gt;&gt;contextMenuStripSetting.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;exitToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnSave.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="txtFileName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>38, 32</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+  <data name="txtFileName.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 4, 4, 4</value>
   </data>
-  <data name="stopMonitorToolStripMenuItem.Text" xml:space="preserve">
-    <value>Stop Monitor</value>
+  <data name="txtFileName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>259, 28</value>
   </data>
-  <data name="&gt;&gt;btnSave.Name" xml:space="preserve">
-    <value>btnSave</value>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="txtFileName.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
-  <data name="&gt;&gt;advancedToolStripMenuItem.Name" xml:space="preserve">
-    <value>advancedToolStripMenuItem</value>
+  <data name="&gt;&gt;txtFileName.Name" xml:space="preserve">
+    <value>txtFileName</value>
   </data>
-  <data name="btnSettings.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="&gt;&gt;txtFileName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtFileName.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;txtFileName.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="cboExtension.Location" type="System.Drawing.Point, System.Drawing">
+    <value>321, 32</value>
+  </data>
+  <data name="cboExtension.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="cboExtension.Size" type="System.Drawing.Size, System.Drawing">
+    <value>85, 26</value>
+  </data>
+  <data name="cboExtension.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;cboExtension.Name" xml:space="preserve">
+    <value>cboExtension</value>
+  </data>
+  <data name="&gt;&gt;cboExtension.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cboExtension.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;cboExtension.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="lblExtension.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblExtension.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
   <data name="lblExtension.Location" type="System.Drawing.Point, System.Drawing">
     <value>318, 9</value>
   </data>
-  <data name="&gt;&gt;settingToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="lblExtension.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
-  <data name="&gt;&gt;btnSettings.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="lblExtension.Size" type="System.Drawing.Size, System.Drawing">
+    <value>98, 18</value>
   </data>
-  <data name="statusStrip.Text" xml:space="preserve">
-    <value>statusStrip1</value>
+  <data name="lblExtension.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
   </data>
-  <data name="btnSettings.TabIndex" type="System.Int32, mscorlib">
-    <value>11</value>
-  </data>
-  <data name="&gt;&gt;toolStripMenuItem1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnChooseLocation.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;btnSettings.Name" xml:space="preserve">
-    <value>btnSettings</value>
+  <data name="lblExtension.Text" xml:space="preserve">
+    <value>Extension:</value>
   </data>
   <data name="&gt;&gt;lblExtension.Name" xml:space="preserve">
     <value>lblExtension</value>
   </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>PasteEx</value>
+  <data name="&gt;&gt;lblExtension.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="lblExtension.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="&gt;&gt;lblExtension.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblExtension.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="lblFileName.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblFileName.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
-  </data>
-  <data name="&gt;&gt;openDebugWindowToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;settingToolStripMenuItem1.Name" xml:space="preserve">
-    <value>settingToolStripMenuItem1</value>
   </data>
   <data name="lblFileName.Location" type="System.Drawing.Point, System.Drawing">
     <value>34, 9</value>
   </data>
-  <data name="txtFileName.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+  <data name="lblFileName.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 0, 4, 0</value>
   </data>
-  <data name="&gt;&gt;autoToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="lblFileName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>98, 18</value>
   </data>
-  <data name="&gt;&gt;cboExtension.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="lblFileName.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
   </data>
   <data name="lblFileName.Text" xml:space="preserve">
     <value>File Name:</value>
   </data>
-  <data name="&gt;&gt;tsslCurrentLocation.Name" xml:space="preserve">
-    <value>tsslCurrentLocation</value>
-  </data>
-  <data name="&gt;&gt;cboExtension.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>9, 18</value>
-  </data>
-  <data name="btnChooseLocation.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
-  </data>
-  <data name="&gt;&gt;advancedToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;lblFileName.Name" xml:space="preserve">
+    <value>lblFileName</value>
   </data>
   <data name="&gt;&gt;lblFileName.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;txtFileName.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="&gt;&gt;btnChooseLocation.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="toolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>244, 6</value>
-  </data>
-  <data name="startMonitorToolStripMenuItem.Text" xml:space="preserve">
-    <value>Start Monitor</value>
-  </data>
-  <data name="btnChooseLocation.Size" type="System.Drawing.Size, System.Drawing">
-    <value>206, 34</value>
-  </data>
-  <data name="&gt;&gt;monitorModeToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;lblFileName.Name" xml:space="preserve">
-    <value>lblFileName</value>
-  </data>
-  <data name="&gt;&gt;exitToolStripMenuItem.Name" xml:space="preserve">
-    <value>exitToolStripMenuItem</value>
-  </data>
-  <data name="contextMenuStripSetting.Size" type="System.Drawing.Size, System.Drawing">
-    <value>215, 68</value>
-  </data>
-  <data name="&gt;&gt;toolStripMenuItem2.Name" xml:space="preserve">
-    <value>toolStripMenuItem2</value>
-  </data>
   <data name="&gt;&gt;lblFileName.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="tsslCurrentLocation.Size" type="System.Drawing.Size, System.Drawing">
-    <value>153, 24</value>
+  <data name="&gt;&gt;lblFileName.ZOrder" xml:space="preserve">
+    <value>7</value>
   </data>
-  <data name="openTempFolderToolStripMenuItem.Text" xml:space="preserve">
-    <value>Open Temp Folder</value>
+  <metadata name="statusStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <data name="statusStrip.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 129</value>
   </data>
-  <data name="&gt;&gt;toolStripMenuItem1.Name" xml:space="preserve">
-    <value>toolStripMenuItem1</value>
+  <data name="statusStrip.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>2, 0, 21, 0</value>
   </data>
-  <data name="&gt;&gt;notifyIcon.Name" xml:space="preserve">
-    <value>notifyIcon</value>
+  <data name="statusStrip.Size" type="System.Drawing.Size, System.Drawing">
+    <value>452, 31</value>
   </data>
-  <data name="&gt;&gt;toolStripMenuItem2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="statusStrip.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
   </data>
-  <data name="&gt;&gt;txtFileName.Parent" xml:space="preserve">
+  <data name="statusStrip.Text" xml:space="preserve">
+    <value>statusStrip1</value>
+  </data>
+  <data name="&gt;&gt;statusStrip.Name" xml:space="preserve">
+    <value>statusStrip</value>
+  </data>
+  <data name="&gt;&gt;statusStrip.Type" xml:space="preserve">
+    <value>System.Windows.Forms.StatusStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;statusStrip.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="autoToolStripMenuItem.Text" xml:space="preserve">
-    <value>Auto Image to File</value>
+  <data name="&gt;&gt;statusStrip.ZOrder" xml:space="preserve">
+    <value>5</value>
   </data>
-  <data name="&gt;&gt;btnSettings.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="tsslCurrentLocation.Size" type="System.Drawing.Size, System.Drawing">
+    <value>429, 24</value>
   </data>
-  <data name="autoToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>247, 32</value>
+  <data name="tsslCurrentLocation.Text" xml:space="preserve">
+    <value>Current Location</value>
   </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>FormMain</value>
+  <data name="tsslCurrentLocation.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
   </data>
-  <data name="settingToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>214, 32</value>
+  <data name="btnSave.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
-  <data name="contextMenuStripMonitorMode.Size" type="System.Drawing.Size, System.Drawing">
-    <value>248, 208</value>
+  <data name="btnSave.Location" type="System.Drawing.Point, System.Drawing">
+    <value>321, 80</value>
   </data>
-  <data name="&gt;&gt;openTempFolderToolStripMenuItem.Name" xml:space="preserve">
-    <value>openTempFolderToolStripMenuItem</value>
+  <data name="btnSave.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
   </data>
-  <data name="lblExtension.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="exitToolStripMenuItem.Text" xml:space="preserve">
-    <value>Exit</value>
-  </data>
-  <data name="txtFileName.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="lblExtension.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 0, 4, 0</value>
-  </data>
-  <data name="&gt;&gt;txtFileName.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="btnSave.Size" type="System.Drawing.Size, System.Drawing">
+    <value>87, 34</value>
   </data>
   <data name="btnSave.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
-  <data name="startMonitorToolStripMenuItem.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
+  <data name="btnSave.Text" xml:space="preserve">
+    <value>Save</value>
   </data>
-  <data name="&gt;&gt;lblExtension.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="settingToolStripMenuItem1.Text" xml:space="preserve">
-    <value>Setting</value>
-  </data>
-  <data name="&gt;&gt;cboExtension.Name" xml:space="preserve">
-    <value>cboExtension</value>
-  </data>
-  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
-    <value>CenterScreen</value>
-  </data>
-  <data name="txtFileName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>259, 28</value>
-  </data>
-  <data name="&gt;&gt;contextMenuStripSetting.Name" xml:space="preserve">
-    <value>contextMenuStripSetting</value>
-  </data>
-  <data name="&gt;&gt;btnChooseLocation.Name" xml:space="preserve">
-    <value>btnChooseLocation</value>
+  <data name="&gt;&gt;btnSave.Name" xml:space="preserve">
+    <value>btnSave</value>
   </data>
   <data name="&gt;&gt;btnSave.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;contextMenuStripMonitorMode.Type" xml:space="preserve">
+  <data name="&gt;&gt;btnSave.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnSave.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="btnChooseLocation.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnChooseLocation.Location" type="System.Drawing.Point, System.Drawing">
+    <value>40, 80</value>
+  </data>
+  <data name="btnChooseLocation.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="btnChooseLocation.Size" type="System.Drawing.Size, System.Drawing">
+    <value>206, 34</value>
+  </data>
+  <data name="btnChooseLocation.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="btnChooseLocation.Text" xml:space="preserve">
+    <value>Choose Location</value>
+  </data>
+  <data name="&gt;&gt;btnChooseLocation.Name" xml:space="preserve">
+    <value>btnChooseLocation</value>
+  </data>
+  <data name="&gt;&gt;btnChooseLocation.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnChooseLocation.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnChooseLocation.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="btnSettings.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Zoom</value>
+  </data>
+  <metadata name="contextMenuStripSetting.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>131, 17</value>
+  </metadata>
+  <data name="monitorModeToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>280, 32</value>
+  </data>
+  <data name="monitorModeToolStripMenuItem.Text" xml:space="preserve">
+    <value>Monitor Mode</value>
+  </data>
+  <data name="settingToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>280, 32</value>
+  </data>
+  <data name="settingToolStripMenuItem.Text" xml:space="preserve">
+    <value>Setting</value>
+  </data>
+  <data name="newVersionAvailableToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>280, 32</value>
+  </data>
+  <data name="newVersionAvailableToolStripMenuItem.Text" xml:space="preserve">
+    <value>New version available!</value>
+  </data>
+  <data name="newVersionAvailableToolStripMenuItem.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="contextMenuStripSetting.Size" type="System.Drawing.Size, System.Drawing">
+    <value>281, 133</value>
+  </data>
+  <data name="&gt;&gt;contextMenuStripSetting.Name" xml:space="preserve">
+    <value>contextMenuStripSetting</value>
+  </data>
+  <data name="&gt;&gt;contextMenuStripSetting.Type" xml:space="preserve">
     <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="cboExtension.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+  <data name="btnSettings.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="btnSettings.Location" type="System.Drawing.Point, System.Drawing">
+    <value>254, 80</value>
+  </data>
+  <data name="btnSettings.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="btnSettings.Size" type="System.Drawing.Size, System.Drawing">
+    <value>34, 34</value>
+  </data>
+  <data name="btnSettings.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;btnSettings.Name" xml:space="preserve">
+    <value>btnSettings</value>
+  </data>
+  <data name="&gt;&gt;btnSettings.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnSettings.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnSettings.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <metadata name="notifyIcon.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>331, 17</value>
+  </metadata>
+  <metadata name="contextMenuStripMonitorMode.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>442, 17</value>
+  </metadata>
+  <data name="contextMenuStripMonitorMode.Size" type="System.Drawing.Size, System.Drawing">
+    <value>248, 208</value>
   </data>
   <data name="&gt;&gt;contextMenuStripMonitorMode.Name" xml:space="preserve">
     <value>contextMenuStripMonitorMode</value>
   </data>
-  <data name="&gt;&gt;stopMonitorToolStripMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;contextMenuStripMonitorMode.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ContextMenuStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="notifyIcon.Text" xml:space="preserve">
+    <value>PasteEx</value>
+  </data>
+  <data name="startMonitorToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>247, 32</value>
+  </data>
+  <data name="startMonitorToolStripMenuItem.Text" xml:space="preserve">
+    <value>Start Monitor</value>
+  </data>
+  <data name="startMonitorToolStripMenuItem.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="stopMonitorToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>247, 32</value>
+  </data>
+  <data name="stopMonitorToolStripMenuItem.Text" xml:space="preserve">
+    <value>Stop Monitor</value>
+  </data>
+  <data name="autoToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>247, 32</value>
+  </data>
+  <data name="autoToolStripMenuItem.Text" xml:space="preserve">
+    <value>Auto Image to File</value>
+  </data>
+  <data name="toolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>244, 6</value>
+  </data>
+  <data name="advancedToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>247, 32</value>
+  </data>
+  <data name="advancedToolStripMenuItem.Text" xml:space="preserve">
+    <value>Advanced</value>
+  </data>
+  <data name="openDebugWindowToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>298, 34</value>
+  </data>
+  <data name="openDebugWindowToolStripMenuItem.Text" xml:space="preserve">
+    <value>Open Debug Window</value>
+  </data>
+  <data name="openTempFolderToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>298, 34</value>
+  </data>
+  <data name="openTempFolderToolStripMenuItem.Text" xml:space="preserve">
+    <value>Open Temp Folder</value>
+  </data>
+  <data name="settingToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>247, 32</value>
+  </data>
+  <data name="settingToolStripMenuItem1.Text" xml:space="preserve">
+    <value>Setting</value>
+  </data>
+  <data name="toolStripMenuItem2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>244, 6</value>
+  </data>
+  <data name="exitToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>247, 32</value>
+  </data>
+  <data name="exitToolStripMenuItem.Text" xml:space="preserve">
+    <value>Exit</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>9, 18</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>452, 160</value>
+  </data>
+  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterScreen</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>PasteEx</value>
+  </data>
+  <data name="&gt;&gt;tsslCurrentLocation.Name" xml:space="preserve">
+    <value>tsslCurrentLocation</value>
+  </data>
+  <data name="&gt;&gt;tsslCurrentLocation.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;monitorModeToolStripMenuItem.Name" xml:space="preserve">
+    <value>monitorModeToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;monitorModeToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;settingToolStripMenuItem.Name" xml:space="preserve">
+    <value>settingToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;settingToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;notifyIcon.Name" xml:space="preserve">
+    <value>notifyIcon</value>
+  </data>
+  <data name="&gt;&gt;notifyIcon.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NotifyIcon, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;startMonitorToolStripMenuItem.Name" xml:space="preserve">
+    <value>startMonitorToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;startMonitorToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;stopMonitorToolStripMenuItem.Name" xml:space="preserve">
     <value>stopMonitorToolStripMenuItem</value>
   </data>
-  <data name="&gt;&gt;lblFileName.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="statusStrip.TabIndex" type="System.Int32, mscorlib">
-    <value>9</value>
-  </data>
-  <data name="lblFileName.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;lblExtension.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="cboExtension.Size" type="System.Drawing.Size, System.Drawing">
-    <value>85, 26</value>
-  </data>
-  <data name="btnSettings.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
-  </data>
-  <data name="&gt;&gt;statusStrip.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="btnSettings.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
-    <value>Zoom</value>
-  </data>
-  <data name="btnSave.Text" xml:space="preserve">
-    <value>Save</value>
-  </data>
-  <data name="btnSettings.Location" type="System.Drawing.Point, System.Drawing">
-    <value>254, 80</value>
-  </data>
-  <data name="toolStripMenuItem2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>244, 6</value>
-  </data>
-  <data name="&gt;&gt;tsslCurrentLocation.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripStatusLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="txtFileName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>38, 32</value>
-  </data>
-  <data name="cboExtension.Location" type="System.Drawing.Point, System.Drawing">
-    <value>321, 32</value>
-  </data>
-  <data name="&gt;&gt;btnSettings.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="lblFileName.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 0, 4, 0</value>
-  </data>
-  <data name="statusStrip.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 129</value>
-  </data>
-  <data name="&gt;&gt;monitorModeToolStripMenuItem.Name" xml:space="preserve">
-    <value>monitorModeToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;settingToolStripMenuItem.Name" xml:space="preserve">
-    <value>settingToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;settingToolStripMenuItem1.Type" xml:space="preserve">
+  <data name="&gt;&gt;stopMonitorToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="btnChooseLocation.Text" xml:space="preserve">
-    <value>Choose Location</value>
-  </data>
-  <data name="&gt;&gt;cboExtension.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;startMonitorToolStripMenuItem.Name" xml:space="preserve">
-    <value>startMonitorToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;statusStrip.Name" xml:space="preserve">
-    <value>statusStrip</value>
-  </data>
-  <data name="&gt;&gt;statusStrip.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="btnSave.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="lblExtension.Size" type="System.Drawing.Size, System.Drawing">
-    <value>98, 18</value>
-  </data>
-  <data name="&gt;&gt;btnChooseLocation.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="lblExtension.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="notifyIcon.Text" xml:space="preserve">
-    <value>PasteEx</value>
-  </data>
-  <data name="&gt;&gt;openDebugWindowToolStripMenuItem.Name" xml:space="preserve">
-    <value>openDebugWindowToolStripMenuItem</value>
-  </data>
-  <data name="settingToolStripMenuItem.Text" xml:space="preserve">
-    <value>Setting</value>
-  </data>
-  <data name="statusStrip.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>2, 0, 21, 0</value>
-  </data>
-  <data name="startMonitorToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>247, 32</value>
-  </data>
-  <data name="&gt;&gt;lblExtension.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="btnSave.Location" type="System.Drawing.Point, System.Drawing">
-    <value>321, 80</value>
-  </data>
-  <data name="&gt;&gt;openTempFolderToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="monitorModeToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>214, 32</value>
-  </data>
-  <data name="&gt;&gt;startMonitorToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="openDebugWindowToolStripMenuItem.Text" xml:space="preserve">
-    <value>Open Debug Window</value>
-  </data>
-  <data name="btnChooseLocation.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="lblFileName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>98, 18</value>
-  </data>
-  <data name="btnSave.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
-  </data>
-  <data name="tsslCurrentLocation.Text" xml:space="preserve">
-    <value>Current Location</value>
-  </data>
-  <data name="advancedToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>247, 32</value>
-  </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>452, 160</value>
-  </data>
-  <data name="lblFileName.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="btnChooseLocation.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
   <data name="&gt;&gt;autoToolStripMenuItem.Name" xml:space="preserve">
     <value>autoToolStripMenuItem</value>
   </data>
-  <data name="stopMonitorToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>247, 32</value>
+  <data name="&gt;&gt;autoToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="lblExtension.Text" xml:space="preserve">
-    <value>Extension:</value>
+  <data name="&gt;&gt;toolStripMenuItem1.Name" xml:space="preserve">
+    <value>toolStripMenuItem1</value>
   </data>
-  <data name="openDebugWindowToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>298, 34</value>
+  <data name="&gt;&gt;toolStripMenuItem1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="exitToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>247, 32</value>
+  <data name="&gt;&gt;advancedToolStripMenuItem.Name" xml:space="preserve">
+    <value>advancedToolStripMenuItem</value>
   </data>
-  <data name="&gt;&gt;statusStrip.Type" xml:space="preserve">
-    <value>System.Windows.Forms.StatusStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;advancedToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="settingToolStripMenuItem1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>247, 32</value>
+  <data name="&gt;&gt;openDebugWindowToolStripMenuItem.Name" xml:space="preserve">
+    <value>openDebugWindowToolStripMenuItem</value>
   </data>
-  <data name="&gt;&gt;txtFileName.Name" xml:space="preserve">
-    <value>txtFileName</value>
+  <data name="&gt;&gt;openDebugWindowToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;btnSave.ZOrder" xml:space="preserve">
-    <value>4</value>
+  <data name="&gt;&gt;openTempFolderToolStripMenuItem.Name" xml:space="preserve">
+    <value>openTempFolderToolStripMenuItem</value>
   </data>
-  <data name="statusStrip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>452, 31</value>
+  <data name="&gt;&gt;openTempFolderToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="openTempFolderToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>298, 34</value>
+  <data name="&gt;&gt;settingToolStripMenuItem1.Name" xml:space="preserve">
+    <value>settingToolStripMenuItem1</value>
   </data>
-  <data name="cboExtension.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
+  <data name="&gt;&gt;settingToolStripMenuItem1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;notifyIcon.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NotifyIcon, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;toolStripMenuItem2.Name" xml:space="preserve">
+    <value>toolStripMenuItem2</value>
   </data>
-  <data name="advancedToolStripMenuItem.Text" xml:space="preserve">
-    <value>Advanced</value>
+  <data name="&gt;&gt;toolStripMenuItem2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="btnSave.Size" type="System.Drawing.Size, System.Drawing">
-    <value>87, 34</value>
+  <data name="&gt;&gt;exitToolStripMenuItem.Name" xml:space="preserve">
+    <value>exitToolStripMenuItem</value>
   </data>
-  <data name="btnChooseLocation.Location" type="System.Drawing.Point, System.Drawing">
-    <value>40, 80</value>
+  <data name="&gt;&gt;exitToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="monitorModeToolStripMenuItem.Text" xml:space="preserve">
-    <value>Monitor Mode</value>
+  <data name="&gt;&gt;newVersionAvailableToolStripMenuItem.Name" xml:space="preserve">
+    <value>newVersionAvailableToolStripMenuItem</value>
   </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="notifyIcon.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>331, 17</value>
-  </metadata>
-  <metadata name="contextMenuStripSetting.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>131, 17</value>
-  </metadata>
-  <metadata name="statusStrip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <metadata name="contextMenuStripMonitorMode.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>442, 17</value>
-  </metadata>
+  <data name="&gt;&gt;newVersionAvailableToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>FormMain</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>

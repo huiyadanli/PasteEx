@@ -1,5 +1,6 @@
 {
-  "version": "1.1.8.2",
-  "download": "https://github.com/huiyadanli/PasteEx/releases/download/1.1.8.2/PasteEx.v1.1.8.2.zip",
-  "page": "https://github.com/huiyadanli/PasteEx/releases/tag/1.1.8.2"
+  "Version": "1.1.8.2",
+  "Info": "修复了首次启动时不弹出提示添加右键菜单的问题,修复了默认以监听模式启动的问题",
+  "DownloadUrl": "https://github.com/huiyadanli/PasteEx/releases/download/1.1.8.2/PasteEx.v1.1.8.2.zip",
+  "PageUrl": "https://github.com/huiyadanli/PasteEx/releases/tag/1.1.8.2"
 }
