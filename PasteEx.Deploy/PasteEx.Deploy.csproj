@@ -82,11 +82,5 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\PasteEx\PasteEx.csproj">
-      <Project>{403df4f1-6a38-4f91-9381-75cc15ed5c7e}</Project>
-      <Name>PasteEx</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
