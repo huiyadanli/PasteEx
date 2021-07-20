@@ -7,6 +7,7 @@ namespace PasteEx.Util
 {
     public class HttpUtil
     {
+
         public static HttpClient Client { get; } = new HttpClient();
 
         static HttpUtil()
@@ -36,6 +37,8 @@ namespace PasteEx.Util
 
         public static void Init()
         {
+            //var httpClientHandler = new HttpClientHandler();
+            //httpClientHandler.UseProxy 
             try
             {
                 string i = Properties.Settings.Default.language;

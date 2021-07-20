@@ -178,7 +178,7 @@ namespace PasteEx.Util
 
         private void NoParamStart()
         {
-            // Client.Start();
+            Client.Start();
             if (!RightMenu.Init())
             {
                 return;

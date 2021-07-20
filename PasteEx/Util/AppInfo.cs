@@ -10,7 +10,9 @@ namespace PasteEx
     {
         public string Version { get; set; }
 
-        public string Info { get; set; }
+        public string InfoCN { get; set; }
+
+        public string InfoEN { get; set; }
 
         public string DownloadUrl { get; set; }
 

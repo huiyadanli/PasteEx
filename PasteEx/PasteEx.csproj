@@ -82,6 +82,12 @@
     <Compile Include="Core\History\PasteResultHistoryHelper.cs" />
     <Compile Include="Core\ModeController.cs" />
     <Compile Include="Core\Processor\Assist\HTMLFormat.cs" />
+    <Compile Include="Forms\FormInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FormInfo.Designer.cs">
+      <DependentUpon>FormInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Hotkey\Hotkey.cs" />
     <Compile Include="Forms\Hotkey\HotkeyTextBox.cs">
       <SubType>Component</SubType>
@@ -167,6 +173,9 @@
     <EmbeddedResource Include="Forms\FormSetting.zh-Hant.resx">
       <DependentUpon>FormSetting.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FormInfo.resx">
+      <DependentUpon>FormInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -310,7 +310,7 @@ namespace PasteEx.Forms
                     }
                     catch (Exception ex)
                     {
-                        Console.WriteLine(ex.Message);
+                        Logger.Error(ex);
                     }
                 }
 
