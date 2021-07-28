@@ -29,33 +29,35 @@ namespace PasteEx.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.rtbInfo = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
-            // richTextBox1
+            // rtbInfo
             // 
-            this.richTextBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.richTextBox1.Location = new System.Drawing.Point(0, 0);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(550, 395);
-            this.richTextBox1.TabIndex = 0;
-            this.richTextBox1.Text = "";
+            this.rtbInfo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.rtbInfo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.rtbInfo.Location = new System.Drawing.Point(0, 0);
+            this.rtbInfo.Name = "rtbInfo";
+            this.rtbInfo.Size = new System.Drawing.Size(376, 370);
+            this.rtbInfo.TabIndex = 0;
+            this.rtbInfo.Text = "";
             // 
             // FormInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(550, 395);
-            this.Controls.Add(this.richTextBox1);
+            this.ClientSize = new System.Drawing.Size(376, 370);
+            this.Controls.Add(this.rtbInfo);
             this.Icon = global::PasteEx.Properties.Resources.ico;
             this.Name = "FormInfo";
             this.Text = "PasteEx Info";
+            this.TopMost = true;
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox rtbInfo;
     }
 }

@@ -233,7 +233,19 @@ namespace PasteEx.Forms
 
         private void linkLabels_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            System.Diagnostics.Process.Start(e.Link.LinkData as string);
+            //System.Diagnostics.Process.Start(e.Link.LinkData as string);
+            AppInfo appInfo = e.Link.LinkData as AppInfo;
+            FormInfo f = FormInfo.GetInstance();
+            f.SetInfo(appInfo.InfoCN);
+            if (f.Visible == true)
+            {
+                f.Show();
+            }
+            else
+            {
+                f.ShowDialog();
+            }
+            f.Activate();
         }
 
         private int VersionToNumber(string version)
@@ -282,14 +294,14 @@ namespace PasteEx.Forms
                         int currentVersionNum = VersionToNumber(currentVersion);
                         if (latestVersionNum > 1000000 && currentVersionNum > 1000000)
                         {
-                            if (latestVersionNum > currentVersionNum)
+                            if (latestVersionNum > 1)
                             {
                                 // have new version
                                 labelUpdateinfo.Text = Resources.Strings.TxtNewVersion + latestVersion;
                                 labelUpdateinfo.ForeColor = System.Drawing.Color.Red;
                                 labelUpdateinfo.LinkColor = System.Drawing.Color.Red;
                                 labelUpdateinfo.Links.Clear();
-                                labelUpdateinfo.Links.Add(0, labelUpdateinfo.Text.Length, appInfo.PageUrl.Replace(@"\/", @"/"));
+                                labelUpdateinfo.Links.Add(0, labelUpdateinfo.Text.Length, appInfo);
                                 labelUpdateinfo.LinkBehavior = LinkBehavior.AlwaysUnderline;
                                 labelUpdateinfo.Visible = true;
                             }

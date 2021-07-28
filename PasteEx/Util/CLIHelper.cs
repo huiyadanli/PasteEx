@@ -47,7 +47,6 @@ namespace PasteEx.Util
 
         private void ParseCommand(string[] args)
         {
-            MessageBox.Show(args[0]);
             List<string> argList = new List<string>();
 
             // paste can be omitted.
