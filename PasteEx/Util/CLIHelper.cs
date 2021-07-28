@@ -47,16 +47,33 @@ namespace PasteEx.Util
 
         private void ParseCommand(string[] args)
         {
+            MessageBox.Show(args[0]);
             List<string> argList = new List<string>();
 
             // paste can be omitted.
             // eg. 
             // PasteEx.exe "c:\"
             // PasteEx.exe -q "c:\"
-            if (args[0].StartsWith("-") || Directory.Exists(args[0]))
+            String maybeRootDirectory = null;
+            if (args[0].LastIndexOf('"') == args[0].Length - 1) 
             {
-                argList.Add(CLIParams.PASTE);
+                // deal with root dir : D:"
+                maybeRootDirectory = args[0].Substring(0, args[0].Length - 1);
+                if (Directory.Exists(maybeRootDirectory))
+                {
+                    args[0] = maybeRootDirectory;
+                    argList.Add(CLIParams.PASTE);
+                }
             }
+            else
+            {
+                if (args[0].StartsWith("-") || Directory.Exists(args[0]))
+                {
+                    argList.Add(CLIParams.PASTE);
+                }
+            }
+
+
             argList.AddRange(args);
 
             if (CLIParams.ACTION_ARRAY.Contains(argList[0]))
@@ -84,18 +101,8 @@ namespace PasteEx.Util
 
             if (i <= argList.Count - 1 && action == CLIParams.PASTE)
             {
-                path = DealWithPath(argList[i]);
+                path = argList[i];
             }
-        }
-
-        private string DealWithPath(string str)
-        {
-            // why the disk root directory has '"' ??
-            if (str.LastIndexOf('"') == str.Length - 1)
-            {
-                str = str.Substring(0, str.Length - 1);
-            }
-            return str;
         }
 
         public void Execute()
@@ -148,7 +155,7 @@ namespace PasteEx.Util
                     else
                     {
                         string directory = Path.GetDirectoryName(path);
-                        if(string.IsNullOrEmpty(directory))
+                        if (string.IsNullOrEmpty(directory))
                         {
                             Console.WriteLine(Resources.Strings.TipTargetPathNotExist);
                             MessageBox.Show(Resources.Strings.TipTargetPathNotExist,
