@@ -50,13 +50,20 @@ namespace PasteEx.Util
         /// <returns>GUID</returns>
         public static string Value()
         {
-            if (fingerPrint == null)
+            try
             {
-                fingerPrint = GetHash(
-                    "MAC >> " + MacID
-                    );
+                if (fingerPrint == null)
+                {
+                    fingerPrint = GetHash(
+                        "MAC >> " + MacID
+                        );
+                }
+                return fingerPrint;
             }
-            return fingerPrint;
+            catch
+            {
+                return Guid.NewGuid().ToString();
+            }
         }
 
         private static string GetHash(string s)
