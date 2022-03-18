@@ -200,4 +200,4 @@ Some codes refer to [PasteIntoFiles](https://github.com/EslaMx7/PasteIntoFiles).
 
 Config storage uses  [PortableSettingsProvider](https://github.com/crdx/PortableSettingsProvider).
 
-The software icon uses the "interaction-Assets-icons" icon group (Creative Commons Attribution-Share Alike 3.0 Unported License)。
+The software icon uses the "interaction-Assets-icons" icon group (Creative Commons Attribution-Share Alike 3.0 Unported License).
