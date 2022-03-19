@@ -173,7 +173,8 @@ you can check "Default startup monitor mode" on the "Settings".
 The functions that can be used at this time are as follows:
 
 * In any directory, use the shortcut key `Ctrl + Alt + X` (default) to quickly paste.
-* When the "Auto Image to File" option is turned on, the copied image is automatically converted to a file type and appended to the clipboard, which means that `Ctrl + V` can be directly pasted as a file.
+* When the "Auto Image to File" option is enabled, the copied image is automatically converted to a file type and appended to the clipboard, which means that `Ctrl + V` can be directly pasted as a file.
+  * After Windows 10 1803, Microsoft introduces a hotkey `Win + Shift + S` to take a screenshot from a selected area and copy it to the clipboard. With "Auto Image to File" option enabled, you can save these screenshots conveniently.
 * When both the "Auto Image to File" option and the "Auto Save" option in "Settings" are turned on, PasteEx can automatically collect all copied pictures into the specified folder.
 
 #### Application filter
@@ -199,4 +200,4 @@ Some codes refer to [PasteIntoFiles](https://github.com/EslaMx7/PasteIntoFiles).
 
 Config storage uses  [PortableSettingsProvider](https://github.com/crdx/PortableSettingsProvider).
 
-The software icon uses the "interaction-Assets-icons" icon group (Creative Commons Attribution-Share Alike 3.0 Unported License)。
+The software icon uses the "interaction-Assets-icons" icon group (Creative Commons Attribution-Share Alike 3.0 Unported License).
