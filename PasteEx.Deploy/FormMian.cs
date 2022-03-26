@@ -66,7 +66,7 @@ namespace PasteEx.Deploy
                 Console.WriteLine(readmeFileName + " √");
             }
 
-            GetSurrentVersion();
+            GetCurrentVersion();
 
             MessageBox.Show("Done!");
 

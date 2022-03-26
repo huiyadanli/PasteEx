@@ -23,7 +23,6 @@ namespace PasteEx.Util
         /// </summary>
         private static readonly string[] urlsCN = new string[]
         {
-            "https://gitee.com/huiyadanli/PasteEx/raw/master/PasteEx.Deploy/latest.json",
             "https://huiyadanli.coding.net/p/PasteEx/d/PasteEx/git/raw/master/PasteEx.Deploy/latest.json",
             "https://raw.githubusercontent.com/huiyadanli/PasteEx/master/PasteEx.Deploy/latest.json"
 
@@ -31,7 +30,6 @@ namespace PasteEx.Util
         private static readonly string[] urlsOther = new string[]
         {
             "https://raw.githubusercontent.com/huiyadanli/PasteEx/master/PasteEx.Deploy/latest.json",
-            "https://gitee.com/huiyadanli/PasteEx/raw/master/PasteEx.Deploy/latest.json",
             "https://huiyadanli.coding.net/p/PasteEx/d/PasteEx/git/raw/master/PasteEx.Deploy/latest.json"
         };
 
@@ -74,24 +72,28 @@ namespace PasteEx.Util
                 Init();
             }
 
-            try
+            int i = 0;
+            while (i < urls.Length)
             {
-                return await Client.GetStringAsync(urls[i]);
-            }
-            catch (Exception ex)
-            {
-                Logger.Warning("第" + (i + 1) + "次请求异常:[" + ex.Message + "]\nURL:" + urls[i]);
+                try
+                {
+                    string json = await Client.GetStringAsync(urls[i]);
+                    if (!string.IsNullOrEmpty(json) && json.Contains("Version"))
+                    {
+                        return json;
+                    }
+                    else
+                    {
+                        Logger.Warning("第" + (i + 1) + "次请求获得的数据并非期望数据\nURL:" + urls[i]);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    Logger.Warning("第" + (i + 1) + "次请求异常:[" + ex.Message + "]\nURL:" + urls[i]);
+                }
                 i++;
-                if (i >= urls.Length)
-                {
-                    i = 0;
-                    return null;
-                }
-                else
-                {
-                    return await GetSoftInfoJsonAsync();
-                }
             }
+            return null;
         }
     }
 }

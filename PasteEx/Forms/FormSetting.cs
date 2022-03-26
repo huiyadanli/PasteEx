@@ -236,7 +236,31 @@ namespace PasteEx.Forms
             //System.Diagnostics.Process.Start(e.Link.LinkData as string);
             AppInfo appInfo = e.Link.LinkData as AppInfo;
             FormInfo f = FormInfo.GetInstance();
-            f.SetInfo(appInfo.InfoCN);
+            string info = null;
+            try
+            {
+                string i = Properties.Settings.Default.language;
+                if (string.IsNullOrWhiteSpace(i))
+                {
+                    i = I18n.FindLanguageByCurrentThreadInfo().Index.ToString();
+                }
+                int index = Convert.ToInt32(i);
+                // zh-CN || zh-Hant
+                if (index == 1 || index == 2)
+                {
+                    info = appInfo.InfoCN;
+                }
+                // en-US 
+                else
+                {
+                    info = appInfo.InfoEN;
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.Error(ex);
+            }
+            f.SetInfo(info);
             if (f.Visible == true)
             {
                 f.Show();
@@ -294,7 +318,7 @@ namespace PasteEx.Forms
                         int currentVersionNum = VersionToNumber(currentVersion);
                         if (latestVersionNum > 1000000 && currentVersionNum > 1000000)
                         {
-                            if (latestVersionNum > 1)
+                            if (latestVersionNum > currentVersionNum)
                             {
                                 // have new version
                                 labelUpdateinfo.Text = Resources.Strings.TxtNewVersion + latestVersion;
