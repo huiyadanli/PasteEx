@@ -25,7 +25,7 @@ If you use [Scoop](https://github.com/lukesampson/scoop), you can install PasteE
 `scoop install 'https://raw.githubusercontent.com/acdzh/zpt/master/bucket/pasteex.json'`
 
 ## Screenshot
-![Screenshot](https://raw.githubusercontent.com/huiyadanli/PasteEx/master/Screenshot/Screenshot.png)
+![Screenshot](https://raw.githubusercontent.com/huiyadanli/PasteEx/master/Screenshot/Screenshot_win11_en.png)
 
 ## Usage
 
