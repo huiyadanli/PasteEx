@@ -32,7 +32,7 @@ If you use [Scoop](https://github.com/lukesampson/scoop), you can install PasteE
 Requirements:
 
 * Windows 7 or higher
-* [.NET Framework 4.5](https://www.microsoft.com/zh-cn/download/details.aspx?id=30653) or higher
+* [.NET Framework 4.5.2](https://www.microsoft.com/en-us/download/details.aspx?id=42642) or higher
 
 Download decompression and run `PasteEx.exe` . There will be UAC prompts when adding context menus.
 
