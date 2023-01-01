@@ -24,3 +24,7 @@ bld/
 Tmp/
 /packages/
 node_modules/
+
+*.pfx
+AppPackages/
+BundleArtifacts/

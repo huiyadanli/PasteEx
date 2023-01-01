@@ -18,21 +18,21 @@ Paste the contents of the clipboard into files.
 
 More functions and usage see [:blue_book:document](https://github.com/huiyadanli/PasteEx/wiki).
 
-[:zap:Download v1.1.8.2 (latest version)](https://github.com/huiyadanli/PasteEx/releases/download/1.1.8.2/PasteEx.v1.1.8.2.zip)
+[:zap:Download v1.1.9.1 (latest version)](https://github.com/huiyadanli/PasteEx/releases/download/v1.1.9.1/PasteEx.v1.1.9.1.zip)
 
 If you use [Scoop](https://github.com/lukesampson/scoop), you can install PasteEx using the following command:
 
 `scoop install 'https://raw.githubusercontent.com/acdzh/zpt/master/bucket/pasteex.json'`
 
 ## Screenshot
-![Screenshot](https://raw.githubusercontent.com/huiyadanli/PasteEx/master/Screenshot/Screenshot.png)
+![Screenshot](https://raw.githubusercontent.com/huiyadanli/PasteEx/master/Screenshot/Screenshot_win11_en.png)
 
 ## Usage
 
 Requirements:
 
 * Windows 7 or higher
-* [.NET Framework 4.5](https://www.microsoft.com/zh-cn/download/details.aspx?id=30653) or higher
+* [.NET Framework 4.5.2](https://www.microsoft.com/en-us/download/details.aspx?id=42642) or higher
 
 Download decompression and run `PasteEx.exe` . There will be UAC prompts when adding context menus.
 

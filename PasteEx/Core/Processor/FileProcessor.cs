@@ -29,7 +29,12 @@ namespace PasteEx.Core.Processor
                         {
                             Data.Storage.SetData(DataFormats.FileDrop, Data.FromClipboard.GetData(DataFormats.FileDrop));
                             extensions.Clear();
-                            extensions.Add(Path.GetExtension(filePaths[0]).Remove(0, 1));
+                            string ext = Path.GetExtension(filePaths[0]);
+                            if(ext.StartsWith("."))
+                            {
+                                ext = ext.Remove(0, 1);
+                            }
+                            extensions.Add(ext);
                         }
                     }
                 }

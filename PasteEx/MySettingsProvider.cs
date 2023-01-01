@@ -11,6 +11,8 @@ namespace PasteEx
     /// <summary>
     /// Thanks for crdx's PortableSettingsProvider
     /// https://github.com/crdx/PortableSettingsProvider
+    /// 
+    /// [System.Configuration.SettingsProvider(typeof(MySettingsProvider))]
     /// </summary>
     public sealed class MySettingsProvider : SettingsProvider, IApplicationSettingsProvider
     {

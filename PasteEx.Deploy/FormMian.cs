@@ -32,10 +32,10 @@ namespace PasteEx.Deploy
         {
             lblPath.Text = path;
 
-            GetSurrentVersion();
+            GetCurrentVersion();
         }
 
-        private void GetSurrentVersion()
+        private void GetCurrentVersion()
         {
             // curr version
             string assemblyInfoPath = Path.Combine(path, @"PasteEx\Properties\AssemblyInfo.cs");
@@ -66,7 +66,7 @@ namespace PasteEx.Deploy
                 Console.WriteLine(readmeFileName + " √");
             }
 
-            GetSurrentVersion();
+            GetCurrentVersion();
 
             MessageBox.Show("Done!");
 

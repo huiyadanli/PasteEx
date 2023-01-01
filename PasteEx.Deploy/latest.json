@@ -1,7 +1,7 @@
 {
-  "Version": "1.1.8.5",
-  "InfoCN": "最新版本: 1.1.8.5\n",
-  "InfoEN": "Last version: 1.1.8.5",
-  "DownloadUrl": "https://github.com/huiyadanli/PasteEx/releases/download/1.1.8.2/PasteEx.v1.1.8.2.zip",
-  "PageUrl": "https://github.com/huiyadanli/PasteEx/releases/tag/1.1.8.2"
+  "Version": "1.1.9.1",
+  "InfoCN": "最新版本: 1.1.9.1\n优化高DPI下的界面表现\n修改检查更新的方法\n修复BUG #48 、#67\n软件编译版本从 NET Framework 4.5 升级至 4.5.2\n感谢 @GazCore 对繁体中文界面文案的改进\n\n下载地址：https://github.com/huiyadanli/PasteEx/releases",
+  "InfoEN": "Last version: 1.1.9.1\n优化高DPI下的界面表现\n修改检查更新的方法\n修复BUG #48 、#67\n软件编译版本从 NET Framework 4.5 升级至 4.5.2\n感谢 @GazCore 对繁体中文界面文案的改进\n\nDownload url：https://github.com/huiyadanli/PasteEx/releases",
+  "DownloadUrl": "https://github.com/huiyadanli/PasteEx/releases/download/1.1.9.1/PasteEx.v1.1.9.1.zip",
+  "PageUrl": "https://github.com/huiyadanli/PasteEx/releases/tag/1.1.9.1"
 }

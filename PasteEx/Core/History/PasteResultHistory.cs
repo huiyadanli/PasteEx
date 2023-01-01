@@ -19,7 +19,7 @@ namespace PasteEx.Core.History
 
         public static PasteResultHistory Parse(string str)
         {
-            return new JavaScriptSerializer().Deserialize<PasteResultHistory>(str); ;
+            return new JavaScriptSerializer().Deserialize<PasteResultHistory>(str);
         }
 
         public PasteResult Find(PasteResult res)

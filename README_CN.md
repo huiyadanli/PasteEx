@@ -19,7 +19,7 @@
 
 更多功能及用法参见[:blue_book:文档](https://github.com/huiyadanli/PasteEx/wiki)。
 
-[:zap:最新版本 v1.1.8.2 下载](https://github.com/huiyadanli/PasteEx/releases/download/1.1.8.2/PasteEx.v1.1.8.2.zip)
+[:zap:最新版本 v1.1.9.1 下载](https://github.com/huiyadanli/PasteEx/releases/download/v1.1.9.1/PasteEx.v1.1.9.1.zip)
 
 如果你使用 [Scoop](https://github.com/lukesampson/scoop) 的话，可以通过以下命令安装 PasteEx :
 
@@ -33,7 +33,7 @@
 环境要求：
 
 * Windows 7 或更高版本。
-* [.NET Framework 4.5](https://www.microsoft.com/zh-cn/download/details.aspx?id=30653) 或更高版本。
+* [.NET Framework 4.5.2](https://www.microsoft.com/en-us/download/details.aspx?id=42642) 或更高版本。
 
 下载解压并运行 `PasteEx.exe` ，根据提示**添加右键菜单**即可（添加菜单时会有 UAC 提示，放行即可）。
 
