@@ -146,7 +146,7 @@ namespace PasteEx.Util
             else
             {
                 key.SetValue("", Resources.Strings.MenuQuickPasteAsFile);
-                cmdKey.SetValue("", Application.ExecutablePath + " -q \"%V\"");
+                cmdKey.SetValue("", Application.ExecutablePath + " -q \"%V\\.\"");
             }
 
             // shell
