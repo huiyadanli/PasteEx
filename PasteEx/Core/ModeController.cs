@@ -220,6 +220,7 @@ namespace PasteEx.Core
                         if (result == DialogResult.Yes)
                         {
                             quickPasteData.Save(path, extensions[0]);
+                            Console.WriteLine(path);
                         }
                         else if (result == DialogResult.No)
                         {
@@ -229,6 +230,7 @@ namespace PasteEx.Core
                     else
                     {
                         quickPasteData.Save(path, extensions[0]);
+                        Console.WriteLine(path);
                     }
                 }
             }
