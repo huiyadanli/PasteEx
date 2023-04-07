@@ -30,7 +30,7 @@
       <Value Profile="(Default)" />
     </Setting>
     <Setting Name="fileNamePattern" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Clip_$yyyyMMdd_HHmmss$</Value>
+      <Value Profile="(Default)">$yyyyMMdd$\\Clip_$HHmmss$</Value>
     </Setting>
     <Setting Name="monitorAutoSaveEnabled" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
@@ -45,6 +45,12 @@
       <Value Profile="(Default)" />
     </Setting>
     <Setting Name="ApplicationFilterExclude" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="fileNameFolder" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="fileNamePatternPure" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
   </Settings>

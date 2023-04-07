@@ -12,7 +12,7 @@ namespace PasteEx.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.1.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.5.0.0")]
     public sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -132,7 +132,7 @@ namespace PasteEx.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Clip_$yyyyMMdd_HHmmss$")]
+        [global::System.Configuration.DefaultSettingValueAttribute("$yyyyMMdd$\\\\Clip_$HHmmss$")]
         public string fileNamePattern {
             get {
                 return ((string)(this["fileNamePattern"]));
@@ -199,6 +199,30 @@ namespace PasteEx.Properties {
             }
             set {
                 this["ApplicationFilterExclude"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string fileNameFolder {
+            get {
+                return ((string)(this["fileNameFolder"]));
+            }
+            set {
+                this["fileNameFolder"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string fileNamePatternPure {
+            get {
+                return ((string)(this["fileNamePatternPure"]));
+            }
+            set {
+                this["fileNamePatternPure"] = value;
             }
         }
     }

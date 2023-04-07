@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Runtime;
 using System.Text;
 using System.Windows.Forms;
 
@@ -7,15 +8,20 @@ namespace PasteEx.Forms
 {
     public class PathGenerator
     {
-        public static string defaultFileNamePattern = "Clip_$yyyyMMdd_HHmmss$";
+        public static string defaultFileNamePattern = "$yyyyMMdd$\\Clip_$HHmmss$";
 
-        public static string GenerateDefaultFileName(string pattern)
+        public static string GenerateDefaultFileName(string folder, string pattern)
         {
             if (pattern.IndexOfAny(Path.GetInvalidFileNameChars()) >= 0)
             {
                 return null;
             }
 
+            return GenerateWithPattern(folder) + GenerateWithPattern(pattern);
+        }
+
+        private static string GenerateWithPattern(string pattern)
+        {
             char[] chars = pattern.ToCharArray();
             StringBuilder sb = new StringBuilder();
             StringBuilder sbFormatPattern = new StringBuilder();
@@ -30,8 +36,10 @@ namespace PasteEx.Forms
                         sb.Append(DateTime.Now.ToString(sbFormatPattern.ToString()));
                         sbFormatPattern.Clear();
                     }
+
                     continue;
                 }
+
                 if (isFormatPattern)
                 {
                     sbFormatPattern.Append(chars[i]);
@@ -41,6 +49,7 @@ namespace PasteEx.Forms
                     sb.Append(chars[i]);
                 }
             }
+
             return sb.ToString();
         }
 
@@ -53,22 +62,50 @@ namespace PasteEx.Forms
         public static string GenerateFileName(string folder, string extension)
         {
             folder = folder.EndsWith("\\") ? folder : folder + "\\";
+            int slashCount = System.Text.RegularExpressions.Regex.Matches(Properties.Settings.Default.fileNameFolder, "\\\\").Count;
+            string[] __ = Properties.Settings.Default.fileNameFolder.Split('\\');
+            string[] _ = new string[slashCount];
+            for (int j = 0; j < slashCount; j++)
+            {
+                _[j] = GenerateWithPattern(__[j]);
+            }
+
+            if (_.Length > 0)
+            {
+                foreach (var k in _)
+                {
+                    folder += k + "\\";
+                }
+            }
+
+            // if folder doesn't exists
+            if (!Directory.Exists(folder))
+            {
+                Directory.CreateDirectory(folder);
+            }
+
             // Use file name pattern
             string defaultFileName = null;
-            if (Properties.Settings.Default.fileNamePattern.IndexOfAny(Path.GetInvalidFileNameChars()) < 0)
+            string pureFileNamePattern = Properties.Settings.Default.fileNamePatternPure;
+            if (string.IsNullOrEmpty(pureFileNamePattern))
+            {
+                pureFileNamePattern = defaultFileNamePattern.Substring(defaultFileNamePattern.LastIndexOf('\\')+1);
+            }
+            if (pureFileNamePattern.IndexOfAny(Path.GetInvalidFileNameChars()) < 0)
             {
                 try
                 {
-                    defaultFileName = GenerateDefaultFileName(Properties.Settings.Default.fileNamePattern);
+                    defaultFileName = GenerateDefaultFileName(folder, pureFileNamePattern);
                 }
                 catch
                 {
                     defaultFileName = null;
                 }
             }
+
             if (string.IsNullOrEmpty(defaultFileName))
             {
-                defaultFileName = GenerateDefaultFileName(defaultFileNamePattern);
+                defaultFileName = GenerateDefaultFileName(folder, defaultFileNamePattern);
             }
 
             // Generate file name
@@ -96,6 +133,7 @@ namespace PasteEx.Forms
                     break;
                 }
             }
+
             return result;
         }
 
@@ -132,12 +170,14 @@ namespace PasteEx.Forms
                 {
                     tail++;
                 }
+
                 tailChars[k++] = location[i];
                 if (location[i] == '\\' && i != location.Length - 1)
                 {
                     break;
                 }
             }
+
             int head = maxLength - ellipsis.Length - tail;
             if (head >= 3)
             {
@@ -153,6 +193,7 @@ namespace PasteEx.Forms
                         tailStr += tailChars[i];
                     }
                 }
+
                 sb.Append(tailStr);
                 return sb.ToString();
             }
@@ -185,6 +226,7 @@ namespace PasteEx.Forms
                 {
                     break;
                 }
+
                 sb.Append(str[i]);
             }
 
@@ -225,6 +267,7 @@ namespace PasteEx.Forms
             {
                 folder = Properties.Settings.Default.monitorAutoSavePath;
             }
+
             if (!Directory.Exists(folder))
             {
                 Directory.CreateDirectory(folder);
@@ -240,6 +283,7 @@ namespace PasteEx.Forms
             {
                 return true;
             }
+
             return false;
         }
     }

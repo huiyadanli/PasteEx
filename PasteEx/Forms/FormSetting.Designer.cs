@@ -105,27 +105,25 @@
             // 
             // tabControl1
             // 
-            resources.ApplyResources(this.tabControl1, "tabControl1");
             this.tabControl1.Controls.Add(this.tabPageNomal);
             this.tabControl1.Controls.Add(this.tabPageCustom);
             this.tabControl1.Controls.Add(this.tabPageMode);
             this.tabControl1.Controls.Add(this.tabPageAbout);
+            resources.ApplyResources(this.tabControl1, "tabControl1");
             this.tabControl1.Multiline = true;
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
-            this.tipHelp.SetToolTip(this.tabControl1, resources.GetString("tabControl1.ToolTip"));
             this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
             // tabPageNomal
             // 
-            resources.ApplyResources(this.tabPageNomal, "tabPageNomal");
             this.tabPageNomal.Controls.Add(this.groupBox6);
             this.tabPageNomal.Controls.Add(this.groupBox4);
             this.tabPageNomal.Controls.Add(this.groupBox3);
             this.tabPageNomal.Controls.Add(this.groupBox1);
+            resources.ApplyResources(this.tabPageNomal, "tabPageNomal");
             this.tabPageNomal.Name = "tabPageNomal";
-            this.tipHelp.SetToolTip(this.tabPageNomal, resources.GetString("tabPageNomal.ToolTip"));
             this.tabPageNomal.UseVisualStyleBackColor = true;
             // 
             // groupBox6
@@ -138,12 +136,11 @@
             this.groupBox6.Controls.Add(this.lblFileNamePattern);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.TabStop = false;
-            this.tipHelp.SetToolTip(this.groupBox6, resources.GetString("groupBox6.ToolTip"));
             // 
             // picHelpFileNamePattern
             // 
-            resources.ApplyResources(this.picHelpFileNamePattern, "picHelpFileNamePattern");
             this.picHelpFileNamePattern.Image = global::PasteEx.Properties.Resources.attention;
+            resources.ApplyResources(this.picHelpFileNamePattern, "picHelpFileNamePattern");
             this.picHelpFileNamePattern.Name = "picHelpFileNamePattern";
             this.picHelpFileNamePattern.TabStop = false;
             this.tipHelp.SetToolTip(this.picHelpFileNamePattern, resources.GetString("picHelpFileNamePattern.ToolTip"));
@@ -153,26 +150,22 @@
             // 
             resources.ApplyResources(this.lblPreviewResult, "lblPreviewResult");
             this.lblPreviewResult.Name = "lblPreviewResult";
-            this.tipHelp.SetToolTip(this.lblPreviewResult, resources.GetString("lblPreviewResult.ToolTip"));
             // 
             // txtFileNamePattern
             // 
             resources.ApplyResources(this.txtFileNamePattern, "txtFileNamePattern");
             this.txtFileNamePattern.Name = "txtFileNamePattern";
-            this.tipHelp.SetToolTip(this.txtFileNamePattern, resources.GetString("txtFileNamePattern.ToolTip"));
             this.txtFileNamePattern.TextChanged += new System.EventHandler(this.txtFileNamePattern_TextChanged);
             // 
             // lblFileNamePreview
             // 
             resources.ApplyResources(this.lblFileNamePreview, "lblFileNamePreview");
             this.lblFileNamePreview.Name = "lblFileNamePreview";
-            this.tipHelp.SetToolTip(this.lblFileNamePreview, resources.GetString("lblFileNamePreview.ToolTip"));
             // 
             // lblFileNamePattern
             // 
             resources.ApplyResources(this.lblFileNamePattern, "lblFileNamePattern");
             this.lblFileNamePattern.Name = "lblFileNamePattern";
-            this.tipHelp.SetToolTip(this.lblFileNamePattern, resources.GetString("lblFileNamePattern.ToolTip"));
             // 
             // groupBox4
             // 
@@ -182,33 +175,29 @@
             this.groupBox4.Controls.Add(this.labelLanguage);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.TabStop = false;
-            this.tipHelp.SetToolTip(this.groupBox4, resources.GetString("groupBox4.ToolTip"));
             // 
             // chkDefaultStartupMonitorMode
             // 
             resources.ApplyResources(this.chkDefaultStartupMonitorMode, "chkDefaultStartupMonitorMode");
             this.chkDefaultStartupMonitorMode.Name = "chkDefaultStartupMonitorMode";
-            this.tipHelp.SetToolTip(this.chkDefaultStartupMonitorMode, resources.GetString("chkDefaultStartupMonitorMode.ToolTip"));
             this.chkDefaultStartupMonitorMode.UseVisualStyleBackColor = true;
             // 
             // cboLanguage
             // 
-            resources.ApplyResources(this.cboLanguage, "cboLanguage");
             this.cboLanguage.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboLanguage.FormattingEnabled = true;
             this.cboLanguage.Items.AddRange(new object[] {
             resources.GetString("cboLanguage.Items"),
             resources.GetString("cboLanguage.Items1"),
             resources.GetString("cboLanguage.Items2")});
+            resources.ApplyResources(this.cboLanguage, "cboLanguage");
             this.cboLanguage.Name = "cboLanguage";
-            this.tipHelp.SetToolTip(this.cboLanguage, resources.GetString("cboLanguage.ToolTip"));
             this.cboLanguage.SelectedIndexChanged += new System.EventHandler(this.cboLanguage_SelectedIndexChanged);
             // 
             // labelLanguage
             // 
             resources.ApplyResources(this.labelLanguage, "labelLanguage");
             this.labelLanguage.Name = "labelLanguage";
-            this.tipHelp.SetToolTip(this.labelLanguage, resources.GetString("labelLanguage.ToolTip"));
             // 
             // groupBox3
             // 
@@ -218,20 +207,17 @@
             this.groupBox3.Controls.Add(this.btnFastRegister);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.TabStop = false;
-            this.tipHelp.SetToolTip(this.groupBox3, resources.GetString("groupBox3.ToolTip"));
             // 
             // chkFastNeedShiftKey
             // 
             resources.ApplyResources(this.chkFastNeedShiftKey, "chkFastNeedShiftKey");
             this.chkFastNeedShiftKey.Name = "chkFastNeedShiftKey";
-            this.tipHelp.SetToolTip(this.chkFastNeedShiftKey, resources.GetString("chkFastNeedShiftKey.ToolTip"));
             this.chkFastNeedShiftKey.UseVisualStyleBackColor = true;
             // 
             // btnFastUnRegister
             // 
             resources.ApplyResources(this.btnFastUnRegister, "btnFastUnRegister");
             this.btnFastUnRegister.Name = "btnFastUnRegister";
-            this.tipHelp.SetToolTip(this.btnFastUnRegister, resources.GetString("btnFastUnRegister.ToolTip"));
             this.btnFastUnRegister.UseVisualStyleBackColor = true;
             this.btnFastUnRegister.Click += new System.EventHandler(this.btnFastUnRegister_Click);
             // 
@@ -239,7 +225,6 @@
             // 
             resources.ApplyResources(this.btnFastRegister, "btnFastRegister");
             this.btnFastRegister.Name = "btnFastRegister";
-            this.tipHelp.SetToolTip(this.btnFastRegister, resources.GetString("btnFastRegister.ToolTip"));
             this.btnFastRegister.UseVisualStyleBackColor = true;
             this.btnFastRegister.Click += new System.EventHandler(this.btnFastRegister_Click);
             // 
@@ -251,20 +236,17 @@
             this.groupBox1.Controls.Add(this.btnRegister);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.TabStop = false;
-            this.tipHelp.SetToolTip(this.groupBox1, resources.GetString("groupBox1.ToolTip"));
             // 
             // chkNeedShiftKey
             // 
             resources.ApplyResources(this.chkNeedShiftKey, "chkNeedShiftKey");
             this.chkNeedShiftKey.Name = "chkNeedShiftKey";
-            this.tipHelp.SetToolTip(this.chkNeedShiftKey, resources.GetString("chkNeedShiftKey.ToolTip"));
             this.chkNeedShiftKey.UseVisualStyleBackColor = true;
             // 
             // btnUnRegister
             // 
             resources.ApplyResources(this.btnUnRegister, "btnUnRegister");
             this.btnUnRegister.Name = "btnUnRegister";
-            this.tipHelp.SetToolTip(this.btnUnRegister, resources.GetString("btnUnRegister.ToolTip"));
             this.btnUnRegister.UseVisualStyleBackColor = true;
             this.btnUnRegister.Click += new System.EventHandler(this.btnUnRegister_Click);
             // 
@@ -272,16 +254,14 @@
             // 
             resources.ApplyResources(this.btnRegister, "btnRegister");
             this.btnRegister.Name = "btnRegister";
-            this.tipHelp.SetToolTip(this.btnRegister, resources.GetString("btnRegister.ToolTip"));
             this.btnRegister.UseVisualStyleBackColor = true;
             this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
             // tabPageCustom
             // 
-            resources.ApplyResources(this.tabPageCustom, "tabPageCustom");
             this.tabPageCustom.Controls.Add(this.groupBox2);
+            resources.ApplyResources(this.tabPageCustom, "tabPageCustom");
             this.tabPageCustom.Name = "tabPageCustom";
-            this.tipHelp.SetToolTip(this.tabPageCustom, resources.GetString("tabPageCustom.ToolTip"));
             this.tabPageCustom.UseVisualStyleBackColor = true;
             // 
             // groupBox2
@@ -293,14 +273,12 @@
             this.groupBox2.Controls.Add(this.txtAutoExtRule);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.TabStop = false;
-            this.tipHelp.SetToolTip(this.groupBox2, resources.GetString("groupBox2.ToolTip"));
             // 
             // chkAutoExtSwitch
             // 
             resources.ApplyResources(this.chkAutoExtSwitch, "chkAutoExtSwitch");
             this.chkAutoExtSwitch.BackColor = System.Drawing.Color.White;
             this.chkAutoExtSwitch.Name = "chkAutoExtSwitch";
-            this.tipHelp.SetToolTip(this.chkAutoExtSwitch, resources.GetString("chkAutoExtSwitch.ToolTip"));
             this.chkAutoExtSwitch.UseVisualStyleBackColor = false;
             this.chkAutoExtSwitch.CheckedChanged += new System.EventHandler(this.chkAutoExtSwitch_CheckedChanged);
             // 
@@ -318,25 +296,22 @@
             resources.ApplyResources(this.lblTipError, "lblTipError");
             this.lblTipError.ForeColor = System.Drawing.Color.Red;
             this.lblTipError.Name = "lblTipError";
-            this.tipHelp.SetToolTip(this.lblTipError, resources.GetString("lblTipError.ToolTip"));
             // 
             // txtAutoExtRule
             // 
             resources.ApplyResources(this.txtAutoExtRule, "txtAutoExtRule");
             this.txtAutoExtRule.Name = "txtAutoExtRule";
-            this.tipHelp.SetToolTip(this.txtAutoExtRule, resources.GetString("txtAutoExtRule.ToolTip"));
             this.txtAutoExtRule.TextChanged += new System.EventHandler(this.txtAutoExtRuleValidate);
             this.txtAutoExtRule.Leave += new System.EventHandler(this.txtAutoExtRuleValidate);
             this.txtAutoExtRule.MouseLeave += new System.EventHandler(this.txtAutoExtRuleValidate);
             // 
             // tabPageMode
             // 
-            resources.ApplyResources(this.tabPageMode, "tabPageMode");
             this.tabPageMode.Controls.Add(this.groupBox8);
             this.tabPageMode.Controls.Add(this.groupBox7);
             this.tabPageMode.Controls.Add(this.groupBox5);
+            resources.ApplyResources(this.tabPageMode, "tabPageMode");
             this.tabPageMode.Name = "tabPageMode";
-            this.tipHelp.SetToolTip(this.tabPageMode, resources.GetString("tabPageMode.ToolTip"));
             this.tabPageMode.UseVisualStyleBackColor = true;
             // 
             // groupBox8
@@ -349,7 +324,6 @@
             this.groupBox8.Controls.Add(this.radInclude);
             this.groupBox8.Name = "groupBox8";
             this.groupBox8.TabStop = false;
-            this.tipHelp.SetToolTip(this.groupBox8, resources.GetString("groupBox8.ToolTip"));
             // 
             // picHelpAppFilter
             // 
@@ -364,13 +338,11 @@
             // 
             resources.ApplyResources(this.txtAppFilterExclude, "txtAppFilterExclude");
             this.txtAppFilterExclude.Name = "txtAppFilterExclude";
-            this.tipHelp.SetToolTip(this.txtAppFilterExclude, resources.GetString("txtAppFilterExclude.ToolTip"));
             // 
             // radExclude
             // 
             resources.ApplyResources(this.radExclude, "radExclude");
             this.radExclude.Name = "radExclude";
-            this.tipHelp.SetToolTip(this.radExclude, resources.GetString("radExclude.ToolTip"));
             this.radExclude.UseVisualStyleBackColor = true;
             this.radExclude.CheckedChanged += new System.EventHandler(this.radApplicationFilter_CheckedChanged);
             // 
@@ -378,13 +350,11 @@
             // 
             resources.ApplyResources(this.txtAppFilterInclude, "txtAppFilterInclude");
             this.txtAppFilterInclude.Name = "txtAppFilterInclude";
-            this.tipHelp.SetToolTip(this.txtAppFilterInclude, resources.GetString("txtAppFilterInclude.ToolTip"));
             // 
             // radInclude
             // 
             resources.ApplyResources(this.radInclude, "radInclude");
             this.radInclude.Name = "radInclude";
-            this.tipHelp.SetToolTip(this.radInclude, resources.GetString("radInclude.ToolTip"));
             this.radInclude.UseVisualStyleBackColor = true;
             this.radInclude.CheckedChanged += new System.EventHandler(this.radApplicationFilter_CheckedChanged);
             // 
@@ -399,12 +369,11 @@
             this.groupBox7.Controls.Add(this.lblAutoSaveFolderPath);
             this.groupBox7.Name = "groupBox7";
             this.groupBox7.TabStop = false;
-            this.tipHelp.SetToolTip(this.groupBox7, resources.GetString("groupBox7.ToolTip"));
             // 
             // picHelpAutoSave
             // 
-            resources.ApplyResources(this.picHelpAutoSave, "picHelpAutoSave");
             this.picHelpAutoSave.Image = global::PasteEx.Properties.Resources.attention;
+            resources.ApplyResources(this.picHelpAutoSave, "picHelpAutoSave");
             this.picHelpAutoSave.Name = "picHelpAutoSave";
             this.picHelpAutoSave.TabStop = false;
             this.tipHelp.SetToolTip(this.picHelpAutoSave, resources.GetString("picHelpAutoSave.ToolTip"));
@@ -414,7 +383,6 @@
             // 
             resources.ApplyResources(this.btnOpenAutoSavePath, "btnOpenAutoSavePath");
             this.btnOpenAutoSavePath.Name = "btnOpenAutoSavePath";
-            this.tipHelp.SetToolTip(this.btnOpenAutoSavePath, resources.GetString("btnOpenAutoSavePath.ToolTip"));
             this.btnOpenAutoSavePath.UseVisualStyleBackColor = true;
             this.btnOpenAutoSavePath.Click += new System.EventHandler(this.btnOpenAutoSavePath_Click);
             // 
@@ -423,7 +391,6 @@
             resources.ApplyResources(this.chkAutoSave, "chkAutoSave");
             this.chkAutoSave.BackColor = System.Drawing.Color.White;
             this.chkAutoSave.Name = "chkAutoSave";
-            this.tipHelp.SetToolTip(this.chkAutoSave, resources.GetString("chkAutoSave.ToolTip"));
             this.chkAutoSave.UseVisualStyleBackColor = false;
             this.chkAutoSave.CheckedChanged += new System.EventHandler(this.chkAutoSave_CheckedChanged);
             // 
@@ -431,13 +398,11 @@
             // 
             resources.ApplyResources(this.txtAutoSaveFolderPath, "txtAutoSaveFolderPath");
             this.txtAutoSaveFolderPath.Name = "txtAutoSaveFolderPath";
-            this.tipHelp.SetToolTip(this.txtAutoSaveFolderPath, resources.GetString("txtAutoSaveFolderPath.ToolTip"));
             // 
             // btnChangeAutoSavePathDialog
             // 
             resources.ApplyResources(this.btnChangeAutoSavePathDialog, "btnChangeAutoSavePathDialog");
             this.btnChangeAutoSavePathDialog.Name = "btnChangeAutoSavePathDialog";
-            this.tipHelp.SetToolTip(this.btnChangeAutoSavePathDialog, resources.GetString("btnChangeAutoSavePathDialog.ToolTip"));
             this.btnChangeAutoSavePathDialog.UseVisualStyleBackColor = true;
             this.btnChangeAutoSavePathDialog.Click += new System.EventHandler(this.btnChangeAutoSavePathDialog_Click);
             // 
@@ -445,7 +410,6 @@
             // 
             resources.ApplyResources(this.lblAutoSaveFolderPath, "lblAutoSaveFolderPath");
             this.lblAutoSaveFolderPath.Name = "lblAutoSaveFolderPath";
-            this.tipHelp.SetToolTip(this.lblAutoSaveFolderPath, resources.GetString("lblAutoSaveFolderPath.ToolTip"));
             // 
             // groupBox5
             // 
@@ -456,13 +420,11 @@
             this.groupBox5.Controls.Add(this.txtQuickPasteExHotkey);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.TabStop = false;
-            this.tipHelp.SetToolTip(this.groupBox5, resources.GetString("groupBox5.ToolTip"));
             // 
             // chkQuickPasteExHotkeyWinKey
             // 
             resources.ApplyResources(this.chkQuickPasteExHotkeyWinKey, "chkQuickPasteExHotkeyWinKey");
             this.chkQuickPasteExHotkeyWinKey.Name = "chkQuickPasteExHotkeyWinKey";
-            this.tipHelp.SetToolTip(this.chkQuickPasteExHotkeyWinKey, resources.GetString("chkQuickPasteExHotkeyWinKey.ToolTip"));
             this.chkQuickPasteExHotkeyWinKey.UseVisualStyleBackColor = true;
             this.chkQuickPasteExHotkeyWinKey.CheckedChanged += new System.EventHandler(this.chkQuickPasteExHotkeyWinKey_CheckedChanged);
             // 
@@ -471,32 +433,28 @@
             resources.ApplyResources(this.lblQuickPasteExHotkeyValid, "lblQuickPasteExHotkeyValid");
             this.lblQuickPasteExHotkeyValid.ForeColor = System.Drawing.Color.Green;
             this.lblQuickPasteExHotkeyValid.Name = "lblQuickPasteExHotkeyValid";
-            this.tipHelp.SetToolTip(this.lblQuickPasteExHotkeyValid, resources.GetString("lblQuickPasteExHotkeyValid.ToolTip"));
             // 
             // lblQuickPasteExHotkey
             // 
             resources.ApplyResources(this.lblQuickPasteExHotkey, "lblQuickPasteExHotkey");
             this.lblQuickPasteExHotkey.Name = "lblQuickPasteExHotkey";
-            this.tipHelp.SetToolTip(this.lblQuickPasteExHotkey, resources.GetString("lblQuickPasteExHotkey.ToolTip"));
             // 
             // txtQuickPasteExHotkey
             // 
             resources.ApplyResources(this.txtQuickPasteExHotkey, "txtQuickPasteExHotkey");
             this.txtQuickPasteExHotkey.HasWinKey = false;
             this.txtQuickPasteExHotkey.Name = "txtQuickPasteExHotkey";
-            this.tipHelp.SetToolTip(this.txtQuickPasteExHotkey, resources.GetString("txtQuickPasteExHotkey.ToolTip"));
             this.txtQuickPasteExHotkey.TextChanged += new System.EventHandler(this.txtQuickPasteExHotkey_TextChanged);
             // 
             // tabPageAbout
             // 
-            resources.ApplyResources(this.tabPageAbout, "tabPageAbout");
             this.tabPageAbout.Controls.Add(this.labelUpdateinfo);
             this.tabPageAbout.Controls.Add(this.picLoading);
             this.tabPageAbout.Controls.Add(this.linkLabel1);
             this.tabPageAbout.Controls.Add(this.label2);
             this.tabPageAbout.Controls.Add(this.pictureBox1);
+            resources.ApplyResources(this.tabPageAbout, "tabPageAbout");
             this.tabPageAbout.Name = "tabPageAbout";
-            this.tipHelp.SetToolTip(this.tabPageAbout, resources.GetString("tabPageAbout.ToolTip"));
             this.tabPageAbout.UseVisualStyleBackColor = true;
             // 
             // labelUpdateinfo
@@ -505,22 +463,19 @@
             this.labelUpdateinfo.ForeColor = System.Drawing.Color.Green;
             this.labelUpdateinfo.LinkColor = System.Drawing.Color.Green;
             this.labelUpdateinfo.Name = "labelUpdateinfo";
-            this.tipHelp.SetToolTip(this.labelUpdateinfo, resources.GetString("labelUpdateinfo.ToolTip"));
             this.labelUpdateinfo.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabels_LinkClicked);
             // 
             // picLoading
             // 
-            resources.ApplyResources(this.picLoading, "picLoading");
             this.picLoading.Image = global::PasteEx.Properties.Resources.loading;
+            resources.ApplyResources(this.picLoading, "picLoading");
             this.picLoading.Name = "picLoading";
             this.picLoading.TabStop = false;
-            this.tipHelp.SetToolTip(this.picLoading, resources.GetString("picLoading.ToolTip"));
             // 
             // linkLabel1
             // 
             resources.ApplyResources(this.linkLabel1, "linkLabel1");
             this.linkLabel1.Name = "linkLabel1";
-            this.tipHelp.SetToolTip(this.linkLabel1, resources.GetString("linkLabel1.ToolTip"));
             this.linkLabel1.UseCompatibleTextRendering = true;
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabels_LinkClicked);
             // 
@@ -528,7 +483,6 @@
             // 
             resources.ApplyResources(this.label2, "label2");
             this.label2.Name = "label2";
-            this.tipHelp.SetToolTip(this.label2, resources.GetString("label2.ToolTip"));
             // 
             // pictureBox1
             // 
@@ -536,7 +490,6 @@
             this.pictureBox1.Image = global::PasteEx.Properties.Resources.png;
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.TabStop = false;
-            this.tipHelp.SetToolTip(this.pictureBox1, resources.GetString("pictureBox1.ToolTip"));
             // 
             // tipHelp
             // 
@@ -552,7 +505,6 @@
             this.Controls.Add(this.tabControl1);
             this.Icon = global::PasteEx.Properties.Resources.ico;
             this.Name = "FormSetting";
-            this.tipHelp.SetToolTip(this, resources.GetString("$this.ToolTip"));
             this.TopMost = true;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormSetting_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormSetting_FormClosed);
