@@ -3,9 +3,11 @@ using PasteEx.Util;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Threading.Tasks;
 using System.Web.Script.Serialization;
 using System.Windows.Forms;
+using PasteEx.Properties;
 
 namespace PasteEx.Forms
 {
@@ -444,7 +446,26 @@ namespace PasteEx.Forms
 
         private void txtFileNamePattern_TextChanged(object sender, EventArgs e)
         {
-            if (txtFileNamePattern.Text.IndexOfAny(Path.GetInvalidFileNameChars()) >= 0)
+            // 合法性检测并输出到预览
+            // Path.GetInvalidFileNameChars() eq [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 34, 60, 62, 124, 58, 42, 63, 92, 47]
+            char[] InvalidFileNameChars = { '\0', '\x01', '\x02', '\x03', '\x04', '\x05', '\x06', '\x07', '\x08', '\t', '\n', '\x0b', '\x0c', '\r', '\x0e', '\x0f', '\x10', '\x11', '\x12', '\x13', '\x14', '\x15', '\x16', '\x17', '\x18', '\x19', '\x1a', '\x1b', '\x1c', '\x1d', '\x1e', '\x1f', '"', '<', '>', '|', ':', '*', '?', '/' };
+            int lastSplitCharIndex = txtFileNamePattern.Text.LastIndexOf('\\') + 1;
+            string folder, filename;
+            if (lastSplitCharIndex >= 0)
+            {
+                folder = txtFileNamePattern.Text.Substring(0, lastSplitCharIndex);
+                filename = txtFileNamePattern.Text.Substring(lastSplitCharIndex, txtFileNamePattern.Text.Length - lastSplitCharIndex);
+                Settings.Default.fileNameFolder = folder;
+                Settings.Default.fileNamePattern = folder.EndsWith("\\") ? folder : folder + "\\" + filename;
+                Settings.Default.fileNamePatternPure = filename;
+            }
+            else
+            {
+                filename = txtFileNamePattern.Text;
+                folder = "";
+            }
+
+            if (filename.IndexOfAny(InvalidFileNameChars) >= 0)
             {
                 lblPreviewResult.Text = Resources.Strings.TipInvalidFileNameChars;
             }
@@ -452,15 +473,15 @@ namespace PasteEx.Forms
             {
                 try
                 {
-                    lblPreviewResult.Text = PathGenerator.GenerateDefaultFileName(txtFileNamePattern.Text);
+                    lblPreviewResult.Text = PathGenerator.GenerateDefaultFileName(folder, filename);
                 }
                 catch (Exception ex)
                 {
                     lblPreviewResult.Text = ex.Message;
                 }
             }
-
         }
+
 
         private void chkAutoSave_CheckedChanged(object sender, EventArgs e)
         {
@@ -523,6 +544,5 @@ namespace PasteEx.Forms
                 txtAppFilterExclude.Enabled = true;
             }
         }
-
     }
 }

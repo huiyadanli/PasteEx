@@ -277,4 +277,7 @@
   <data name="$this.Text" xml:space="preserve">
     <value>设置</value>
   </data>
+  <data name="SavePatternBtn.Text" xml:space="preserve">
+    <value>保存</value>
+  </data>
 </root>

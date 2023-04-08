@@ -1,4 +1,5 @@
 ## Introduction
+
 Paste the contents of the clipboard into files.
 
 * Custom text extension rules.
@@ -10,16 +11,20 @@ Support File (.*), HTML (.html), Image (.png .jpg .gif .bmp .ico ), RTF (.rtf ),
 ## Usage
 
 ![Screenshot](https://raw.githubusercontent.com/huiyadanli/PasteEx/master/Screenshot/Screenshot.png)
+
 ### Requirements
+
 * Windows 7 or higher
 * [.NET Framework 4.5](https://www.microsoft.com/zh-cn/download/details.aspx?id=30653) or higher
 
 ### Install
+
 Download the latest PasteEx from [here](https://github.com/huiyadanli/PasteEx/releases).
 
 Unzip and run `PasteEx.exe`, and add the **right-click menu** according to the prompts (the UAC prompt will be displayed when the Context Menu is added, please allow it).
 
 ### Uninstall
+
 This is a portable software. Just remove the right-click menu on the "Settings", and then delete the folder where the software is located.
 
 If you delete PasteEx but forget to remove the right-click menu, or cannot remove the related function items of the right-click menu normally, you can use the following method.
@@ -103,7 +108,7 @@ Save the contents of the clipboard as "c:\test.png" directly. The file will be o
 
 Rule format: extension = the first line signature of the text corresponding to this extension (support regular expression)
 
-For text files, the first non-blank line will be used to match the signatures. 
+For text files, the first non-blank line will be used to match the signatures.
 
 If the matching is successful, the corresponding custom extension will be used by default when saving.
 
@@ -112,38 +117,40 @@ Example:
 ```
 cs=^using .*;$
 java=^package.*;$
-html=(?i)&lt;!DOCTYPE html
+html=(?i)<!DOCTYPE html
 cpp=^#include.*
 ```
 
 ### Custom file name generation
 
-Note: The custom file name cannot contain illegal characters ` \ / : * ? " < > | `。
+Note: The custom file name cannot contain illegal characters `\ / : * ? " < > |`。
+
++ P.S.: Except for `\`, which can be used to create directory, but may not appear inside `$$`.
 
 To use the date format string of C# DateTime, please use `$` to wrap the string to be formatted.
 
-Example：`Clip_$yyyyMMdd_HHmmss$`
+For example, `\$MM$\$dd$\Clip_%HHmmss$` will copy different clipboard screenshots into different directories based on the date.
 
 Date and time format strings：
 
-| Format specifier | Description |
-| ------ | ------ |
-| yyyy | The year as a four-digit number. |
-| yy | The year, from 00 to 99. |
-| MM | The month, from 01 through 12. |
-| M | The month, from 1 through 12. |
-| dddd | The full name of the day of the week. |
-| ddd | The abbreviated name of the day of the week. |
-| dd | The day of the month, from 01 through 31. |
-| d | The day of the month, from 1 through 31. |
-| HH | The hour, using a 24-hour clock from 00 to 23. |
-| H | The hour, using a 24-hour clock from 0 to 23. |
-| hh | The hour, using a 12-hour clock from 01 to 12. |
-| h | The hour, using a 12-hour clock from 1 to 12. |
-| mm | The minute, from 00 through 59. |
-| m | The minute, from 0 through 59. |
-| ss | The second, from 00 through 59. |
-| s | The second, from 0 through 59. |
+| Format specifier | Description                                    |
+| ---------------- | ---------------------------------------------- |
+| yyyy             | The year as a four-digit number.               |
+| yy               | The year, from 00 to 99.                       |
+| MM               | The month, from 01 through 12.                 |
+| M                | The month, from 1 through 12.                  |
+| dddd             | The full name of the day of the week.          |
+| ddd              | The abbreviated name of the day of the week.   |
+| dd               | The day of the month, from 01 through 31.      |
+| d                | The day of the month, from 1 through 31.       |
+| HH               | The hour, using a 24-hour clock from 00 to 23. |
+| H                | The hour, using a 24-hour clock from 0 to 23.  |
+| hh               | The hour, using a 12-hour clock from 01 to 12. |
+| h                | The hour, using a 12-hour clock from 1 to 12.  |
+| mm               | The minute, from 00 through 59.                |
+| m                | The minute, from 0 through 59.                 |
+| ss               | The second, from 00 through 59.                |
+| s                | The second, from 0 through 59.                 |
 
 Official document：
 
@@ -153,7 +160,7 @@ Official document：
 
 ### Quick mode
 
-Add the right-click menu of "Quick Paste As File" in the "Settings". 
+Add the right-click menu of "Quick Paste As File" in the "Settings".
 After use, the main interface will not be displayed, and the file will be directly pasted.
 
 The first extension that is analyzed is used for pasting.
@@ -162,10 +169,10 @@ The first extension that is analyzed is used for pasting.
 
 ![start monitor mode](https://raw.githubusercontent.com/huiyadanli/PasteEx/master/Screenshot/Screenshot_m1.png)
 
-Click the "Settings" icon, select the "Monitor Mode" from the drop-down menu. 
+Click the "Settings" icon, select the "Monitor Mode" from the drop-down menu.
 PasteEx will turn on the monitor mode and show in the icon in the notification area.
 
-If you want to turn on the "Monitor Mode" directly when you start PasteEx, 
+If you want to turn on the "Monitor Mode" directly when you start PasteEx,
 you can check "Default startup monitor mode" on the "Settings".
 
 ![monitor mode started](https://raw.githubusercontent.com/huiyadanli/PasteEx/master/Screenshot/Screenshot_m2.png)
@@ -178,16 +185,20 @@ The functions that can be used at this time are as follows:
 * When both the "Auto Image to File" option and the "Auto Save" option in "Settings" are turned on, PasteEx can automatically collect all copied pictures into the specified folder.
 
 #### Application filter
-In the monitor mode, the copy source can be filtered, and the clipboard data from the application is not processed, 
+
+In the monitor mode, the copy source can be filtered, and the clipboard data from the application is not processed,
 which can solve some compatibility problems of the same type of software. For detailed settings, see [Application filter](https://github.com/huiyadanli/PasteEx/wiki/App-Filter).
 
 ## Contribution
+
 ### TODO
+
 It may be plug-in in the future.
 
 [https://github.com/huiyadanli/PasteEx/projects](https://github.com/huiyadanli/PasteEx/projects)
 
 ### How to translate
+
 VS 2017 and .Net 4.5 or newer required.
 
 Reference: [C# i18n](https://github.com/Luke31/i18n-cs/wiki/C-Sharp)
