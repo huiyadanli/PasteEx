@@ -1,14 +1,38 @@
-﻿using System;
+using System;
 using System.IO;
 using System.Runtime;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows.Forms;
+using System.Diagnostics;
 
 namespace PasteEx.Forms
 {
     public class PathGenerator
     {
         public static string defaultFileNamePattern = "$yyyyMMdd$\\Clip_$HHmmss$";
+
+        [DllImport("user32.dll")]
+        private static extern IntPtr GetForegroundWindow();
+
+        [DllImport("user32.dll")]
+        static extern int GetWindowTextLength(IntPtr hWnd);
+
+        [DllImport("user32.dll")]
+        private static extern int GetWindowText(IntPtr hWnd, StringBuilder lpString, int nMaxCount);
+
+        [DllImport("user32.dll")]
+        private static extern uint GetWindowThreadProcessId(IntPtr hWnd, out uint lpdwProcessId);
+
+
+        public static string GetTopWindowText()
+        {
+            IntPtr hWnd = GetForegroundWindow();
+            int length = GetWindowTextLength(hWnd);
+            StringBuilder text = new StringBuilder(length + 1);
+            GetWindowText(hWnd, text, text.Capacity);
+            return text.ToString();
+        }
 
         public static string GenerateDefaultFileName(string folder, string pattern)
         {
@@ -33,7 +57,41 @@ namespace PasteEx.Forms
                     isFormatPattern = !isFormatPattern;
                     if (!isFormatPattern && sbFormatPattern.Length > 0)
                     {
-                        sb.Append(DateTime.Now.ToString(sbFormatPattern.ToString()));
+                        bool b_window = sbFormatPattern.ToString().CompareTo("window") == 0;
+                        bool b_process = sbFormatPattern.ToString().CompareTo("process") == 0;
+                        if (b_window || b_process)
+                        {
+                            uint TopWndProcessID = 0;
+                            IntPtr TopWindow = GetForegroundWindow();
+
+                            if (b_process && GetWindowThreadProcessId(TopWindow, out TopWndProcessID) != 0)
+                            {
+                                Process[] process_list = Process.GetProcesses();
+                                foreach (var p in process_list)
+                                {
+                                    try
+                                    {
+                                        if (p.Id == TopWndProcessID) {
+                                            sb.Append(p.ProcessName.ToString());
+                                            break;
+                                        }
+                                    }
+                                    catch (Exception)
+                                    {
+                                        continue;
+                                    }
+                                }
+                            }
+                            
+                            if (b_window)
+                            {
+                                sb.Append(GetTopWindowText().ToString());
+                            }
+                        }
+                        else
+                        {
+                            sb.Append(DateTime.Now.ToString(sbFormatPattern.ToString()));
+                        }
                         sbFormatPattern.Clear();
                     }
 
