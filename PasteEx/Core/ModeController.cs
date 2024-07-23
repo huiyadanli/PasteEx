@@ -120,7 +120,9 @@ namespace PasteEx.Core
                         string filePath = PathGenerator.GenerateMonitorAppendFilePath(exts[0]);
                         CommandLine.Info("[Monitor] Paste pictures into files: " + filePath);
 
-                        AppendFileToClipboard(filePath);
+                        if (!Properties.Settings.Default.newAutoSaveBehavior) { 
+                            AppendFileToClipboard(filePath);
+                        }
 
                         monitorModeData.SaveAsync(filePath, exts[0]);
                     }

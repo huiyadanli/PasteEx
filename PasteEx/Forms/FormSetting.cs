@@ -51,6 +51,9 @@ namespace PasteEx.Forms
             chkAutoSave.Checked = Properties.Settings.Default.monitorAutoSaveEnabled;
             txtAutoSaveFolderPath.Text = Properties.Settings.Default.monitorAutoSavePath;
 
+            // Auto Save Behavior
+            chkNewBehavior.Checked = Properties.Settings.Default.newAutoSaveBehavior;
+
             // Default Startup Monitor Mode
             chkDefaultStartupMonitorMode.Checked = Properties.Settings.Default.DefaultStartupMonitorModeEnabled;
 
@@ -98,6 +101,8 @@ namespace PasteEx.Forms
             {
                 Properties.Settings.Default.ApplicationFilterState = AppFilterStateEnum.Exclude.ToString();
             }
+
+            Properties.Settings.Default.newAutoSaveBehavior = chkNewBehavior.Checked;
         }
 
         private void FormSetting_Load(object sender, EventArgs e)
@@ -488,6 +493,11 @@ namespace PasteEx.Forms
             txtAutoSaveFolderPath.Enabled = chkAutoSave.Checked;
             btnChangeAutoSavePathDialog.Enabled = chkAutoSave.Checked;
             btnOpenAutoSavePath.Enabled = chkAutoSave.Checked;
+        }
+
+        private void chkNewBehavior_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
 
         private void btnOpenAutoSavePath_Click(object sender, EventArgs e)
