@@ -236,7 +236,8 @@
     <value>包括</value>
   </data>
   <data name="picHelpAutoSave.ToolTip" xml:space="preserve">
-    <value>自動把複製過的圖片儲存到該資料夾</value>
+    <value>自動把複製過的圖片儲存到該資料夾
+勾選新行爲後將不會自動把監聽模式自動保存的文件複製到剪貼板中</value>
   </data>
   <data name="btnOpenAutoSavePath.Text" xml:space="preserve">
     <value>開啟</value>
@@ -276,5 +277,8 @@
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>設定</value>
+  </data>
+  <data name="chkNewBehavior.Text" xml:space="preserve">
+    <value>新行爲</value>
   </data>
 </root>

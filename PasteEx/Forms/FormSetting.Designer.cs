@@ -74,7 +74,6 @@
             this.chkQuickPasteExHotkeyWinKey = new System.Windows.Forms.CheckBox();
             this.lblQuickPasteExHotkeyValid = new System.Windows.Forms.Label();
             this.lblQuickPasteExHotkey = new System.Windows.Forms.Label();
-            this.txtQuickPasteExHotkey = new PasteEx.Forms.Hotkey.HotkeyTextBox();
             this.tabPageAbout = new System.Windows.Forms.TabPage();
             this.labelUpdateinfo = new System.Windows.Forms.LinkLabel();
             this.picLoading = new System.Windows.Forms.PictureBox();
@@ -82,6 +81,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tipHelp = new System.Windows.Forms.ToolTip(this.components);
+            this.chkNewBehavior = new System.Windows.Forms.CheckBox();
+            this.txtQuickPasteExHotkey = new PasteEx.Forms.Hotkey.HotkeyTextBox();
             this.tabControl1.SuspendLayout();
             this.tabPageNomal.SuspendLayout();
             this.groupBox6.SuspendLayout();
@@ -361,6 +362,7 @@
             // groupBox7
             // 
             resources.ApplyResources(this.groupBox7, "groupBox7");
+            this.groupBox7.Controls.Add(this.chkNewBehavior);
             this.groupBox7.Controls.Add(this.picHelpAutoSave);
             this.groupBox7.Controls.Add(this.btnOpenAutoSavePath);
             this.groupBox7.Controls.Add(this.chkAutoSave);
@@ -377,6 +379,7 @@
             this.picHelpAutoSave.Name = "picHelpAutoSave";
             this.picHelpAutoSave.TabStop = false;
             this.tipHelp.SetToolTip(this.picHelpAutoSave, resources.GetString("picHelpAutoSave.ToolTip"));
+            this.picHelpAutoSave.UseWaitCursor = true;
             this.picHelpAutoSave.Click += new System.EventHandler(this.picHelpAutoSave_Click);
             // 
             // btnOpenAutoSavePath
@@ -439,13 +442,6 @@
             resources.ApplyResources(this.lblQuickPasteExHotkey, "lblQuickPasteExHotkey");
             this.lblQuickPasteExHotkey.Name = "lblQuickPasteExHotkey";
             // 
-            // txtQuickPasteExHotkey
-            // 
-            resources.ApplyResources(this.txtQuickPasteExHotkey, "txtQuickPasteExHotkey");
-            this.txtQuickPasteExHotkey.HasWinKey = false;
-            this.txtQuickPasteExHotkey.Name = "txtQuickPasteExHotkey";
-            this.txtQuickPasteExHotkey.TextChanged += new System.EventHandler(this.txtQuickPasteExHotkey_TextChanged);
-            // 
             // tabPageAbout
             // 
             this.tabPageAbout.Controls.Add(this.labelUpdateinfo);
@@ -497,6 +493,20 @@
             this.tipHelp.AutoPopDelay = 30000;
             this.tipHelp.InitialDelay = 100;
             this.tipHelp.ReshowDelay = 20;
+            // 
+            // chkNewBehavior
+            // 
+            resources.ApplyResources(this.chkNewBehavior, "chkNewBehavior");
+            this.chkNewBehavior.Name = "chkNewBehavior";
+            this.chkNewBehavior.UseVisualStyleBackColor = true;
+            this.chkNewBehavior.CheckedChanged += new System.EventHandler(this.chkNewBehavior_CheckedChanged);
+            // 
+            // txtQuickPasteExHotkey
+            // 
+            resources.ApplyResources(this.txtQuickPasteExHotkey, "txtQuickPasteExHotkey");
+            this.txtQuickPasteExHotkey.HasWinKey = false;
+            this.txtQuickPasteExHotkey.Name = "txtQuickPasteExHotkey";
+            this.txtQuickPasteExHotkey.TextChanged += new System.EventHandler(this.txtQuickPasteExHotkey_TextChanged);
             // 
             // FormSetting
             // 
@@ -594,5 +604,6 @@
         private System.Windows.Forms.PictureBox picHelpAppFilter;
         private System.Windows.Forms.CheckBox chkDefaultStartupMonitorMode;
         private System.Windows.Forms.CheckBox chkQuickPasteExHotkeyWinKey;
+        private System.Windows.Forms.CheckBox chkNewBehavior;
     }
 }

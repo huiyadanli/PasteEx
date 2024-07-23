@@ -230,7 +230,8 @@
     <value>应用过滤</value>
   </data>
   <data name="picHelpAutoSave.ToolTip" xml:space="preserve">
-    <value>自动把复制过的图片保存到该文件夹</value>
+    <value>自动把复制过的图片保存到该文件夹
+勾选新行为后将不会自动把监听模式自动保存的文件复制到剪贴板中</value>
   </data>
   <data name="btnOpenAutoSavePath.Text" xml:space="preserve">
     <value>打开</value>
@@ -279,5 +280,8 @@
   </data>
   <data name="SavePatternBtn.Text" xml:space="preserve">
     <value>保存</value>
+  </data>
+  <data name="chkNewBehavior.Text" xml:space="preserve">
+    <value>新行为</value>
   </data>
 </root>
