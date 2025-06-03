@@ -28,3 +28,5 @@ node_modules/
 *.pfx
 AppPackages/
 BundleArtifacts/
+
+.assets.cache

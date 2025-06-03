@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
-using System.Web.Script.Serialization;
+using System.Text.Json;
 using System.Windows.Forms;
 using PasteEx.Properties;
 
@@ -311,8 +311,7 @@ namespace PasteEx.Forms
                 {
                     try
                     {
-                        JavaScriptSerializer serializer = new JavaScriptSerializer();
-                        AppInfo appInfo = serializer.Deserialize<AppInfo>(json);
+                        AppInfo appInfo = JsonSerializer.Deserialize<AppInfo>(json);
                         string latestVersion = appInfo.Version;
                         string currentVersion = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
 
