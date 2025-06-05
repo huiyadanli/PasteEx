@@ -132,7 +132,7 @@ namespace PasteEx.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("$yyyyMMdd$\\\\Clip_$HHmmss$")]
+        [global::System.Configuration.DefaultSettingValueAttribute("$yyyyMMdd$\\Clip_$HHmmss$")]
         public string fileNamePattern {
             get {
                 return ((string)(this["fileNamePattern"]));
@@ -199,30 +199,6 @@ namespace PasteEx.Properties {
             }
             set {
                 this["ApplicationFilterExclude"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string fileNameFolder {
-            get {
-                return ((string)(this["fileNameFolder"]));
-            }
-            set {
-                this["fileNameFolder"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string fileNamePatternPure {
-            get {
-                return ((string)(this["fileNamePatternPure"]));
-            }
-            set {
-                this["fileNamePatternPure"] = value;
             }
         }
     }

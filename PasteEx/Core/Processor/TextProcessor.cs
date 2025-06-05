@@ -83,6 +83,7 @@ namespace PasteEx.Core.Processor
                     ResultObject = Data.Storage.GetData(DataFormats.Text);
                 }
             }
+            Directory.CreateDirectory(Path.GetDirectoryName(path));
             File.WriteAllText(path, ResultObject as string, new UTF8Encoding(false));
             OnSaveAsFileCompleted();
             return true;

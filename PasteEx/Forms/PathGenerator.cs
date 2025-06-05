@@ -1,16 +1,17 @@
 using System;
+using System.Diagnostics;
 using System.IO;
+using System.Linq;
 using System.Runtime;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows.Forms;
-using System.Diagnostics;
 
 namespace PasteEx.Forms
 {
     public class PathGenerator
     {
-        public static string defaultFileNamePattern = "$yyyyMMdd$\\Clip_$HHmmss$";
+        public static string defaultRelativePathPattern = "$yyyyMMdd$\\Clip_$HHmmss$";
 
         [DllImport("user32.dll")]
         private static extern IntPtr GetForegroundWindow();
@@ -34,14 +35,15 @@ namespace PasteEx.Forms
             return text.ToString();
         }
 
-        public static string GenerateDefaultFileName(string folder, string pattern)
+        public static string GenerateDefaultRelativePath(string pattern)
         {
-            if (pattern.IndexOfAny(Path.GetInvalidFileNameChars()) >= 0)
+            string relativePath = GenerateWithPattern(pattern);
+            if (relativePath.IndexOfAny(Path.GetInvalidPathChars()) >= 0)
             {
                 return null;
             }
 
-            return GenerateWithPattern(folder) + GenerateWithPattern(pattern);
+            return relativePath;
         }
 
         private static string GenerateWithPattern(string pattern)
@@ -114,85 +116,42 @@ namespace PasteEx.Forms
         /// <summary>
         /// Save File Name
         /// </summary>
-        /// <param name="folder"></param>
-        /// <param name="extension"></param>
+        /// <param name="folder">The current folder that user wants to paste into</param>
+        /// <param name="extension">Filename extension</param>
         /// <returns></returns>
         public static string GenerateFileName(string folder, string extension)
         {
-            folder = folder.EndsWith("\\") ? folder : folder + "\\";
-            int slashCount = System.Text.RegularExpressions.Regex.Matches(Properties.Settings.Default.fileNameFolder, "\\\\").Count;
-            string[] __ = Properties.Settings.Default.fileNameFolder.Split('\\');
-            string[] _ = new string[slashCount];
-            for (int j = 0; j < slashCount; j++)
-            {
-                _[j] = GenerateWithPattern(__[j]);
-            }
 
-            if (_.Length > 0)
-            {
-                foreach (var k in _)
-                {
-                    folder += k + "\\";
-                }
-            }
-
-            // if folder doesn't exists
-            if (!Directory.Exists(folder))
-            {
-                Directory.CreateDirectory(folder);
-            }
-
+            string relativePathPattern = Properties.Settings.Default.fileNamePattern;
             // Use file name pattern
-            string defaultFileName = null;
-            string pureFileNamePattern = Properties.Settings.Default.fileNamePatternPure;
-            if (string.IsNullOrEmpty(pureFileNamePattern))
+            string defaultRelativePath = null;
+            try
             {
-                pureFileNamePattern = defaultFileNamePattern.Substring(defaultFileNamePattern.LastIndexOf('\\')+1);
+                defaultRelativePath = GenerateDefaultRelativePath(relativePathPattern);
             }
-            if (pureFileNamePattern.IndexOfAny(Path.GetInvalidFileNameChars()) < 0)
+            catch
             {
-                try
-                {
-                    defaultFileName = GenerateDefaultFileName(folder, pureFileNamePattern);
-                }
-                catch
-                {
-                    defaultFileName = null;
-                }
             }
-
-            if (string.IsNullOrEmpty(defaultFileName))
+            if (string.IsNullOrEmpty(defaultRelativePath))
             {
-                defaultFileName = GenerateDefaultFileName(folder, defaultFileNamePattern);
+                defaultRelativePath = GenerateDefaultRelativePath(defaultRelativePathPattern);
             }
 
             // Generate file name
-            string path = folder + defaultFileName + "." + extension;
-
-            string result;
-            string newFileName = defaultFileName;
-            int i = 0;
-            while (true)
+            if (!File.Exists(Path.Combine(folder, defaultRelativePath + "." + extension)))
             {
-                if (File.Exists(path))
+                return defaultRelativePath;
+            }
+            //If file already exists
+            for (int i = 0; i <= 233; i++)
+            {
+                string relativePath = defaultRelativePath + " (" + i + ")";
+                if (!File.Exists(Path.Combine(folder, defaultRelativePath + "." + extension)))
                 {
-                    newFileName = defaultFileName + " (" + ++i + ")";
-                    path = folder + newFileName + "." + extension;
-                }
-                else
-                {
-                    result = newFileName;
-                    break;
-                }
-
-                if (i > 233)
-                {
-                    result = "Default";
-                    break;
+                    return relativePath;
                 }
             }
-
-            return result;
+            return "Default";
         }
 
         /// <summary>
