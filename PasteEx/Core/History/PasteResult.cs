@@ -2,7 +2,7 @@
 using PasteEx.Util;
 using System;
 using System.Diagnostics;
-using System.Web.Script.Serialization;
+using System.Text.Json.Serialization;
 
 namespace PasteEx.Core.History
 {
@@ -17,14 +17,13 @@ namespace PasteEx.Core.History
 
         public string[] UserHistoryExts { get; set; }
 
-        [ScriptIgnore]
+        [JsonIgnore]
         public string Key
         {
             get
             {
                 string str = string.Format("[{0}]-[{1}]-[{2}]", CopySourceName, string.Join(",", ClipboardFormats), string.Join(",", AnalyzeResultExts));
-                byte[] b = ObjectHelper.SerializeObject(str);
-                return ObjectHelper.ComputeMD5(b);
+                return ObjectHelper.ComputeMD5(str);
             }
         }
 

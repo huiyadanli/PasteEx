@@ -19,7 +19,7 @@ namespace PasteEx.Util
             }
 
             string path = Path.Combine(folder, "PasteEx.log");
-            Trace.Listeners.Add(new TextWriterTraceListener(path));
+            System.Diagnostics.Trace.Listeners.Add(new TextWriterTraceListener(path));
             Trace.AutoFlush = true;
         }
 

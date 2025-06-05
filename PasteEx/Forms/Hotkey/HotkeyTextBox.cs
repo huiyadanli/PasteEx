@@ -27,7 +27,7 @@ namespace PasteEx.Forms.Hotkey
         {
             hotkey = new Hotkey();
 
-            ContextMenu = new ContextMenu(); // Disable right-clicking
+            ContextMenuStrip = new ContextMenuStrip(); // Disable right-clicking
             GotFocus += delegate { User32.HideCaret(Handle); };
         }
 

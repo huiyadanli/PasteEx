@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
-using System.Web.Script.Serialization;
+using System.Text.Json;
+using System.Text.Json.Serialization;
 
 namespace PasteEx.Core.History
 {
@@ -14,12 +15,12 @@ namespace PasteEx.Core.History
 
         public string ToJSONString()
         {
-            return new JavaScriptSerializer().Serialize(this);
+            return JsonSerializer.Serialize(this);
         }
 
         public static PasteResultHistory Parse(string str)
         {
-            return new JavaScriptSerializer().Deserialize<PasteResultHistory>(str);
+            return JsonSerializer.Deserialize<PasteResultHistory>(str);
         }
 
         public PasteResult Find(PasteResult res)
